@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noshahibaba.com - Sign In</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f2f3f7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .signin-wrapper {
+            display: flex;
+            flex: 1;
+            min-height: 100vh;
+        }
+
+        .signin-left {
+            flex: 1.2;
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%), url('assets/hero_banner.png');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+            position: relative;
+        }
+
+        .signin-left::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 102, 0, 0.1);
+        }
+
+        .signin-left>* {
+            position: relative;
+            z-index: 10;
+        }
+
+        .signin-left h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .signin-left p {
+            font-size: 20px;
+            opacity: 0.8;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+
+        .signin-right {
+            flex: 1;
+            background: #fdfdfd;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 440px;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-login {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .login-tabs {
+            display: flex;
+            border-bottom: 2px solid #f3f4f6;
+            margin-bottom: 30px;
+        }
+
+        .login-tab {
+            flex: 1;
+            text-align: center;
+            padding: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            color: #666;
+            transition: all 0.2s;
+        }
+
+        .login-tab.active {
+            color: #ff6600;
+            border-bottom: 2px solid #ff6600;
+            margin-bottom: -2px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            outline: none;
+            font-size: 15px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-group input:focus {
+            border-color: #ff6600;
+            box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.1);
+        }
+
+        .login-btn {
+            width: 100%;
+            background: #ff6600;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .login-btn:hover {
+            background: #e65c00;
+        }
+
+        .login-btn:active {
+            transform: scale(0.98);
+        }
+
+        .login-options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .login-options a:hover {
+            color: #ff6600;
+        }
+
+        .social-login {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .social-login p {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .social-login p::before,
+        .social-login p::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 32%;
+            height: 1px;
+            background: #eee;
+        }
+
+        .social-login p::before {
+            left: 0;
+        }
+
+        .social-login p::after {
+            right: 0;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icon {
+            width: 48px;
+            height: 48px;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .social-icon:hover {
+            background: #f9f9f9;
+            border-color: #d1d5db;
+            transform: translateY(-2px);
+        }
+
+        .social-icon.fb {
+            color: #1877f2;
+        }
+
+        .social-icon.google {
+            color: #ea4335;
+        }
+
+        .social-icon.linkedin {
+            color: #0a66c2;
+        }
+
+        .register-footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .register-footer a {
+            color: #ff6600;
+            font-weight: 600;
+        }
+
+        @media (max-width: 1024px) {
+            .signin-left {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="signin-wrapper">
+        <aside class="signin-left">
+            <h1>Unlock Global<br>Opportunities.</h1>
+            <p>Join millions of businesses sourcing directly from manufacturers on Noshahibaba.com.</p>
+            <div style="margin-top: 60px; display: flex; gap: 40px;">
+                <div class="feature-bullet">
+                    <i data-lucide="shield-check"
+                        style="width: 32px; height: 32px; color: #ff6600; margin-bottom: 10px;"></i>
+                    <h4 style="font-size: 18px;">Verified Pro</h4>
+                    <p style="font-size: 14px; opacity: 0.7;">Quality inspected factors</p>
+                </div>
+                <div class="feature-bullet">
+                    <i data-lucide="truck" style="width: 32px; height: 32px; color: #ff6600; margin-bottom: 10px;"></i>
+                    <h4 style="font-size: 18px;">Fast Shipping</h4>
+                    <p style="font-size: 14px; opacity: 0.7;">Global logistics support</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="signin-right">
+            <div class="logo-login">
+                <a href="index.html">
+                    <span class="logo-text" style="font-size: 32px;">Noshahi<span>baba</span>.com</span>
+                </a>
+            </div>
+
+            <div class="login-card">
+                <div class="login-tabs">
+                    <div class="login-tab active" id="account-tab">Account</div>
+                    <div class="login-tab" id="mobile-tab">Mobile</div>
+                </div>
+
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">Account Name</label>
+                        <input type="text" id="username" placeholder="Email address or member ID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter password" required>
+                    </div>
+
+                    <button type="submit" class="login-btn">Sign In</button>
+                </form>
+
+                <div class="login-options">
+                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <input type="checkbox"> Stay signed in
+                    </label>
+                    <div>
+                        <a href="#">Forgot password?</a>
+                    </div>
+                </div>
+
+                <div class="social-login">
+                    <p>Or sign in with</p>
+                    <div class="social-icons">
+                        <div class="social-icon fb"><i data-lucide="facebook"></i></div>
+                        <div class="social-icon google"><i data-lucide="mail"></i></div>
+                        <div class="social-icon linkedin"><i data-lucide="linkedin"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="register-footer">
+                New user? <a href="#">Create a Free Account</a>
+            </div>
+
+            <div style="margin-top: 60px; font-size: 12px; color: #999; text-align: center;">
+                <p>Noshahi Group | Privacy Policy | Terms of Use</p>
+                <p style="margin-top: 10px;">&copy; 2026 Noshahibaba.com. All rights reserved.</p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // Tab switching
+        const accountTab = document.getElementById('account-tab');
+        const mobileTab = document.getElementById('mobile-tab');
+        const usernameLabel = document.querySelector('label[for="username"]');
+        const usernameInput = document.getElementById('username');
+
+        accountTab.addEventListener('click', () => {
+            accountTab.classList.add('active');
+            mobileTab.classList.remove('active');
+            usernameLabel.textContent = 'Account Name';
+            usernameInput.placeholder = 'Email address or member ID';
+            usernameInput.type = 'text';
+        });
+
+        mobileTab.addEventListener('click', () => {
+            mobileTab.classList.add('active');
+            accountTab.classList.remove('active');
+            usernameLabel.textContent = 'Mobile Number';
+            usernameInput.placeholder = 'Your mobile number';
+            usernameInput.type = 'tel';
+        });
+
+        // Form Submission
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Sign-in successful!\n(Note: This is a demo clone)');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+
+</html>

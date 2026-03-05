@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Selections | Noshahibaba.com</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .featured-hero {
+            background-color: #f7f8fa;
+            padding: 60px 0;
+            margin-bottom: 40px;
+        }
+
+        .featured-header h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        .featured-header p {
+            color: #666;
+            font-size: 18px;
+        }
+
+        .filter-bar {
+            background: white;
+            padding: 15px 0;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 74px;
+            /* Adjusting for main header */
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .filter-links {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-bottom: 5px;
+        }
+
+        .filter-links a {
+            font-weight: 500;
+            color: #444;
+            font-size: 15px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+
+        .filter-links a.active,
+        .filter-links a:hover {
+            background-color: #fff4ed;
+            color: #ff6600;
+        }
+
+        .featured-grid {
+            margin-bottom: 80px;
+        }
+
+        .results-count {
+            margin-bottom: 30px;
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* Specialized card style for Featured */
+        .featured-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #eee;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .featured-card:hover {
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            border-color: #ff6600;
+        }
+
+        .img-container {
+            height: 240px;
+            background: #f9f9f9;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .img-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .rank-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-body h3 {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.4;
+            height: 40px;
+            overflow: hidden;
+            display: -webkit-box;
+            line-clamp: 2;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            margin-bottom: 12px;
+        }
+
+        .price-row {
+            margin-bottom: 8px;
+        }
+
+        .price-val {
+            font-size: 18px;
+            font-weight: 700;
+            color: #111;
+        }
+
+        .moq-val {
+            font-size: 13px;
+            color: #888;
+        }
+
+        .supplier-row {
+            margin-top: auto;
+            border-top: 1px solid #f3f4f6;
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .supplier-meta {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .verified-pro {
+            color: #4f46e5;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 50px 0;
+        }
+
+        .pg-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .pg-btn.active {
+            background: #ff6600;
+            color: white;
+            border-color: #ff6600;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left">
+                <span>Free delivery for your first order</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="#">Help Center</a>
+                <a href="#">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK"> PKR</a>
+                <a href="#">Language: EN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header (Same as Index) -->
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                </a>
+            </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
+                    <input type="text" placeholder="What are you looking for...">
+                    <button class="search-btn"><i data-lucide="search"></i> Search</button>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="signin.html" class="action-item">
+                    <i data-lucide="user"></i>
+                    <span>Sign In</span>
+                </a>
+                <div class="action-item">
+                    <i data-lucide="message-square"></i>
+                    <span>Messages</span>
+                </div>
+                <div class="action-item">
+                    <i data-lucide="shopping-cart"></i>
+                    <span>Cart</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sub Navigation -->
+    <nav class="sub-nav">
+        <div class="container nav-flex">
+            <div class="all-categories"><i data-lucide="menu"></i> All categories</div>
+            <div class="nav-links">
+                <a href="featured.html" class="active" style="color: #ff6600;">Featured selections</a>
+                <a href="tradeassurance.html">Trade Assurance</a>
+                <a href="#">Buyer Central</a>
+                <a href="#">Help Center</a>
+                <a href="#">Get the app</a>
+            </div>
+            <div class="nav-right"><a href="#">Become a supplier</a></div>
+        </div>
+    </nav>
+
+    <!-- Featured Hero -->
+    <section class="featured-hero">
+        <div class="container featured-header">
+            <h1>Featured Selections</h1>
+            <p>Curated high-quality products from diamond-verified manufacturers.</p>
+        </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+        <div class="container">
+            <div class="filter-links">
+                <a href="#" class="active">All Categories</a>
+                <a href="#">Consumer Electronics</a>
+                <a href="#">Apparel & Fashion</a>
+                <a href="#">Home & Garden</a>
+                <a href="#">Machinery</a>
+                <a href="#">Beauty & Personal Care</a>
+                <a href="#">Sports & Entertainment</a>
+                <a href="#">Vehicle Accessories</a>
+                <a href="#">Health & Medical</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="featured-grid">
+            <p class="results-count">Showing 1,240 results for Diamond-Verified Suppliers</p>
+
+            <div class="product-grid" style="grid-template-columns: repeat(4, 1fr);">
+                <!-- Card 1 - Wireless Earbuds -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">Top 1</span>
+                        <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=800&auto=format&fit=crop"
+                            alt="Wireless Earbuds">
+                    </div>
+                    <div class="card-body">
+                        <h3>Latest Generation Wireless Noise Cancelling Pro Earbuds</h3>
+                        <div class="price-row">
+                            <span class="price-val">PKR 2,400.00</span>
+                        </div>
+                        <p class="moq-val">2 Pieces (Min. Order)</p>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                CN 5yrs <span class="stars" style="color: #ffbe00;">★★★★★</span>
+                            </div>
+                            <div class="verified-pro">
+                                <i data-lucide="check-circle" style="width: 14px;"></i> Verified
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 - CNC Machine -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">Hot</span>
+                        <img src="https://images.unsplash.com/photo-1610444583737-254149028005?q=80&w=800&auto=format&fit=crop"
+                            alt="Industrial Machine">
+                    </div>
+                    <div class="card-body">
+                        <h3>High Precision CNC Milling Lathe for Metalworking</h3>
+                        <div class="price-row">
+                            <span class="price-val">PKR 450,000.00</span>
+                        </div>
+                        <p class="moq-val">1 Set (Min. Order)</p>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                PK 8yrs <span class="stars" style="color: #ffbe00;">★★★★★</span>
+                            </div>
+                            <div class="verified-pro">
+                                <i data-lucide="check-circle" style="width: 14px;"></i> Verified
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 - Solar Panels -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">Eco</span>
+                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=800&auto=format&fit=crop"
+                            alt="Solar Panels">
+                    </div>
+                    <div class="card-body">
+                        <h3>Monocrystalline Solar Panel 600W High Efficiency</h3>
+                        <div class="price-row">
+                            <span class="price-val">PKR 18,500.00</span>
+                        </div>
+                        <p class="moq-val">10 Pieces (Min. Order)</p>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                CN 6yrs <span class="stars" style="color: #ffbe00;">★★★★★</span>
+                            </div>
+                            <div class="verified-pro">
+                                <i data-lucide="check-circle" style="width: 14px;"></i> Verified
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 - Modern Sofa -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">New</span>
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop"
+                            alt="Modern Sofa">
+                    </div>
+                    <div class="card-body">
+                        <h3>Contemporary Scandinavian Living Room Sofa Set</h3>
+                        <div class="price-row">
+                            <span class="price-val">PKR 125,000.00</span>
+                        </div>
+                        <p class="moq-val">1 Set (Min. Order)</p>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                PK 3yrs <span class="stars" style="color: #ffbe00;">★★★★☆</span>
+                            </div>
+                            <div class="verified-pro">
+                                <i data-lucide="check-circle" style="width: 14px;"></i> Verified
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More results... -->
+            <div class="pagination">
+                <div class="pg-btn"><i data-lucide="chevron-left"></i></div>
+                <div class="pg-btn active">1</div>
+                <div class="pg-btn">2</div>
+                <div class="pg-btn">3</div>
+                <div class="pg-btn">...</div>
+                <div class="pg-btn">14</div>
+                <div class="pg-btn"><i data-lucide="chevron-right"></i></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (Same as Index) -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Get Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Live Chat</a></li>
+                        <li><a href="#">Check order status</a></li>
+                    </ul>
+                </div>
+                <!-- ... other columns ... -->
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Noshahi Group</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <i data-lucide="facebook"></i>
+                    <i data-lucide="linkedin"></i>
+                    <i data-lucide="twitter"></i>
+                </div>
+                <p>&copy; 2026 Noshahibaba.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

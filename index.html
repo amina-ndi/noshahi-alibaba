@@ -4,234 +4,354 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noshahi Alibaba | Largest B2B Marketplace</title>
+    <title>Noshahibaba | Leading B2B Marketplace for Global Trade</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-    <div class="top-header">
-        <div class="container">
-            <span>Help Center</span>
-            <span>Ship to: <b>PK/PKR</b></span>
-            <span>Language: <b>EN</b></span>
-            <span>Become a Supplier</span>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left">
+                <span>Free delivery for your first order</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="#">Help Center</a>
+                <a href="#">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK"> PKR</a>
+                <a href="#">Language: EN</a>
+            </div>
         </div>
     </div>
 
+    <!-- Main Header -->
     <header class="main-header">
-        <div class="container">
-            <a href="#"><img src="assets/logo.png" alt="Noshahi Alibaba" class="logo"></a>
-            <div class="search-bar">
-                <input type="text" placeholder="What are you looking for...">
-                <button class="search-btn">Search</button>
+        <div class="container header-flex">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                </a>
+            </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
+                    <input type="text" placeholder="What are you looking for...">
+                    <button class="search-btn"><i data-lucide="search"></i> Search</button>
+                </div>
             </div>
             <div class="header-actions">
-                <div class="action-item"><i data-lucide="user"></i> Sign In</div>
-                <div class="action-item"><i data-lucide="message-square"></i> Messages</div>
-                <div class="action-item"><i data-lucide="shopping-cart"></i> Cart</div>
+                <a href="signin.html" class="action-item">
+                    <i data-lucide="user"></i>
+                    <span>Sign In</span>
+                </a>
+                <div class="action-item">
+                    <i data-lucide="message-square"></i>
+                    <span>Messages</span>
+                </div>
+                <div class="action-item">
+                    <i data-lucide="shopping-cart"></i>
+                    <span>Cart</span>
+                </div>
             </div>
         </div>
     </header>
 
-    <nav class="sub-header">
-        <div class="container">
-            <div class="all-categories"><i data-lucide="menu"></i> All Categories</div>
+    <!-- Navigation -->
+    <nav class="sub-nav">
+        <div class="container nav-flex">
+            <div class="all-categories" id="all-categories-btn">
+                <i data-lucide="menu"></i> All categories
+            </div>
             <div class="nav-links">
-                <a href="#">Featured Products</a>
-                <a href="#">Trade Assurance</a>
+                <a href="featured.html">Featured selections</a>
+                <a href="tradeassurance.html">Trade Assurance</a>
                 <a href="#">Buyer Central</a>
-                <a href="#">Logistics Services</a>
-                <a href="#">Top Ranking</a>
+                <a href="#">Help Center</a>
+                <a href="#">Get the app</a>
+            </div>
+            <div class="nav-right">
+                <a href="#">Become a supplier</a>
             </div>
         </div>
     </nav>
 
-    <main class="container hero">
-        <div class="hero-grid">
-            <aside class="hero-sidebar">
-                <ul class="category-list">
-                    <li>Consumer Electronics <i data-lucide="chevron-right"></i></li>
-                    <li>Apparel & Fashion <i data-lucide="chevron-right"></i></li>
-                    <li>Home & Garden <i data-lucide="chevron-right"></i></li>
-                    <li>Industrial Machinery <i data-lucide="chevron-right"></i></li>
-                    <li>Beauty & Care <i data-lucide="chevron-right"></i></li>
-                    <li>Auto Parts <i data-lucide="chevron-right"></i></li>
-                    <li>Sports & Entertainment <i data-lucide="chevron-right"></i></li>
-                    <li>Agriculture <i data-lucide="chevron-right"></i></li>
-                </ul>
-            </aside>
-            <section class="hero-banner">
-                <img src="assets/hero-banner.png" alt="Hero">
-                <div class="banner-overlay">
-                    <h1>Source Smarter.<br>Ship Faster.</h1>
-                    <p>Connecting global manufacturers with Noshahi businesses. Verified suppliers and 100% trade
-                        protection.</p>
-                    <a href="#" class="cta-btn">Source Now</a>
-                </div>
-            </section>
-            <aside class="hero-right-cards">
-                <div class="testimonial-card">
-                    <img src="assets/testimonial1.png" alt="Sarah J." class="testimonial-img">
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">"The best sourcing experience I've had. Quality suppliers!"</p>
-                        <h4 class="testimonial-name">Sarah Jenkins</h4>
-                        <span class="testimonial-role">Apparel Buyer</span>
+    <!-- Hero Section -->
+    <main>
+        <section class="hero-section">
+            <div class="container hero-grid">
+                <aside class="category-sidebar" id="category-sidebar">
+                    <ul>
+                        <li><a href="apparel.html"
+                                style="display: flex; width: 100%; justify-content: space-between; align-items: center;"><span
+                                    style="display: flex; align-items: center; gap: 12px;"><i data-lucide="shirt"></i>
+                                    Apparel & Accessories</span> <i data-lucide="chevron-right"></i></a></li>
+                        <li><a href="electronics.html"
+                                style="display: flex; width: 100%; justify-content: space-between; align-items: center;"><span
+                                    style="display: flex; align-items: center; gap: 12px;"><i data-lucide="cpu"></i>
+                                    Consumer Electronics</span> <i data-lucide="chevron-right"></i></a></li>
+                        <li><a href="home-garden.html"
+                                style="display: flex; width: 100%; justify-content: space-between; align-items: center;"><span
+                                    style="display: flex; align-items: center; gap: 12px;"><i data-lucide="home"></i>
+                                    Home & Garden</span> <i data-lucide="chevron-right"></i></a></li>
+                        <li><a href="machinery.html"
+                                style="display: flex; width: 100%; justify-content: space-between; align-items: center;"><span
+                                    style="display: flex; align-items: center; gap: 12px;"><i
+                                        data-lucide="settings"></i> Machinery</span> <i
+                                    data-lucide="chevron-right"></i></a></li>
+                        <li><a href="beauty.html"
+                                style="display: flex; width: 100%; justify-content: space-between; align-items: center;"><span
+                                    style="display: flex; align-items: center; gap: 12px;"><i data-lucide="heart"></i>
+                                    Beauty & Personal Care</span> <i data-lucide="chevron-right"></i></a></li>
+                        <li><a href="vehicles.html"
+                                style="display: flex; width: 100%; justify-content: space-between; align-items: center;"><span
+                                    style="display: flex; align-items: center; gap: 12px;"><i data-lucide="car"></i>
+                                    Vehicles & Accessories</span> <i data-lucide="chevron-right"></i></a></li>
+                        <li><a href="agriculture.html"
+                                style="display: flex; width: 100%; justify-content: space-between; align-items: center;"><span
+                                    style="display: flex; align-items: center; gap: 12px;"><i data-lucide="sprout"></i>
+                                    Agriculture & Food</span> <i data-lucide="chevron-right"></i></a></li>
+                        <li><a href="computers.html"
+                                style="display: flex; width: 100%; justify-content: space-between; align-items: center;"><span
+                                    style="display: flex; align-items: center; gap: 12px;"><i data-lucide="laptop"></i>
+                                    Computer & Software</span> <i data-lucide="chevron-right"></i></a></li>
+                    </ul>
+                </aside>
+                <div class="hero-main">
+                    <div class="hero-banner"
+                        style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1600&auto=format&fit=crop');">
+                        <div class="banner-content">
+                            <h1>Source Smarter.<br>Ship Faster.</h1>
+                            <p>Global trade possibilities at your fingertips.</p>
+                            <a href="#" class="cta-primary">Find Suppliers</a>
+                        </div>
+                    </div>
+                    <div class="hero-sub-cards">
+                        <div class="sub-card">
+                            <div class="sub-card-text">
+                                <h3>New arrivals</h3>
+                                <p>Latest trends in tech</p>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=400&auto=format&fit=crop"
+                                alt="New Arrival">
+                        </div>
+                        <div class="sub-card">
+                            <div class="sub-card-text">
+                                <h3>Best sellers</h3>
+                                <p>Top rated products</p>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=400&auto=format&fit=crop"
+                                alt="Best Seller">
+                        </div>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <img src="assets/testimonial2.png" alt="David K." class="testimonial-img">
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">"Trade Assurance gives me the confidence to order globally."</p>
-                        <h4 class="testimonial-name">David Kumar</h4>
-                        <span class="testimonial-role">Tech Importer</span>
+                <aside class="hero-user-panel">
+                    <div class="user-welcome">
+                        <div class="user-avatar"><i data-lucide="user"></i></div>
+                        <p>Welcome to Noshahibaba</p>
+                        <div class="user-btns">
+                            <button class="join-btn">Join for free</button>
+                            <a href="signin.html" class="signin-btn" style="text-align: center; display: block;">Sign
+                                In</a>
+                        </div>
+                    </div>
+                    <div class="panel-promo">
+                        <h4>Trade Assurance</h4>
+                        <p>Protect your Noshahibaba.com orders</p>
+                    </div>
+                    <div class="panel-promo">
+                        <h4>Verified Pro</h4>
+                        <p>Work with professional manufacturers</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Features Band -->
+        <section class="features-band">
+            <div class="container features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon"><i data-lucide="shield-check"></i></div>
+                    <div class="feature-text">
+                        <h4>Trade Assurance</h4>
+                        <p>Order protection for you</p>
                     </div>
                 </div>
-            </aside>
-        </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i data-lucide="truck"></i></div>
+                    <div class="feature-text">
+                        <h4>On-time delivery</h4>
+                        <p>Logistical solutions</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i data-lucide="search-check"></i></div>
+                    <div class="feature-text">
+                        <h4>Quality Control</h4>
+                        <p>Inspection services</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i data-lucide="headphones"></i></div>
+                    <div class="feature-text">
+                        <h4>24/7 Support</h4>
+                        <p>Help whenever you need</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Grid -->
+        <section class="products-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Just for you</h2>
+                    <a href="#">View more</a>
+                </div>
+                <div class="product-grid">
+                    <!-- Product 1 - Smart Watch -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=1200&auto=format&fit=crop"
+                                alt="Ultra Smart Watch">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Ultra Series 9 Smart Watch - AMOLED Display & Health Tracking</p>
+                            <p class="product-price">PKR 4,500.00 - 8,200.00</p>
+                            <p class="product-moq">10 Pieces (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified</span>
+                                <span class="country">CN 3yrs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 - 4K Drone -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1473968512647-3e44a224fe8f?q=80&w=1200&auto=format&fit=crop"
+                                alt="Professional 4K Drone">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Professional 4K Camera Drone - GPS & 5G WiFi FPV Transmission</p>
+                            <p class="product-price">PKR 45,000.00 - 65,000.00</p>
+                            <p class="product-moq">2 Sets (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified Pro</span>
+                                <span class="country">CN 6yrs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 3 - Bluetooth Speaker -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1589003077984-814fe04443df?q=80&w=1200&auto=format&fit=crop"
+                                alt="Premium Speaker">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Premium Portable Waterproof Bluetooth Speaker - 20W Hi-Fi Sound</p>
+                            <p class="product-price">PKR 3,500.00 - 5,800.00</p>
+                            <p class="product-moq">20 Pieces (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified</span>
+                                <span class="country">CN 2yrs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 4 - Noise Cancelling Headphones -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=1200&auto=format&fit=crop"
+                                alt="HD Headphones">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Professional Active Noise Cancelling Wireless Headphones</p>
+                            <p class="product-price">PKR 12,000.00 - 18,000.00</p>
+                            <p class="product-moq">5 Pieces (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified Pro</span>
+                                <span class="country">PK 4yrs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter-section">
+            <div class="container newsletter-box">
+                <div class="newsletter-text">
+                    <h3>Subscribe to our newsletter</h3>
+                    <p>Get daily updates on the latest trends and top ranking products.</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Please enter your email address">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
     </main>
 
-    <section class="features-band">
-        <div class="container features-grid">
-            <div class="feature-item">
-                <div class="feature-icon"><i data-lucide="zap"></i></div>
-                <div><b>Low MOQ</b><br><small>Customizable options</small></div>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon"><i data-lucide="truck"></i></div>
-                <div><b>14-Day Delivery</b><br><small>Global express shipping</small></div>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon"><i data-lucide="check-circle"></i></div>
-                <div><b>Quality Control</b><br><small>Verified monitoring</small></div>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon"><i data-lucide="globe"></i></div>
-                <div><b>5,000+ Suppliers</b><br><small>Global factory direct</small></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Source By Category -->
-    <section class="container" style="margin-bottom: 5rem;">
-        <div class="section-title">
-            <h2>Source by Category</h2>
-        </div>
-        <div class="category-main-grid">
-            <div class="category-item-card">
-                <div class="cat-icon-wrap"><i data-lucide="cpu"></i></div><span>Electronics</span>
-            </div>
-            <div class="category-item-card">
-                <div class="cat-icon-wrap"><i data-lucide="shirt"></i></div><span>Apparel</span>
-            </div>
-            <div class="category-item-card">
-                <div class="cat-icon-wrap"><i data-lucide="home"></i></div><span>Home</span>
-            </div>
-            <div class="category-item-card">
-                <div class="cat-icon-wrap"><i data-lucide="settings"></i></div><span>Industrial</span>
-            </div>
-            <div class="category-item-card">
-                <div class="cat-icon-wrap"><i data-lucide="heart"></i></div><span>Health</span>
-            </div>
-            <div class="category-item-card">
-                <div class="cat-icon-wrap"><i data-lucide="car"></i></div><span>Auto</span>
-            </div>
-            <div class="category-item-card">
-                <div class="cat-icon-wrap"><i data-lucide="sprout"></i></div><span>Agriculture</span>
-            </div>
-            <div class="category-item-card">
-                <div class="cat-icon-wrap"><i data-lucide="gift"></i></div><span>Gifts</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- RFQ -->
-    <section class="container">
-        <div class="rfq-main-section">
-            <div>
-                <h2 style="font-size:2.5rem; margin-bottom:1.5rem;">One Request,<br>Multiple Quotations</h2>
-                <p style="opacity:0.8; font-size:1.1rem;">Post your requirements and get verified suppliers to compete
-                    for your business.</p>
-                <ul style="margin-top:2rem; list-style:none;">
-                    <li style="margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;"><i
-                            data-lucide="check-circle"></i> Connect with Manufacturers</li>
-                    <li style="margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;"><i
-                            data-lucide="check-circle"></i> Get quotes in 24 hours</li>
-                    <li style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="check-circle"></i> 100%
-                        Free Service</li>
-                </ul>
-            </div>
-            <div class="rfq-form-card">
-                <h3 style="margin-bottom:1.5rem;">Quick Sourcing Request</h3>
-                <div class="rfq-input-group">
-                    <label>Product Name</label>
-                    <input type="text" placeholder="e.g. 1000 Wireless Earbuds">
-                </div>
-                <div class="rfq-input-group">
-                    <label>Detailed Requirements</label>
-                    <textarea rows="4" placeholder="Specs, quality, colors, target price..."></textarea>
-                </div>
-                <button class="rfq-submit-btn">Submit Request</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- NEWSLETTER -->
-    <section class="footer-newsletter">
-        <div class="container">
-            <h2>Stay Updated with Noshahi Alibaba</h2>
-            <p style="color:var(--text-muted);">Exclusive trade insights and supplier deals in your inbox.</p>
-            <form class="newsletter-controls">
-                <input type="email" placeholder="Your email address" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
-    </section>
-
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-links-grid">
-                <div>
-                    <img src="assets/logo.png" alt="Logo" class="logo" style="margin-bottom:1.5rem;">
-                    <p style="font-size:14px; color:var(--text-muted);">Noshahi Alibaba is the leading B2B marketplace
-                        for global trade. Connecting buyers and suppliers worldwide.</p>
-                </div>
-                <div>
-                    <h4 class="footer-col-title">Support</h4>
-                    <ul class="footer-link-list">
-                        <li>Help Center</li>
-                        <li>Buyer Guide</li>
-                        <li>Policies</li>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Get Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Live Chat</a></li>
+                        <li><a href="#">Check order status</a></li>
+                        <li><a href="#">Report abuse</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="footer-col-title">Services</h4>
-                    <ul class="footer-link-list">
-                        <li>Trade Assurance</li>
-                        <li>Logistics</li>
-                        <li>Production</li>
+                <div class="footer-col">
+                    <h4>Trade Services</h4>
+                    <ul>
+                        <li><a href="#">Trade Assurance</a></li>
+                        <li><a href="#">Business Identity</a></li>
+                        <li><a href="#">Logistics Service</a></li>
+                        <li><a href="#">Inspection Service</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="footer-col-title">About</h4>
-                    <ul class="footer-link-list">
-                        <li>Our Story</li>
-                        <li>News</li>
-                        <li>Careers</li>
+                <div class="footer-col">
+                    <h4>Source on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="#">Top Ranking</a></li>
+                        <li><a href="#">Request for Quotation</a></li>
+                        <li><a href="#">Membership Program</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="footer-col-title">Apps</h4>
-                    <ul class="footer-link-list">
-                        <li>Android App</li>
-                        <li>iOS App</li>
+                <div class="footer-col">
+                    <h4>Sell on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="#">Become a Supplier</a></li>
+                        <li><a href="#">Supplier Central</a></li>
+                        <li><a href="#">Training Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Noshahi Group</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Legal Notice</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom-line">
-                <p>&copy; 2026 Noshahi Alibaba. All Rights Reserved.</p>
-                <p>Terms | Privacy | Sitemap</p>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <i data-lucide="facebook"></i>
+                    <i data-lucide="linkedin"></i>
+                    <i data-lucide="twitter"></i>
+                    <i data-lucide="instagram"></i>
+                    <i data-lucide="youtube"></i>
+                </div>
+                <p>&copy; 2026 Noshahibaba.com. All rights reserved.</p>
+                <p>Noshahi Group | Privacy Policy | Terms of Use</p>
             </div>
         </div>
     </footer>

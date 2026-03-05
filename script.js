@@ -1,95 +1,122 @@
-// Initialize Lucide Icons after DOM is fully loaded
+// Initialize Lucide Icons
 document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
-});
 
-// Sticky Header Box Shadow on Scroll
-const header = document.querySelector('.main-header');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
-    } else {
-        header.style.boxShadow = 'var(--shadow)';
-    }
-});
-
-// Search Bar Interaction
-const searchInput = document.querySelector('.search-bar input');
-const searchBtn = document.querySelector('.search-btn');
-
-searchBtn.addEventListener('click', () => {
-    const query = searchInput.value.trim();
-    if (query) {
-        alert(`Searching for: ${query}\n(This is a demo clone)`);
-    } else {
-        searchInput.focus();
-    }
-});
-
-searchInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        searchBtn.click();
-    }
-});
-
-// Smooth Scrolling for nav links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Category Hover Animation (Subtle)
-const categoryItems = document.querySelectorAll('.category-list li');
-categoryItems.forEach(item => {
-    item.addEventListener('mouseenter', () => {
-        item.style.paddingLeft = '5px';
-        item.style.color = 'var(--primary)';
-    });
-    item.addEventListener('mouseleave', () => {
-        item.style.paddingLeft = '0';
-        item.style.color = 'inherit';
-    });
-});
-
-// Product Card Interaction
-const productCards = document.querySelectorAll('.product-card');
-productCards.forEach(card => {
-    card.addEventListener('click', () => {
-        const title = card.querySelector('.product-title').innerText;
-        console.log(`Product Clicked: ${title}`);
-    });
-});
-
-// RFQ Form Submission
-const rfqBtn = document.querySelector('.rfq-submit');
-if (rfqBtn) {
-    rfqBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const input = document.querySelector('.rfq-form input').value;
-        const textarea = document.querySelector('.rfq-form textarea').value;
-
-        if (input && textarea) {
-            alert(`RFQ Submitted successfully!\nRequirement: ${input}`);
+    // Sticky Header Effect
+    const mainHeader = document.querySelector('.main-header');
+    const scrollHandler = () => {
+        if (window.scrollY > 50) {
+            mainHeader.style.boxShadow = 'var(--shadow-lg)';
+            mainHeader.style.padding = '15px 0';
         } else {
-            alert('Please fill out all fields in the RFQ form.');
+            mainHeader.style.boxShadow = 'var(--shadow-sm)';
+            mainHeader.style.padding = '20px 0';
         }
-    });
-}
+    };
+    window.addEventListener('scroll', scrollHandler);
 
-// Newsletter Submission
-const newsletterForm = document.querySelector('.newsletter-form');
-if (newsletterForm) {
-    newsletterForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const emailInput = newsletterForm.querySelector('input');
-        alert(`Successfully subscribed with: ${emailInput.value}`);
-        emailInput.value = '';
+    // Search Interactivity
+    const searchBtn = document.querySelector('.search-btn');
+    const searchInput = document.querySelector('.search-box input');
+
+    if (searchBtn && searchInput) {
+        searchBtn.addEventListener('click', () => {
+            const query = searchInput.value.trim();
+            if (query) {
+                alert(`Redirecting to search for: ${query}\n(Note: This is a demo clone)`);
+            } else {
+                searchInput.focus();
+            }
+        });
+
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchBtn.click();
+            }
+        });
+    }
+
+    // Category Hover Effect Logic
+    const categoryLinks = document.querySelectorAll('.category-sidebar li');
+    categoryLinks.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            // In a real app, this would show subcategories
+        });
     });
-}
+
+    // Newsletter Form Submission
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const emailInput = newsletterForm.querySelector('input');
+            const email = emailInput.value.trim();
+
+            if (email && validateEmail(email)) {
+                alert(`Thank you for subscribing, ${email}!\nWe'll send you the latest Noshahibaba updates.`);
+                emailInput.value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+    }
+
+    // Smooth Scrolling for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // User Panel Interactivity
+    const joinBtn = document.querySelector('.join-btn');
+    const signinBtn = document.querySelector('.signin-btn');
+
+    if (joinBtn) {
+        joinBtn.addEventListener('click', () => {
+            alert('Welcome! Redirecting you to the registration page.');
+        });
+    }
+
+    if (signinBtn) {
+        signinBtn.addEventListener('click', () => {
+            alert('Redirecting you to the login page.');
+        });
+    }
+
+    // All Categories Toggle
+    const allCategoriesBtn = document.getElementById('all-categories-btn');
+    const categorySidebar = document.getElementById('category-sidebar');
+    const heroGrid = document.querySelector('.hero-grid');
+
+    if (allCategoriesBtn && categorySidebar && heroGrid) {
+        allCategoriesBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent closing immediately if toggle is part of broader click logic
+            categorySidebar.classList.toggle('active');
+            heroGrid.classList.toggle('with-sidebar');
+        });
+
+        // Optional: Close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!allCategoriesBtn.contains(e.target) && !categorySidebar.contains(e.target)) {
+                categorySidebar.classList.remove('active');
+                heroGrid.classList.remove('with-sidebar');
+            }
+        });
+    }
+
+    // Utility function for email validation
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+});
