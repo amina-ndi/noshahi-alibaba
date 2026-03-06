@@ -1,0 +1,713 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get the App | Noshahibaba.com</title>
+    <meta name="description"
+        content="Download the Noshahibaba app and source from millions of products on the go. Available on iOS and Android.">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* â”€â”€ App Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .app-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1a2744 50%, #0f172a 100%);
+            padding: 90px 0;
+            color: white;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .app-hero::before {
+            content: '';
+            position: absolute;
+            bottom: -120px;
+            right: -80px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 102, 0, 0.2) 0%, transparent 65%);
+            border-radius: 50%;
+        }
+
+        .app-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .app-hero h1 {
+            font-size: 50px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 22px;
+        }
+
+        .app-hero h1 span {
+            color: #ff6600;
+        }
+
+        .app-hero p {
+            font-size: 18px;
+            opacity: 0.85;
+            line-height: 1.7;
+            margin-bottom: 36px;
+        }
+
+        .app-store-btns {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .app-store-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            color: #0f172a;
+            border-radius: 12px;
+            padding: 13px 22px;
+            text-decoration: none;
+            transition: all 0.25s;
+            border: 2px solid transparent;
+        }
+
+        .app-store-btn:hover {
+            background: transparent;
+            border-color: white;
+            color: white;
+        }
+
+        .app-store-btn i {
+            width: 28px;
+            height: 28px;
+        }
+
+        .app-store-btn .btn-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .app-store-btn .btn-text small {
+            font-size: 11px;
+            opacity: 0.6;
+        }
+
+        .app-store-btn .btn-text strong {
+            font-size: 16px;
+            display: block;
+        }
+
+        .app-qr-box {
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 16px 20px;
+            max-width: 340px;
+        }
+
+        .qr-code {
+            width: 70px;
+            height: 70px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .qr-code i {
+            width: 44px;
+            height: 44px;
+            color: #0f172a;
+        }
+
+        .qr-text {
+            font-size: 13px;
+            opacity: 0.75;
+            line-height: 1.6;
+        }
+
+        .qr-text strong {
+            display: block;
+            font-size: 14px;
+            opacity: 1;
+            margin-bottom: 2px;
+        }
+
+        /* Phone Mockup */
+        .phone-mockup {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .phone-outer {
+            width: 260px;
+            background: linear-gradient(160deg, #1e293b, #0e1220);
+            border-radius: 40px;
+            padding: 14px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+            position: relative;
+        }
+
+        .phone-screen {
+            border-radius: 28px;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .phone-screen img {
+            width: 100%;
+            display: block;
+        }
+
+        .phone-notch {
+            width: 100px;
+            height: 6px;
+            background: #0e1220;
+            border-radius: 999px;
+            margin: 0 auto 10px;
+        }
+
+        /* â”€â”€ Features Grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .app-features {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .features-grid-app {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 50px;
+        }
+
+        .app-feat-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 30px 24px;
+            transition: all 0.25s;
+        }
+
+        .app-feat-card:hover {
+            border-color: #ff6600;
+            box-shadow: 0 12px 32px rgba(255, 102, 0, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .app-feat-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+
+        .app-feat-icon i {
+            width: 26px;
+            height: 26px;
+        }
+
+        .app-feat-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .app-feat-card p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        /* â”€â”€ Screenshots â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .app-screenshots {
+            padding: 80px 0;
+        }
+
+        .screenshots-slider {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            margin-top: 50px;
+            padding-bottom: 16px;
+            scrollbar-width: thin;
+            scrollbar-color: #ff6600 #f1f5f9;
+        }
+
+        .screenshot-item {
+            flex-shrink: 0;
+            width: 200px;
+            background: #0f172a;
+            border-radius: 24px;
+            padding: 10px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            border-radius: 18px;
+            display: block;
+        }
+
+        .screenshot-label {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 13px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        /* â”€â”€ Stats â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .app-stats {
+            background: linear-gradient(135deg, #ff6600, #ff9900);
+            padding: 70px 0;
+        }
+
+        .stats-grid-app {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-block h3 {
+            font-size: 42px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .stat-block p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* â”€â”€ Download CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .download-cta {
+            background: #0f172a;
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .download-cta h2 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .download-cta p {
+            font-size: 18px;
+            opacity: 0.75;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .download-btns {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* â”€â”€ Section Labels â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .section-label {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #ff6600;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-heading {
+            font-size: 34px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .section-sub {
+            font-size: 16px;
+            color: #64748b;
+        }
+
+        /* â”€â”€ Responsive â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        @media (max-width: 1024px) {
+            .app-hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .phone-mockup {
+                display: none;
+            }
+
+            .features-grid-app {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-grid-app {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .app-hero h1 {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 640px) {
+
+            .features-grid-app,
+            .stats-grid-app {
+                grid-template-columns: 1fr;
+            }
+
+            .app-hero h1 {
+                font-size: 28px;
+            }
+
+            .app-store-btns {
+                flex-direction: column;
+            }
+
+            .download-cta h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left"><span>Free delivery for your first order</span></div>
+            <div class="top-bar-right">
+                <a href="helpcenter.html">Help Center</a>
+                <a href="#">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK"> PKR</a>
+                <a href="#">Language: EN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                </a>
+            </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
+                    <input type="text" placeholder="Search suppliers, products...">
+                    <button class="search-btn"><i data-lucide="search"></i> Search</button>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign In</span></a>
+                <div class="action-item"><i data-lucide="message-square"></i><span>Messages</span></div>
+                <div class="action-item"><i data-lucide="shopping-cart"></i><span>Cart</span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sub-nav">
+        <div class="container nav-flex">
+            <div class="all-categories" id="all-categories-btn"><i data-lucide="menu"></i> All categories</div>
+            <div class="nav-links">
+                <a href="featured.html">Featured selections</a>
+                <a href="tradeassurance.html">Trade Assurance</a>
+                <a href="buyer-central.html">Buyer Central</a>
+                <a href="helpcenter.html">Help Center</a>
+                <a href="getapp.html" class="active" style="color:#ff6600;">Get the app</a>
+            </div>
+            <div class="nav-right"><a href="#">Become a supplier</a></div>
+        </div>
+    </nav>
+
+    <!-- â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <section class="app-hero">
+        <div class="container">
+            <div class="app-hero-grid">
+                <div>
+                    <div class="section-label" style="color:#ff9900;">Mobile App</div>
+                    <h1>Trade Globally<br>From Your<br><span>Pocket.</span></h1>
+                    <p>Source from millions of products, message suppliers, track orders, and manage your entire B2B
+                        business â€” all from the Noshahibaba app.</p>
+                    <div class="app-store-btns">
+                        <a href="#" class="app-store-btn" id="appstore-btn">
+                            <i data-lucide="apple"></i>
+                            <div class="btn-text">
+                                <small>Download on the</small>
+                                <strong>App Store</strong>
+                            </div>
+                        </a>
+                        <a href="#" class="app-store-btn" id="playstore-btn">
+                            <i data-lucide="play"></i>
+                            <div class="btn-text">
+                                <small>Get it on</small>
+                                <strong>Google Play</strong>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="app-qr-box">
+                        <div class="qr-code"><i data-lucide="qr-code"></i></div>
+                        <div class="qr-text">
+                            <strong>Scan to Download</strong>
+                            Point your camera at this QR code to install the Noshahibaba app instantly.
+                        </div>
+                    </div>
+                </div>
+                <div class="phone-mockup" id="phone-hero">
+                    <div class="phone-outer">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=400&auto=format&fit=crop"
+                                alt="App Screenshot">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- â”€â”€ STATS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <section class="app-stats">
+        <div class="container">
+            <div class="stats-grid-app">
+                <div class="stat-block">
+                    <h3>50M+</h3>
+                    <p>App Downloads</p>
+                </div>
+                <div class="stat-block">
+                    <h3>4.8â˜…</h3>
+                    <p>App Store Rating</p>
+                </div>
+                <div class="stat-block">
+                    <h3>190+</h3>
+                    <p>Countries Available</p>
+                </div>
+                <div class="stat-block">
+                    <h3>24/7</h3>
+                    <p>In-App Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- â”€â”€ APP FEATURES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <section class="app-features">
+        <div class="container">
+            <div class="section-label">Why Use the App</div>
+            <h2 class="section-heading">Everything You Need, On the Go</h2>
+            <p class="section-sub">The Noshahibaba app puts the entire global marketplace right in your hands.</p>
+            <div class="features-grid-app">
+                <div class="app-feat-card">
+                    <div class="app-feat-icon" style="background:#fff4ed;"><i data-lucide="search"
+                            style="color:#ff6600;"></i></div>
+                    <h3>Smart Search & Filters</h3>
+                    <p>Find exactly what you need using AI-powered search with intelligent category filters, image
+                        search, and voice input.</p>
+                </div>
+                <div class="app-feat-card">
+                    <div class="app-feat-icon" style="background:#eff6ff;"><i data-lucide="message-circle"
+                            style="color:#3b82f6;"></i></div>
+                    <h3>Instant Messaging</h3>
+                    <p>Chat with suppliers in real time using text, images, or voice messages. Auto-translation in 20+
+                        languages included.</p>
+                </div>
+                <div class="app-feat-card">
+                    <div class="app-feat-icon" style="background:#f0fdf4;"><i data-lucide="package"
+                            style="color:#16a34a;"></i></div>
+                    <h3>Order Tracking</h3>
+                    <p>Track all your orders and shipments in one place with push notifications for every status update.
+                    </p>
+                </div>
+                <div class="app-feat-card">
+                    <div class="app-feat-icon" style="background:#faf5ff;"><i data-lucide="bell"
+                            style="color:#9333ea;"></i></div>
+                    <h3>Price Alerts</h3>
+                    <p>Set price alerts on products you're interested in. Get notified the moment a supplier drops their
+                        price.</p>
+                </div>
+                <div class="app-feat-card">
+                    <div class="app-feat-icon" style="background:#fff4ed;"><i data-lucide="credit-card"
+                            style="color:#ff6600;"></i></div>
+                    <h3>Secure Mobile Payments</h3>
+                    <p>Pay for your orders securely using biometric authentication, Face ID, or fingerprint on your
+                        device.</p>
+                </div>
+                <div class="app-feat-card">
+                    <div class="app-feat-icon" style="background:#eff6ff;"><i data-lucide="bar-chart-2"
+                            style="color:#3b82f6;"></i></div>
+                    <h3>Business Dashboard</h3>
+                    <p>View your order history, spending reports, favourite suppliers, and RFQ status all from one clean
+                        dashboard.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- â”€â”€ SCREENSHOTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <section class="app-screenshots">
+        <div class="container">
+            <div class="section-label">App Preview</div>
+            <h2 class="section-heading">See the App in Action</h2>
+            <p class="section-sub">A beautifully designed experience built for serious B2B buyers.</p>
+            <div class="screenshots-slider">
+                <div>
+                    <div class="screenshot-item">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=300&auto=format&fit=crop"
+                            alt="Home Screen">
+                    </div>
+                    <div class="screenshot-label">Home Feed</div>
+                </div>
+                <div>
+                    <div class="screenshot-item">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=300&auto=format&fit=crop"
+                            alt="Search Screen">
+                    </div>
+                    <div class="screenshot-label">Search</div>
+                </div>
+                <div>
+                    <div class="screenshot-item">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=300&auto=format&fit=crop"
+                            alt="Orders Screen">
+                    </div>
+                    <div class="screenshot-label">My Orders</div>
+                </div>
+                <div>
+                    <div class="screenshot-item">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=300&auto=format&fit=crop"
+                            alt="Messaging">
+                    </div>
+                    <div class="screenshot-label">Messaging</div>
+                </div>
+                <div>
+                    <div class="screenshot-item">
+                        <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=300&auto=format&fit=crop"
+                            alt="Dashboard">
+                    </div>
+                    <div class="screenshot-label">Dashboard</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- â”€â”€ DOWNLOAD CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <section class="download-cta">
+        <div class="container">
+            <h2>Ready to Trade on the Go?</h2>
+            <p>Join 50 million buyers who manage their global sourcing from their phones.</p>
+            <div class="download-btns">
+                <a href="#" class="app-store-btn">
+                    <i data-lucide="apple"></i>
+                    <div class="btn-text">
+                        <small>Download on the</small>
+                        <strong>App Store</strong>
+                    </div>
+                </a>
+                <a href="#" class="app-store-btn">
+                    <i data-lucide="play"></i>
+                    <div class="btn-text">
+                        <small>Get it on</small>
+                        <strong>Google Play</strong>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Get Support</h4>
+                    <ul>
+                        <li><a href="helpcenter.html">Help Center</a></li>
+                        <li><a href="live-chat.html">Live Chat</a></li>
+                        <li><a href="order-status.html">Check order status</a></li>
+                        <li><a href="report-abuse.html">Report abuse</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Trade Services</h4>
+                    <ul>
+                        <li><a href="tradeassurance.html">Trade Assurance</a></li>
+                        <li><a href="business-identity.html">Business Identity</a></li>
+                        <li><a href="logistics.html">Logistics Service</a></li>
+                        <li><a href="inspection.html">Inspection Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Source on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="top-ranking.html">Top Ranking</a></li>
+                        <li><a href="rfq.html">Request for Quotation</a></li>
+                        <li><a href="membership.html">Membership Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Sell on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="become-supplier.html">Become a Supplier</a></li>
+                        <li><a href="supplier-central.html">Supplier Central</a></li>
+                        <li><a href="training-center.html">Training Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="our-story.html">Our Story</a></li>
+                        <li><a href="noshahi-group.html">Noshahi Group</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="legal.html">Legal Notice</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <i data-lucide="facebook"></i>
+                    <i data-lucide="linkedin"></i>
+                    <i data-lucide="twitter"></i>
+                    <i data-lucide="instagram"></i>
+                    <i data-lucide="youtube"></i>
+                </div>
+                <p>&copy; 2026 Noshahibaba.com. All rights reserved.</p>
+                <p>Noshahi Group | <a href="legal.html" style="color:#999;">Privacy Policy</a> | <a href="legal.html"
+                        style="color:#999;">Terms of Use</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+        document.getElementById('appstore-btn').addEventListener('click', e => { e.preventDefault(); alert('App Store link coming soon!\n(Demo Version)'); });
+        document.getElementById('playstore-btn').addEventListener('click', e => { e.preventDefault(); alert('Google Play link coming soon!\n(Demo Version)'); });
+    </script>
+</body>
+
+</html>

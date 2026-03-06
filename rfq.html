@@ -1,0 +1,377 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request for Quotation | Noshahibaba.com</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, #0f172a, #1e3a5f);
+            padding: 70px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .page-hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 14px;
+        }
+
+        .page-hero p {
+            font-size: 18px;
+            opacity: .8;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .rfq-section {
+            padding: 70px 0;
+            background: #f8fafc;
+        }
+
+        .rfq-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .rfq-form {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 36px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, .06);
+        }
+
+        .rfq-form h2 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 6px;
+            color: #0f172a;
+        }
+
+        .rfq-form>p {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 28px;
+        }
+
+        .fg {
+            margin-bottom: 18px;
+        }
+
+        .fg label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 8px;
+        }
+
+        .fg input,
+        .fg select,
+        .fg textarea {
+            width: 100%;
+            padding: 13px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+            box-sizing: border-box;
+            color: #0f172a;
+        }
+
+        .fg input:focus,
+        .fg select:focus,
+        .fg textarea:focus {
+            border-color: #ff6600;
+            box-shadow: 0 0 0 3px rgba(255, 102, 0, .1);
+        }
+
+        .fg textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: #ff6600;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 8px;
+            font-family: 'Inter', sans-serif;
+            transition: .2s;
+        }
+
+        .submit-btn:hover {
+            background: #e05500;
+        }
+
+        .rfq-sidebar .widget {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .rfq-sidebar .widget h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: #0f172a;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 14px;
+            color: #475569;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-item i {
+            width: 18px;
+            height: 18px;
+            color: #ff6600;
+        }
+
+        .cta-band {
+            background: linear-gradient(135deg, #ff6600, #ff9900);
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-band h2 {
+            font-size: 34px;
+            font-weight: 800;
+            margin-bottom: 14px;
+        }
+
+        .cta-band p {
+            font-size: 17px;
+            opacity: .9;
+            margin-bottom: 30px;
+        }
+
+        .bw {
+            background: white;
+            color: #ff6600;
+            padding: 14px 36px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            display: inline-block;
+            transition: .2s;
+        }
+
+        .bw:hover {
+            transform: translateY(-2px);
+            color: #e05500;
+        }
+
+        @media(max-width:768px) {
+            .rfq-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .page-hero h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left"><span>Free delivery for your first order</span></div>
+            <div class="top-bar-right"><a href="helpcenter.html">Help Center</a></div>
+        </div>
+    </div>
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo"><a href="index.html"><span class="logo-text">Noshahi<span>baba</span>.com</span></a></div>
+            <div class="search-container">
+                <div class="search-box">
+                    <div class="search-type">Products <i data-lucide="chevron-down"></i></div><input type="text"
+                        placeholder="Search..."><button class="search-btn"><i data-lucide="search"></i> Search</button>
+                </div>
+            </div>
+            <div class="header-actions"><a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign
+                        In</span></a>
+                <div class="action-item"><i data-lucide="shopping-cart"></i><span>Cart</span></div>
+            </div>
+        </div>
+    </header>
+    <nav class="sub-nav">
+        <div class="container nav-flex">
+            <div class="all-categories" id="all-categories-btn"><i data-lucide="menu"></i> All categories</div>
+            <div class="nav-links"><a href="featured.html">Featured selections</a><a href="tradeassurance.html">Trade
+                    Assurance</a><a href="buyer-central.html">Buyer Central</a><a href="helpcenter.html">Help
+                    Center</a><a href="getapp.html">Get the app</a></div>
+            <div class="nav-right"><a href="#">Become a supplier</a></div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Request for Quotation</h1>
+            <p>Post your buying requirements and receive competitive quotes from verified suppliers within 24 hours â€”
+                completely free.</p>
+        </div>
+    </section>
+
+    <section class="rfq-section">
+        <div class="container">
+            <div class="rfq-layout">
+                <div class="rfq-form">
+                    <h2>Post Your RFQ</h2>
+                    <p>Fill in your requirements below. Our verified suppliers will respond within 24 hours.</p>
+                    <form onsubmit="submitRFQ(event)">
+                        <div class="fg"><label>Product Name</label><input type="text"
+                                placeholder="e.g. Cotton T-Shirts, LED Bulbs, Steel Pipes" required></div>
+                        <div class="form-row">
+                            <div class="fg"><label>Quantity Required</label><input type="number" placeholder="e.g. 1000"
+                                    required></div>
+                            <div class="fg"><label>Unit</label><select>
+                                    <option>Pieces</option>
+                                    <option>Kilograms</option>
+                                    <option>Tons</option>
+                                    <option>Sets</option>
+                                    <option>Boxes</option>
+                                </select></div>
+                        </div>
+                        <div class="fg"><label>Target Price (PKR per unit)</label><input type="text"
+                                placeholder="e.g. PKR 200 - 350 per piece"></div>
+                        <div class="fg"><label>Product Specifications</label><textarea
+                                placeholder="Color, size, material, packaging, certifications required..."></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="fg"><label>Delivery Port / City</label><input type="text"
+                                    placeholder="e.g. Karachi, Lahore"></div>
+                            <div class="fg"><label>Delivery Date Needed</label><input type="date"></div>
+                        </div>
+                        <div class="fg"><label>Your Name</label><input type="text" placeholder="Full name" required>
+                        </div>
+                        <div class="fg"><label>Email Address</label><input type="email" placeholder="your@email.com"
+                                required></div>
+                        <button type="submit" class="submit-btn">Submit RFQ â€” Get Free Quotes</button>
+                    </form>
+                </div>
+                <div class="rfq-sidebar">
+                    <div class="widget">
+                        <h3>Why Post an RFQ?</h3>
+                        <div class="stat-item"><i data-lucide="zap"></i>Free to post, no hidden fees</div>
+                        <div class="stat-item"><i data-lucide="users"></i>Reach 50,000+ verified suppliers</div>
+                        <div class="stat-item"><i data-lucide="clock"></i>Get quotes within 24 hours</div>
+                        <div class="stat-item"><i data-lucide="shield-check"></i>Only verified suppliers respond</div>
+                        <div class="stat-item"><i data-lucide="dollar-sign"></i>Compare prices & negotiate</div>
+                    </div>
+                    <div class="widget">
+                        <h3>RFQ Stats</h3>
+                        <div class="stat-item"><i data-lucide="file-text"></i>2.4M+ RFQs posted</div>
+                        <div class="stat-item"><i data-lucide="check-circle"></i>94% receive quotes in 12h</div>
+                        <div class="stat-item"><i data-lucide="trending-up"></i>Avg. 8 quotes per RFQ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Get Support</h4>
+                    <ul>
+                        <li><a href="helpcenter.html">Help Center</a></li>
+                        <li><a href="live-chat.html">Live Chat</a></li>
+                        <li><a href="order-status.html">Check order status</a></li>
+                        <li><a href="report-abuse.html">Report abuse</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Trade Services</h4>
+                    <ul>
+                        <li><a href="tradeassurance.html">Trade Assurance</a></li>
+                        <li><a href="business-identity.html">Business Identity</a></li>
+                        <li><a href="logistics.html">Logistics Service</a></li>
+                        <li><a href="inspection.html">Inspection Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Source on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="top-ranking.html">Top Ranking</a></li>
+                        <li><a href="rfq.html">Request for Quotation</a></li>
+                        <li><a href="membership.html">Membership Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Sell on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="become-supplier.html">Become a Supplier</a></li>
+                        <li><a href="supplier-central.html">Supplier Central</a></li>
+                        <li><a href="training-center.html">Training Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="our-story.html">Our Story</a></li>
+                        <li><a href="noshahi-group.html">Noshahi Group</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="legal.html">Legal Notice</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <i data-lucide="facebook"></i>
+                    <i data-lucide="linkedin"></i>
+                    <i data-lucide="twitter"></i>
+                    <i data-lucide="instagram"></i>
+                    <i data-lucide="youtube"></i>
+                </div>
+                <p>&copy; 2026 Noshahibaba.com. All rights reserved.</p>
+                <p>Noshahi Group | <a href="legal.html" style="color:#999;">Privacy Policy</a> | <a href="legal.html"
+                        style="color:#999;">Terms of Use</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>lucide.createIcons(); function submitRFQ(e) { e.preventDefault(); alert('RFQ submitted!\nOur verified suppliers will respond within 24 hours.'); e.target.reset(); }</script>
+</body>
+
+</html>

@@ -1,0 +1,748 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center | Noshahibaba.com</title>
+    <meta name="description"
+        content="Get answers to your questions about buying, selling, payments, shipping, and more on Noshahibaba.com.">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .hc-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+            padding: 80px 0 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hc-hero h1 {
+            font-size: 46px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .hc-hero p {
+            font-size: 18px;
+            opacity: 0.8;
+            margin-bottom: 36px;
+        }
+
+        .hc-search-bar {
+            display: flex;
+            max-width: 640px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .hc-search-bar input {
+            flex: 1;
+            padding: 18px 24px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            background: transparent;
+            color: #0f172a;
+        }
+
+        .hc-search-bar button {
+            background: #ff6600;
+            color: white;
+            border: none;
+            padding: 0 32px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hc-search-bar button:hover {
+            background: #e05500;
+        }
+
+        .hc-popular {
+            margin-top: 22px;
+            font-size: 14px;
+            opacity: 0.65;
+        }
+
+        .hc-popular a {
+            color: #ffbb7a;
+            text-decoration: underline;
+            margin: 0 6px;
+        }
+
+        /* â”€â”€ Category Cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .hc-cats {
+            padding: 70px 0;
+        }
+
+        .hc-cats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+            margin-top: 50px;
+        }
+
+        .hc-cat-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 32px 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.25s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .hc-cat-card:hover {
+            border-color: #ff6600;
+            box-shadow: 0 12px 32px rgba(255, 102, 0, 0.13);
+            transform: translateY(-5px);
+            color: inherit;
+        }
+
+        .hc-cat-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            font-size: 28px;
+        }
+
+        .hc-cat-icon i {
+            width: 30px;
+            height: 30px;
+        }
+
+        .hc-cat-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .hc-cat-card p {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .hc-cat-card .article-count {
+            font-size: 12px;
+            color: #ff6600;
+            font-weight: 600;
+            margin-top: 14px;
+        }
+
+        /* â”€â”€ Popular Articles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .hc-articles {
+            padding: 0 0 70px;
+            background: #f8fafc;
+        }
+
+        .hc-articles .inner {
+            padding-top: 70px;
+        }
+
+        .articles-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .article-link {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 18px 22px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+        }
+
+        .article-link:hover {
+            border-color: #ff6600;
+            transform: translateX(4px);
+            color: inherit;
+        }
+
+        .article-link i {
+            width: 18px;
+            height: 18px;
+            color: #ff6600;
+            flex-shrink: 0;
+        }
+
+        .article-link span {
+            font-size: 15px;
+            color: #0f172a;
+            font-weight: 500;
+            flex: 1;
+        }
+
+        .article-link .arr {
+            width: 16px;
+            height: 16px;
+            color: #94a3b8;
+            margin-left: auto;
+        }
+
+        .hc-widget {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 28px 24px;
+            margin-bottom: 22px;
+        }
+
+        .hc-widget h4 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 18px;
+        }
+
+        .contact-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-opt {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 18px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .contact-opt:hover {
+            border-color: #ff6600;
+            background: #fff4ed;
+            color: inherit;
+        }
+
+        .contact-opt i {
+            width: 22px;
+            height: 22px;
+            color: #ff6600;
+        }
+
+        .contact-opt div span {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .contact-opt div small {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        /* â”€â”€ Video Guides â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .hc-videos {
+            padding: 70px 0;
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 44px;
+        }
+
+        .video-card {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            transition: all 0.25s;
+        }
+
+        .video-card:hover {
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .video-thumb {
+            position: relative;
+            height: 180px;
+            background: #0f172a;
+            overflow: hidden;
+        }
+
+        .video-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 52px;
+            height: 52px;
+            background: rgba(255, 102, 0, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-btn i {
+            width: 22px;
+            height: 22px;
+            color: white;
+        }
+
+        .video-info {
+            padding: 18px 20px;
+            background: white;
+        }
+
+        .video-info span {
+            font-size: 11px;
+            color: #ff6600;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .video-info h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 6px 0;
+        }
+
+        .video-info p {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        /* â”€â”€ Section Labels â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .section-label {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #ff6600;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-heading {
+            font-size: 34px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .section-sub {
+            font-size: 16px;
+            color: #64748b;
+        }
+
+        /* â”€â”€ Responsive â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        @media (max-width: 1024px) {
+            .hc-cats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .articles-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .videos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hc-hero h1 {
+                font-size: 34px;
+            }
+        }
+
+        @media (max-width: 640px) {
+
+            .hc-cats-grid,
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hc-hero h1 {
+                font-size: 26px;
+            }
+
+            .hc-search-bar {
+                border-radius: 12px;
+                flex-direction: column;
+            }
+
+            .hc-search-bar button {
+                padding: 16px;
+                border-radius: 0 0 12px 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left"><span>Free delivery for your first order</span></div>
+            <div class="top-bar-right">
+                <a href="helpcenter.html">Help Center</a>
+                <a href="#">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK"> PKR</a>
+                <a href="#">Language: EN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                </a>
+            </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
+                    <input type="text" placeholder="Search suppliers, products...">
+                    <button class="search-btn"><i data-lucide="search"></i> Search</button>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign In</span></a>
+                <div class="action-item"><i data-lucide="message-square"></i><span>Messages</span></div>
+                <div class="action-item"><i data-lucide="shopping-cart"></i><span>Cart</span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sub-nav">
+        <div class="container nav-flex">
+            <div class="all-categories" id="all-categories-btn"><i data-lucide="menu"></i> All categories</div>
+            <div class="nav-links">
+                <a href="featured.html">Featured selections</a>
+                <a href="tradeassurance.html">Trade Assurance</a>
+                <a href="buyer-central.html">Buyer Central</a>
+                <a href="helpcenter.html" class="active" style="color:#ff6600;">Help Center</a>
+                <a href="getapp.html">Get the app</a>
+            </div>
+            <div class="nav-right"><a href="#">Become a supplier</a></div>
+        </div>
+    </nav>
+
+    <!-- â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <section class="hc-hero">
+        <div class="container">
+            <h1>How can we help you?</h1>
+            <p>Search our knowledge base or browse categories below</p>
+            <div class="hc-search-bar">
+                <input type="text" id="hc-search-input" placeholder="Search for orders, payments, shipping, suppliersâ€¦">
+                <button onclick="handleHcSearch()"><i data-lucide="search"
+                        style="display:inline;width:16px;vertical-align:middle;margin-right:6px;"></i>Search</button>
+            </div>
+            <div class="hc-popular">
+                Popular: <a href="#">Track Order</a> <a href="#">Refund Policy</a> <a href="#">Verify Supplier</a> <a
+                    href="#">Cancel Order</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- â”€â”€ HELP CATEGORIES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <section class="hc-cats">
+        <div class="container">
+            <div class="section-label">Browse by Topic</div>
+            <h2 class="section-heading">Help Categories</h2>
+            <div class="hc-cats-grid">
+                <a href="#" class="hc-cat-card">
+                    <div class="hc-cat-icon" style="background:#fff4ed;"><i data-lucide="shopping-bag"
+                            style="color:#ff6600;"></i></div>
+                    <h3>Orders & Payments</h3>
+                    <p>Place orders, payment methods, and order history.</p>
+                    <div class="article-count">24 Articles</div>
+                </a>
+                <a href="#" class="hc-cat-card">
+                    <div class="hc-cat-icon" style="background:#eff6ff;"><i data-lucide="truck"
+                            style="color:#3b82f6;"></i></div>
+                    <h3>Shipping & Delivery</h3>
+                    <p>Tracking, customs, logistics, and delivery issues.</p>
+                    <div class="article-count">31 Articles</div>
+                </a>
+                <a href="#" class="hc-cat-card">
+                    <div class="hc-cat-icon" style="background:#f0fdf4;"><i data-lucide="shield-check"
+                            style="color:#16a34a;"></i></div>
+                    <h3>Trade Assurance</h3>
+                    <p>Buyer protection, disputes, refunds and claims.</p>
+                    <div class="article-count">18 Articles</div>
+                </a>
+                <a href="#" class="hc-cat-card">
+                    <div class="hc-cat-icon" style="background:#faf5ff;"><i data-lucide="user-check"
+                            style="color:#9333ea;"></i></div>
+                    <h3>Account & Profile</h3>
+                    <p>Settings, verification, security, and personal info.</p>
+                    <div class="article-count">15 Articles</div>
+                </a>
+                <a href="#" class="hc-cat-card">
+                    <div class="hc-cat-icon" style="background:#fff4ed;"><i data-lucide="search"
+                            style="color:#ff6600;"></i></div>
+                    <h3>Finding Suppliers</h3>
+                    <p>Search, RFQ, supplier verification, and sourcing.</p>
+                    <div class="article-count">22 Articles</div>
+                </a>
+                <a href="#" class="hc-cat-card">
+                    <div class="hc-cat-icon" style="background:#eff6ff;"><i data-lucide="credit-card"
+                            style="color:#3b82f6;"></i></div>
+                    <h3>Payments & Billing</h3>
+                    <p>Payment methods, invoices, and billing issues.</p>
+                    <div class="article-count">20 Articles</div>
+                </a>
+                <a href="#" class="hc-cat-card">
+                    <div class="hc-cat-icon" style="background:#f0fdf4;"><i data-lucide="box"
+                            style="color:#16a34a;"></i></div>
+                    <h3>Returns & Refunds</h3>
+                    <p>Return policies, how to start a return, and refunds.</p>
+                    <div class="article-count">12 Articles</div>
+                </a>
+                <a href="#" class="hc-cat-card">
+                    <div class="hc-cat-icon" style="background:#fafafa;"><i data-lucide="smartphone"
+                            style="color:#64748b;"></i></div>
+                    <h3>Mobile App</h3>
+                    <p>Using Noshahibaba on mobile devices and troubleshooting.</p>
+                    <div class="article-count">9 Articles</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- â”€â”€ POPULAR ARTICLES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <section class="hc-articles">
+        <div class="inner">
+            <div class="container">
+                <div class="section-label">Most Read</div>
+                <h2 class="section-heading">Popular Articles</h2>
+                <div class="articles-layout">
+                    <div class="article-list">
+                        <a href="#" class="article-link"><i data-lucide="file-text"></i><span>How to place your first
+                                order on Noshahibaba</span><i data-lucide="chevron-right" class="arr"></i></a>
+                        <a href="#" class="article-link"><i data-lucide="truck"></i><span>How to track your shipment in
+                                real time</span><i data-lucide="chevron-right" class="arr"></i></a>
+                        <a href="#" class="article-link"><i data-lucide="shield-check"></i><span>What is Trade Assurance
+                                and how does it work?</span><i data-lucide="chevron-right" class="arr"></i></a>
+                        <a href="#" class="article-link"><i data-lucide="refresh-ccw"></i><span>How to request a refund
+                                or file a dispute</span><i data-lucide="chevron-right" class="arr"></i></a>
+                        <a href="#" class="article-link"><i data-lucide="badge-check"></i><span>How to verify a
+                                supplier's authenticity</span><i data-lucide="chevron-right" class="arr"></i></a>
+                        <a href="#" class="article-link"><i data-lucide="credit-card"></i><span>Accepted payment methods
+                                and how to pay</span><i data-lucide="chevron-right" class="arr"></i></a>
+                        <a href="#" class="article-link"><i data-lucide="package"></i><span>How to request product
+                                samples from suppliers</span><i data-lucide="chevron-right" class="arr"></i></a>
+                        <a href="#" class="article-link"><i data-lucide="message-circle"></i><span>How to send an RFQ
+                                (Request for Quotation)</span><i data-lucide="chevron-right" class="arr"></i></a>
+                    </div>
+                    <div>
+                        <div class="hc-widget">
+                            <h4>Contact Support</h4>
+                            <div class="contact-options">
+                                <div class="contact-opt">
+                                    <i data-lucide="message-circle"></i>
+                                    <div><span>Live Chat</span><small>Available 24/7 â€” avg. 2 min reply</small></div>
+                                </div>
+                                <div class="contact-opt">
+                                    <i data-lucide="mail"></i>
+                                    <div><span>Email Support</span><small>Response within 24 hours</small></div>
+                                </div>
+                                <div class="contact-opt">
+                                    <i data-lucide="phone"></i>
+                                    <div><span>Call Us</span><small>Monâ€“Fri, 9amâ€“6pm PKT</small></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hc-widget">
+                            <h4>Quick Links</h4>
+                            <div class="contact-options">
+                                <a href="buyer-central.html" class="contact-opt"
+                                    style="text-decoration:none;color:inherit;">
+                                    <i data-lucide="users"></i>
+                                    <div><span>Buyer Central</span><small>Sourcing tips & guides</small></div>
+                                </a>
+                                <a href="tradeassurance.html" class="contact-opt"
+                                    style="text-decoration:none;color:inherit;">
+                                    <i data-lucide="shield"></i>
+                                    <div><span>Trade Assurance</span><small>Order protection info</small></div>
+                                </a>
+                                <a href="getapp.html" class="contact-opt" style="text-decoration:none;color:inherit;">
+                                    <i data-lucide="smartphone"></i>
+                                    <div><span>Get the App</span><small>Buy on the go</small></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- â”€â”€ VIDEO GUIDES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <section class="hc-videos">
+        <div class="container">
+            <div class="section-label">Learn Faster</div>
+            <h2 class="section-heading">Video Guides</h2>
+            <p class="section-sub">Step-by-step visual tutorials to get you started quickly.</p>
+            <div class="videos-grid">
+                <div class="video-card">
+                    <div class="video-thumb">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=700&auto=format&fit=crop"
+                            alt="Place First Order">
+                        <div class="play-btn"><i data-lucide="play"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <span>Getting Started</span>
+                        <h4>How to Place Your First Order</h4>
+                        <p>5 min â€¢ Beginner</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumb">
+                        <img src="https://images.unsplash.com/photo-1454165033706-54c2826b0b03?q=80&w=700&auto=format&fit=crop"
+                            alt="Find Suppliers">
+                        <div class="play-btn"><i data-lucide="play"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <span>Sourcing</span>
+                        <h4>How to Find & Verify Suppliers</h4>
+                        <p>8 min â€¢ Intermediate</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumb">
+                        <img src="https://images.unsplash.com/photo-1627377562473-863a137e5ec0?q=80&w=700&auto=format&fit=crop"
+                            alt="Track Order">
+                        <div class="play-btn"><i data-lucide="play"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <span>Shipping</span>
+                        <h4>Tracking Your Shipment Live</h4>
+                        <p>4 min â€¢ Beginner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Get Support</h4>
+                    <ul>
+                        <li><a href="helpcenter.html">Help Center</a></li>
+                        <li><a href="live-chat.html">Live Chat</a></li>
+                        <li><a href="order-status.html">Check order status</a></li>
+                        <li><a href="report-abuse.html">Report abuse</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Trade Services</h4>
+                    <ul>
+                        <li><a href="tradeassurance.html">Trade Assurance</a></li>
+                        <li><a href="business-identity.html">Business Identity</a></li>
+                        <li><a href="logistics.html">Logistics Service</a></li>
+                        <li><a href="inspection.html">Inspection Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Source on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="top-ranking.html">Top Ranking</a></li>
+                        <li><a href="rfq.html">Request for Quotation</a></li>
+                        <li><a href="membership.html">Membership Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Sell on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="become-supplier.html">Become a Supplier</a></li>
+                        <li><a href="supplier-central.html">Supplier Central</a></li>
+                        <li><a href="training-center.html">Training Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="our-story.html">Our Story</a></li>
+                        <li><a href="noshahi-group.html">Noshahi Group</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="legal.html">Legal Notice</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <i data-lucide="facebook"></i>
+                    <i data-lucide="linkedin"></i>
+                    <i data-lucide="twitter"></i>
+                    <i data-lucide="instagram"></i>
+                    <i data-lucide="youtube"></i>
+                </div>
+                <p>&copy; 2026 Noshahibaba.com. All rights reserved.</p>
+                <p>Noshahi Group | <a href="legal.html" style="color:#999;">Privacy Policy</a> | <a href="legal.html"
+                        style="color:#999;">Terms of Use</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+        function handleHcSearch() {
+            const q = document.getElementById('hc-search-input').value.trim();
+            if (q) alert('Searching for: "' + q + '"\n(This is a demo)');
+            else document.getElementById('hc-search-input').focus();
+        }
+        document.getElementById('hc-search-input').addEventListener('keypress', e => {
+            if (e.key === 'Enter') handleHcSearch();
+        });
+    </script>
+</body>
+
+</html>

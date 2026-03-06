@@ -1,0 +1,382 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | Noshahibaba.com</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, #0f172a, #1e3a5f);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .page-hero h1 {
+            font-size: 46px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .page-hero p {
+            font-size: 19px;
+            opacity: .9;
+            max-width: 680px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .careers-section {
+            padding: 90px 0;
+            background: #f8fafc;
+        }
+
+        .section-label {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #ff6600;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-heading {
+            font-size: 38px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 40px;
+        }
+
+        .jobs-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .job-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 28px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            transition: .25s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, .02);
+        }
+
+        .job-card:hover {
+            border-color: #ff6600;
+            transform: translateX(6px);
+            box-shadow: 0 12px 24px rgba(255, 102, 0, .08);
+        }
+
+        .job-info {
+            flex: 1;
+            min-width: 260px;
+        }
+
+        .job-info h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .job-meta {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .meta-tag {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .meta-tag i {
+            width: 16px;
+            height: 16px;
+            color: #94a3b8;
+        }
+
+        .apply-btn {
+            background: #ff6600;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+            transition: .2s;
+        }
+
+        .apply-btn:hover {
+            background: #e05500;
+        }
+
+        .cta-band {
+            background: linear-gradient(135deg, #ff6600, #ff9900);
+            padding: 70px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-band h2 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .cta-band p {
+            font-size: 18px;
+            opacity: .9;
+            margin-bottom: 34px;
+        }
+
+        .btn-w {
+            background: white;
+            color: #ff6600;
+            padding: 16px 42px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            transition: .2s;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-w:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            color: #e05500;
+        }
+
+        @media(max-width: 768px) {
+            .page-hero h1 {
+                font-size: 34px;
+            }
+
+            .section-heading {
+                font-size: 30px;
+                text-align: center;
+            }
+
+            .section-label {
+                text-align: center;
+            }
+
+            .job-card {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: left;
+            }
+
+            .apply-btn {
+                text-align: center;
+            }
+
+            .cta-band h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left"><span>Free delivery for your first order</span></div>
+            <div class="top-bar-right"><a href="helpcenter.html">Help Center</a></div>
+        </div>
+    </div>
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo"><a href="index.html"><span class="logo-text">Noshahi<span>baba</span>.com</span></a></div>
+            <div class="search-container">
+                <div class="search-box">
+                    <div class="search-type">Products <i data-lucide="chevron-down"></i></div><input type="text"
+                        placeholder="Search..."><button class="search-btn"><i data-lucide="search"></i> Search</button>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign In</span></a>
+            </div>
+        </div>
+    </header>
+    <nav class="sub-nav">
+        <div class="container nav-flex">
+            <div class="all-categories" id="all-categories-btn"><i data-lucide="menu"></i> All categories</div>
+            <div class="nav-links"><a href="featured.html">Featured selections</a><a href="tradeassurance.html">Trade
+                    Assurance</a><a href="buyer-central.html">Buyer Central</a><a href="helpcenter.html">Help
+                    Center</a><a href="getapp.html">Get the app</a></div>
+            <div class="nav-right"><a href="become-supplier.html">Become a supplier</a></div>
+        </div>
+    </nav>
+    <section class="page-hero">
+        <div class="container">
+            <h1>Careers</h1>
+            <p>Join an exceptionally fast-growing, passionate team shaping the robust future of global B2B trade. We are
+                actively hiring incredibly smart people.</p>
+        </div>
+    </section>
+    <section class="careers-section">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto 30px;">
+                <div class="section-label">Open Roles</div>
+                <h2 class="section-heading">Current Job Openings</h2>
+            </div>
+
+            <div class="jobs-list">
+                <div class="job-card">
+                    <div class="job-info">
+                        <h3>Senior Frontend Engineer (React/Vue)</h3>
+                        <div class="job-meta">
+                            <span class="meta-tag"><i data-lucide="monitor"></i> Engineering</span>
+                            <span class="meta-tag"><i data-lucide="clock"></i> Full-time</span>
+                            <span class="meta-tag"><i data-lucide="map-pin"></i> Lahore / Remote Setup</span>
+                        </div>
+                    </div>
+                    <a href="mailto:careers@noshahibaba.com" class="apply-btn">Submit Application</a>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-info">
+                        <h3>Lead Product Manager – Supplier Platform Integration</h3>
+                        <div class="job-meta">
+                            <span class="meta-tag"><i data-lucide="box"></i> Product Team</span>
+                            <span class="meta-tag"><i data-lucide="clock"></i> Full-time</span>
+                            <span class="meta-tag"><i data-lucide="map-pin"></i> Lahore HQ</span>
+                        </div>
+                    </div>
+                    <a href="mailto:careers@noshahibaba.com" class="apply-btn">Submit Application</a>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-info">
+                        <h3>Senior Business Development Manager – Strategic Export Sales</h3>
+                        <div class="job-meta">
+                            <span class="meta-tag"><i data-lucide="trending-up"></i> Sales Division</span>
+                            <span class="meta-tag"><i data-lucide="clock"></i> Full-time</span>
+                            <span class="meta-tag"><i data-lucide="map-pin"></i> Karachi Office</span>
+                        </div>
+                    </div>
+                    <a href="mailto:careers@noshahibaba.com" class="apply-btn">Submit Application</a>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-info">
+                        <h3>Regional Supplier Onboarding & Verification Specialist</h3>
+                        <div class="job-meta">
+                            <span class="meta-tag"><i data-lucide="users"></i> Operations Center</span>
+                            <span class="meta-tag"><i data-lucide="clock"></i> Full-time</span>
+                            <span class="meta-tag"><i data-lucide="map-pin"></i> Lahore HQ</span>
+                        </div>
+                    </div>
+                    <a href="mailto:careers@noshahibaba.com" class="apply-btn">Submit Application</a>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-info">
+                        <h3>Global B2B Customer Support Lead (English/Arabic)</h3>
+                        <div class="job-meta">
+                            <span class="meta-tag"><i data-lucide="headphones"></i> Global Support</span>
+                            <span class="meta-tag"><i data-lucide="clock"></i> Full-time</span>
+                            <span class="meta-tag"><i data-lucide="map-pin"></i> 100% Fully Remote Setup</span>
+                        </div>
+                    </div>
+                    <a href="mailto:careers@noshahibaba.com" class="apply-btn">Submit Application</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cta-band">
+        <div class="container">
+            <h2>Don't See Your Exact Perfect Role Listed?</h2>
+            <p>We are constantly boldly expanding. Send us your updated CV and we will gladly keep you strongly in mind
+                for immediate future openings.</p>
+            <a href="mailto:careers@noshahibaba.com" class="btn-w">Send Us An Open Application</a>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Get Support</h4>
+                    <ul>
+                        <li><a href="helpcenter.html">Help Center</a></li>
+                        <li><a href="live-chat.html">Live Chat</a></li>
+                        <li><a href="order-status.html">Check order status</a></li>
+                        <li><a href="report-abuse.html">Report abuse</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Trade Services</h4>
+                    <ul>
+                        <li><a href="tradeassurance.html">Trade Assurance</a></li>
+                        <li><a href="business-identity.html">Business Identity</a></li>
+                        <li><a href="logistics.html">Logistics Service</a></li>
+                        <li><a href="inspection.html">Inspection Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Source on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="top-ranking.html">Top Ranking</a></li>
+                        <li><a href="rfq.html">Request for Quotation</a></li>
+                        <li><a href="membership.html">Membership Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Sell on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="become-supplier.html">Become a Supplier</a></li>
+                        <li><a href="supplier-central.html">Supplier Central</a></li>
+                        <li><a href="training-center.html">Training Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="our-story.html">Our Story</a></li>
+                        <li><a href="noshahi-group.html">Noshahi Group</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="legal.html">Legal Notice</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <i data-lucide="facebook"></i>
+                    <i data-lucide="linkedin"></i>
+                    <i data-lucide="twitter"></i>
+                    <i data-lucide="instagram"></i>
+                    <i data-lucide="youtube"></i>
+                </div>
+                <p>&copy; 2026 Noshahibaba.com. All rights reserved.</p>
+                <p>Noshahi Group | <a href="legal.html" style="color:#999;">Privacy Policy</a> | <a href="legal.html"
+                        style="color:#999;">Terms of Use</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

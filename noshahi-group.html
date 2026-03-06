@@ -1,0 +1,326 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noshahi Group | Noshahibaba.com</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, #0f172a, #1e3a5f);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .page-hero h1 {
+            font-size: 46px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .page-hero p {
+            font-size: 19px;
+            opacity: .9;
+            max-width: 680px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .content-section {
+            padding: 90px 0;
+        }
+
+        .content-section.gray {
+            background: #f8fafc;
+        }
+
+        .section-label {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #ff6600;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .section-heading {
+            font-size: 38px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .company-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .company-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            transition: .3s;
+        }
+
+        .company-card:hover {
+            border-color: #0f172a;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, .08);
+            transform: translateY(-8px);
+        }
+
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #fff4ed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            transition: .3s;
+        }
+
+        .company-card:hover .icon-circle {
+            background: #ff6600;
+        }
+
+        .icon-circle i {
+            width: 36px;
+            height: 36px;
+            color: #ff6600;
+            transition: .3s;
+        }
+
+        .company-card:hover .icon-circle i {
+            color: white;
+        }
+
+        .company-card h3 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 14px;
+            letter-spacing: -0.5px;
+        }
+
+        .company-card p {
+            font-size: 16px;
+            color: #64748b;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .cta-band {
+            background: linear-gradient(135deg, #ff6600, #ff9900);
+            padding: 70px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-band h2 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .cta-band p {
+            font-size: 18px;
+            opacity: .9;
+            margin-bottom: 34px;
+        }
+
+        .btn-w {
+            background: white;
+            color: #ff6600;
+            padding: 16px 42px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            transition: .2s;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-w:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            color: #e05500;
+        }
+
+        @media(max-width: 768px) {
+            .page-hero h1 {
+                font-size: 34px;
+            }
+
+            .section-heading {
+                font-size: 30px;
+            }
+
+            .cta-band h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left"><span>Free delivery for your first order</span></div>
+            <div class="top-bar-right"><a href="helpcenter.html">Help Center</a></div>
+        </div>
+    </div>
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo"><a href="index.html"><span class="logo-text">Noshahi<span>baba</span>.com</span></a></div>
+            <div class="search-container">
+                <div class="search-box">
+                    <div class="search-type">Products <i data-lucide="chevron-down"></i></div><input type="text"
+                        placeholder="Search..."><button class="search-btn"><i data-lucide="search"></i> Search</button>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign In</span></a>
+            </div>
+        </div>
+    </header>
+    <nav class="sub-nav">
+        <div class="container nav-flex">
+            <div class="all-categories" id="all-categories-btn"><i data-lucide="menu"></i> All categories</div>
+            <div class="nav-links"><a href="featured.html">Featured selections</a><a href="tradeassurance.html">Trade
+                    Assurance</a><a href="buyer-central.html">Buyer Central</a><a href="helpcenter.html">Help
+                    Center</a><a href="getapp.html">Get the app</a></div>
+            <div class="nav-right"><a href="become-supplier.html">Become a supplier</a></div>
+        </div>
+    </nav>
+    <section class="page-hero">
+        <div class="container">
+            <h1>Noshahi Group</h1>
+            <p>A rapidly expanding diversified business conglomerate with core strategic interests in massive global
+                e-commerce, complex logistics, secure fintech, and advanced technology solutions.</p>
+        </div>
+    </section>
+    <section class="content-section gray">
+        <div class="container">
+            <div class="section-label">Our Verticals</div>
+            <h2 class="section-heading">Explore Our Companies</h2>
+
+            <div class="company-grid">
+                <div class="company-card">
+                    <div class="icon-circle" style="background:#fff4ed;"><i data-lucide="shopping-bag"
+                            style="color:#ff6600;"></i></div>
+                    <h3>Noshahibaba.com</h3>
+                    <p>Our remarkably thriving flagship B2B wholesale marketplace decisively connecting millions of
+                        global buyers and strategic suppliers across 190+ countries worldwide.</p>
+                </div>
+
+                <div class="company-card">
+                    <div class="icon-circle" style="background:#eff6ff;"><i data-lucide="truck"
+                            style="color:#3b82f6;"></i></div>
+                    <h3>Noshahi Logistics</h3>
+                    <p>Uncompromisingly seamless, high-speed end-to-end freight and intelligent logistics solutions
+                        managing complex domestic routes and massive international container shipments.</p>
+                </div>
+
+                <div class="company-card">
+                    <div class="icon-circle" style="background:#f0fdf4;"><i data-lucide="credit-card"
+                            style="color:#16a34a;"></i></div>
+                    <h3>Noshahi Pay</h3>
+                    <p>A brilliantly secure, fiercely reliable fintech platform proudly offering flawless cross-border
+                        B2B payments, robust escrow services, and innovative smart trade finance.</p>
+                </div>
+
+                <div class="company-card">
+                    <div class="icon-circle" style="background:#faf5ff;"><i data-lucide="cpu"
+                            style="color:#9333ea;"></i></div>
+                    <h3>Noshahi Tech</h3>
+                    <p>Dedicated to pure digital transformation, delivering completely custom-built enterprise software,
+                        agile ERP integrations, and cloud scalability for hyper-growth businesses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cta-band">
+        <div class="container">
+            <h2>Partner With Noshahi Group</h2>
+            <p>We are actively exploring incredibly powerful business partnerships, high-impact joint ventures, and bold
+                investment opportunities alongside ambitious global leaders.</p>
+            <a href="live-chat.html" class="btn-w">Initiate Contact Now</a>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Get Support</h4>
+                    <ul>
+                        <li><a href="helpcenter.html">Help Center</a></li>
+                        <li><a href="live-chat.html">Live Chat</a></li>
+                        <li><a href="order-status.html">Check order status</a></li>
+                        <li><a href="report-abuse.html">Report abuse</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Trade Services</h4>
+                    <ul>
+                        <li><a href="tradeassurance.html">Trade Assurance</a></li>
+                        <li><a href="business-identity.html">Business Identity</a></li>
+                        <li><a href="logistics.html">Logistics Service</a></li>
+                        <li><a href="inspection.html">Inspection Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Source on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="top-ranking.html">Top Ranking</a></li>
+                        <li><a href="rfq.html">Request for Quotation</a></li>
+                        <li><a href="membership.html">Membership Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Sell on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="become-supplier.html">Become a Supplier</a></li>
+                        <li><a href="supplier-central.html">Supplier Central</a></li>
+                        <li><a href="training-center.html">Training Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="our-story.html">Our Story</a></li>
+                        <li><a href="noshahi-group.html">Noshahi Group</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="legal.html">Legal Notice</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <i data-lucide="facebook"></i>
+                    <i data-lucide="linkedin"></i>
+                    <i data-lucide="twitter"></i>
+                    <i data-lucide="instagram"></i>
+                    <i data-lucide="youtube"></i>
+                </div>
+                <p>&copy; 2026 Noshahibaba.com. All rights reserved.</p>
+                <p>Noshahi Group | <a href="legal.html" style="color:#999;">Privacy Policy</a> | <a href="legal.html"
+                        style="color:#999;">Terms of Use</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

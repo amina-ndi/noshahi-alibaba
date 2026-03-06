@@ -1,0 +1,427 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Clothing Categories | Noshahibaba.com</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .category-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            height: 350px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .category-hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .category-hero p {
+            font-size: 20px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .category-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .category-card-item {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .category-card-item:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: var(--primary);
+        }
+
+        .category-card-img {
+            height: 320px;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .category-card-item:hover .category-card-img {
+            transform: scale(1.05);
+        }
+
+        .category-card-info {
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(to top, white, rgba(255, 255, 255, 0.9));
+        }
+
+        .category-card-info h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+
+        .category-card-info p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .section-header .line {
+            height: 2px;
+            flex: 1;
+            background: var(--border-color);
+        }
+
+        /* Responsive Mobile Styles */
+        @media (max-width: 768px) {
+            .category-hero {
+                height: 250px;
+                border-radius: 12px;
+            }
+
+            .category-hero h1 {
+                font-size: 32px;
+            }
+
+            .category-hero p {
+                font-size: 16px;
+            }
+
+            .category-cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .category-card-img {
+                height: 200px;
+            }
+
+            .category-card-info h3 {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left">
+                <span>Free delivery for your first order</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="helpcenter.html">Help Center</a>
+                <a href="#">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK"> PKR</a>
+                <a href="#">Language: EN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                </a>
+            </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
+                    <input type="text" placeholder="Explore Men's Fashion...">
+                    <button class="search-btn"><i data-lucide="search"></i> Search</button>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="signin.html" class="action-item">
+                    <i data-lucide="user"></i>
+                    <span>Sign In</span>
+                </a>
+                <div class="action-item">
+                    <i data-lucide="message-square"></i>
+                    <span>Messages</span>
+                </div>
+                <div class="action-item">
+                    <i data-lucide="shopping-cart"></i>
+                    <span>Cart</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sub-nav">
+        <div class="container nav-flex">
+            <div class="all-categories" id="all-categories-btn">
+                <i data-lucide="menu"></i> All categories
+            </div>
+            <div class="nav-links">
+                <a href="featured.html">Featured selections</a>
+                <a href="tradeassurance.html">Trade Assurance</a>
+                <a href="buyer-central.html">Buyer Central</a>
+                <a href="helpcenter.html">Help Center</a>
+                <a href="getapp.html">Get the app</a>
+            </div>
+            <div class="nav-right">
+                <a href="#">Become a supplier</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container" style="margin-top: 30px;">
+        <!-- Breadcrumbs -->
+        <div class="breadcrumb" style="margin-bottom: 25px; font-size: 14px; color: var(--text-muted);">
+            <a href="index.html">Home</a> &gt; <a href="apparel.html">Apparel & Accessories</a> &gt; <span
+                style="color: var(--text-main);">Men's Clothing Categories</span>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="category-hero">
+            <div class="category-hero-content">
+                <h1>Men's Fashion Hub</h1>
+                <p>Discover the finest categories in men's apparel. Premium quality from verified global manufacturers.
+                </p>
+            </div>
+        </section>
+
+        <section class="hero-grid">
+            <!-- Sidebar -->
+            <aside class="category-sidebar" id="category-sidebar"
+                style="display: block; background: white; border-radius: 12px; padding: 20px; box-shadow: var(--shadow-sm); height: fit-content;">
+                <h4
+                    style="font-size: 16px; margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                    Categories</h4>
+                <ul class="sidebar-links" style="list-style: none;">
+                    <li style="margin-bottom: 12px; font-size: 14px;"><a href="womens-clothing.html"
+                            style="color: var(--text-muted);">Women's Clothing</a></li>
+                    <li style="margin-bottom: 12px; font-size: 14px;"><a href="mens-clothing.html"
+                            style="color: var(--primary); font-weight: 600;">Men's Clothing</a></li>
+                    <li style="margin-bottom: 12px; font-size: 14px;"><a href="kids-wear.html"
+                            style="color: var(--text-muted);">Kids' Wear</a></li>
+                    <li style="margin-bottom: 12px; font-size: 14px;"><a href="shoes-footwear.html"
+                            style="color: var(--text-muted);">Shoes & Footwear</a></li>
+                    <li style="margin-bottom: 12px; font-size: 14px;"><a href="bags-accessories.html"
+                            style="color: var(--text-muted);">Bags & Accessories</a></li>
+                    <li style="margin-bottom: 12px; font-size: 14px;"><a href="uniforms.html"
+                            style="color: var(--text-muted);">Uniforms</a></li>
+                    <li style="margin-bottom: 12px; font-size: 14px;"><a href="apparel-stock.html"
+                            style="color: var(--text-muted);">Apparel Stock</a></li>
+                    <li style="margin-bottom: 12px; font-size: 14px;"><a href="wedding-apparel.html"
+                            style="color: var(--text-muted);">Wedding Apparel</a></li>
+                </ul>
+            </aside>
+
+            <div>
+                <!-- Section Header -->
+                <div class="section-header">
+                    <h2>Explore Categories</h2>
+                    <div class="line"></div>
+                </div>
+
+                <!-- Grid of Category Cards (No Links as requested) -->
+                <section class="category-cards-grid">
+                    <!-- Card 1 -->
+                    <div class="category-card-item">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800&auto=format&fit=crop"
+                            alt="T-shirts" class="category-card-img">
+                        <div class="category-card-info">
+                            <h3>T-Shirts & Polos</h3>
+                            <p>15,000+ Items Available</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="category-card-item">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aec36caea?q=80&w=800&auto=format&fit=crop"
+                            alt="Jackets" class="category-card-img">
+                        <div class="category-card-info">
+                            <h3>Jackets & Coats</h3>
+                            <p>8,200+ Items Available</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="category-card-item">
+                        <img src="https://images.unsplash.com/photo-1594932224030-940955d2c0bb?q=80&w=800&auto=format&fit=crop"
+                            alt="Casual Shirts" class="category-card-img">
+                        <div class="category-card-info">
+                            <h3>Casual Shirts</h3>
+                            <p>12,400+ Items Available</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="category-card-item">
+                        <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?q=80&w=800&auto=format&fit=crop"
+                            alt="Suits" class="category-card-img">
+                        <div class="category-card-info">
+                            <h3>Suits & Blazers</h3>
+                            <p>5,600+ Items Available</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="category-card-item">
+                        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=800&auto=format&fit=crop"
+                            alt="Jeans" class="category-card-img">
+                        <div class="category-card-info">
+                            <h3>Pants & Jeans</h3>
+                            <p>9,800+ Items Available</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="category-card-item">
+                        <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?q=80&w=800&auto=format&fit=crop"
+                            alt="Activewear" class="category-card-img">
+                        <div class="category-card-info">
+                            <h3>Activewear & Gym</h3>
+                            <p>7,300+ Items Available</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 7 -->
+                    <div class="category-card-item">
+                        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=800&auto=format&fit=crop"
+                            alt="Hoodies" class="category-card-img">
+                        <div class="category-card-info">
+                            <h3>Hoodies & Sweaters</h3>
+                            <p>6,500+ Items Available</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 8 -->
+                    <div class="category-card-item">
+                        <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?q=80&w=800&auto=format&fit=crop"
+                            alt="Traditional" class="category-card-img">
+                        <div class="category-card-info">
+                            <h3>Traditional Wear</h3>
+                            <p>4,200+ Items Available</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 9 -->
+                    <div class="category-card-item">
+                        <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?q=80&w=800&auto=format&fit=crop"
+                            alt="Accessories" class="category-card-img">
+                        <div class="category-card-info">
+                            <h3>Fashion Accessories</h3>
+                            <p>10,500+ Items Available</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Get Support</h4>
+                    <ul>
+                        <li><a href="helpcenter.html">Help Center</a></li>
+                        <li><a href="live-chat.html">Live Chat</a></li>
+                        <li><a href="order-status.html">Check order status</a></li>
+                        <li><a href="report-abuse.html">Report abuse</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Trade Services</h4>
+                    <ul>
+                        <li><a href="tradeassurance.html">Trade Assurance</a></li>
+                        <li><a href="business-identity.html">Business Identity</a></li>
+                        <li><a href="logistics.html">Logistics Service</a></li>
+                        <li><a href="inspection.html">Inspection Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Source on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="top-ranking.html">Top Ranking</a></li>
+                        <li><a href="rfq.html">Request for Quotation</a></li>
+                        <li><a href="membership.html">Membership Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Sell on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="become-supplier.html">Become a Supplier</a></li>
+                        <li><a href="supplier-central.html">Supplier Central</a></li>
+                        <li><a href="training-center.html">Training Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="our-story.html">Our Story</a></li>
+                        <li><a href="noshahi-group.html">Noshahi Group</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="legal.html">Legal Notice</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <i data-lucide="facebook"></i>
+                    <i data-lucide="linkedin"></i>
+                    <i data-lucide="twitter"></i>
+                    <i data-lucide="instagram"></i>
+                    <i data-lucide="youtube"></i>
+                </div>
+                <p>&copy; 2026 Noshahibaba.com. All rights reserved.</p>
+                <p>Noshahi Group | <a href="legal.html" style="color:#999;">Privacy Policy</a> | <a href="legal.html"
+                        style="color:#999;">Terms of Use</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

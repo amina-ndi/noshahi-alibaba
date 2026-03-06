@@ -99,18 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroGrid = document.querySelector('.hero-grid');
 
     if (allCategoriesBtn && categorySidebar && heroGrid) {
-        allCategoriesBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent closing immediately if toggle is part of broader click logic
+        allCategoriesBtn.addEventListener('click', () => {
             categorySidebar.classList.toggle('active');
             heroGrid.classList.toggle('with-sidebar');
-        });
-
-        // Optional: Close when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!allCategoriesBtn.contains(e.target) && !categorySidebar.contains(e.target)) {
-                categorySidebar.classList.remove('active');
-                heroGrid.classList.remove('with-sidebar');
-            }
         });
     }
 

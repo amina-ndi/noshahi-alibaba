@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Supplier | Noshahibaba.com</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, #0f172a, #1e3a5f);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .page-hero h1 {
+            font-size: 46px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .page-hero p {
+            font-size: 19px;
+            opacity: .9;
+            max-width: 680px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .content-section.gray {
+            background: #f8fafc;
+        }
+
+        .section-label {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #ff6600;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-heading {
+            font-size: 36px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 16px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .info-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 36px;
+            transition: .3s;
+        }
+
+        .info-card:hover {
+            border-color: #ff6600;
+            box-shadow: 0 16px 40px rgba(255, 102, 0, .08);
+            transform: translateY(-6px);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            background: #fff4ed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .icon-box i {
+            width: 30px;
+            height: 30px;
+            color: #ff6600;
+        }
+
+        .info-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .info-card p {
+            font-size: 15px;
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        .cta-band {
+            background: linear-gradient(135deg, #ff6600, #ff9900);
+            padding: 70px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-band h2 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .cta-band p {
+            font-size: 18px;
+            opacity: .9;
+            margin-bottom: 34px;
+        }
+
+        .btn-w {
+            background: white;
+            color: #ff6600;
+            padding: 16px 42px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            transition: .2s;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-w:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            color: #e05500;
+        }
+
+        @media(max-width: 768px) {
+            .page-hero h1 {
+                font-size: 32px;
+            }
+
+            .cta-band h2 {
+                font-size: 28px;
+            }
+
+            .section-heading {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left"><span>Free delivery for your first order</span></div>
+            <div class="top-bar-right"><a href="helpcenter.html">Help Center</a></div>
+        </div>
+    </div>
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo"><a href="index.html"><span class="logo-text">Noshahi<span>baba</span>.com</span></a></div>
+            <div class="search-container">
+                <div class="search-box">
+                    <div class="search-type">Products <i data-lucide="chevron-down"></i></div><input type="text"
+                        placeholder="Search..."><button class="search-btn"><i data-lucide="search"></i> Search</button>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign In</span></a>
+            </div>
+        </div>
+    </header>
+    <nav class="sub-nav">
+        <div class="container nav-flex">
+            <div class="all-categories" id="all-categories-btn"><i data-lucide="menu"></i> All categories</div>
+            <div class="nav-links"><a href="featured.html">Featured selections</a><a href="tradeassurance.html">Trade
+                    Assurance</a><a href="buyer-central.html">Buyer Central</a><a href="helpcenter.html">Help
+                    Center</a><a href="getapp.html">Get the app</a></div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Become a Supplier</h1>
+            <p>Reach millions of buyers worldwide by listing your products on Noshahibaba.com. Expand your business
+                globally with our powerful tools.</p>
+        </div>
+    </section>
+
+    <section class="content-section gray">
+        <div class="container">
+            <div class="section-label">Why Join Us</div>
+            <h2 class="section-heading">Benefits of Selling on Noshahibaba</h2>
+            <div class="card-grid">
+                <div class="info-card">
+                    <div class="icon-box"><i data-lucide="globe"></i></div>
+                    <h3>Global Audience</h3>
+                    <p>Connect instantly with over 10 million active buyers from 190+ countries who are actively
+                        sourcing products every single day.</p>
+                </div>
+                <div class="info-card">
+                    <div class="icon-box"><i data-lucide="trending-up"></i></div>
+                    <h3>Accelerated Growth</h3>
+                    <p>Verified suppliers on Noshahibaba report an unprecedented average of 3× revenue increase within
+                        their very first year on the platform.</p>
+                </div>
+                <div class="info-card">
+                    <div class="icon-box"><i data-lucide="shield-check"></i></div>
+                    <h3>Secure Transactions</h3>
+                    <p>Get paid safely and reliably through our escrow payment system. Eliminate the risk of
+                        chargebacks, payment delays, or international fraud.</p>
+                </div>
+                <div class="info-card">
+                    <div class="icon-box"><i data-lucide="users"></i></div>
+                    <h3>Dedicated Support</h3>
+                    <p>Enjoy access to a dedicated account manager who helps you set up your storefront, optimize
+                        product listings, and scale your operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="section-label">Getting Started</div>
+            <h2 class="section-heading">3 Simple Steps to Start Selling</h2>
+            <div class="card-grid">
+                <div class="info-card">
+                    <div class="icon-box" style="background:#eff6ff;"><i data-lucide="file-plus"
+                            style="color:#3b82f6;"></i></div>
+                    <h3>1. Register Your Business</h3>
+                    <p>Create a free supplier account and submit your basic business registration documents for our fast
+                        24-hour verification.</p>
+                </div>
+                <div class="info-card">
+                    <div class="icon-box" style="background:#f0fdf4;"><i data-lucide="package"
+                            style="color:#16a34a;"></i></div>
+                    <h3>2. List Your Products</h3>
+                    <p>Use our easy bulk-upload tools to add your product catalog complete with high-quality images,
+                        descriptions, pricing, and MOQ parameters.</p>
+                </div>
+                <div class="info-card">
+                    <div class="icon-box" style="background:#fff4ed;"><i data-lucide="dollar-sign"
+                            style="color:#ff6600;"></i></div>
+                    <h3>3. Receive Orders</h3>
+                    <p>Publish your store and instantly start receiving direct inquiries and massive wholesale orders
+                        from buyers across the globe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-band">
+        <div class="container">
+            <h2>Ready to Take Your Business Global?</h2>
+            <p>Join over 50,000 verified suppliers who are already growing their sales exponentially on Noshahibaba.</p>
+            <a href="signin.html" class="btn-w">Register as a Supplier Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Get Support</h4>
+                    <ul>
+                        <li><a href="helpcenter.html">Help Center</a></li>
+                        <li><a href="live-chat.html">Live Chat</a></li>
+                        <li><a href="order-status.html">Check order status</a></li>
+                        <li><a href="report-abuse.html">Report abuse</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Trade Services</h4>
+                    <ul>
+                        <li><a href="tradeassurance.html">Trade Assurance</a></li>
+                        <li><a href="business-identity.html">Business Identity</a></li>
+                        <li><a href="logistics.html">Logistics Service</a></li>
+                        <li><a href="inspection.html">Inspection Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Source on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="top-ranking.html">Top Ranking</a></li>
+                        <li><a href="rfq.html">Request for Quotation</a></li>
+                        <li><a href="membership.html">Membership Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Sell on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="become-supplier.html">Become a Supplier</a></li>
+                        <li><a href="supplier-central.html">Supplier Central</a></li>
+                        <li><a href="training-center.html">Training Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="our-story.html">Our Story</a></li>
+                        <li><a href="noshahi-group.html">Noshahi Group</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="legal.html">Legal Notice</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <i data-lucide="facebook"></i>
+                    <i data-lucide="linkedin"></i>
+                    <i data-lucide="twitter"></i>
+                    <i data-lucide="instagram"></i>
+                    <i data-lucide="youtube"></i>
+                </div>
+                <p>&copy; 2026 Noshahibaba.com. All rights reserved.</p>
+                <p>Noshahi Group | <a href="legal.html" style="color:#999;">Privacy Policy</a> | <a href="legal.html"
+                        style="color:#999;">Terms of Use</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

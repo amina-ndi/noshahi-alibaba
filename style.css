@@ -207,8 +207,7 @@ ul {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 240px;
-  /* Sidebar hidden by default */
+  grid-template-columns: 240px 1fr 240px;
   gap: 20px;
   transition: all 0.3s ease;
 }
@@ -224,8 +223,7 @@ ul {
   padding: 15px 0;
   border-radius: 8px;
   box-shadow: var(--shadow-sm);
-  display: none;
-  /* Hidden by default */
+  display: block;
   overflow: hidden;
 }
 

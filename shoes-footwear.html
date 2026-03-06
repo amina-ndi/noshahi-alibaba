@@ -1,0 +1,444 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoes & Footwear | Noshahibaba.com</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .category-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 40px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-title h1 {
+            color: white;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .hero-title p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 18px;
+        }
+
+        .page-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 30px;
+        }
+
+        .sidebar {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+            height: fit-content;
+        }
+
+        .sidebar h4 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .sidebar-links {
+            list-style: none;
+        }
+
+        .sidebar-links li {
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .sidebar-links a {
+            color: var(--text-muted);
+            display: block;
+            width: 100%;
+            transition: color 0.2s;
+        }
+
+        .sidebar-links a:hover,
+        .sidebar-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .product-grid-new {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .filter-btn {
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 1024px) {
+            .page-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .hero-title h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left">
+                <span>Free delivery for your first order</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="helpcenter.html">Help Center</a>
+                <a href="#">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK"> PKR</a>
+                <a href="#">Language: EN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                </a>
+            </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
+                    <input type="text" placeholder="Search in Shoes & Footwear...">
+                    <button class="search-btn"><i data-lucide="search"></i> Search</button>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="signin.html" class="action-item">
+                    <i data-lucide="user"></i>
+                    <span>Sign In</span>
+                </a>
+                <div class="action-item">
+                    <i data-lucide="message-square"></i>
+                    <span>Messages</span>
+                </div>
+                <div class="action-item">
+                    <i data-lucide="shopping-cart"></i>
+                    <span>Cart</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sub-nav">
+        <div class="container nav-flex">
+            <div class="all-categories" id="all-categories-btn">
+                <i data-lucide="menu"></i> All categories
+            </div>
+            <div class="nav-links">
+                <a href="featured.html">Featured selections</a>
+                <a href="tradeassurance.html">Trade Assurance</a>
+                <a href="buyer-central.html">Buyer Central</a>
+                <a href="helpcenter.html">Help Center</a>
+                <a href="getapp.html">Get the app</a>
+            </div>
+            <div class="nav-right">
+                <a href="#">Become a supplier</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container" style="margin-top: 20px;">
+        <div class="breadcrumb" style="font-size: 14px; margin-bottom: 20px; color: var(--text-muted);">
+            <a href="index.html" style="color: inherit;">Home</a> &gt; <a href="apparel.html"
+                style="color: inherit;">Apparel</a> &gt; Shoes & Footwear
+        </div>
+
+        <section class="category-hero">
+            <div class="hero-title">
+                <h1>Step into Style</h1>
+                <p>From athletic sneakers to formal dress shoes, find the perfect pair from top manufacturers.</p>
+            </div>
+        </section>
+
+        <div class="hero-grid">
+            <aside class="sidebar" id="category-sidebar">
+                <h4>Categories</h4>
+                <ul class="sidebar-links">
+                    <li><a href="womens-clothing.html">Women's Clothing</a></li>
+                    <li><a href="mens-clothing.html">Men's Clothing</a></li>
+                    <li><a href="kids-wear.html">Kids' Wear</a></li>
+                    <li><a href="shoes-footwear.html" class="active">Shoes & Footwear</a></li>
+                    <li><a href="bags-accessories.html">Bags & Accessories</a></li>
+                    <li><a href="uniforms.html">Uniforms</a></li>
+                    <li><a href="apparel-stock.html">Apparel Stock</a></li>
+                    <li><a href="wedding-apparel.html">Wedding Apparel</a></li>
+                </ul>
+                <div style="margin-top: 30px;">
+                    <h4>Filter by Price</h4>
+                    <div style="display: flex; gap: 5px;">
+                        <input type="text" placeholder="Min"
+                            style="width: 50%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                        <input type="text" placeholder="Max"
+                            style="width: 50%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                    <button class="filter-btn">Apply Filter</button>
+                </div>
+            </aside>
+
+            <div class="content">
+                <div class="product-grid-new">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=800&auto=format&fit=crop"
+                                alt="Sneakers">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Professional Performance Running Sneakers - Breathable Mesh</p>
+                            <p class="product-price">PKR 3,500.00 - 5,200.00</p>
+                            <p class="product-moq">50 Pairs (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified</span>
+                                <span class="country">CN 3yrs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=800&auto=format&fit=crop"
+                                alt="Sports Shoes">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Urban Lifestyle Casual Shoes - Multi-Surface Traction</p>
+                            <p class="product-price">PKR 2,800.00 - 4,500.00</p>
+                            <p class="product-moq">30 Pairs (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified Pro</span>
+                                <span class="country">PK 6yrs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1449505278894-297fdb3edbc1?q=80&w=800&auto=format&fit=crop"
+                                alt="Leather Shoes">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Handmade Genuine Leather Formal Shoes - Classic Oxford Style</p>
+                            <p class="product-price">PKR 8,500.00 - 12,000.00</p>
+                            <p class="product-moq">10 Pairs (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified</span>
+                                <span class="country">PK 12yrs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?q=80&w=800&auto=format&fit=crop"
+                                alt="Heels">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Elegant High-Heel Stiletto Sandals - Comfortable Padding</p>
+                            <p class="product-price">PKR 4,200.00 - 6,800.00</p>
+                            <p class="product-moq">20 Pairs (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified</span>
+                                <span class="country">CN 4yrs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 5 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?q=80&w=800&auto=format&fit=crop"
+                                alt="Hiking Boots">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Rugged Waterproof Hiking Boots - All-Terrain Grip</p>
+                            <p class="product-price">PKR 9,500.00 - 15,000.00</p>
+                            <p class="product-moq">15 Pairs (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified Pro</span>
+                                <span class="country">PK 7yrs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 6 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1533867617858-e7b97e060509?q=80&w=800&auto=format&fit=crop"
+                                alt="Sandals">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Comfortable Leather Sandals - Casual Summer Wear</p>
+                            <p class="product-price">PKR 2,500.00 - 3,800.00</p>
+                            <p class="product-moq">40 Pairs (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified</span>
+                                <span class="country">CN 2yrs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 7 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?q=80&w=800&auto=format&fit=crop"
+                                alt="Football Cleats">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Professional Football Cleats - High Performance Turf Shoes</p>
+                            <p class="product-price">PKR 5,500.00 - 8,200.00</p>
+                            <p class="product-moq">20 Pairs (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified Pro</span>
+                                <span class="country">VN 4yrs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 8 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800&auto=format&fit=crop"
+                                alt="Running Shoes">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Ultra-Lightweight Mesh Running Shoes - Shock Absorption Sole</p>
+                            <p class="product-price">PKR 3,200.00 - 4,800.00</p>
+                            <p class="product-moq">50 Pairs (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified</span>
+                                <span class="country">CN 6yrs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 9 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1520639882703-b2484ad60cba?q=80&w=800&auto=format&fit=crop"
+                                alt="Slippers">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Premium Memory Foam Indoor Slippers - Soft & Warm</p>
+                            <p class="product-price">PKR 1,500.00 - 2,500.00</p>
+                            <p class="product-moq">100 Pairs (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified</span>
+                                <span class="country">PK 3yrs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: center; margin-top: 50px; margin-bottom: 50px; gap: 10px;">
+                    <a href="#"
+                        style="padding: 10px 15px; border: 1px solid var(--primary); background: var(--primary); color: white; border-radius: 4px;">1</a>
+                    <a href="#"
+                        style="padding: 10px 15px; border: 1px solid var(--border-color); background: white; border-radius: 4px;">2</a>
+                    <a href="#"
+                        style="padding: 10px 15px; border: 1px solid var(--border-color); background: white; border-radius: 4px;">Next</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Get Support</h4>
+                    <ul>
+                        <li><a href="helpcenter.html">Help Center</a></li>
+                        <li><a href="live-chat.html">Live Chat</a></li>
+                        <li><a href="order-status.html">Check order status</a></li>
+                        <li><a href="report-abuse.html">Report abuse</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Trade Services</h4>
+                    <ul>
+                        <li><a href="tradeassurance.html">Trade Assurance</a></li>
+                        <li><a href="business-identity.html">Business Identity</a></li>
+                        <li><a href="logistics.html">Logistics Service</a></li>
+                        <li><a href="inspection.html">Inspection Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Source on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="top-ranking.html">Top Ranking</a></li>
+                        <li><a href="rfq.html">Request for Quotation</a></li>
+                        <li><a href="membership.html">Membership Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Sell on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="become-supplier.html">Become a Supplier</a></li>
+                        <li><a href="supplier-central.html">Supplier Central</a></li>
+                        <li><a href="training-center.html">Training Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="our-story.html">Our Story</a></li>
+                        <li><a href="noshahi-group.html">Noshahi Group</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="legal.html">Legal Notice</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <i data-lucide="facebook"></i>
+                    <i data-lucide="linkedin"></i>
+                    <i data-lucide="twitter"></i>
+                    <i data-lucide="instagram"></i>
+                    <i data-lucide="youtube"></i>
+                </div>
+                <p>&copy; 2026 Noshahibaba.com. All rights reserved.</p>
+                <p>Noshahi Group | <a href="legal.html" style="color:#999;">Privacy Policy</a> | <a href="legal.html"
+                        style="color:#999;">Terms of Use</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

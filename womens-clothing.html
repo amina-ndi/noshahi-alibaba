@@ -1,0 +1,574 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Clothing | Noshahibaba.com</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .category-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            padding: 0 60px;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .category-hero-content h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .category-hero-content p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .category-grid-layout {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 30px;
+        }
+
+        .sidebar-section {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .sidebar-title {
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sidebar-list {
+            list-style: none;
+        }
+
+        .sidebar-list li {
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .sidebar-list li:hover {
+            color: var(--primary);
+        }
+
+        .sidebar-list li.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .filter-group {
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .checkbox-item input {
+            cursor: pointer;
+        }
+
+        .product-sort-bar {
+            background: white;
+            padding: 15px 25px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .sort-options {
+            display: flex;
+            gap: 25px;
+            font-size: 14px;
+        }
+
+        .sort-item {
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .sort-item.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .page-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: white;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .page-link:hover,
+        .page-link.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        @media (max-width: 1024px) {
+            .category-grid-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .category-sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left">
+                <span>Free delivery for your first order</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="helpcenter.html">Help Center</a>
+                <a href="#">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK"> PKR</a>
+                <a href="#">Language: EN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                </a>
+            </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
+                    <input type="text" placeholder="Search in Women's Clothing...">
+                    <button class="search-btn"><i data-lucide="search"></i> Search</button>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="signin.html" class="action-item">
+                    <i data-lucide="user"></i>
+                    <span>Sign In</span>
+                </a>
+                <div class="action-item">
+                    <i data-lucide="message-square"></i>
+                    <span>Messages</span>
+                </div>
+                <div class="action-item">
+                    <i data-lucide="shopping-cart"></i>
+                    <span>Cart</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sub-nav">
+        <div class="container nav-flex">
+            <div class="all-categories" id="all-categories-btn">
+                <i data-lucide="menu"></i> All categories
+            </div>
+            <div class="nav-links">
+                <a href="featured.html">Featured selections</a>
+                <a href="tradeassurance.html">Trade Assurance</a>
+                <a href="buyer-central.html">Buyer Central</a>
+                <a href="helpcenter.html">Help Center</a>
+                <a href="getapp.html">Get the app</a>
+            </div>
+            <div class="nav-right">
+                <a href="#">Become a supplier</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Breadcrumbs -->
+        <div class="breadcrumb" style="margin: 20px 0; font-size: 14px; color: var(--text-muted);">
+            <a href="index.html">Home</a> &gt; <a href="apparel.html">Apparel & Accessories</a> &gt; <span
+                style="color: var(--text-main);">Women's Clothing</span>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="category-hero">
+            <div class="category-hero-content">
+                <h1>Women's Clothing</h1>
+                <p>Trending designs for the modern woman. 2.5M+ products from global suppliers.</p>
+            </div>
+        </section>
+
+        <section class="hero-grid">
+            <!-- Sidebar -->
+            <aside class="category-sidebar" id="category-sidebar"
+                style="display: block; background: white; border-radius: 12px; padding: 20px; box-shadow: var(--shadow-sm); height: fit-content;">
+                <h4
+                    style="font-size: 16px; margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                    Categories</h4>
+                <ul class="sidebar-links" style="list-style: none;">
+                    <li style="margin-bottom: 12px; font-size: 14px;"><a href="womens-clothing.html"
+                            style="color: var(--primary); font-weight: 600;">Women's Clothing</a></li>
+                    <li style="margin-bottom: 12px; font-size: 14px;"><a href="mens-clothing.html"
+                            style="color: var(--text-muted);">Men's Clothing</a></li>
+                    <li style="margin-bottom: 12px; font-size: 14px;"><a href="kids-wear.html"
+                            style="color: var(--text-muted);">Kids' Wear</a></li>
+                    <li style="margin-bottom: 12px; font-size: 14px;"><a href="shoes-footwear.html"
+                            style="color: var(--text-muted);">Shoes & Footwear</a></li>
+                    <li style="margin-bottom: 12px; font-size: 14px;"><a href="bags-accessories.html"
+                            style="color: var(--text-muted);">Bags & Accessories</a></li>
+                    <li style="margin-bottom: 12px; font-size: 14px;"><a href="uniforms.html"
+                            style="color: var(--text-muted);">Uniforms</a></li>
+                    <li style="margin-bottom: 12px; font-size: 14px;"><a href="apparel-stock.html"
+                            style="color: var(--text-muted);">Apparel Stock</a></li>
+                    <li style="margin-bottom: 12px; font-size: 14px;"><a href="wedding-apparel.html"
+                            style="color: var(--text-muted);">Wedding Apparel</a></li>
+                </ul>
+
+                <div style="margin-top: 30px;">
+                    <h4
+                        style="font-size: 16px; margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                        Supplier Type</h4>
+                    <div class="filter-group">
+                        <label class="checkbox-item"
+                            style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 14px;"><input
+                                type="checkbox"> Verified Supplier</label>
+                        <label class="checkbox-item"
+                            style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 14px;"><input
+                                type="checkbox"> Verified Pro</label>
+                        <label class="checkbox-item"
+                            style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 14px;"><input
+                                type="checkbox"> Trade Assurance</label>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <h4
+                        style="font-size: 16px; margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                        Price (PKR)</h4>
+                    <div style="display: flex; gap: 10px; align-items: center; margin-top: 10px;">
+                        <input type="text" placeholder="Min"
+                            style="width: 80px; padding: 8px; border: 1px solid var(--border-color); border-radius: 6px; outline: none;">
+                        <span>-</span>
+                        <input type="text" placeholder="Max"
+                            style="width: 80px; padding: 8px; border: 1px solid var(--border-color); border-radius: 6px; outline: none;">
+                    </div>
+                    <button
+                        style="width: 100%; margin-top: 15px; background: var(--primary); color: white; border: none; padding: 10px; border-radius: 8px; font-weight: 600; cursor: pointer;">Apply</button>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <div class="category-main-content">
+                <!-- Sort Bar -->
+                <div class="product-sort-bar">
+                    <div class="sort-options">
+                        <span class="sort-item active">Best Match</span>
+                        <span class="sort-item">New Arrivals</span>
+                        <span class="sort-item">Price: Low to High</span>
+                        <span class="sort-item">Response Rate</span>
+                    </div>
+                    <div
+                        style="display: flex; gap: 15px; align-items: center; font-size: 14px; color: var(--text-muted);">
+                        <span>View: <i data-lucide="layout-grid"
+                                style="width: 18px; color: var(--primary); vertical-align: middle;"></i> <i
+                                data-lucide="list" style="width: 18px; vertical-align: middle;"></i></span>
+                    </div>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="product-container">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1539109132314-34a9c668e1a1?q=80&w=800&auto=format&fit=crop"
+                                alt="Floral Summer Dress">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Elegant Floral Print Summer Maxi Dress - High Quality Chiffon</p>
+                            <p class="product-price">PKR 1,800.00 - 3,200.00</p>
+                            <p class="product-moq">20 Pieces (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified</span>
+                                <span class="country">PK 3yrs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1543085337-12432e4b609c?q=80&w=800&auto=format&fit=crop"
+                                alt="Silk Blouse">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Professional Silk Blouse for Women - Multiple Solid Colors Available
+                            </p>
+                            <p class="product-price">PKR 4,500.00 - 5,800.00</p>
+                            <p class="product-moq">10 Pieces (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified Pro</span>
+                                <span class="country">PK 5yrs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1563842420658-00e28f3bb748?q=80&w=800&auto=format&fit=crop"
+                                alt="Active Leggings">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Seamless High-Waist Yoga Pants - Squat Proof Activewear Leggings</p>
+                            <p class="product-price">PKR 950.00 - 1,400.00</p>
+                            <p class="product-moq">50 Pieces (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified</span>
+                                <span class="country">CN 2yrs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1516762689617-e1cffcef479d?q=80&w=800&auto=format&fit=crop"
+                                alt="Denim Jacket">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Classic Oversized Denim Jacket for Women - Distressed Vintage Style
+                            </p>
+                            <p class="product-price">PKR 2,200.00 - 3,500.00</p>
+                            <p class="product-moq">12 Pieces (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified</span>
+                                <span class="country">PK 4yrs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=800&auto=format&fit=crop"
+                                alt="Boho Skirt">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Bohemian Style Long Skirt - Lightweight Modal Fabric for Summer</p>
+                            <p class="product-price">PKR 1,500.00 - 2,800.00</p>
+                            <p class="product-moq">30 Pieces (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified Pro</span>
+                                <span class="country">VN 6yrs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?q=80&w=800&auto=format&fit=crop"
+                                alt="Traditional Kurta">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Embroidered Cotton Kurta for Women - Traditional North
+                                Indian/Pakistani Craft</p>
+                            <p class="product-price">PKR 3,500.00</p>
+                            <p class="product-moq">5 Pieces (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified</span>
+                                <span class="country">PK 8yrs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=800&auto=format&fit=crop"
+                                alt="Office Trousers">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Tailored High-Waisted Office Trousers - Breathable Formal Wear</p>
+                            <p class="product-price">PKR 2,400.00 - 3,800.00</p>
+                            <p class="product-moq">15 Pieces (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified</span>
+                                <span class="country">TR 2yrs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1574015974293-817f0ebebb74?q=80&w=800&auto=format&fit=crop"
+                                alt="Linen Top">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Natural Linen Casual Top - V-Neck Loose Fit Summer Collection</p>
+                            <p class="product-price">PKR 1,200.00 - 2,100.00</p>
+                            <p class="product-moq">100 Pieces (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified Pro</span>
+                                <span class="country">ES 9yrs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 9 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?q=80&w=800&auto=format&fit=crop"
+                                alt="Winter Coat">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Premium Woolen Overcoat for Women - Elegant Winter Fashion</p>
+                            <p class="product-price">PKR 8,500.00 - 12,000.00</p>
+                            <p class="product-moq">10 Pieces (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified</span>
+                                <span class="country">IT 3yrs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <a href="#" class="page-link disabled"><i data-lucide="chevron-left"></i></a>
+                    <a href="#" class="page-link active">1</a>
+                    <a href="#" class="page-link">2</a>
+                    <a href="#" class="page-link">3</a>
+                    <span>...</span>
+                    <a href="#" class="page-link">15</a>
+                    <a href="#" class="page-link"><i data-lucide="chevron-right"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Get Support</h4>
+                    <ul>
+                        <li><a href="helpcenter.html">Help Center</a></li>
+                        <li><a href="live-chat.html">Live Chat</a></li>
+                        <li><a href="order-status.html">Check order status</a></li>
+                        <li><a href="report-abuse.html">Report abuse</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Trade Services</h4>
+                    <ul>
+                        <li><a href="tradeassurance.html">Trade Assurance</a></li>
+                        <li><a href="business-identity.html">Business Identity</a></li>
+                        <li><a href="logistics.html">Logistics Service</a></li>
+                        <li><a href="inspection.html">Inspection Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Source on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="top-ranking.html">Top Ranking</a></li>
+                        <li><a href="rfq.html">Request for Quotation</a></li>
+                        <li><a href="membership.html">Membership Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Sell on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="become-supplier.html">Become a Supplier</a></li>
+                        <li><a href="supplier-central.html">Supplier Central</a></li>
+                        <li><a href="training-center.html">Training Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="our-story.html">Our Story</a></li>
+                        <li><a href="noshahi-group.html">Noshahi Group</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="legal.html">Legal Notice</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <i data-lucide="facebook"></i>
+                    <i data-lucide="linkedin"></i>
+                    <i data-lucide="twitter"></i>
+                    <i data-lucide="instagram"></i>
+                    <i data-lucide="youtube"></i>
+                </div>
+                <p>&copy; 2026 Noshahibaba.com. All rights reserved.</p>
+                <p>Noshahi Group | <a href="legal.html" style="color:#999;">Privacy Policy</a> | <a href="legal.html"
+                        style="color:#999;">Terms of Use</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

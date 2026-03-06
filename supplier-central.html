@@ -1,0 +1,339 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplier Central | Noshahibaba.com</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, #0f172a, #1e3a5f);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .page-hero h1 {
+            font-size: 46px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .page-hero p {
+            font-size: 19px;
+            opacity: .9;
+            max-width: 680px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .content-section.gray {
+            background: #f8fafc;
+        }
+
+        .section-label {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #ff6600;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-heading {
+            font-size: 36px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 16px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .info-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 40px;
+            transition: .3s;
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+        }
+
+        .info-card:hover {
+            border-color: #ff6600;
+            box-shadow: 0 16px 40px rgba(255, 102, 0, .08);
+            transform: translateY(-4px);
+        }
+
+        .icon-box {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: #fff4ed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .icon-box i {
+            width: 32px;
+            height: 32px;
+            color: #ff6600;
+        }
+
+        .info-wrap h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .info-wrap p {
+            font-size: 15px;
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        .cta-band {
+            background: linear-gradient(135deg, #ff6600, #ff9900);
+            padding: 70px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-band h2 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .cta-band p {
+            font-size: 18px;
+            opacity: .9;
+            margin-bottom: 34px;
+        }
+
+        .btn-w {
+            background: white;
+            color: #ff6600;
+            padding: 16px 42px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            transition: .2s;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-w:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            color: #e05500;
+        }
+
+        @media(max-width: 768px) {
+            .page-hero h1 {
+                font-size: 32px;
+            }
+
+            .cta-band h2 {
+                font-size: 28px;
+            }
+
+            .section-heading {
+                font-size: 28px;
+            }
+
+            .info-card {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left"><span>Free delivery for your first order</span></div>
+            <div class="top-bar-right"><a href="helpcenter.html">Help Center</a></div>
+        </div>
+    </div>
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo"><a href="index.html"><span class="logo-text">Noshahi<span>baba</span>.com</span></a></div>
+            <div class="search-container">
+                <div class="search-box">
+                    <div class="search-type">Products <i data-lucide="chevron-down"></i></div><input type="text"
+                        placeholder="Search..."><button class="search-btn"><i data-lucide="search"></i> Search</button>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign In</span></a>
+            </div>
+        </div>
+    </header>
+    <nav class="sub-nav">
+        <div class="container nav-flex">
+            <div class="all-categories" id="all-categories-btn"><i data-lucide="menu"></i> All categories</div>
+            <div class="nav-links"><a href="featured.html">Featured selections</a><a href="tradeassurance.html">Trade
+                    Assurance</a><a href="buyer-central.html">Buyer Central</a><a href="helpcenter.html">Help
+                    Center</a><a href="getapp.html">Get the app</a></div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Supplier Central Dashboard</h1>
+            <p>Your all-in-one command center for managing products, tracking orders, communicating with global buyers,
+                and analyzing your sales performance.</p>
+        </div>
+    </section>
+
+    <section class="content-section gray">
+        <div class="container">
+            <div class="section-label">Platform Features</div>
+            <h2 class="section-heading">Everything You Need to Grow</h2>
+            <div class="card-grid">
+                <div class="info-card">
+                    <div class="icon-box"><i data-lucide="layout-dashboard"></i></div>
+                    <div class="info-wrap">
+                        <h3>Smart Analytics Dashboard</h3>
+                        <p>View all your orders, real-time inquiries, shipment tracking, and complete revenue analytics
+                            in one perfectly organized interface.</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="icon-box"><i data-lucide="package"></i></div>
+                    <div class="info-wrap">
+                        <h3>Advanced Product Management</h3>
+                        <p>Easily add, edit, or bulk import thousands of product listings. Optimize titles and media to
+                            reach exactly the right buyers.</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="icon-box"><i data-lucide="message-square"></i></div>
+                    <div class="info-wrap">
+                        <h3>Direct Buyer Communication</h3>
+                        <p>Instantly respond to buyer RFQs, send customized professional quotes, and dynamically
+                            negotiate large B2B deals securely.</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="icon-box"><i data-lucide="bar-chart-2"></i></div>
+                    <div class="info-wrap">
+                        <h3>Performance Reports</h3>
+                        <p>Track your store's traffic, visitor conversion rates, most viewed products, and gain
+                            actionable customer demographic insights.</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="icon-box"><i data-lucide="star"></i></div>
+                    <div class="info-wrap">
+                        <h3>Reputation Manager</h3>
+                        <p>Actively monitor, highlight, and strategically respond to buyer reviews. Build your lasting
+                            global reputation with steady reliable service.</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="icon-box"><i data-lucide="credit-card"></i></div>
+                    <div class="info-wrap">
+                        <h3>Financial Hub & Invoicing</h3>
+                        <p>Seamlessly view your transaction history, download automated tax invoices, and securely
+                            export professional ledger records.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-band">
+        <div class="container">
+            <h2>Ready to Manage Your Store?</h2>
+            <p>Securely log in to the Supplier Central portal and take complete control of your global business.</p>
+            <a href="signin.html" class="btn-w">Log In to Supplier Central</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Get Support</h4>
+                    <ul>
+                        <li><a href="helpcenter.html">Help Center</a></li>
+                        <li><a href="live-chat.html">Live Chat</a></li>
+                        <li><a href="order-status.html">Check order status</a></li>
+                        <li><a href="report-abuse.html">Report abuse</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Trade Services</h4>
+                    <ul>
+                        <li><a href="tradeassurance.html">Trade Assurance</a></li>
+                        <li><a href="business-identity.html">Business Identity</a></li>
+                        <li><a href="logistics.html">Logistics Service</a></li>
+                        <li><a href="inspection.html">Inspection Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Source on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="top-ranking.html">Top Ranking</a></li>
+                        <li><a href="rfq.html">Request for Quotation</a></li>
+                        <li><a href="membership.html">Membership Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Sell on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="become-supplier.html">Become a Supplier</a></li>
+                        <li><a href="supplier-central.html">Supplier Central</a></li>
+                        <li><a href="training-center.html">Training Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="our-story.html">Our Story</a></li>
+                        <li><a href="noshahi-group.html">Noshahi Group</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="legal.html">Legal Notice</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <i data-lucide="facebook"></i>
+                    <i data-lucide="linkedin"></i>
+                    <i data-lucide="twitter"></i>
+                    <i data-lucide="instagram"></i>
+                    <i data-lucide="youtube"></i>
+                </div>
+                <p>&copy; 2026 Noshahibaba.com. All rights reserved.</p>
+                <p>Noshahi Group | <a href="legal.html" style="color:#999;">Privacy Policy</a> | <a href="legal.html"
+                        style="color:#999;">Terms of Use</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

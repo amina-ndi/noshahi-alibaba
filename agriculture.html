@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -20,7 +20,7 @@
                 <span>Free delivery for your first order</span>
             </div>
             <div class="top-bar-right">
-                <a href="#">Help Center</a>
+                <a href="helpcenter.html">Help Center</a>
                 <a href="#">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK"> PKR</a>
                 <a href="#">Language: EN</a>
             </div>
@@ -68,9 +68,9 @@
             <div class="nav-links">
                 <a href="featured.html">Featured selections</a>
                 <a href="tradeassurance.html">Trade Assurance</a>
-                <a href="#">Buyer Central</a>
-                <a href="#">Help Center</a>
-                <a href="#">Get the app</a>
+                <a href="buyer-central.html">Buyer Central</a>
+                <a href="helpcenter.html">Help Center</a>
+                <a href="getapp.html">Get the app</a>
             </div>
             <div class="nav-right">
                 <a href="#">Become a supplier</a>
@@ -86,7 +86,8 @@
 
         <div class="hero-grid" style="grid-template-columns: 240px 1fr; margin-top: 0;">
             <!-- Left Sidebar Filters -->
-            <aside class="category-sidebar" style="display: block; box-shadow: none; background: transparent;">
+            <aside class="category-sidebar" id="category-sidebar"
+                style="display: block; box-shadow: none; background: transparent;">
                 <div class="filter-section">
                     <div class="filter-title">Categories <i data-lucide="chevron-up"></i></div>
                     <ul class="filter-list">
@@ -240,19 +241,67 @@
                         </div>
                     </div>
 
-                    <!-- Ag Product 6 - Corn Feed -->
+                    <!-- Product 6 -->
                     <div class="product-card">
                         <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1551781444-245e15f9ed15?q=80&w=800&auto=format&fit=crop"
-                                alt="Yellow Corn">
+                            <img src="https://images.unsplash.com/photo-1595113316349-9fa4eb24f884?q=80&w=800&auto=format&fit=crop"
+                                alt="Solar Pump">
                         </div>
                         <div class="product-info">
-                            <p class="product-name">High Protein Yellow Corn for Poultry & Livestock Feed</p>
-                            <p class="product-price">PKR 45.00 - 65.00 / kg</p>
-                            <p class="product-moq">1,000 kg (MOQ)</p>
+                            <p class="product-name">High Efficiency Solar Water Pump for Agriculture Irrigation</p>
+                            <p class="product-price">PKR 45,000.00 - 65,000.00</p>
+                            <p class="product-moq">1 Set (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified Pro</span>
+                                <span class="country">PK 6yrs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 7 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=800&auto=format&fit=crop"
+                                alt="Fertilizer">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Water Soluble NPK Fertilizer - Balanced Growth Formula</p>
+                            <p class="product-price">PKR 2,400.00 / 50kg Bag</p>
+                            <p class="product-moq">100 Bags (MOQ)</p>
                             <div class="supplier-info">
                                 <span class="badge">Verified</span>
-                                <span class="country">BR 10yrs</span>
+                                <span class="country">CN 10yrs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 8 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=800&auto=format&fit=crop"
+                                alt="Greenhouse">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Multi-span Plastic Film Greenhouse for Vegetable Cultivation</p>
+                            <p class="product-price">PKR 150,000.00 - 350,000.00</p>
+                            <p class="product-moq">1 Unit (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified Pro</span>
+                                <span class="country">CN 8yrs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 9 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://images.unsplash.com/photo-1523348830342-d01f9fc56440?q=80&w=800&auto=format&fit=crop"
+                                alt="Sprayer">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Battery Operated Knapsack Power Sprayer - 20L Tank</p>
+                            <p class="product-price">PKR 8,500.00 - 12,000.00</p>
+                            <p class="product-moq">10 Pieces (MOQ)</p>
+                            <div class="supplier-info">
+                                <span class="badge">Verified</span>
+                                <span class="country">PK 4yrs</span>
                             </div>
                         </div>
                     </div>
@@ -281,18 +330,44 @@
                 <div class="footer-col">
                     <h4>Get Support</h4>
                     <ul>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Live Chat</a></li>
-                        <li><a href="#">Check order status</a></li>
+                        <li><a href="helpcenter.html">Help Center</a></li>
+                        <li><a href="live-chat.html">Live Chat</a></li>
+                        <li><a href="order-status.html">Check order status</a></li>
+                        <li><a href="report-abuse.html">Report abuse</a></li>
                     </ul>
                 </div>
-                <!-- Other columns... -->
+                <div class="footer-col">
+                    <h4>Trade Services</h4>
+                    <ul>
+                        <li><a href="tradeassurance.html">Trade Assurance</a></li>
+                        <li><a href="business-identity.html">Business Identity</a></li>
+                        <li><a href="logistics.html">Logistics Service</a></li>
+                        <li><a href="inspection.html">Inspection Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Source on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="top-ranking.html">Top Ranking</a></li>
+                        <li><a href="rfq.html">Request for Quotation</a></li>
+                        <li><a href="membership.html">Membership Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Sell on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="become-supplier.html">Become a Supplier</a></li>
+                        <li><a href="supplier-central.html">Supplier Central</a></li>
+                        <li><a href="training-center.html">Training Center</a></li>
+                    </ul>
+                </div>
                 <div class="footer-col">
                     <h4>About Us</h4>
                     <ul>
-                        <li><a href="#">Our Story</a></li>
-                        <li><a href="#">Noshahi Group</a></li>
-                        <li><a href="#">Careers</a></li>
+                        <li><a href="our-story.html">Our Story</a></li>
+                        <li><a href="noshahi-group.html">Noshahi Group</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="legal.html">Legal Notice</a></li>
                     </ul>
                 </div>
             </div>
@@ -302,8 +377,11 @@
                     <i data-lucide="linkedin"></i>
                     <i data-lucide="twitter"></i>
                     <i data-lucide="instagram"></i>
+                    <i data-lucide="youtube"></i>
                 </div>
                 <p>&copy; 2026 Noshahibaba.com. All rights reserved.</p>
+                <p>Noshahi Group | <a href="legal.html" style="color:#999;">Privacy Policy</a> | <a href="legal.html"
+                        style="color:#999;">Terms of Use</a></p>
             </div>
         </div>
     </footer>
