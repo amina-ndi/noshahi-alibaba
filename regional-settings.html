@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regional Settings | Noshahibaba.com</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .settings-container {
+            max-width: 800px;
+            margin: 60px auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid #f0f0f0;
+        }
+
+        .settings-header {
+            padding: 30px 40px;
+            border-bottom: 1px solid #f0f0f0;
+            background: #fafafa;
+        }
+
+        .settings-header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 8px;
+        }
+
+        .settings-header p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        .settings-body {
+            padding: 40px;
+        }
+
+        .setting-group {
+            margin-bottom: 35px;
+        }
+
+        .setting-label {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        .custom-select {
+            position: relative;
+            width: 100%;
+        }
+
+        .custom-select select {
+            width: 100%;
+            padding: 14px 20px;
+            font-size: 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            appearance: none;
+            background: white;
+            color: #111;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .custom-select select:focus {
+            outline: none;
+            border-color: #ff6600;
+            box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.05);
+        }
+
+        .custom-select::after {
+            content: '';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid #666;
+            pointer-events: none;
+        }
+
+        .country-input-box {
+            display: flex;
+            align-items: center;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 10px 20px;
+            background: white;
+            transition: all 0.2s;
+        }
+
+        .country-input-box:focus-within {
+            border-color: #ff6600;
+            box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.05);
+        }
+
+        .country-input-box img {
+            width: 24px;
+            height: auto;
+            margin-right: 15px;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .country-input-box input {
+            border: none;
+            outline: none;
+            font-size: 16px;
+            width: 100%;
+            color: #111;
+        }
+
+        .save-btn {
+            width: 100%;
+            padding: 16px;
+            background: #ff6600;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .save-btn:hover {
+            background: #e65c00;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 102, 0, 0.2);
+        }
+
+        .save-btn:active {
+            transform: translateY(0);
+        }
+
+        .info-card {
+            background: #fff4ed;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #c2410c;
+            font-size: 14px;
+            border: 1px solid #ffedd5;
+        }
+
+        /* Hover effect for country list Simulation */
+        .country-list {
+            margin-top: 10px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            max-height: 250px;
+            overflow-y: auto;
+            display: none;
+            /* Initially hidden, would be shown via JS */
+        }
+
+        .country-item {
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .country-item:hover {
+            background: #f9fafb;
+        }
+    </style>
+</head>
+
+<body style="background-color: #f7f8fa;">
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left">
+                <span>Free delivery for your first order</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="helpcenter.html">Help Center</a>
+                <a href="regional-settings.html" class="active">Ship to: <img src="https://flagcdn.com/w20/pk.png"
+                        width="16" alt="PK"> PKR</a>
+                <a href="regional-settings.html">Language: EN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                </a>
+            </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
+                    <input type="text" placeholder="What are you looking for...">
+                    <button class="search-btn"><i data-lucide="search"></i> Search</button>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="signin.html" class="action-item">
+                    <i data-lucide="user"></i>
+                    <span>Sign In</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="settings-container">
+            <div class="settings-header">
+                <h1>Regional Settings</h1>
+                <p>Set your preferences for a personalized shopping experience.</p>
+            </div>
+
+            <div class="settings-body">
+                <div class="info-card">
+                    <i data-lucide="info" style="flex-shrink: 0;"></i>
+                    <p>Some sellers may not ship to your selected country. Price and shipping costs will be updated
+                        based on your selection.</p>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">Ship to (Country/Region)</label>
+                    <div class="country-input-box">
+                        <img src="https://flagcdn.com/w40/pk.png" id="current-flag" alt="PK">
+                        <input type="text" value="Pakistan" placeholder="Search country...">
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">Currency</label>
+                    <div class="custom-select">
+                        <select id="currency-select">
+                            <option value="PKR" selected>PKR - Pakistani Rupee</option>
+                            <option value="USD">USD - US Dollar</option>
+                            <option value="EUR">EUR - Euro</option>
+                            <option value="GBP">GBP - British Pound</option>
+                            <option value="CNY">CNY - Chinese Yuan</option>
+                            <option value="SAR">SAR - Saudi Riyal</option>
+                            <option value="AED">AED - UAE Dirham</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">Language</label>
+                    <div class="custom-select">
+                        <select id="language-select">
+                            <option value="EN" selected>English</option>
+                            <option value="UR">Urdu (Ø§Ø±Ø¯Ùˆ)</option>
+                            <option value="AR">Arabic (Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©)</option>
+                            <option value="ZH">Chinese (ä¸æ–‡)</option>
+                            <option value="FR">French (FranÃ§ais)</option>
+                            <option value="ES">Spanish (EspaÃ±ol)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="save-btn" onclick="saveSettings()">
+                    <i data-lucide="save"></i> Save Settings
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Simple Footer for Settings Page -->
+    <footer style="margin-top: 100px; padding: 40px 0; border-top: 1px solid #eee; text-align: center;">
+        <div class="container">
+            <p style="color: #888; font-size: 14px;">&copy; 2026 Noshahibaba.com. Global Sourcing Solutions.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+
+        function saveSettings() {
+            const btn = document.querySelector('.save-btn');
+            const originalContent = btn.innerHTML;
+
+            btn.innerHTML = '<i data-lucide="loader-2" class="animate-spin"></i> Saving...';
+            lucide.createIcons();
+            btn.style.opacity = '0.7';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.innerHTML = '<i data-lucide="check"></i> Settings Saved!';
+                btn.style.background = '#059669'; // Green success
+                lucide.createIcons();
+
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1500);
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,105 +10,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .category-hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=1200&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 60px 40px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-title h1 {
-            color: white;
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
-
-        .hero-title p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 18px;
-        }
-
-        .page-layout {
-            display: grid;
-            grid-template-columns: 240px 1fr;
-            gap: 30px;
-        }
-
-        .sidebar {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: var(--shadow-sm);
-            height: fit-content;
-        }
-
-        .sidebar h4 {
-            font-size: 16px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-        }
-
-        .sidebar-links {
-            list-style: none;
-        }
-
-        .sidebar-links li {
-            margin-bottom: 12px;
-            font-size: 14px;
-        }
-
-        .sidebar-links a {
-            color: var(--text-muted);
-            display: block;
-            width: 100%;
-            transition: color 0.2s;
-        }
-
-        .sidebar-links a:hover,
-        .sidebar-links a.active {
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        .product-grid-new {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .filter-btn {
-            width: 100%;
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 15px;
-        }
-
-        @media (max-width: 1024px) {
-            .page-layout {
-                grid-template-columns: 1fr;
-            }
-
-            .sidebar {
-                display: none;
-            }
-
-            .hero-title h1 {
-                font-size: 32px;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -120,8 +21,9 @@
             </div>
             <div class="top-bar-right">
                 <a href="helpcenter.html">Help Center</a>
-                <a href="#">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK"> PKR</a>
-                <a href="#">Language: EN</a>
+                <a href="regional-settings.html">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK">
+                    PKR</a>
+                <a href="regional-settings.html">Language: EN</a>
             </div>
         </div>
     </div>
@@ -137,7 +39,7 @@
             <div class="search-container">
                 <div class="search-box">
                     <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
-                    <input type="text" placeholder="Explore Bags & Accessories...">
+                    <input type="text" placeholder="Search Bags...">
                     <button class="search-btn"><i data-lucide="search"></i> Search</button>
                 </div>
             </div>
@@ -177,150 +79,259 @@
         </div>
     </nav>
 
-    <main class="container" style="margin-top: 20px;">
-        <div class="breadcrumb" style="font-size: 14px; margin-bottom: 20px; color: var(--text-muted);">
-            <a href="index.html" style="color: inherit;">Home</a> &gt; <a href="apparel.html"
-                style="color: inherit;">Apparel</a> &gt; Bags & Accessories
-        </div>
-
-        <section class="category-hero">
-            <div class="hero-title">
-                <h1>Carry with Confidence</h1>
-                <p>Explore our vast collection of designer bags, belts, wallets, and much more.</p>
+    <main class="container" style="margin-top: 40px;">
+        <!-- Hero Section -->
+        <section class="category-hero"
+            style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; height: 300px; border-radius: 20px; display: flex; align-items: center; padding: 0 60px; color: white; margin-bottom: 40px;">
+            <div class="category-hero-content">
+                <h1 style="font-size: 52px; font-weight: 800; margin-bottom: 10px;">Bags & Accessories</h1>
+                <p style="font-size: 20px; opacity: 0.9;">Carry your world with style. Handbags, backpacks, and luxury
+                    accents.</p>
             </div>
         </section>
 
-        <div class="hero-grid">
-            <aside class="sidebar" id="category-sidebar">
-                <h4>Categories</h4>
-                <ul class="sidebar-links">
-                    <li><a href="womens-clothing.html">Women's Clothing</a></li>
-                    <li><a href="mens-clothing.html">Men's Clothing</a></li>
-                    <li><a href="kids-wear.html">Kids' Wear</a></li>
-                    <li><a href="shoes-footwear.html">Shoes & Footwear</a></li>
-                    <li><a href="bags-accessories.html" class="active">Bags & Accessories</a></li>
-                    <li><a href="uniforms.html">Uniforms</a></li>
-                    <li><a href="apparel-stock.html">Apparel Stock</a></li>
-                    <li><a href="wedding-apparel.html">Wedding Apparel</a></li>
+        <div class="page-layout" style="display: grid; grid-template-columns: 260px 1fr; gap: 40px;">
+            <!-- Sidebar -->
+            <aside class="sidebar"
+                style="background: white; border-radius: 16px; padding: 25px; box-shadow: var(--shadow-sm); height: fit-content;">
+                <h4
+                    style="font-size: 18px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;">
+                    Categories</h4>
+                <ul class="sidebar-links" style="list-style: none;">
+                    <li><a href="womens-clothing.html"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Women's
+                            Clothing</a></li>
+                    <li><a href="mens-clothing.html"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Men's
+                            Clothing</a></li>
+                    <li><a href="kids-wear.html"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Kids'
+                            Wear</a></li>
+                    <li><a href="shoes-footwear.html"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Shoes
+                            & Footwear</a></li>
+                    <li><a href="bags-accessories.html"
+                            style="color: var(--primary); font-weight: 600; font-size: 15px; display: block;">Bags &
+                            Accessories</a></li>
+                    <li><a href="uniforms.html"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Uniforms</a>
+                    </li>
+                    <li><a href="apparel-stock.html"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Apparel
+                            Stock</a></li>
+                    <li><a href="wedding-apparel.html"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Wedding
+                            Apparel</a></li>
                 </ul>
-                <div style="margin-top: 30px;">
-                    <h4>Filter by Price</h4>
-                    <div style="display: flex; gap: 5px;">
-                        <input type="text" placeholder="Min"
-                            style="width: 50%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
-                        <input type="text" placeholder="Max"
-                            style="width: 50%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
-                    </div>
-                    <button class="filter-btn">Apply Filter</button>
-                </div>
             </aside>
 
+            <!-- Product Section -->
             <div class="content">
-                <div class="product-grid-new">
-                    <!-- Product 1 -->
+                <div class="mixed-grid">
+                    <!-- 1 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=800&auto=format&fit=crop"
-                                alt="Handbag">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1584917033904-4911df4408bc?q=80&w=800&auto=format&fit=crop"
+                                alt="P1"></div>
                         <div class="product-info">
-                            <p class="product-name">Luxury Suede Leather Handbag - Trendy Winter Collection</p>
-                            <p class="product-price">PKR 3,200.00 - 4,800.00</p>
+                            <p class="product-name">Luxury Saffiano Leather Handbag</p>
+                            <p class="product-price">PKR 8,500.00 - 12,500.00</p>
+                            <p class="product-moq">5 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
+                                    12yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 2 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1553062407-98eeb94c6a62?q=80&w=800&auto=format&fit=crop"
+                                alt="P2"></div>
+                        <div class="product-info">
+                            <p class="product-name">Multi-Functional Travel Laptop Backpack</p>
+                            <p class="product-price">PKR 4,200.00 - 6,500.00</p>
                             <p class="product-moq">20 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">CN 4yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    6yrs</span></div>
                         </div>
                     </div>
-                    <!-- Product 2 -->
+                    <!-- 3 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1547949003-9792a18a2601?q=80&w=800&auto=format&fit=crop"
-                                alt="Backpack">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1622353350632-ca05bb344d28?q=80&w=800&auto=format&fit=crop"
+                                alt="P3"></div>
                         <div class="product-info">
-                            <p class="product-name">Professional Anti-Theft Travel Backpack - USB Charging Port</p>
-                            <p class="product-price">PKR 4,500.00 - 6,200.00</p>
-                            <p class="product-moq">10 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified Pro</span>
-                                <span class="country">PK 6yrs</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product 3 -->
-                    <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=800&auto=format&fit=crop"
-                                alt="Leather Wallet">
-                        </div>
-                        <div class="product-info">
-                            <p class="product-name">Genuine Leather Bifold Wallet - Slim RFID Blocking Design</p>
-                            <p class="product-price">PKR 1,500.00 - 2,400.00</p>
+                            <p class="product-name">Slim Minimalist Leather Wallet</p>
+                            <p class="product-price">PKR 1,500.00 - 2,800.00</p>
                             <p class="product-moq">50 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">PK 2yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    4yrs</span></div>
                         </div>
                     </div>
-                    <!-- Product 4 -->
+                    <!-- 4 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1511406384665-270bd6517f00?q=80&w=800&auto=format&fit=crop"
-                                alt="Bead Necklace">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=800&auto=format&fit=crop"
+                                alt="P4"></div>
                         <div class="product-info">
-                            <p class="product-name">Elegant Statement Necklace Set - Fashion Jewelry Accessory</p>
-                            <p class="product-price">PKR 850.00 - 1,200.00</p>
-                            <p class="product-moq">100 Sets (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">PK 1yr</span>
-                            </div>
+                            <p class="product-name">Premium Chronograph Wrist Watch</p>
+                            <p class="product-price">PKR 15,000.00 - 25,000.00</p>
+                            <p class="product-moq">10 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
+                                    8yrs</span></div>
                         </div>
                     </div>
-                    <!-- Product 5 -->
+                    <!-- 5 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1590739225287-bd31519780c3?q=80&w=800&auto=format&fit=crop"
-                                alt="Sunglasses">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1511406361295-0a5ff814c0ad?q=80&w=800&auto=format&fit=crop"
+                                alt="P5"></div>
                         <div class="product-info">
-                            <p class="product-name">Designer UV400 Protection Sunglasses - Classic Aviator Style</p>
-                            <p class="product-price">PKR 1,200.00 - 1,800.00</p>
-                            <p class="product-moq">50 Pairs (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified Pro</span>
-                                <span class="country">CN 5yrs</span>
-                            </div>
+                            <p class="product-name">Aviator UV Protection Sunglasses</p>
+                            <p class="product-price">PKR 2,800.00 - 4,500.00</p>
+                            <p class="product-moq">30 Pairs (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    3yrs</span></div>
                         </div>
                     </div>
-                    <!-- Product 6 -->
+                    <!-- 6 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=800&auto=format&fit=crop"
-                                alt="Perfume">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800&auto=format&fit=crop"
+                                alt="P6"></div>
                         <div class="product-info">
-                            <p class="product-name">Eau de Parfum Fragrance Set - Long Lasting Scent</p>
-                            <p class="product-price">PKR 3,500.00 - 5,800.00</p>
-                            <p class="product-moq">20 Sets (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">PK 3yrs</span>
-                            </div>
+                            <p class="product-name">Vintage Canvas Messenger Bag</p>
+                            <p class="product-price">PKR 3,500.00 - 5,200.00</p>
+                            <p class="product-moq">15 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    2yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 7 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=800&auto=format&fit=crop"
+                                alt="P7"></div>
+                        <div class="product-info">
+                            <p class="product-name">Exotic Leather Belt with Silver Buckle</p>
+                            <p class="product-price">PKR 3,200.00 - 5,500.00</p>
+                            <p class="product-moq">25 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
+                                    15yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 8 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1621612027581-22919d3f10f8?q=80&w=800&auto=format&fit=crop"
+                                alt="P8"></div>
+                        <div class="product-info">
+                            <p class="product-name">Professional Aluminum Rolling Luggage</p>
+                            <p class="product-price">PKR 18,000.00 - 32,000.00</p>
+                            <p class="product-moq">2 Sets (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    10yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 9 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1509319117193-57bab727e09d?q=80&w=800&auto=format&fit=crop"
+                                alt="P9"></div>
+                        <div class="product-info">
+                            <p class="product-name">Fashionable Tote Bag for Work</p>
+                            <p class="product-price">PKR 2,400.00 - 4,200.00</p>
+                            <p class="product-moq">40 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    5yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 10 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop"
+                                alt="P10"></div>
+                        <div class="product-info">
+                            <p class="product-name">New Collection Jewelry Set</p>
+                            <p class="product-price">PKR 5,500.00 - 9,200.00</p>
+                            <p class="product-moq">10 Sets (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    3yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 11 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=800&auto=format&fit=crop"
+                                alt="P11"></div>
+                        <div class="product-info">
+                            <p class="product-name">Exclusive Factory Direct Briefcase</p>
+                            <p class="product-price">PKR 12,000.00 - 18,500.00</p>
+                            <p class="product-moq">5 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
+                                    7yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 12 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800&auto=format&fit=crop"
+                                alt="P12"></div>
+                        <div class="product-info">
+                            <p class="product-name">Premium Global Trade Selection</p>
+                            <p class="product-price">PKR 4,200.00 - 6,500.00</p>
+                            <p class="product-moq">15 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
+                                    6yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 13 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=800&auto=format&fit=crop"
+                                alt="P13"></div>
+                        <div class="product-info">
+                            <p class="product-name">Top Rated Wholesale Deal</p>
+                            <p class="product-price">PKR 3,800.00 - 5,200.00</p>
+                            <p class="product-moq">25 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    4yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 14 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800&auto=format&fit=crop"
+                                alt="P14"></div>
+                        <div class="product-info">
+                            <p class="product-name">Professional Quality Assurance</p>
+                            <p class="product-price">PKR 5,500.00 - 8,000.00</p>
+                            <p class="product-moq">5 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
+                                    10yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 15 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=800&auto=format&fit=crop"
+                                alt="P15"></div>
+                        <div class="product-info">
+                            <p class="product-name">Export Standard Premium Inventory</p>
+                            <p class="product-price">PKR 2,100.00 - 3,500.00</p>
+                            <p class="product-moq">50 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    2yrs</span></div>
                         </div>
                     </div>
                 </div>
-                <div style="display: flex; justify-content: center; margin-top: 50px; margin-bottom: 50px; gap: 10px;">
+
+                <div style="display: flex; justify-content: center; margin-top: 60px; margin-bottom: 60px; gap: 10px;">
                     <a href="#"
-                        style="padding: 10px 15px; border: 1px solid var(--primary); background: var(--primary); color: white; border-radius: 4px;">1</a>
+                        style="padding: 12px 20px; border: 1px solid var(--primary); background: var(--primary); color: white; border-radius: 8px; font-weight: 600;">1</a>
                     <a href="#"
-                        style="padding: 10px 15px; border: 1px solid var(--border-color); background: white; border-radius: 4px;">2</a>
+                        style="padding: 12px 20px; border: 1px solid var(--border-color); background: white; border-radius: 8px; font-weight: 600;">2</a>
                     <a href="#"
-                        style="padding: 10px 15px; border: 1px solid var(--border-color); background: white; border-radius: 4px;">Next</a>
+                        style="padding: 12px 20px; border: 1px solid var(--border-color); background: white; border-radius: 8px; font-weight: 600;">Next</a>
                 </div>
             </div>
         </div>
@@ -328,64 +339,9 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-links">
-                <div class="footer-col">
-                    <h4>Get Support</h4>
-                    <ul>
-                        <li><a href="helpcenter.html">Help Center</a></li>
-                        <li><a href="live-chat.html">Live Chat</a></li>
-                        <li><a href="order-status.html">Check order status</a></li>
-                        <li><a href="report-abuse.html">Report abuse</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Trade Services</h4>
-                    <ul>
-                        <li><a href="tradeassurance.html">Trade Assurance</a></li>
-                        <li><a href="business-identity.html">Business Identity</a></li>
-                        <li><a href="logistics.html">Logistics Service</a></li>
-                        <li><a href="inspection.html">Inspection Service</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Source on Noshahibaba</h4>
-                    <ul>
-                        <li><a href="top-ranking.html">Top Ranking</a></li>
-                        <li><a href="rfq.html">Request for Quotation</a></li>
-                        <li><a href="membership.html">Membership Program</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Sell on Noshahibaba</h4>
-                    <ul>
-                        <li><a href="become-supplier.html">Become a Supplier</a></li>
-                        <li><a href="supplier-central.html">Supplier Central</a></li>
-                        <li><a href="training-center.html">Training Center</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>About Us</h4>
-                    <ul>
-                        <li><a href="our-story.html">Our Story</a></li>
-                        <li><a href="noshahi-group.html">Noshahi Group</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="legal.html">Legal Notice</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="social-links">
-                    <i data-lucide="facebook"></i>
-                    <i data-lucide="linkedin"></i>
-                    <i data-lucide="twitter"></i>
-                    <i data-lucide="instagram"></i>
-                    <i data-lucide="youtube"></i>
-                </div>
-                <p>&copy; 2026 Noshahibaba.com. All rights reserved.</p>
-                <p>Noshahi Group | <a href="legal.html" style="color:#999;">Privacy Policy</a> | <a href="legal.html"
-                        style="color:#999;">Terms of Use</a></p>
-            </div>
+        <div class="container"
+            style="text-align: center; color: var(--text-muted); padding: 40px 0; border-top: 1px solid var(--border-color);">
+            <p>&copy; 2026 Noshahibaba.com. All rights reserved.</p>
         </div>
     </footer>
 

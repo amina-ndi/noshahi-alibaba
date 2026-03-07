@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,105 +10,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .category-hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1594931936715-08e64c11430f?q=80&w=1200&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 60px 40px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-title h1 {
-            color: white;
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
-
-        .hero-title p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 18px;
-        }
-
-        .page-layout {
-            display: grid;
-            grid-template-columns: 240px 1fr;
-            gap: 30px;
-        }
-
-        .sidebar {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: var(--shadow-sm);
-            height: fit-content;
-        }
-
-        .sidebar h4 {
-            font-size: 16px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-        }
-
-        .sidebar-links {
-            list-style: none;
-        }
-
-        .sidebar-links li {
-            margin-bottom: 12px;
-            font-size: 14px;
-        }
-
-        .sidebar-links a {
-            color: var(--text-muted);
-            display: block;
-            width: 100%;
-            transition: color 0.2s;
-        }
-
-        .sidebar-links a:hover,
-        .sidebar-links a.active {
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        .product-grid-new {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .filter-btn {
-            width: 100%;
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 15px;
-        }
-
-        @media (max-width: 1024px) {
-            .page-layout {
-                grid-template-columns: 1fr;
-            }
-
-            .sidebar {
-                display: none;
-            }
-
-            .hero-title h1 {
-                font-size: 32px;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -120,8 +21,9 @@
             </div>
             <div class="top-bar-right">
                 <a href="helpcenter.html">Help Center</a>
-                <a href="#">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK"> PKR</a>
-                <a href="#">Language: EN</a>
+                <a href="regional-settings.html">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK">
+                    PKR</a>
+                <a href="regional-settings.html">Language: EN</a>
             </div>
         </div>
     </div>
@@ -177,198 +79,259 @@
         </div>
     </nav>
 
-    <main class="container" style="margin-top: 20px;">
-        <div class="breadcrumb" style="font-size: 14px; margin-bottom: 20px; color: var(--text-muted);">
-            <a href="index.html" style="color: inherit;">Home</a> &gt; <a href="apparel.html"
-                style="color: inherit;">Apparel</a> &gt; Wedding Apparel
-        </div>
-
-        <section class="category-hero">
-            <div class="hero-title">
-                <h1>Exquisite Wedding Apparel</h1>
-                <p>Bridal gowns, groom suits, and elegant bridesmaids dresses for your special day.</p>
+    <main class="container" style="margin-top: 40px;">
+        <!-- Hero Section -->
+        <section class="category-hero"
+            style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1594553323242-c6a2e4757591?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; height: 300px; border-radius: 20px; display: flex; align-items: center; padding: 0 60px; color: white; margin-bottom: 40px;">
+            <div class="category-hero-content">
+                <h1 style="font-size: 52px; font-weight: 800; margin-bottom: 10px;">Bridal & Formal</h1>
+                <p style="font-size: 20px; opacity: 0.9;">Elegance for your most special day. Luxurious fabrics and
+                    intricate craftsmanship.</p>
             </div>
         </section>
 
-        <div class="hero-grid">
-            <aside class="sidebar" id="category-sidebar">
-                <h4>Categories</h4>
-                <ul class="sidebar-links">
-                    <li><a href="womens-clothing.html">Women's Clothing</a></li>
-                    <li><a href="mens-clothing.html">Men's Clothing</a></li>
-                    <li><a href="kids-wear.html">Kids' Wear</a></li>
-                    <li><a href="shoes-footwear.html">Shoes & Footwear</a></li>
-                    <li><a href="bags-accessories.html">Bags & Accessories</a></li>
-                    <li><a href="uniforms.html">Uniforms</a></li>
-                    <li><a href="apparel-stock.html">Apparel Stock</a></li>
-                    <li><a href="wedding-apparel.html" class="active">Wedding Apparel</a></li>
+        <div class="page-layout" style="display: grid; grid-template-columns: 260px 1fr; gap: 40px;">
+            <!-- Sidebar -->
+            <aside class="sidebar"
+                style="background: white; border-radius: 16px; padding: 25px; box-shadow: var(--shadow-sm); height: fit-content;">
+                <h4
+                    style="font-size: 18px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;">
+                    Categories</h4>
+                <ul class="sidebar-links" style="list-style: none;">
+                    <li><a href="womens-clothing.html"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Women's
+                            Clothing</a></li>
+                    <li><a href="mens-clothing.html"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Men's
+                            Clothing</a></li>
+                    <li><a href="kids-wear.html"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Kids'
+                            Wear</a></li>
+                    <li><a href="shoes-footwear.html"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Shoes
+                            & Footwear</a></li>
+                    <li><a href="bags-accessories.html"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Bags
+                            & Accessories</a></li>
+                    <li><a href="uniforms.html"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Uniforms</a>
+                    </li>
+                    <li><a href="apparel-stock.html"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Apparel
+                            Stock</a></li>
+                    <li><a href="wedding-apparel.html"
+                            style="color: var(--primary); font-weight: 600; font-size: 15px; display: block;">Wedding
+                            Apparel</a></li>
                 </ul>
-                <div style="margin-top: 30px;">
-                    <h4>Filter by Price</h4>
-                    <div style="display: flex; gap: 5px;">
-                        <input type="text" placeholder="Min"
-                            style="width: 50%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
-                        <input type="text" placeholder="Max"
-                            style="width: 50%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
-                    </div>
-                    <button class="filter-btn">Apply Filter</button>
-                </div>
             </aside>
 
+            <!-- Product Section -->
             <div class="content">
-                <div class="product-grid-new">
-                    <!-- Product 1 -->
+                <div class="mixed-grid">
+                    <!-- 1 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1594931936715-08e64c11430f?q=80&w=800&auto=format&fit=crop"
-                                alt="Bridal Gown">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1594553323242-c6a2e4757591?q=80&w=800&auto=format&fit=crop"
+                                alt="P1"></div>
                         <div class="product-info">
-                            <p class="product-name">Luxury Lace Wedding Gown - Customized Tailoring Available</p>
+                            <p class="product-name">Luxury Lace Mermaid Wedding Gown</p>
                             <p class="product-price">PKR 45,000.00 - 85,000.00</p>
                             <p class="product-moq">1 Piece (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">PK 12yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
+                                    10yrs</span></div>
                         </div>
                     </div>
-                    <!-- Product 2 -->
+                    <!-- 2 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?q=80&w=800&auto=format&fit=crop"
-                                alt="Groom Suit">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1507679799287-c2f1b0df8299?q=80&w=800&auto=format&fit=crop"
+                                alt="P2"></div>
                         <div class="product-info">
-                            <p class="product-name">3-Piece Slim Fit Groom Suit Set - Premium Italian Fabric</p>
-                            <p class="product-price">PKR 25,000.00 - 45,000.00</p>
-                            <p class="product-moq">2 Sets (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified Pro</span>
-                                <span class="country">PK 8yrs</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product 3 -->
-                    <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?q=80&w=800&auto=format&fit=crop"
-                                alt="Lehenga">
-                        </div>
-                        <div class="product-info">
-                            <p class="product-name">Hand-Embroidered Bridal Lehenga - Traditional Artisan Work</p>
-                            <p class="product-price">PKR 65,000.00 - 150,000.00</p>
-                            <p class="product-moq">1 Piece (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">PK 15yrs</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product 4 -->
-                    <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?q=80&w=800&auto=format&fit=crop"
-                                alt="Bridesmaid Dress">
-                        </div>
-                        <div class="product-info">
-                            <p class="product-name">Elegant Chiffon Bridesmaid Dress - Floor Length Styles</p>
-                            <p class="product-price">PKR 8,500.00 - 15,000.00</p>
+                            <p class="product-name">Elegant Chiffon Bridesmaid Dress</p>
+                            <p class="product-price">PKR 12,000.00 - 18,500.00</p>
                             <p class="product-moq">5 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">CN 4yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    4yrs</span></div>
                         </div>
                     </div>
-                    <!-- Product 5 -->
+                    <!-- 3 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1595438662287-2195f2e82544?q=80&w=800&auto=format&fit=crop"
-                                alt="Wedding Accessories">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?q=80&w=800&auto=format&fit=crop"
+                                alt="P3"></div>
                         <div class="product-info">
-                            <p class="product-name">Luxury Bridal Veil - Delicate Lace & Sparkle Detailed</p>
+                            <p class="product-name">Premium Velvet Wedding Tuxedo</p>
+                            <p class="product-price">PKR 25,000.00 - 42,000.00</p>
+                            <p class="product-moq">2 Sets (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
+                                    8yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 4 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1610450529515-4ba5af58cb18?q=80&w=800&auto=format&fit=crop"
+                                alt="P4"></div>
+                        <div class="product-info">
+                            <p class="product-name">Hand-Embroidered Traditional Lehenga</p>
+                            <p class="product-price">PKR 65,000.00 - 120,000.00</p>
+                            <p class="product-moq">1 Set (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    12yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 5 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1542060717-183adffbf45c?q=80&w=800&auto=format&fit=crop"
+                                alt="P5"></div>
+                        <div class="product-info">
+                            <p class="product-name">Cathedral Length Tulle Wedding Veil</p>
                             <p class="product-price">PKR 4,500.00 - 8,200.00</p>
                             <p class="product-moq">10 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">PK 2yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    6yrs</span></div>
                         </div>
                     </div>
-                    <!-- Product 6 -->
+                    <!-- 6 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1445205170230-053b830c6050?q=80&w=800&auto=format&fit=crop"
-                                alt="Flower Girl Dress">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=800&auto=format&fit=crop"
+                                alt="P6"></div>
                         <div class="product-info">
-                            <p class="product-name">Princess Design Flower Girl Dresses - Tulle & Ribbon</p>
-                            <p class="product-price">PKR 3,800.00 - 6,500.00</p>
-                            <p class="product-moq">15 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified Pro</span>
-                                <span class="country">PK 5yrs</span>
-                            </div>
+                            <p class="product-name">Floral Satin Flower Girl Dress</p>
+                            <p class="product-price">PKR 5,800.00 - 9,500.00</p>
+                            <p class="product-moq">10 Sets (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    3yrs</span></div>
                         </div>
                     </div>
-                    <!-- Product 7 -->
+                    <!-- 7 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1594932224030-940955d2c0bb?q=80&w=800&auto=format&fit=crop"
-                                alt="Sherwani">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1519239495477-3642337d10e0?q=80&w=800&auto=format&fit=crop"
+                                alt="P7"></div>
                         <div class="product-info">
-                            <p class="product-name">Exquisite Designer Sherwani for Grooms - Zardozi Work</p>
-                            <p class="product-price">PKR 85,000.00 - 150,000.00</p>
-                            <p class="product-moq">1 Piece (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">PK 10yrs</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product 8 -->
-                    <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1574015974293-817f0ebebb74?q=80&w=800&auto=format&fit=crop"
-                                alt="Bridal Saree">
-                        </div>
-                        <div class="product-info">
-                            <p class="product-name">Traditional Banarasi Bridal Saree - Pure Silk with Gold Weaving</p>
-                            <p class="product-price">PKR 35,000.00 - 55,000.00</p>
-                            <p class="product-moq">3 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified Pro</span>
-                                <span class="country">PK 12yrs</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product 9 -->
-                    <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1591047139829-d91aec36caea?q=80&w=800&auto=format&fit=crop"
-                                alt="Wedding Tie Set">
-                        </div>
-                        <div class="product-info">
-                            <p class="product-name">Luxury Silk Tie and Pocket Square Set for Weddings</p>
-                            <p class="product-price">PKR 2,500.00 - 3,800.00</p>
+                            <p class="product-name">Bridal Hair Jewelry Pearl Trio Set</p>
+                            <p class="product-price">PKR 2,800.00 - 5,200.00</p>
                             <p class="product-moq">20 Sets (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">CN 4yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
+                                    2yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 8 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1532635224-cfcb662d59ed?q=80&w=800&auto=format&fit=crop"
+                                alt="P8"></div>
+                        <div class="product-info">
+                            <p class="product-name">Bespoke Groom Sherwani Set</p>
+                            <p class="product-price">PKR 35,000.00 - 62,000.00</p>
+                            <p class="product-moq">1 Set (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    15yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 9 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop"
+                                alt="P9"></div>
+                        <div class="product-info">
+                            <p class="product-name">Mother of the Bride Evening Gown</p>
+                            <p class="product-price">PKR 18,500.00 - 28,000.00</p>
+                            <p class="product-moq">5 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    7yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 10 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop"
+                                alt="P10"></div>
+                        <div class="product-info">
+                            <p class="product-name">New Arrival Formal Party Wear</p>
+                            <p class="product-price">PKR 12,500.00 - 18,200.00</p>
+                            <p class="product-moq">5 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    3yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 11 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=800&auto=format&fit=crop"
+                                alt="P11"></div>
+                        <div class="product-info">
+                            <p class="product-name">Exclusive Factory Direct Bridal Set</p>
+                            <p class="product-price">PKR 25,000.00 - 45,000.00</p>
+                            <p class="product-moq">2 Sets (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
+                                    5yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 12 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800&auto=format&fit=crop"
+                                alt="P12"></div>
+                        <div class="product-info">
+                            <p class="product-name">Premium Global Trade Selection</p>
+                            <p class="product-price">PKR 4,200.00 - 6,500.00</p>
+                            <p class="product-moq">15 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
+                                    6yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 13 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=800&auto=format&fit=crop"
+                                alt="P13"></div>
+                        <div class="product-info">
+                            <p class="product-name">Top Rated Wholesale Deal</p>
+                            <p class="product-price">PKR 3,800.00 - 5,200.00</p>
+                            <p class="product-moq">25 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    4yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 14 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800&auto=format&fit=crop"
+                                alt="P14"></div>
+                        <div class="product-info">
+                            <p class="product-name">Professional Quality Assurance</p>
+                            <p class="product-price">PKR 5,500.00 - 8,000.00</p>
+                            <p class="product-moq">5 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
+                                    10yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 15 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=800&auto=format&fit=crop"
+                                alt="P15"></div>
+                        <div class="product-info">
+                            <p class="product-name">Export Standard Premium Inventory</p>
+                            <p class="product-price">PKR 2,100.00 - 3,500.00</p>
+                            <p class="product-moq">50 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    2yrs</span></div>
                         </div>
                     </div>
                 </div>
-                <div style="display: flex; justify-content: center; margin-top: 50px; margin-bottom: 50px; gap: 10px;">
+
+                <div style="display: flex; justify-content: center; margin-top: 60px; margin-bottom: 60px; gap: 10px;">
                     <a href="#"
-                        style="padding: 10px 15px; border: 1px solid var(--primary); background: var(--primary); color: white; border-radius: 4px;">1</a>
+                        style="padding: 12px 20px; border: 1px solid var(--primary); background: var(--primary); color: white; border-radius: 8px; font-weight: 600;">1</a>
                     <a href="#"
-                        style="padding: 10px 15px; border: 1px solid var(--border-color); background: white; border-radius: 4px;">2</a>
+                        style="padding: 12px 20px; border: 1px solid var(--border-color); background: white; border-radius: 8px; font-weight: 600;">2</a>
                     <a href="#"
-                        style="padding: 10px 15px; border: 1px solid var(--border-color); background: white; border-radius: 4px;">Next</a>
+                        style="padding: 12px 20px; border: 1px solid var(--border-color); background: white; border-radius: 8px; font-weight: 600;">Next</a>
                 </div>
             </div>
         </div>
@@ -376,64 +339,9 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-links">
-                <div class="footer-col">
-                    <h4>Get Support</h4>
-                    <ul>
-                        <li><a href="helpcenter.html">Help Center</a></li>
-                        <li><a href="live-chat.html">Live Chat</a></li>
-                        <li><a href="order-status.html">Check order status</a></li>
-                        <li><a href="report-abuse.html">Report abuse</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Trade Services</h4>
-                    <ul>
-                        <li><a href="tradeassurance.html">Trade Assurance</a></li>
-                        <li><a href="business-identity.html">Business Identity</a></li>
-                        <li><a href="logistics.html">Logistics Service</a></li>
-                        <li><a href="inspection.html">Inspection Service</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Source on Noshahibaba</h4>
-                    <ul>
-                        <li><a href="top-ranking.html">Top Ranking</a></li>
-                        <li><a href="rfq.html">Request for Quotation</a></li>
-                        <li><a href="membership.html">Membership Program</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Sell on Noshahibaba</h4>
-                    <ul>
-                        <li><a href="become-supplier.html">Become a Supplier</a></li>
-                        <li><a href="supplier-central.html">Supplier Central</a></li>
-                        <li><a href="training-center.html">Training Center</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>About Us</h4>
-                    <ul>
-                        <li><a href="our-story.html">Our Story</a></li>
-                        <li><a href="noshahi-group.html">Noshahi Group</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="legal.html">Legal Notice</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="social-links">
-                    <i data-lucide="facebook"></i>
-                    <i data-lucide="linkedin"></i>
-                    <i data-lucide="twitter"></i>
-                    <i data-lucide="instagram"></i>
-                    <i data-lucide="youtube"></i>
-                </div>
-                <p>&copy; 2026 Noshahibaba.com. All rights reserved.</p>
-                <p>Noshahi Group | <a href="legal.html" style="color:#999;">Privacy Policy</a> | <a href="legal.html"
-                        style="color:#999;">Terms of Use</a></p>
-            </div>
+        <div class="container"
+            style="text-align: center; color: var(--text-muted); padding: 40px 0; border-top: 1px solid var(--border-color);">
+            <p>&copy; 2026 Noshahibaba.com. All rights reserved.</p>
         </div>
     </footer>
 

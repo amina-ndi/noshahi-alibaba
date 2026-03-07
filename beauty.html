@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,8 +21,9 @@
             </div>
             <div class="top-bar-right">
                 <a href="helpcenter.html">Help Center</a>
-                <a href="#">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK"> PKR</a>
-                <a href="#">Language: EN</a>
+                <a href="regional-settings.html">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK">
+                    PKR</a>
+                <a href="regional-settings.html">Language: EN</a>
             </div>
         </div>
     </div>
@@ -38,7 +39,7 @@
             <div class="search-container">
                 <div class="search-box">
                     <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
-                    <input type="text" placeholder="Search in Beauty & Personal Care...">
+                    <input type="text" placeholder="Search Beauty Products...">
                     <button class="search-btn"><i data-lucide="search"></i> Search</button>
                 </div>
             </div>
@@ -78,303 +79,253 @@
         </div>
     </nav>
 
-    <main class="container">
-        <!-- Breadcrumbs -->
-        <div class="breadcrumb">
-            <a href="index.html">Home</a> &gt; <span>Beauty & Personal Care</span>
-        </div>
+    <main class="container" style="margin-top: 40px;">
+        <!-- Hero Section -->
+        <section class="category-hero"
+            style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1596462502278-27bfdc4033c8?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; height: 300px; border-radius: 20px; display: flex; align-items: center; padding: 0 60px; color: white; margin-bottom: 40px;">
+            <div class="category-hero-content">
+                <h1 style="font-size: 52px; font-weight: 800; margin-bottom: 10px;">Beauty & Personal Care</h1>
+                <p style="font-size: 20px; opacity: 0.9;">Glow with confidence. Premium cosmetics and grooming
+                    essentials.</p>
+            </div>
+        </section>
 
-        <div class="hero-grid" style="grid-template-columns: 240px 1fr; margin-top: 0;">
-            <!-- Left Sidebar Filters -->
-            <aside class="category-sidebar" id="category-sidebar"
-                style="display: block; box-shadow: none; background: transparent;">
-                <div class="filter-section">
-                    <div class="filter-title">Categories <i data-lucide="chevron-up"></i></div>
-                    <ul class="filter-list">
-                        <li>Skin Care</li>
-                        <li>Hair Care</li>
-                        <li>Makeup & Cosmetics</li>
-                        <li>Fragrances & Perfumes</li>
-                        <li>Personal Care Appliances</li>
-                        <li>Nail Art & Tools</li>
-                        <li>Oral Care</li>
-                        <li>Men's Grooming</li>
-                    </ul>
-                </div>
-
-                <div class="filter-section">
-                    <div class="filter-title">Supplier Type <i data-lucide="chevron-up"></i></div>
-                    <ul class="filter-list">
-                        <li><span class="filter-checkbox"></span> Verified Supplier</li>
-                        <li><span class="filter-checkbox"></span> Verified Pro</li>
-                        <li><span class="filter-checkbox"></span> Trade Assurance</li>
-                    </ul>
-                </div>
-
-                <div class="filter-section">
-                    <div class="filter-title">Ingridients <i data-lucide="chevron-up"></i></div>
-                    <ul class="filter-list">
-                        <li><span class="filter-checkbox"></span> Organic</li>
-                        <li><span class="filter-checkbox"></span> Herbal</li>
-                        <li><span class="filter-checkbox"></span> Cruelty-Free</li>
-                        <li><span class="filter-checkbox"></span> Paraben-Free</li>
-                    </ul>
-                </div>
-
-                <div class="filter-section">
-                    <div class="filter-title">MOQ <i data-lucide="chevron-up"></i></div>
-                    <div style="display: flex; gap: 10px; align-items: center;">
-                        <input type="text" placeholder="Min"
-                            style="width: 60px; padding: 5px; border: 1px solid var(--border-color); border-radius: 4px;">
-                        <span>-</span>
-                        <input type="text" placeholder="Max"
-                            style="width: 60px; padding: 5px; border: 1px solid var(--border-color); border-radius: 4px;">
-                    </div>
-                </div>
+        <div class="page-layout" style="display: grid; grid-template-columns: 260px 1fr; gap: 40px;">
+            <!-- Sidebar -->
+            <aside class="sidebar"
+                style="background: white; border-radius: 16px; padding: 25px; box-shadow: var(--shadow-sm); height: fit-content;">
+                <h4
+                    style="font-size: 18px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;">
+                    Categories</h4>
+                <ul class="sidebar-links" style="list-style: none;">
+                    <li><a href="#"
+                            style="color: var(--primary); font-weight: 600; font-size: 15px; display: block;">Skin
+                            Care</a></li>
+                    <li><a href="#"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Makeup</a>
+                    </li>
+                    <li><a href="#"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Hair
+                            Care</a></li>
+                    <li><a href="#"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Fragrances</a>
+                    </li>
+                    <li><a href="#"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Personal
+                            Care</a></li>
+                    <li><a href="#"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Men's
+                            Grooming</a></li>
+                </ul>
             </aside>
 
-            <!-- Main Content Area -->
-            <div class="hero-main" style="gap: 10px;">
-                <div class="category-page-header"
-                    style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1596462502278-27bfdc4033c8?q=80&w=1200&auto=format&fit=crop'); background-size: cover; background-position: center; color: white; padding: 40px; border-radius: 8px; margin-bottom: 20px;">
-                    <h1 style="color: white; margin-bottom: 10px;">Beauty & Personal Care</h1>
-                    <p style="color: rgba(255,255,255,0.9);">820,000+ Beauty products from top global cosmetic brands &
-                        wholesalers.</p>
-                </div>
-
-                <div class="product-sort-bar">
-                    <div class="sort-options">
-                        <span class="sort-item active">Best Match</span>
-                        <span class="sort-item">New Arrivals</span>
-                        <span class="sort-item">Popularity</span>
-                        <span class="sort-item">Trusted Brands</span>
-                    </div>
-                    <div style="display: flex; gap: 15px; align-items: center; font-size: 14px;">
-                        <span>View: <i data-lucide="layout-grid" style="width: 18px; color: var(--primary);"></i> <i
-                                data-lucide="list" style="width: 18px;"></i></span>
-                    </div>
-                </div>
-
-                <!-- Product Grid -->
-                <div class="product-grid" style="grid-template-columns: repeat(3, 1fr);">
-                    <!-- Beauty Product 1 - Serum -->
+            <!-- Product Section -->
+            <div class="content">
+                <div class="mixed-grid">
+                    <!-- 1 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1620916566398-39f1143f7c0e?q=80&w=800&auto=format&fit=crop"
-                                alt="Skin Serum">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1620916566398-39f1143f7c0e?q=80&w=800&auto=format&fit=crop"
+                                alt="P1"></div>
                         <div class="product-info">
-                            <p class="product-name">Premium Vitamin C Face Serum for Radiant & Healthy Skin</p>
+                            <p class="product-name">Premium Vitamin C Face Serum for Radiance</p>
                             <p class="product-price">PKR 1,200.00 - 1,800.00</p>
                             <p class="product-moq">50 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified Pro</span>
-                                <span class="country">PK 4yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
+                                    4yrs</span></div>
                         </div>
                     </div>
-
-                    <!-- Beauty Product 2 - Makeup Set -->
+                    <!-- 2 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1522335715111-eec739268846?q=80&w=800&auto=format&fit=crop"
-                                alt="Makeup Kit">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1522335715111-eec739268846?q=80&w=800&auto=format&fit=crop"
+                                alt="P2"></div>
                         <div class="product-info">
-                            <p class="product-name">Professional 24-Piece Makeup Brush Set with Leather Case</p>
+                            <p class="product-name">Professional 24-Piece Makeup Brush Set</p>
                             <p class="product-price">PKR 2,500.00 - 3,800.00</p>
                             <p class="product-moq">10 Sets (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">CN 6yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
+                                    6yrs</span></div>
                         </div>
                     </div>
-
-                    <!-- Beauty Product 3 - Hair Dryer -->
+                    <!-- 3 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1522337660859-0268480921ed?q=80&w=800&auto=format&fit=crop"
-                                alt="Hair Dryer">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1522337660859-0268480921ed?q=80&w=800&auto=format&fit=crop"
+                                alt="P3"></div>
                         <div class="product-info">
-                            <p class="product-name">High-Power Ionic Hair Dryer for Professional Salon Use</p>
-                            <p class="product-price">PKR 4,800.00</p>
+                            <p class="product-name">High-Power Ionic Salon Hair Dryer</p>
+                            <p class="product-price">PKR 4,800.00 - 6,500.00</p>
                             <p class="product-moq">5 Sets (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">CN 3yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
+                                    3yrs</span></div>
                         </div>
                     </div>
-
-                    <!-- Beauty Product 4 - Lipstick -->
+                    <!-- 4 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1586773860418-d3b3a978dc03?q=80&w=800&auto=format&fit=crop"
-                                alt="Lipstick Collection">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1586773860418-d3b3a978dc03?q=80&w=800&auto=format&fit=crop"
+                                alt="P4"></div>
                         <div class="product-info">
-                            <p class="product-name">Matte Finish Long-Lasting Lipstick - Set of 12 Trendy Colors</p>
-                            <p class="product-price">PKR 3,200.00</p>
+                            <p class="product-name">Matte Finish Long-Lasting Lipstick Set</p>
+                            <p class="product-price">PKR 3,200.00 - 4,500.00</p>
                             <p class="product-moq">20 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified Pro</span>
-                                <span class="country">KR 5yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">KR
+                                    5yrs</span></div>
                         </div>
                     </div>
-
-                    <!-- Beauty Product 5 - Skin Cream -->
+                    <!-- 5 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?q=80&w=800&auto=format&fit=crop"
-                                alt="Skin Care Cream">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?q=80&w=800&auto=format&fit=crop"
+                                alt="P5"></div>
                         <div class="product-info">
-                            <p class="product-name">Moisturizing Hyaluronic Acid Night Cream for Anti-Aging</p>
+                            <p class="product-name">Hyaluronic Acid Anti-Aging Night Cream</p>
                             <p class="product-price">PKR 1,500.00 - 2,200.00</p>
                             <p class="product-moq">30 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">FR 10yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">FR
+                                    10yrs</span></div>
                         </div>
                     </div>
-
-                    <!-- Beauty Product 6 - Perfume -->
+                    <!-- 6 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=800&auto=format&fit=crop"
-                                alt="Perfume Bottle">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=800&auto=format&fit=crop"
+                                alt="P6"></div>
                         <div class="product-info">
-                            <p class="product-name">Luxury Eau de Parfum for Men & Women - Long Lasting Scent</p>
+                            <p class="product-name">Luxury Eau de Parfum for Men & Women</p>
                             <p class="product-price">PKR 3,500.00 - 5,500.00</p>
                             <p class="product-moq">12 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified Pro</span>
-                                <span class="country">UAE 7yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">UAE
+                                    7yrs</span></div>
                         </div>
                     </div>
-
-                    <!-- Beauty Product 7 - Facial Mask -->
+                    <!-- 7 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1594465919760-441fe5908ab0?q=80&w=800&auto=format&fit=crop"
-                                alt="Facial Mask">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1594465919760-441fe5908ab0?q=80&w=800&auto=format&fit=crop"
+                                alt="P7"></div>
                         <div class="product-info">
-                            <p class="product-name">Hydrating Silk Sheet Mask - Natural Organic Face Care</p>
-                            <p class="product-price">PKR 150.00 - 300.00</p>
-                            <p class="product-moq">100 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">CN 4yrs</span>
-                            </div>
+                            <p class="product-name">Hydrating Silk Sheet Mask - Organic</p>
+                            <p class="product-price">PKR 1,500.00 - 3,000.00 (Pack of 10)</p>
+                            <p class="product-moq">100 Packs (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
+                                    4yrs</span></div>
                         </div>
                     </div>
-
-                    <!-- Beauty Product 8 - Essential Oil -->
+                    <!-- 8 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=800&auto=format&fit=crop"
-                                alt="Essential Oil">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=800&auto=format&fit=crop"
+                                alt="P8"></div>
                         <div class="product-info">
-                            <p class="product-name">Pure Lavender Essential Oil for Aromatherapy & Skin Care</p>
+                            <p class="product-name">Pure Lavender Essential Oil for Therapy</p>
                             <p class="product-price">PKR 850.00 - 1,200.00</p>
                             <p class="product-moq">20 Bottles (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified Pro</span>
-                                <span class="country">IN 8yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">IN
+                                    8yrs</span></div>
                         </div>
                     </div>
-
-                    <!-- Beauty Product 9 - Sunscreen -->
+                    <!-- 9 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1556228578-8c89e6afd6f5?q=80&w=800&auto=format&fit=crop"
-                                alt="Sunscreen">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1556228578-8c89e6afd6f5?q=80&w=800&auto=format&fit=crop"
+                                alt="P9"></div>
                         <div class="product-info">
-                            <p class="product-name">Waterproof Sunscreen SPF 50+ Broad Spectrum Protection</p>
-                            <p class="product-price">PKR 1,100.00</p>
+                            <p class="product-name">Waterproof Sunscreen SPF 50+ Protection</p>
+                            <p class="product-price">PKR 1,100.00 - 1,800.00</p>
                             <p class="product-moq">50 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">AU 2yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">AU
+                                    2yrs</span></div>
                         </div>
                     </div>
-
-                    <!-- Beauty Product 10 - Eye Palette -->
+                    <!-- 10 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=800&auto=format&fit=crop"
-                                alt="Eye Palette">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=800&auto=format&fit=crop"
+                                alt="P10"></div>
                         <div class="product-info">
-                            <p class="product-name">Professional 32-Color Eyeshadow Palette - Highly Pigmented</p>
-                            <p class="product-price">PKR 2,800.00</p>
+                            <p class="product-name">Professional 32-Color Eyeshadow Palette</p>
+                            <p class="product-price">PKR 2,800.00 - 4,200.00</p>
                             <p class="product-moq">15 Sets (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified Pro</span>
-                                <span class="country">CN 5yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">CN
+                                    5yrs</span></div>
                         </div>
                     </div>
-
-                    <!-- Beauty Product 11 - Hair Serum -->
+                    <!-- 11 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1527799822394-30a5c427f791?q=80&w=800&auto=format&fit=crop"
-                                alt="Hair Serum">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1527799822394-30a5c427f791?q=80&w=800&auto=format&fit=crop"
+                                alt="P11"></div>
                         <div class="product-info">
-                            <p class="product-name">Argan Oil Hair Repair Serum for Shiny & Frizz-Free Hair</p>
-                            <p class="product-price">PKR 1,650.00</p>
+                            <p class="product-name">Argan Oil Hair Repair Serum - Shiny Finish</p>
+                            <p class="product-price">PKR 1,650.00 - 2,500.00</p>
                             <p class="product-moq">30 Bottles (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">MA 6yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">MA
+                                    6yrs</span></div>
                         </div>
                     </div>
-
-                    <!-- Beauty Product 12 - Body Scrub -->
+                    <!-- 12 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1619451334792-150fd785ee74?q=80&w=800&auto=format&fit=crop"
-                                alt="Body Scrub">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1619451334792-150fd785ee74?q=80&w=800&auto=format&fit=crop"
+                                alt="P12"></div>
                         <div class="product-info">
-                            <p class="product-name">Organic Himalayan Salt Body Scrub with Coconut Oil</p>
+                            <p class="product-name">Organic Himalayan Salt Body Scrub</p>
                             <p class="product-price">PKR 1,200.00 - 1,800.00</p>
                             <p class="product-moq">25 Jars (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified Pro</span>
-                                <span class="country">PK 3yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
+                                    3yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 13 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1570172619677-f13884a0d935?q=80&w=800&auto=format&fit=crop"
+                                alt="P13"></div>
+                        <div class="product-info">
+                            <p class="product-name">Professional Electric Face Cleaning Brush</p>
+                            <p class="product-price">PKR 3,500.00 - 5,200.00</p>
+                            <p class="product-moq">15 Sets (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
+                                    4yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 14 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800&auto=format&fit=crop"
+                                alt="P14"></div>
+                        <div class="product-info">
+                            <p class="product-name">Luxury Spa Treatment Clay Mask Bowl</p>
+                            <p class="product-price">PKR 2,500.00 - 4,800.00</p>
+                            <p class="product-moq">10 Sets (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">UK
+                                    10yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 15 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1612817288484-6f916006741a?q=80&w=800&auto=format&fit=crop"
+                                alt="P15"></div>
+                        <div class="product-info">
+                            <p class="product-name">Gentle Exfoliating Face Wash - All Skin Types</p>
+                            <p class="product-price">PKR 1,100.00 - 1,800.00</p>
+                            <p class="product-moq">50 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">US
+                                    2yrs</span></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Pagination -->
-                <div style="display: flex; justify-content: center; gap: 10px; margin: 40px 0;">
-                    <button
-                        style="padding: 8px 15px; border: 1px solid var(--border-color); background: white; border-radius: 4px; cursor: pointer;">Previous</button>
-                    <button
-                        style="padding: 8px 15px; border: 1px solid var(--primary); background: var(--primary); color: white; border-radius: 4px; cursor: pointer;">1</button>
-                    <button
-                        style="padding: 8px 15px; border: 1px solid var(--border-color); background: white; border-radius: 4px; cursor: pointer;">2</button>
-                    <button
-                        style="padding: 8px 15px; border: 1px solid var(--border-color); background: white; border-radius: 4px; cursor: pointer;">3</button>
-                    <span>...</span>
-                    <button
-                        style="padding: 8px 15px; border: 1px solid var(--border-color); background: white; border-radius: 4px; cursor: pointer;">Next</button>
+                <div style="display: flex; justify-content: center; margin-top: 60px; margin-bottom: 60px; gap: 10px;">
+                    <a href="#"
+                        style="padding: 12px 20px; border: 1px solid var(--primary); background: var(--primary); color: white; border-radius: 8px; font-weight: 600;">1</a>
+                    <a href="#"
+                        style="padding: 12px 20px; border: 1px solid var(--border-color); background: white; border-radius: 8px; font-weight: 600;">2</a>
+                    <a href="#"
+                        style="padding: 12px 20px; border: 1px solid var(--border-color); background: white; border-radius: 8px; font-weight: 600;">Next</a>
                 </div>
             </div>
         </div>
@@ -382,68 +333,14 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-links">
-                <div class="footer-col">
-                    <h4>Get Support</h4>
-                    <ul>
-                        <li><a href="helpcenter.html">Help Center</a></li>
-                        <li><a href="live-chat.html">Live Chat</a></li>
-                        <li><a href="order-status.html">Check order status</a></li>
-                        <li><a href="report-abuse.html">Report abuse</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Trade Services</h4>
-                    <ul>
-                        <li><a href="tradeassurance.html">Trade Assurance</a></li>
-                        <li><a href="business-identity.html">Business Identity</a></li>
-                        <li><a href="logistics.html">Logistics Service</a></li>
-                        <li><a href="inspection.html">Inspection Service</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Source on Noshahibaba</h4>
-                    <ul>
-                        <li><a href="top-ranking.html">Top Ranking</a></li>
-                        <li><a href="rfq.html">Request for Quotation</a></li>
-                        <li><a href="membership.html">Membership Program</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Sell on Noshahibaba</h4>
-                    <ul>
-                        <li><a href="become-supplier.html">Become a Supplier</a></li>
-                        <li><a href="supplier-central.html">Supplier Central</a></li>
-                        <li><a href="training-center.html">Training Center</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>About Us</h4>
-                    <ul>
-                        <li><a href="our-story.html">Our Story</a></li>
-                        <li><a href="noshahi-group.html">Noshahi Group</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="legal.html">Legal Notice</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="social-links">
-                    <i data-lucide="facebook"></i>
-                    <i data-lucide="linkedin"></i>
-                    <i data-lucide="twitter"></i>
-                    <i data-lucide="instagram"></i>
-                    <i data-lucide="youtube"></i>
-                </div>
-                <p>&copy; 2026 Noshahibaba.com. All rights reserved.</p>
-                <p>Noshahi Group | <a href="legal.html" style="color:#999;">Privacy Policy</a> | <a href="legal.html"
-                        style="color:#999;">Terms of Use</a></p>
-            </div>
+        <div class="container"
+            style="text-align: center; color: var(--text-muted); padding: 40px 0; border-top: 1px solid var(--border-color);">
+            <p>&copy; 2026 Noshahibaba.com. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
 </body>
 
 </html>

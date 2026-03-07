@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,8 +21,9 @@
             </div>
             <div class="top-bar-right">
                 <a href="helpcenter.html">Help Center</a>
-                <a href="#">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK"> PKR</a>
-                <a href="#">Language: EN</a>
+                <a href="regional-settings.html">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK">
+                    PKR</a>
+                <a href="regional-settings.html">Language: EN</a>
             </div>
         </div>
     </div>
@@ -38,7 +39,7 @@
             <div class="search-container">
                 <div class="search-box">
                     <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
-                    <input type="text" placeholder="Search in Vehicles & Accessories...">
+                    <input type="text" placeholder="Search Vehicles...">
                     <button class="search-btn"><i data-lucide="search"></i> Search</button>
                 </div>
             </div>
@@ -78,249 +79,253 @@
         </div>
     </nav>
 
-    <main class="container">
-        <!-- Breadcrumbs -->
-        <div class="breadcrumb">
-            <a href="index.html">Home</a> &gt; <span>Vehicles & Accessories</span>
-        </div>
+    <main class="container" style="margin-top: 40px;">
+        <!-- Hero Section -->
+        <section class="category-hero"
+            style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; height: 300px; border-radius: 20px; display: flex; align-items: center; padding: 0 60px; color: white; margin-bottom: 40px;">
+            <div class="category-hero-content">
+                <h1 style="font-size: 52px; font-weight: 800; margin-bottom: 10px;">Vehicles & Accessories</h1>
+                <p style="font-size: 20px; opacity: 0.9;">High-quality vehicles, auto parts, and car accessories from
+                    global manufacturers.</p>
+            </div>
+        </section>
 
-        <div class="hero-grid" style="grid-template-columns: 240px 1fr; margin-top: 0;">
-            <!-- Left Sidebar Filters -->
-            <aside class="category-sidebar" id="category-sidebar"
-                style="display: block; box-shadow: none; background: transparent;">
-                <div class="filter-section">
-                    <div class="filter-title">Categories <i data-lucide="chevron-up"></i></div>
-                    <ul class="filter-list">
-                        <li>Electric Vehicles</li>
-                        <li>Car Electronics</li>
-                        <li>Auto Parts</li>
-                        <li>Interior Accessories</li>
-                        <li>Exterior Accessories</li>
-                        <li>Motorcycles & Parts</li>
-                        <li>Commercial Vehicles</li>
-                        <li>Tools & Equipment</li>
-                    </ul>
-                </div>
-
-                <div class="filter-section">
-                    <div class="filter-title">Supplier Type <i data-lucide="chevron-up"></i></div>
-                    <ul class="filter-list">
-                        <li><span class="filter-checkbox"></span> Verified Supplier</li>
-                        <li><span class="filter-checkbox"></span> Verified Pro</li>
-                        <li><span class="filter-checkbox"></span> Trade Assurance</li>
-                    </ul>
-                </div>
-
-                <div class="filter-section">
-                    <div class="filter-title">Vehicle Type <i data-lucide="chevron-up"></i></div>
-                    <ul class="filter-list">
-                        <li><span class="filter-checkbox"></span> Sedan</li>
-                        <li><span class="filter-checkbox"></span> SUV</li>
-                        <li><span class="filter-checkbox"></span> Truck</li>
-                        <li><span class="filter-checkbox"></span> Bike</li>
-                    </ul>
-                </div>
-
-                <div class="filter-section">
-                    <div class="filter-title">MOQ <i data-lucide="chevron-up"></i></div>
-                    <div style="display: flex; gap: 10px; align-items: center;">
-                        <input type="text" placeholder="Min"
-                            style="width: 60px; padding: 5px; border: 1px solid var(--border-color); border-radius: 4px;">
-                        <span>-</span>
-                        <input type="text" placeholder="Max"
-                            style="width: 60px; padding: 5px; border: 1px solid var(--border-color); border-radius: 4px;">
-                    </div>
-                </div>
+        <div class="page-layout" style="display: grid; grid-template-columns: 260px 1fr; gap: 40px;">
+            <!-- Sidebar -->
+            <aside class="sidebar"
+                style="background: white; border-radius: 16px; padding: 25px; box-shadow: var(--shadow-sm); height: fit-content;">
+                <h4
+                    style="font-size: 18px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;">
+                    Categories</h4>
+                <ul class="sidebar-links" style="list-style: none;">
+                    <li><a href="#"
+                            style="color: var(--primary); font-weight: 600; font-size: 15px; display: block;">Electric
+                            Vehicles</a></li>
+                    <li><a href="#"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Car
+                            Electronics</a></li>
+                    <li><a href="#"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Auto
+                            Parts</a></li>
+                    <li><a href="#"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Interior
+                            Accessories</a></li>
+                    <li><a href="#"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Motorcycles</a>
+                    </li>
+                    <li><a href="#"
+                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Tools
+                            & Equipment</a></li>
+                </ul>
             </aside>
 
-            <!-- Main Content Area -->
-            <div class="hero-main" style="gap: 10px;">
-                <div class="category-page-header"
-                    style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop'); background-size: cover; background-position: center; color: white; padding: 40px; border-radius: 12px; margin-bottom: 25px;">
-                    <h1 style="color: white; margin-bottom: 10px;">Vehicles & Accessories</h1>
-                    <p style="color: rgba(255,255,255,0.9);">Explore millions of high-quality vehicles, auto parts, and
-                        car accessories from global manufacturers.</p>
-                </div>
-
-                <div class="product-sort-bar">
-                    <div class="sort-options">
-                        <span class="sort-item active">Best Match</span>
-                        <span class="sort-item">New Arrivals</span>
-                        <span class="sort-item">Top Rated</span>
-                        <span class="sort-item">Global Sourcing</span>
-                    </div>
-                    <div style="display: flex; gap: 15px; align-items: center; font-size: 14px;">
-                        <span>View: <i data-lucide="layout-grid" style="width: 18px; color: var(--primary);"></i> <i
-                                data-lucide="list" style="width: 18px;"></i></span>
-                    </div>
-                </div>
-
-                <!-- Product Grid -->
-                <div class="product-grid" style="grid-template-columns: repeat(3, 1fr);">
-                    <!-- Vehicle Product 1 - EV -->
+            <!-- Product Section -->
+            <div class="content">
+                <div class="mixed-grid">
+                    <!-- 1 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=1200&auto=format&fit=crop"
-                                alt="Electric Sedan">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=1200&auto=format&fit=crop"
+                                alt="P1"></div>
                         <div class="product-info">
-                            <p class="product-name">2026 Model High Performance Electric Luxury Sedan - Long Range</p>
+                            <p class="product-name">2026 High Performance Electric Luxury Sedan</p>
                             <p class="product-price">PKR 8,500,000.00 - 12,000,000.00</p>
                             <p class="product-moq">1 Unit (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified Pro</span>
-                                <span class="country">CN 10yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">CN
+                                    10yrs</span></div>
                         </div>
                     </div>
-
-                    <!-- Vehicle Product 2 - Car Multimedia -->
+                    <!-- 2 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1549231518-e214f4882c5a?q=80&w=1200&auto=format&fit=crop"
-                                alt="Car Multimedia System">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1549231518-e214f4882c5a?q=80&w=1200&auto=format&fit=crop"
+                                alt="P2"></div>
                         <div class="product-info">
-                            <p class="product-name">Universal 10 Inch Android Car Multimedia Player GPS Navigation</p>
+                            <p class="product-name">Universal 10 Inch Android Car Multimedia Player</p>
                             <p class="product-price">PKR 15,000.00 - 28,000.00</p>
                             <p class="product-moq">10 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">CN 5yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
+                                    5yrs</span></div>
                         </div>
                     </div>
-
-                    <!-- Vehicle Product 3 - Sport Bike -->
+                    <!-- 3 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1558981403-c5f91cbba527?q=80&w=1200&auto=format&fit=crop"
-                                alt="Sport Motorcycle">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1558981403-c5f91cbba527?q=80&w=1200&auto=format&fit=crop"
+                                alt="P3"></div>
                         <div class="product-info">
-                            <p class="product-name">Professional 250cc Racing Sport Motorcycle - Multiple Colors</p>
+                            <p class="product-name">Professional 250cc Racing Sport Motorcycle</p>
                             <p class="product-price">PKR 450,000.00 - 680,000.00</p>
                             <p class="product-moq">5 Units (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified Pro</span>
-                                <span class="country">CN 8yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">CN
+                                    8yrs</span></div>
                         </div>
                     </div>
-
-                    <!-- Vehicle Product 4 - Car Interior Accessories -->
+                    <!-- 4 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=1200&auto=format&fit=crop"
-                                alt="Luxury Car Seats">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=1200&auto=format&fit=crop"
+                                alt="P4"></div>
                         <div class="product-info">
-                            <p class="product-name">Premium Leather Car Seat Covers - Breathable & Universal Fit</p>
+                            <p class="product-name">Premium Leather Car Seat Covers - Universal</p>
                             <p class="product-price">PKR 12,000.00 - 18,000.00</p>
                             <p class="product-moq">20 Sets (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">PK 4yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    4yrs</span></div>
                         </div>
                     </div>
-
-                    <!-- Vehicle Product 5 - Alloy Wheels -->
+                    <!-- 5 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1486496146582-9ffcd0b2b2b7?q=80&w=1200&auto=format&fit=crop"
-                                alt="Alloy Wheels">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1486496146582-9ffcd0b2b2b7?q=80&w=1200&auto=format&fit=crop"
+                                alt="P5"></div>
                         <div class="product-info">
-                            <p class="product-name">18 Inch Luxury Matte Black Alloy Wheels for SUV & Sedans</p>
+                            <p class="product-name">18 Inch Luxury Matte Black Alloy Wheels</p>
                             <p class="product-price">PKR 85,000.00 - 110,000.00</p>
                             <p class="product-moq">4 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified Pro</span>
-                                <span class="country">PK 12yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
+                                    12yrs</span></div>
                         </div>
                     </div>
-
-                    <!-- Product 6 -->
+                    <!-- 6 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1579829366248-204fe8413f31?q=80&w=800&auto=format&fit=crop"
-                                alt="GPS Tracker">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1579829366248-204fe8413f31?q=80&w=800&auto=format&fit=crop"
+                                alt="P6"></div>
                         <div class="product-info">
-                            <p class="product-name">Vehicle Real-time GPS Tracker - Anti-theft GSM GPRS Device</p>
+                            <p class="product-name">Vehicle Real-time GPS Tracker Anti-theft</p>
                             <p class="product-price">PKR 3,500.00 - 5,800.00</p>
                             <p class="product-moq">50 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">CN 4yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
+                                    4yrs</span></div>
                         </div>
                     </div>
-                    <!-- Product 7 -->
+                    <!-- 7 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=800&auto=format&fit=crop"
-                                alt="Motorcycle Helmet">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=800&auto=format&fit=crop"
+                                alt="P7"></div>
                         <div class="product-info">
-                            <p class="product-name">Full Face Motorcycle Helmet - DOT Certified Racing Gear</p>
+                            <p class="product-name">Full Face Motorcycle Helmet DOT Certified</p>
                             <p class="product-price">PKR 8,500.00 - 15,000.00</p>
                             <p class="product-moq">10 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified Pro</span>
-                                <span class="country">PK 5yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
+                                    5yrs</span></div>
                         </div>
                     </div>
-                    <!-- Product 8 -->
+                    <!-- 8 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=800&auto=format&fit=crop"
-                                alt="Car Jacks">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=800&auto=format&fit=crop"
+                                alt="P8"></div>
                         <div class="product-info">
-                            <p class="product-name">Hydraulic Floor Jack for SUV - 3 Ton Lifting Capacity</p>
+                            <p class="product-name">Hydraulic Floor Jack for SUV - 3 Ton</p>
                             <p class="product-price">PKR 12,000.00 - 18,000.00</p>
                             <p class="product-moq">5 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">CN 10yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
+                                    10yrs</span></div>
                         </div>
                     </div>
-                    <!-- Product 9 -->
+                    <!-- 9 -->
                     <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=800&auto=format&fit=crop"
-                                alt="Dashboard Cam">
-                        </div>
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=800&auto=format&fit=crop"
+                                alt="P9"></div>
                         <div class="product-info">
-                            <p class="product-name">4K Dual Dash Cam - Front and Rear Wide Angle Recording</p>
+                            <p class="product-name">4K Dual Dash Cam - Front and Rear Recording</p>
                             <p class="product-price">PKR 6,500.00 - 9,800.00</p>
                             <p class="product-moq">30 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified Pro</span>
-                                <span class="country">CN 3yrs</span>
-                            </div>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">CN
+                                    3yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 10 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=800&auto=format&fit=crop"
+                                alt="P10"></div>
+                        <div class="product-info">
+                            <p class="product-name">Smart Car Interior LED Lighting Kit</p>
+                            <p class="product-price">PKR 2,500.00 - 4,200.00</p>
+                            <p class="product-moq">50 Sets (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    2yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 11 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=800&auto=format&fit=crop"
+                                alt="P11"></div>
+                        <div class="product-info">
+                            <p class="product-name">Luxury SUV Roof Rack Cargo Carrier</p>
+                            <p class="product-price">PKR 25,000.00 - 45,000.00</p>
+                            <p class="product-moq">5 Units (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">DE
+                                    8yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 12 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1621614912997-73a7c089201a?q=80&w=800&auto=format&fit=crop"
+                                alt="P12"></div>
+                        <div class="product-info">
+                            <p class="product-name">Portable Car Jump Starter Power Bank</p>
+                            <p class="product-price">PKR 8,500.00 - 12,500.00</p>
+                            <p class="product-moq">20 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">US
+                                    5yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 13 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=800&auto=format&fit=crop"
+                                alt="P13"></div>
+                        <div class="product-info">
+                            <p class="product-name">Custom Car Floor Mats All-Weather Protection</p>
+                            <p class="product-price">PKR 4,200.00 - 6,800.00</p>
+                            <p class="product-moq">10 Sets (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
+                                    4yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 14 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1549231518-e214f4882c5a?q=80&w=800&auto=format&fit=crop"
+                                alt="P14"></div>
+                        <div class="product-info">
+                            <p class="product-name">OBD2 Diagnostic Scanner Tool Professional</p>
+                            <p class="product-price">PKR 15,000.00 - 35,000.00</p>
+                            <p class="product-moq">5 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">UK
+                                    10yrs</span></div>
+                        </div>
+                    </div>
+                    <!-- 15 -->
+                    <div class="product-card">
+                        <div class="product-img-box"><img
+                                src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=800&auto=format&fit=crop"
+                                alt="P15"></div>
+                        <div class="product-info">
+                            <p class="product-name">Premium Ceramic Coating Protection Kit</p>
+                            <p class="product-price">PKR 5,500.00 - 8,200.00</p>
+                            <p class="product-moq">50 Boxes (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">JP
+                                    12yrs</span></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Pagination -->
-                <div style="display: flex; justify-content: center; gap: 10px; margin: 40px 0;">
-                    <button
-                        style="padding: 8px 15px; border: 1px solid var(--border-color); background: white; border-radius: 4px; cursor: pointer;">Previous</button>
-                    <button
-                        style="padding: 8px 15px; border: 1px solid var(--primary); background: var(--primary); color: white; border-radius: 4px; cursor: pointer;">1</button>
-                    <button
-                        style="padding: 8px 15px; border: 1px solid var(--border-color); background: white; border-radius: 4px; cursor: pointer;">2</button>
-                    <button
-                        style="padding: 8px 15px; border: 1px solid var(--border-color); background: white; border-radius: 4px; cursor: pointer;">3</button>
-                    <span>...</span>
-                    <button
-                        style="padding: 8px 15px; border: 1px solid var(--border-color); background: white; border-radius: 4px; cursor: pointer;">Next</button>
+                <div style="display: flex; justify-content: center; margin-top: 60px; margin-bottom: 60px; gap: 10px;">
+                    <a href="#"
+                        style="padding: 12px 20px; border: 1px solid var(--primary); background: var(--primary); color: white; border-radius: 8px; font-weight: 600;">1</a>
+                    <a href="#"
+                        style="padding: 12px 20px; border: 1px solid var(--border-color); background: white; border-radius: 8px; font-weight: 600;">2</a>
+                    <a href="#"
+                        style="padding: 12px 20px; border: 1px solid var(--border-color); background: white; border-radius: 8px; font-weight: 600;">Next</a>
                 </div>
             </div>
         </div>
@@ -328,71 +333,14 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-links">
-                <div class="footer-col">
-                    <h4>Get Support</h4>
-                    <ul>
-                        <li><a href="helpcenter.html">Help Center</a></li>
-                        <li><a href="live-chat.html">Live Chat</a></li>
-                        <li><a href="order-status.html">Check order status</a></li>
-                        <li><a href="report-abuse.html">Report abuse</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Trade Services</h4>
-                    <ul>
-                        <li><a href="tradeassurance.html">Trade Assurance</a></li>
-                        <li><a href="business-identity.html">Business Identity</a></li>
-                        <li><a href="logistics.html">Logistics Service</a></li>
-                        <li><a href="inspection.html">Inspection Service</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Source on Noshahibaba</h4>
-                    <ul>
-                        <li><a href="top-ranking.html">Top Ranking</a></li>
-                        <li><a href="rfq.html">Request for Quotation</a></li>
-                        <li><a href="membership.html">Membership Program</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Sell on Noshahibaba</h4>
-                    <ul>
-                        <li><a href="become-supplier.html">Become a Supplier</a></li>
-                        <li><a href="supplier-central.html">Supplier Central</a></li>
-                        <li><a href="training-center.html">Training Center</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>About Us</h4>
-                    <ul>
-                        <li><a href="our-story.html">Our Story</a></li>
-                        <li><a href="noshahi-group.html">Noshahi Group</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="legal.html">Legal Notice</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="social-links">
-                    <i data-lucide="facebook"></i>
-                    <i data-lucide="linkedin"></i>
-                    <i data-lucide="twitter"></i>
-                    <i data-lucide="instagram"></i>
-                    <i data-lucide="youtube"></i>
-                </div>
-                <p>&copy; 2026 Noshahibaba.com. All rights reserved.</p>
-                <p>Noshahi Group | <a href="legal.html" style="color:#999;">Privacy Policy</a> | <a href="legal.html"
-                        style="color:#999;">Terms of Use</a></p>
-            </div>
+        <div class="container"
+            style="text-align: center; color: var(--text-muted); padding: 40px 0; border-top: 1px solid var(--border-color);">
+            <p>&copy; 2026 Noshahibaba.com. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+    <script>lucide.createIcons();</script>
 </body>
 
 </html>

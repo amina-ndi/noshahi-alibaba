@@ -93,15 +93,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // All Categories Toggle
+    // All Categories Toggle & Dropdown Logic
     const allCategoriesBtn = document.getElementById('all-categories-btn');
-    const categorySidebar = document.getElementById('category-sidebar');
-    const heroGrid = document.querySelector('.hero-grid');
+    const subNav = document.querySelector('.sub-nav .container');
 
-    if (allCategoriesBtn && categorySidebar && heroGrid) {
-        allCategoriesBtn.addEventListener('click', () => {
-            categorySidebar.classList.toggle('active');
-            heroGrid.classList.toggle('with-sidebar');
+    const categoriesHTML = `
+        <div class="categories-dropdown" id="global-categories-dropdown">
+            <ul>
+                <li><a href="womens-clothing.html"><i data-lucide="shopping-bag"></i> Women's Clothing</a></li>
+                <li><a href="mens-clothing.html"><i data-lucide="user"></i> Men's Clothing</a></li>
+                <li><a href="apparel.html"><i data-lucide="shirt"></i> Apparel & Accessories</a></li>
+                <li><a href="electronics.html"><i data-lucide="cpu"></i> Consumer Electronics</a></li>
+                <li><a href="home-garden.html"><i data-lucide="home"></i> Home & Garden</a></li>
+                <li><a href="machinery.html"><i data-lucide="settings"></i> Machinery</a></li>
+                <li><a href="beauty.html"><i data-lucide="heart"></i> Beauty & Personal Care</a></li>
+                <li><a href="vehicles.html"><i data-lucide="car"></i> Vehicles & Accessories</a></li>
+                <li><a href="agriculture.html"><i data-lucide="sprout"></i> Agriculture & Food</a></li>
+                <li><a href="computers.html"><i data-lucide="laptop"></i> Computer & Software</a></li>
+            </ul>
+        </div>
+    `;
+
+    if (allCategoriesBtn && subNav) {
+        // Inject dropdown if not present
+        if (!document.getElementById('global-categories-dropdown')) {
+            const navFlex = document.querySelector('.nav-flex');
+            navFlex.insertAdjacentHTML('beforeend', categoriesHTML);
+            lucide.createIcons();
+        }
+
+        const dropdown = document.getElementById('global-categories-dropdown');
+
+        allCategoriesBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dropdown.classList.toggle('active');
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target) && !allCategoriesBtn.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
         });
     }
 
