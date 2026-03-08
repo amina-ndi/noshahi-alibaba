@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -82,15 +83,49 @@
     <main class="container" style="margin-top: 40px;">
         <!-- Hero Section -->
         <section class="category-hero"
-            style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; height: 300px; border-radius: 20px; display: flex; align-items: center; padding: 0 60px; color: white; margin-bottom: 40px;">
+            style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; height: 300px; border-radius: 20px; display: flex; align-items: center; padding: 0 60px; color: white; margin-bottom: 40px;">
             <div class="category-hero-content">
                 <h1 style="font-size: 52px; font-weight: 800; margin-bottom: 10px;">Vehicles & Accessories</h1>
-                <p style="font-size: 20px; opacity: 0.9;">High-quality vehicles, auto parts, and car accessories from
-                    global manufacturers.</p>
+                <p style="font-size: 20px; opacity: 0.9;">Drive the future. Global source for cars, parts and transport
+                    solutions.</p>
             </div>
         </section>
 
-        <div class="page-layout" style="display: grid; grid-template-columns: 260px 1fr; gap: 40px;">
+        <!-- Visual Categories Grid -->
+        <div class="visual-categories">
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1593941707882-a5bba14930c7?q=80&w=400&auto=format&fit=crop"
+                    alt="Electric" class="visual-cat-img">
+                <span>Electric Vehicles</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=400&auto=format&fit=crop"
+                    alt="Commercial" class="visual-cat-img">
+                <span>Commercial</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=400&auto=format&fit=crop"
+                    alt="Spare Parts" class="visual-cat-img">
+                <span>Spare Parts</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?q=80&w=400&auto=format&fit=crop"
+                    alt="Accessories" class="visual-cat-img">
+                <span>Accessories</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1558981403-c5f91ebec3ad?q=80&w=400&auto=format&fit=crop"
+                    alt="Bikes" class="visual-cat-img">
+                <span>Bikes & Scooters</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5f649774?q=80&w=400&auto=format&fit=crop"
+                    alt="Tools" class="visual-cat-img">
+                <span>Repair Tools</span>
+            </div>
+        </div>
+
+        <div class="page-layout">
             <!-- Sidebar -->
             <aside class="sidebar"
                 style="background: white; border-radius: 16px; padding: 25px; box-shadow: var(--shadow-sm); height: fit-content;">
@@ -98,24 +133,42 @@
                     style="font-size: 18px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;">
                     Categories</h4>
                 <ul class="sidebar-links" style="list-style: none;">
-                    <li><a href="#"
-                            style="color: var(--primary); font-weight: 600; font-size: 15px; display: block;">Electric
-                            Vehicles</a></li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Car
-                            Electronics</a></li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Auto
-                            Parts</a></li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Interior
-                            Accessories</a></li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Motorcycles</a>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--primary); font-weight: 600; font-size: 15px; display: flex; align-items: center; gap: 10px;">
+                            <i data-lucide="car" style="width: 18px;"></i> Electric Vehicles
+                        </a>
                     </li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Tools
-                            & Equipment</a></li>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="truck" style="width: 18px;"></i> Commercial
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="cog" style="width: 18px;"></i> Spare Parts
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="settings" style="width: 18px;"></i> Accessories
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="bike" style="width: 18px;"></i> Bikes
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="wrench" style="width: 18px;"></i> Repair Tools
+                        </a>
+                    </li>
                 </ul>
             </aside>
 
@@ -125,196 +178,196 @@
                     <!-- 1 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=1200&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1593941707882-a5bba14930c7?q=80&w=800&auto=format&fit=crop"
                                 alt="P1"></div>
                         <div class="product-info">
-                            <p class="product-name">2026 High Performance Electric Luxury Sedan</p>
-                            <p class="product-price">PKR 8,500,000.00 - 12,000,000.00</p>
+                            <p class="product-name">2024 New Energy Electric Sedan - 500km Range</p>
+                            <p class="product-price">PKR 3,500,000.00 - 4,800,000.00</p>
                             <p class="product-moq">1 Unit (MOQ)</p>
                             <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">CN
-                                    10yrs</span></div>
+                                    5yrs</span></div>
                         </div>
                     </div>
                     <!-- 2 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1549231518-e214f4882c5a?q=80&w=1200&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=800&auto=format&fit=crop"
                                 alt="P2"></div>
                         <div class="product-info">
-                            <p class="product-name">Universal 10 Inch Android Car Multimedia Player</p>
-                            <p class="product-price">PKR 15,000.00 - 28,000.00</p>
-                            <p class="product-moq">10 Pieces (MOQ)</p>
+                            <p class="product-name">Heavy Duty Delivery Truck - Reefer Unit</p>
+                            <p class="product-price">PKR 8,500,000.00 - 12,000,000.00</p>
+                            <p class="product-moq">1 Unit (MOQ)</p>
                             <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
-                                    5yrs</span></div>
+                                    8yrs</span></div>
                         </div>
                     </div>
                     <!-- 3 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1558981403-c5f91cbba527?q=80&w=1200&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=800&auto=format&fit=crop"
                                 alt="P3"></div>
                         <div class="product-info">
-                            <p class="product-name">Professional 250cc Racing Sport Motorcycle</p>
-                            <p class="product-price">PKR 450,000.00 - 680,000.00</p>
-                            <p class="product-moq">5 Units (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">CN
-                                    8yrs</span></div>
+                            <p class="product-name">Premium Alloy Wheel Set - 18 Inch</p>
+                            <p class="product-price">PKR 45,000.00 - 65,000.00</p>
+                            <p class="product-moq">4 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">TW
+                                    4yrs</span></div>
                         </div>
                     </div>
                     <!-- 4 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=1200&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=800&auto=format&fit=crop"
                                 alt="P4"></div>
                         <div class="product-info">
-                            <p class="product-name">Premium Leather Car Seat Covers - Universal</p>
+                            <p class="product-name">Luxury Leather Seat Covers - Universal Fit</p>
                             <p class="product-price">PKR 12,000.00 - 18,000.00</p>
-                            <p class="product-moq">20 Sets (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
-                                    4yrs</span></div>
+                            <p class="product-moq">10 Sets (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
+                                    3yrs</span></div>
                         </div>
                     </div>
                     <!-- 5 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1486496146582-9ffcd0b2b2b7?q=80&w=1200&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1558981403-c5f91ebec3ad?q=80&w=800&auto=format&fit=crop"
                                 alt="P5"></div>
                         <div class="product-info">
-                            <p class="product-name">18 Inch Luxury Matte Black Alloy Wheels</p>
-                            <p class="product-price">PKR 85,000.00 - 110,000.00</p>
-                            <p class="product-moq">4 Pieces (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
-                                    12yrs</span></div>
+                            <p class="product-name">Sport Cruise Motorcycle - 250cc Engine</p>
+                            <p class="product-price">PKR 250,000.00 - 450,000.00</p>
+                            <p class="product-moq">5 Units (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
+                                    6yrs</span></div>
                         </div>
                     </div>
                     <!-- 6 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1579829366248-204fe8413f31?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1526726533690-5cbe94f42e5d?q=80&w=800&auto=format&fit=crop"
                                 alt="P6"></div>
                         <div class="product-info">
-                            <p class="product-name">Vehicle Real-time GPS Tracker Anti-theft</p>
-                            <p class="product-price">PKR 3,500.00 - 5,800.00</p>
-                            <p class="product-moq">50 Pieces (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
-                                    4yrs</span></div>
+                            <p class="product-name">Solar Charged Dash Cam - Ultra HD 4K</p>
+                            <p class="product-price">PKR 8,500.00 - 12,000.00</p>
+                            <p class="product-moq">20 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">KR
+                                    2yrs</span></div>
                         </div>
                     </div>
                     <!-- 7 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800&auto=format&fit=crop"
                                 alt="P7"></div>
                         <div class="product-info">
-                            <p class="product-name">Full Face Motorcycle Helmet DOT Certified</p>
-                            <p class="product-price">PKR 8,500.00 - 15,000.00</p>
-                            <p class="product-moq">10 Pieces (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
-                                    5yrs</span></div>
+                            <p class="product-name">City Transit Bus - 45 Seater Diesel</p>
+                            <p class="product-price">PKR 4,500,000.00 - 6,500,000.00</p>
+                            <p class="product-moq">1 Unit (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">CN
+                                    10yrs</span></div>
                         </div>
                     </div>
                     <!-- 8 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=800&auto=format&fit=crop"
                                 alt="P8"></div>
                         <div class="product-info">
-                            <p class="product-name">Hydraulic Floor Jack for SUV - 3 Ton</p>
-                            <p class="product-price">PKR 12,000.00 - 18,000.00</p>
-                            <p class="product-moq">5 Pieces (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
-                                    10yrs</span></div>
+                            <p class="product-name">Professional Engine Diagnostic Tool - OBD2</p>
+                            <p class="product-price">PKR 15,000.00 - 25,000.00</p>
+                            <p class="product-moq">10 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">US
+                                    8yrs</span></div>
                         </div>
                     </div>
                     <!-- 9 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1510282312150-cc8f6c5e8884?q=80&w=800&auto=format&fit=crop"
                                 alt="P9"></div>
                         <div class="product-info">
-                            <p class="product-name">4K Dual Dash Cam - Front and Rear Recording</p>
-                            <p class="product-price">PKR 6,500.00 - 9,800.00</p>
-                            <p class="product-moq">30 Pieces (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">CN
+                            <p class="product-name">LED Headlight Bulb Kit - 12000 Lumens</p>
+                            <p class="product-price">PKR 2,500.00 - 4,200.00</p>
+                            <p class="product-moq">50 Sets (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
                                     3yrs</span></div>
                         </div>
                     </div>
                     <!-- 10 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=800&auto=format&fit=crop"
                                 alt="P10"></div>
                         <div class="product-info">
-                            <p class="product-name">Smart Car Interior LED Lighting Kit</p>
-                            <p class="product-price">PKR 2,500.00 - 4,200.00</p>
-                            <p class="product-moq">50 Sets (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
-                                    2yrs</span></div>
+                            <p class="product-name">Industrial Rubber Tires - Heavy Machinery</p>
+                            <p class="product-price">PKR 25,000.00 - 45,000.00</p>
+                            <p class="product-moq">4 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">CN
+                                    5yrs</span></div>
                         </div>
                     </div>
                     <!-- 11 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1593941707882-a5bba14930c7?q=80&w=800&auto=format&fit=crop"
                                 alt="P11"></div>
                         <div class="product-info">
-                            <p class="product-name">Luxury SUV Roof Rack Cargo Carrier</p>
-                            <p class="product-price">PKR 25,000.00 - 45,000.00</p>
-                            <p class="product-moq">5 Units (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">DE
-                                    8yrs</span></div>
+                            <p class="product-name">High-Performance Brake Pads - Ceramic</p>
+                            <p class="product-price">PKR 4,500.00 - 8,200.00</p>
+                            <p class="product-moq">20 Sets (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">DE
+                                    3yrs</span></div>
                         </div>
                     </div>
                     <!-- 12 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1621614912997-73a7c089201a?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1558981403-c5f91ebec3ad?q=80&w=800&auto=format&fit=crop"
                                 alt="P12"></div>
                         <div class="product-info">
-                            <p class="product-name">Portable Car Jump Starter Power Bank</p>
-                            <p class="product-price">PKR 8,500.00 - 12,500.00</p>
-                            <p class="product-moq">20 Pieces (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">US
-                                    5yrs</span></div>
+                            <p class="product-name">Electric Cargo Bike - 250kg Capacity</p>
+                            <p class="product-price">PKR 85,000.00 - 120,000.00</p>
+                            <p class="product-moq">5 Units (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">CN
+                                    6yrs</span></div>
                         </div>
                     </div>
                     <!-- 13 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?q=80&w=800&auto=format&fit=crop"
                                 alt="P13"></div>
                         <div class="product-info">
-                            <p class="product-name">Custom Car Floor Mats All-Weather Protection</p>
-                            <p class="product-price">PKR 4,200.00 - 6,800.00</p>
-                            <p class="product-moq">10 Sets (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
-                                    4yrs</span></div>
+                            <p class="product-name">Bluetooth Car FM Transmitter & Charger</p>
+                            <p class="product-price">PKR 1,200.00 - 1,800.00</p>
+                            <p class="product-moq">50 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    2yrs</span></div>
                         </div>
                     </div>
                     <!-- 14 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1549231518-e214f4882c5a?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop"
                                 alt="P14"></div>
                         <div class="product-info">
-                            <p class="product-name">OBD2 Diagnostic Scanner Tool Professional</p>
-                            <p class="product-price">PKR 15,000.00 - 35,000.00</p>
-                            <p class="product-moq">5 Pieces (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">UK
-                                    10yrs</span></div>
+                            <p class="product-name">Executive Sedan - Luxury Interior Edition</p>
+                            <p class="product-price">PKR 4,500,000.00 - 6,500,000.00</p>
+                            <p class="product-moq">1 Unit (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">KR
+                                    9yrs</span></div>
                         </div>
                     </div>
                     <!-- 15 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800&auto=format&fit=crop"
                                 alt="P15"></div>
                         <div class="product-info">
-                            <p class="product-name">Premium Ceramic Coating Protection Kit</p>
-                            <p class="product-price">PKR 5,500.00 - 8,200.00</p>
-                            <p class="product-moq">50 Boxes (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">JP
-                                    12yrs</span></div>
+                            <p class="product-name">Commercial Delivery Van - High Roof</p>
+                            <p class="product-price">PKR 2,800,000.00 - 4,200,000.00</p>
+                            <p class="product-moq">2 Units (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
+                                    5yrs</span></div>
                         </div>
                     </div>
                 </div>

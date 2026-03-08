@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -90,7 +91,41 @@
             </div>
         </section>
 
-        <div class="page-layout" style="display: grid; grid-template-columns: 260px 1fr; gap: 40px;">
+        <!-- Visual Categories Grid -->
+        <div class="visual-categories">
+            <div class="visual-cat-card">
+                <img src="C:\Users\Administrator\.gemini\antigravity\brain\072aedd7-c88b-47a0-819f-0d84b2270ccb\luxury_skincare_set_1772910578647.png"
+                    alt="Skin Care" class="visual-cat-img">
+                <span>Skin Care</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="C:\Users\Administrator\.gemini\antigravity\brain\072aedd7-c88b-47a0-819f-0d84b2270ccb\makeup_palette_professional_1772910666398.png"
+                    alt="Makeup" class="visual-cat-img">
+                <span>Makeup</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="C:\Users\Administrator\.gemini\antigravity\brain\072aedd7-c88b-47a0-819f-0d84b2270ccb\hair_care_premium_bottles_1772910717091.png"
+                    alt="Hair Care" class="visual-cat-img">
+                <span>Hair Care</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=400&auto=format&fit=crop"
+                    alt="Fragrances" class="visual-cat-img">
+                <span>Fragrances</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1556229010-6c3f3930ae25?q=80&w=400&auto=format&fit=crop"
+                    alt="Personal Care" class="visual-cat-img">
+                <span>Personal Care</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1621607512214-68297480165e?q=80&w=400&auto=format&fit=crop"
+                    alt="Men's Grooming" class="visual-cat-img">
+                <span>Men's Grooming</span>
+            </div>
+        </div>
+
+        <div class="page-layout">
             <!-- Sidebar -->
             <aside class="sidebar"
                 style="background: white; border-radius: 16px; padding: 25px; box-shadow: var(--shadow-sm); height: fit-content;">
@@ -98,24 +133,42 @@
                     style="font-size: 18px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;">
                     Categories</h4>
                 <ul class="sidebar-links" style="list-style: none;">
-                    <li><a href="#"
-                            style="color: var(--primary); font-weight: 600; font-size: 15px; display: block;">Skin
-                            Care</a></li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Makeup</a>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--primary); font-weight: 600; font-size: 15px; display: flex; align-items: center; gap: 10px;">
+                            <i data-lucide="sparkles" style="width: 18px;"></i> Skin Care
+                        </a>
                     </li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Hair
-                            Care</a></li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Fragrances</a>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="palette" style="width: 18px;"></i> Makeup
+                        </a>
                     </li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Personal
-                            Care</a></li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Men's
-                            Grooming</a></li>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="wind" style="width: 18px;"></i> Hair Care
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="droplet" style="width: 18px;"></i> Fragrances
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="heart" style="width: 18px;"></i> Personal Care
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="user" style="width: 18px;"></i> Men's Grooming
+                        </a>
+                    </li>
                 </ul>
             </aside>
 
@@ -207,7 +260,7 @@
                                 alt="P7"></div>
                         <div class="product-info">
                             <p class="product-name">Hydrating Silk Sheet Mask - Organic</p>
-                            <p class="product-price">PKR 1,500.00 - 3,000.00 (Pack of 10)</p>
+                            <p class="product-price">PKR 1,500.00 - 3,000.00</p>
                             <p class="product-moq">100 Packs (MOQ)</p>
                             <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
                                     4yrs</span></div>

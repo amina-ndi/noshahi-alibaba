@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -39,7 +40,7 @@
             <div class="search-container">
                 <div class="search-box">
                     <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
-                    <input type="text" placeholder="Search Agriculture & Food...">
+                    <input type="text" placeholder="Search Agriculture Products...">
                     <button class="search-btn"><i data-lucide="search"></i> Search</button>
                 </div>
             </div>
@@ -82,14 +83,49 @@
     <main class="container" style="margin-top: 40px;">
         <!-- Hero Section -->
         <section class="category-hero"
-            style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; height: 300px; border-radius: 20px; display: flex; align-items: center; padding: 0 60px; color: white; margin-bottom: 40px;">
+            style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1500673922987-e212871fec22?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; height: 300px; border-radius: 20px; display: flex; align-items: center; padding: 0 60px; color: white; margin-bottom: 40px;">
             <div class="category-hero-content">
                 <h1 style="font-size: 52px; font-weight: 800; margin-bottom: 10px;">Agriculture & Food</h1>
-                <p style="font-size: 20px; opacity: 0.9;">Fresh produce, grains, and advanced farming technology.</p>
+                <p style="font-size: 20px; opacity: 0.9;">Fresh from the earth. Global wholesale of agriculture and food
+                    products.</p>
             </div>
         </section>
 
-        <div class="page-layout" style="display: grid; grid-template-columns: 260px 1fr; gap: 40px;">
+        <!-- Visual Categories Grid -->
+        <div class="visual-categories">
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1542382257-80dee27001db?q=80&w=400&auto=format&fit=crop"
+                    alt="Seeds" class="visual-cat-img">
+                <span>Seeds & Bulbs</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=400&auto=format&fit=crop"
+                    alt="Plants" class="visual-cat-img">
+                <span>Plants & Flowers</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=400&auto=format&fit=crop"
+                    alt="Food" class="visual-cat-img">
+                <span>Fresh Food</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?q=80&w=400&auto=format&fit=crop"
+                    alt="Livestock" class="visual-cat-img">
+                <span>Livestock</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1511132103238-7fc6a8c6f2b1?q=80&w=400&auto=format&fit=crop"
+                    alt="Processed" class="visual-cat-img">
+                <span>Processed Food</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=400&auto=format&fit=crop"
+                    alt="Beverages" class="visual-cat-img">
+                <span>Beverages</span>
+            </div>
+        </div>
+
+        <div class="page-layout">
             <!-- Sidebar -->
             <aside class="sidebar"
                 style="background: white; border-radius: 16px; padding: 25px; box-shadow: var(--shadow-sm); height: fit-content;">
@@ -97,24 +133,42 @@
                     style="font-size: 18px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;">
                     Categories</h4>
                 <ul class="sidebar-links" style="list-style: none;">
-                    <li><a href="#"
-                            style="color: var(--primary); font-weight: 600; font-size: 15px; display: block;">Grains &
-                            Seeds</a></li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Fresh
-                            Fruits</a></li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Farming
-                            Machinery</a></li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Fertilizers</a>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--primary); font-weight: 600; font-size: 15px; display: flex; align-items: center; gap: 10px;">
+                            <i data-lucide="sprout" style="width: 18px;"></i> Seeds & Bulbs
+                        </a>
                     </li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Animal
-                            Feed</a></li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Irrigation
-                            Systems</a></li>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="flower-2" style="width: 18px;"></i> Plants & Flowers
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="utensils-2" style="width: 18px;"></i> Fresh Food
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="beef" style="width: 18px;"></i> Livestock
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="package-2" style="width: 18px;"></i> Processed Food
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="droplets" style="width: 18px;"></i> Beverages
+                        </a>
+                    </li>
                 </ul>
             </aside>
 
@@ -124,196 +178,196 @@
                     <!-- 1 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1542382257-80dee27001db?q=80&w=800&auto=format&fit=crop"
                                 alt="P1"></div>
                         <div class="product-info">
-                            <p class="product-name">Premium Long Grain Basmati Rice - Export Quality</p>
-                            <p class="product-price">PKR 350.00 - 450.00 / kg</p>
-                            <p class="product-moq">500 kg (MOQ)</p>
+                            <p class="product-name">High-Yield Hybrid Corn Seeds - 20kg Bag</p>
+                            <p class="product-price">PKR 4,500.00 - 6,200.00</p>
+                            <p class="product-moq">50 Bags (MOQ)</p>
                             <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
-                                    15yrs</span></div>
+                                    6yrs</span></div>
                         </div>
                     </div>
                     <!-- 2 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800&auto=format&fit=crop"
                                 alt="P2"></div>
                         <div class="product-info">
-                            <p class="product-name">100% Pure Organic Forest Honey - Raw</p>
+                            <p class="product-name">Fresh Organic Red Apples - Export Quality</p>
                             <p class="product-price">PKR 1,200.00 - 1,800.00</p>
-                            <p class="product-moq">20 Bottles (MOQ)</p>
+                            <p class="product-moq">100 Boxes (MOQ)</p>
                             <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
-                                    4yrs</span></div>
+                                    8yrs</span></div>
                         </div>
                     </div>
                     <!-- 3 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1595062772590-48e244837839?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=800&auto=format&fit=crop"
                                 alt="P3"></div>
                         <div class="product-info">
-                            <p class="product-name">Heavy Duty 75HP 4WD Agricultural Tractor</p>
-                            <p class="product-price">PKR 2,200,000.00 - 3,500,000.00</p>
-                            <p class="product-moq">1 Unit (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">CN
-                                    8yrs</span></div>
+                            <p class="product-name">Pure Extra Virgin Olive Oil - 5L Tin</p>
+                            <p class="product-price">PKR 8,500.00 - 12,000.00</p>
+                            <p class="product-moq">10 Tins (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">ES
+                                    10yrs</span></div>
                         </div>
                     </div>
                     <!-- 4 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?q=80&w=800&auto=format&fit=crop"
                                 alt="P4"></div>
                         <div class="product-info">
-                            <p class="product-name">Export Quality Fresh Honeycrisp Red Apples</p>
-                            <p class="product-price">PKR 180.00 - 250.00 / kg</p>
-                            <p class="product-moq">100 kg (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
-                                    6yrs</span></div>
+                            <p class="product-name">Healthy Livestock Cattle - Meat & Dairy</p>
+                            <p class="product-price">PKR 150,000.00 - 250,000.00</p>
+                            <p class="product-moq">5 Heads (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
+                                    4yrs</span></div>
                         </div>
                     </div>
                     <!-- 5 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1592911349520-205167f5e714?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1511132103238-7fc6a8c6f2b1?q=80&w=800&auto=format&fit=crop"
                                 alt="P5"></div>
                         <div class="product-info">
-                            <p class="product-name">Automatic Solar Drip Irrigation System</p>
-                            <p class="product-price">PKR 85,000.00 - 150,000.00</p>
-                            <p class="product-moq">1 Set (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
+                            <p class="product-name">Premium Basmati Rice - Parboiled XXXL</p>
+                            <p class="product-price">PKR 5,500.00 - 8,500.00</p>
+                            <p class="product-moq">20 Bags (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
                                     12yrs</span></div>
                         </div>
                     </div>
                     <!-- 6 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1523348830342-d01f9fc56440?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=800&auto=format&fit=crop"
                                 alt="P6"></div>
                         <div class="product-info">
-                            <p class="product-name">Battery Operated Knapsack Power Sprayer</p>
-                            <p class="product-price">PKR 8,500.00 - 12,000.00</p>
-                            <p class="product-moq">10 Pieces (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
-                                    4yrs</span></div>
+                            <p class="product-name">Exotic Indoor Plant Collection - Wholesale</p>
+                            <p class="product-price">PKR 12,000.00 - 35,000.00</p>
+                            <p class="product-moq">10 Sets (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">TH
+                                    5yrs</span></div>
                         </div>
                     </div>
                     <!-- 7 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1543073395-53531b46a2ee?q=80&w=800&auto=format&fit=crop"
                                 alt="P7"></div>
                         <div class="product-info">
-                            <p class="product-name">Water Soluble NPK Fertilizer - Balanced</p>
-                            <p class="product-price">PKR 2,400.00 / 50kg Bag</p>
-                            <p class="product-moq">100 Bags (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
-                                    10yrs</span></div>
+                            <p class="product-name">Organic Coffee Beans - Arabica Medium Roast</p>
+                            <p class="product-price">PKR 2,400.00 - 3,800.00</p>
+                            <p class="product-moq">50kg (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">ET
+                                    7yrs</span></div>
                         </div>
                     </div>
                     <!-- 8 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1542382257-80dee27001db?q=80&w=800&auto=format&fit=crop"
                                 alt="P8"></div>
                         <div class="product-info">
-                            <p class="product-name">Multi-span Greenhouse for Large Scale</p>
-                            <p class="product-price">PKR 150,000.00 - 350,000.00</p>
-                            <p class="product-moq">1 Unit (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">CN
-                                    8yrs</span></div>
+                            <p class="product-name">Specialized Fertilizer - NPK Growth Formula</p>
+                            <p class="product-price">PKR 3,500.00 - 5,200.00</p>
+                            <p class="product-moq">100 Bags (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
+                                    5yrs</span></div>
                         </div>
                     </div>
                     <!-- 9 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1595113316349-9fa4eb24f884?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1473093226795-af9932fe5856?q=80&w=800&auto=format&fit=crop"
                                 alt="P9"></div>
                         <div class="product-info">
-                            <p class="product-name">High Efficiency Solar Water Pump</p>
-                            <p class="product-price">PKR 45,000.00 - 65,000.00</p>
-                            <p class="product-moq">1 Set (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
-                                    6yrs</span></div>
+                            <p class="product-name">Raw Wild Honey - 100% Pure Organic</p>
+                            <p class="product-price">PKR 2,800.00 - 4,500.00</p>
+                            <p class="product-moq">12 Bottles (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    3yrs</span></div>
                         </div>
                     </div>
                     <!-- 10 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1511132103238-7fc6a8c6f2b1?q=80&w=800&auto=format&fit=crop"
                                 alt="P10"></div>
                         <div class="product-info">
-                            <p class="product-name">Pure Alfalfa Hay Pellets for Livestock</p>
-                            <p class="product-price">PKR 85.00 - 120.00 / kg</p>
-                            <p class="product-moq">1000 kg (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
-                                    4yrs</span></div>
+                            <p class="product-name">Bulk Spices - Turmeric & Cumin Powder</p>
+                            <p class="product-price">PKR 450.00 - 850.00 per kg</p>
+                            <p class="product-moq">50kg (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">IN
+                                    9yrs</span></div>
                         </div>
                     </div>
                     <!-- 11 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1495539406979-bf61750d38ad?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800&auto=format&fit=crop"
                                 alt="P11"></div>
                         <div class="product-info">
-                            <p class="product-name">Industrial Seed Cleaning & Grading Machine</p>
-                            <p class="product-price">PKR 125,000.00 - 180,000.00</p>
-                            <p class="product-moq">1 Unit (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">CN
-                                    10yrs</span></div>
+                            <p class="product-name">Fresh Vegetable Mix - Supply Chain Wholesale</p>
+                            <p class="product-price">PKR 1,500.00 - 2,800.00</p>
+                            <p class="product-moq">50 Crates (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    2yrs</span></div>
                         </div>
                     </div>
                     <!-- 12 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1530260626688-0482da93f96a?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=800&auto=format&fit=crop"
                                 alt="P12"></div>
                         <div class="product-info">
-                            <p class="product-name">Fresh Organic Yellow Lemons - Bulk</p>
-                            <p class="product-price">PKR 120.00 - 180.00 / kg</p>
-                            <p class="product-moq">500 kg (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
-                                    3yrs</span></div>
+                            <p class="product-name">Natural Fruit Juice Concentrate - Orange</p>
+                            <p class="product-price">PKR 12,000.00 per Drum</p>
+                            <p class="product-moq">5 Drums (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">EG
+                                    6yrs</span></div>
                         </div>
                     </div>
                     <!-- 13 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1471194402529-8e0f5a675de6?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1542382257-80dee27001db?q=80&w=800&auto=format&fit=crop"
                                 alt="P13"></div>
                         <div class="product-info">
-                            <p class="product-name">Hybrid Corn Seeds for High Yield Farming</p>
-                            <p class="product-price">PKR 1,500.00 - 2,500.00 / bag</p>
-                            <p class="product-moq">50 Bags (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
-                                    5yrs</span></div>
+                            <p class="product-name">High-Glow Flower Seeds - Seasonal Mix</p>
+                            <p class="product-price">PKR 2,500.00 - 4,200.00</p>
+                            <p class="product-moq">10 Sets (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">NL
+                                    15yrs</span></div>
                         </div>
                     </div>
                     <!-- 14 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1508588629415-fb1e93b35a6b?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=800&auto=format&fit=crop"
                                 alt="P14"></div>
                         <div class="product-info">
-                            <p class="product-name">Professional Poultry Farm Feeding System</p>
-                            <p class="product-price">PKR 85,000.00 - 120,000.00</p>
-                            <p class="product-moq">1 Set (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">CN
+                            <p class="product-name">Bonsai Tree Master Collection - Rare Species</p>
+                            <p class="product-price">PKR 45,000.00 - 85,000.00</p>
+                            <p class="product-moq">2 Units (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">JP
                                     12yrs</span></div>
                         </div>
                     </div>
                     <!-- 15 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1518977676601-b53f02ac6d31?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?q=80&w=800&auto=format&fit=crop"
                                 alt="P15"></div>
                         <div class="product-info">
-                            <p class="product-name">Fresh High-Quality Potato - Export Quality</p>
-                            <p class="product-price">PKR 85.00 - 110.00 / kg</p>
-                            <p class="product-moq">2000 kg (MOQ)</p>
+                            <p class="product-name">Industrial Animal Feed - High Protein Blend</p>
+                            <p class="product-price">PKR 3,800.00 - 5,500.00</p>
+                            <p class="product-moq">100 Bags (MOQ)</p>
                             <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
-                                    4yrs</span></div>
+                                    5yrs</span></div>
                         </div>
                     </div>
                 </div>

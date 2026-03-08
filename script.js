@@ -6,11 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainHeader = document.querySelector('.main-header');
     const scrollHandler = () => {
         if (window.scrollY > 50) {
-            mainHeader.style.boxShadow = 'var(--shadow-lg)';
-            mainHeader.style.padding = '15px 0';
+            mainHeader.classList.add('scrolled');
         } else {
-            mainHeader.style.boxShadow = 'var(--shadow-sm)';
-            mainHeader.style.padding = '20px 0';
+            mainHeader.classList.remove('scrolled');
         }
     };
     window.addEventListener('scroll', scrollHandler);
@@ -99,6 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const categoriesHTML = `
         <div class="categories-dropdown" id="global-categories-dropdown">
+            <div class="dropdown-header mobile-only" style="padding: 15px 20px; background: #f8fafc; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: 700; color: #0f172a;">All Categories</span>
+                <i data-lucide="x" class="close-dropdown" style="width: 20px; cursor: pointer;"></i>
+            </div>
             <ul>
                 <li><a href="womens-clothing.html"><i data-lucide="shopping-bag"></i> Women's Clothing</a></li>
                 <li><a href="mens-clothing.html"><i data-lucide="user"></i> Men's Clothing</a></li>
@@ -123,11 +125,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const dropdown = document.getElementById('global-categories-dropdown');
+        const closeBtn = dropdown.querySelector('.close-dropdown');
+
+        const mobileCatBtn = document.querySelector('.mobile-nav-item:nth-child(2)');
 
         allCategoriesBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             dropdown.classList.toggle('active');
         });
+
+        if (mobileCatBtn) {
+            mobileCatBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                dropdown.classList.add('active');
+            });
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdown.classList.remove('active');
+            });
+        }
 
         // Close when clicking outside
         document.addEventListener('click', (e) => {

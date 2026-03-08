@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Industrial Machinery | Noshahibaba.com</title>
+    <title>Machinery | Noshahibaba.com</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -39,7 +40,7 @@
             <div class="search-container">
                 <div class="search-box">
                     <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
-                    <input type="text" placeholder="Search in Machinery...">
+                    <input type="text" placeholder="Search Machinery...">
                     <button class="search-btn"><i data-lucide="search"></i> Search</button>
                 </div>
             </div>
@@ -82,40 +83,92 @@
     <main class="container" style="margin-top: 40px;">
         <!-- Hero Section -->
         <section class="category-hero"
-            style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; height: 300px; border-radius: 20px; display: flex; align-items: center; padding: 0 60px; color: white; margin-bottom: 40px;">
+            style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; height: 300px; border-radius: 20px; display: flex; align-items: center; padding: 0 60px; color: white; margin-bottom: 40px;">
             <div class="category-hero-content">
                 <h1 style="font-size: 52px; font-weight: 800; margin-bottom: 10px;">Industrial Machinery</h1>
-                <p style="font-size: 20px; opacity: 0.9;">Global trade in high-performance machinery and industrial
-                    solutions.</p>
+                <p style="font-size: 20px; opacity: 0.9;">Powering global production. Heavy-duty equipment for every
+                    industry.</p>
             </div>
         </section>
 
-        <div class="page-layout" style="display: grid; grid-template-columns: 260px 1fr; gap: 40px;">
+        <!-- Visual Categories Grid -->
+        <div class="visual-categories">
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1534067783941-51c9c23eca0c?q=80&w=400&auto=format&fit=crop"
+                    alt="Industrial" class="visual-cat-img">
+                <span>Industrial Machines</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1541625602330-2277a1cd1f84?q=80&w=400&auto=format&fit=crop"
+                    alt="Construction" class="visual-cat-img">
+                <span>Construction</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=400&auto=format&fit=crop"
+                    alt="Agriculture" class="visual-cat-img">
+                <span>Agriculture</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1578575036934-f20387405230?q=80&w=400&auto=format&fit=crop"
+                    alt="Parts" class="visual-cat-img">
+                <span>Machinery Parts</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1497124401559-3e75ec2ed794?q=80&w=400&auto=format&fit=crop"
+                    alt="Power" class="visual-cat-img">
+                <span>Power Equipment</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1536859355448-76f92ebff33d?q=80&w=400&auto=format&fit=crop"
+                    alt="Tools" class="visual-cat-img">
+                <span>Precision Tools</span>
+            </div>
+        </div>
+
+        <div class="page-layout">
             <!-- Sidebar -->
             <aside class="sidebar"
                 style="background: white; border-radius: 16px; padding: 25px; box-shadow: var(--shadow-sm); height: fit-content;">
                 <h4
                     style="font-size: 18px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;">
-                    Machinery</h4>
+                    Categories</h4>
                 <ul class="sidebar-links" style="list-style: none;">
-                    <li><a href="#"
-                            style="color: var(--primary); font-weight: 600; font-size: 15px; display: block;">Industrial
-                            Machinery</a></li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Manufacturing</a>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--primary); font-weight: 600; font-size: 15px; display: flex; align-items: center; gap: 10px;">
+                            <i data-lucide="settings" style="width: 18px;"></i> Industrial Machines
+                        </a>
                     </li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Construction</a>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="hammer" style="width: 18px;"></i> Construction
+                        </a>
                     </li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Packaging</a>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="truck" style="width: 18px;"></i> Agriculture
+                        </a>
                     </li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Electrical</a>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="cog" style="width: 18px;"></i> Machinery Parts
+                        </a>
                     </li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Machine
-                            Parts</a></li>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="zap" style="width: 18px;"></i> Power Equipment
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="anvil" style="width: 18px;"></i> Precision Tools
+                        </a>
+                    </li>
                 </ul>
             </aside>
 
@@ -125,25 +178,25 @@
                     <!-- 1 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop"
-                                alt="P1"></div>
+                                src="https://images.unsplash.com/photo-1534067783941-51c9c23eca0c?q=80&w=800&auto=format&fit=crop"
+                                alt="Industrial Lathe"></div>
                         <div class="product-info">
-                            <p class="product-name">Heavy Duty Mini Excavator - Construction Grade</p>
-                            <p class="product-price">PKR 1,550,000.00 - 2,200,000.00</p>
-                            <p class="product-moq">1 Set (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">CN
-                                    12yrs</span></div>
+                            <p class="product-name">High-Precision CNC Lathe Machine - Heavy Duty</p>
+                            <p class="product-price">PKR 450,000.00 - 850,000.00</p>
+                            <p class="product-moq">1 Unit (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">DE
+                                    5yrs</span></div>
                         </div>
                     </div>
                     <!-- 2 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=800&auto=format&fit=crop"
-                                alt="P2"></div>
+                                src="https://images.unsplash.com/photo-1541625602330-2277a1cd1f84?q=80&w=800&auto=format&fit=crop"
+                                alt="Mini Excavator"></div>
                         <div class="product-info">
-                            <p class="product-name">Precision CNC Machining Center - High Speed</p>
-                            <p class="product-price">PKR 3,500,000.00</p>
-                            <p class="product-moq">1 Set (MOQ)</p>
+                            <p class="product-name">Hydraulic Mini Excavator - Diesel Engine</p>
+                            <p class="product-price">PKR 1,200,000.00 - 1,800,000.00</p>
+                            <p class="product-moq">1 Unit (MOQ)</p>
                             <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
                                     8yrs</span></div>
                         </div>
@@ -151,38 +204,38 @@
                     <!-- 3 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1542641728-6ca359b085f4?q=80&w=800&auto=format&fit=crop"
-                                alt="P3"></div>
+                                src="https://images.unsplash.com/photo-1530268577195-263a20721867?q=80&w=800&auto=format&fit=crop"
+                                alt="Modern Tractor"></div>
                         <div class="product-info">
-                            <p class="product-name">3 Ton Diesel Forklift - Advanced Stability</p>
-                            <p class="product-price">PKR 1,250,000.00 - 1,800,000.00</p>
-                            <p class="product-moq">1 Set (MOQ)</p>
+                            <p class="product-name">Modern Farming Tractor - 4WD 90HP</p>
+                            <p class="product-price">PKR 850,000.00 - 1,200,000.00</p>
+                            <p class="product-moq">1 Unit (MOQ)</p>
                             <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
-                                    5yrs</span></div>
+                                    4yrs</span></div>
                         </div>
                     </div>
                     <!-- 4 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1516934024742-b461fbc4760a?q=80&w=800&auto=format&fit=crop"
-                                alt="P4"></div>
+                                src="https://images.unsplash.com/photo-1530124564312-6f951079313a?q=80&w=800&auto=format&fit=crop"
+                                alt="Machinery Gears"></div>
                         <div class="product-info">
-                            <p class="product-name">Industrial Laser Cutting Machine 3000W</p>
-                            <p class="product-price">PKR 4,800,000.00 - 6,500,000.00</p>
-                            <p class="product-moq">1 Set (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">CN
-                                    15yrs</span></div>
+                            <p class="product-name">Industrial Gear Set - High Torque Capability</p>
+                            <p class="product-price">PKR 12,000.00 - 25,000.00</p>
+                            <p class="product-moq">5 Sets (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">IT
+                                    3yrs</span></div>
                         </div>
                     </div>
                     <!-- 5 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1533900298318-6b8da08a523e?q=80&w=800&auto=format&fit=crop"
-                                alt="P5"></div>
+                                src="https://images.unsplash.com/photo-1585232354425-c60395d97f5b?q=80&w=800&auto=format&fit=crop"
+                                alt="Air Compressor"></div>
                         <div class="product-info">
-                            <p class="product-name">Automatic Bottling & Packaging Line</p>
-                            <p class="product-price">PKR 2,500,000.00 - 4,200,000.00</p>
-                            <p class="product-moq">1 Set (MOQ)</p>
+                            <p class="product-name">Electric Air Compressor - 500L Tank</p>
+                            <p class="product-price">PKR 45,000.00 - 65,000.00</p>
+                            <p class="product-moq">2 Units (MOQ)</p>
                             <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
                                     6yrs</span></div>
                         </div>
@@ -190,131 +243,131 @@
                     <!-- 6 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=800&auto=format&fit=crop"
-                                alt="P6"></div>
+                                src="https://images.unsplash.com/photo-1536859355448-76f92ebff33d?q=80&w=800&auto=format&fit=crop"
+                                alt="Precision Tool"></div>
                         <div class="product-info">
-                            <p class="product-name">High-Pressure Concrete Pump Truck</p>
-                            <p class="product-price">PKR 12,000,000.00</p>
-                            <p class="product-moq">1 Unit (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">CN
-                                    10yrs</span></div>
+                            <p class="product-name">Digital Caliper - Professional Grade 300mm</p>
+                            <p class="product-price">PKR 4,500.00 - 8,200.00</p>
+                            <p class="product-moq">10 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">JP
+                                    11yrs</span></div>
                         </div>
                     </div>
                     <!-- 7 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1581093458791-9f3c3250cc8b?q=80&w=800&auto=format&fit=crop"
-                                alt="P7"></div>
+                                src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?q=80&w=800&auto=format&fit=crop"
+                                alt="Bottling Plant"></div>
                         <div class="product-info">
-                            <p class="product-name">Plastic Injection Molding Machine</p>
-                            <p class="product-price">PKR 5,500,000.00 - 8,200,000.00</p>
-                            <p class="product-moq">1 Set (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
-                                    4yrs</span></div>
+                            <p class="product-name">Automatic Bottling Plant - Liquid Filling</p>
+                            <p class="product-price">PKR 2,500,000.00</p>
+                            <p class="product-moq">1 line (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">CN
+                                    10yrs</span></div>
                         </div>
                     </div>
                     <!-- 8 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop"
-                                alt="P8"></div>
+                                src="https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?q=80&w=800&auto=format&fit=crop"
+                                alt="Concrete Mixer"></div>
                         <div class="product-info">
-                            <p class="product-name">Global Trade Selection - Heavy Drill Rig</p>
-                            <p class="product-price">PKR 18,000,000.00</p>
-                            <p class="product-moq">1 Set (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
-                                    6yrs</span></div>
+                            <p class="product-name">Concrete Mixer Truck - 12m3 Capacity</p>
+                            <p class="product-price">PKR 3,500,000.00 - 5,000,000.00</p>
+                            <p class="product-moq">1 Unit (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
+                                    7yrs</span></div>
                         </div>
                     </div>
                     <!-- 9 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1565171341753-431599370703?q=80&w=800&auto=format&fit=crop"
-                                alt="P9"></div>
+                                src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?q=80&w=800&auto=format&fit=crop"
+                                alt="Power Generator"></div>
                         <div class="product-info">
-                            <p class="product-name">Industrial Air Compressor 500L</p>
-                            <p class="product-price">PKR 120,000.00 - 250,000.00</p>
-                            <p class="product-moq">2 Units (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
-                                    12yrs</span></div>
+                            <p class="product-name">Gas Powered Generator - 250kVA Silent</p>
+                            <p class="product-price">PKR 450,000.00 - 650,000.00</p>
+                            <p class="product-moq">1 Unit (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">UK
+                                    8yrs</span></div>
                         </div>
                     </div>
                     <!-- 10 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=800&auto=format&fit=crop"
-                                alt="P10"></div>
+                                src="https://images.unsplash.com/photo-1581093196277-9f608009c46e?q=80&w=800&auto=format&fit=crop"
+                                alt="Molding Machine"></div>
                         <div class="product-info">
-                            <p class="product-name">Smart Factory Monitoring Console</p>
-                            <p class="product-price">PKR 85,000.00 - 150,000.00</p>
-                            <p class="product-moq">5 Pieces (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">KR
-                                    3yrs</span></div>
+                            <p class="product-name">Plastic Injection Molding Machine</p>
+                            <p class="product-price">PKR 1,500,000.00 - 2,500,000.00</p>
+                            <p class="product-moq">1 Unit (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
+                                    5yrs</span></div>
                         </div>
                     </div>
                     <!-- 11 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=800&auto=format&fit=crop"
-                                alt="P11"></div>
+                                src="https://images.unsplash.com/photo-1565191999001-551c187427bb?q=80&w=800&auto=format&fit=crop"
+                                alt="Milling Machine"></div>
                         <div class="product-info">
-                            <p class="product-name">Hydroponic Greenhouse Equipment</p>
-                            <p class="product-price">PKR 450,000.00 - 850,000.00</p>
-                            <p class="product-moq">1 Set (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">NL
-                                    7yrs</span></div>
+                            <p class="product-name">Heavy Duty Milling Machine - Vertical</p>
+                            <p class="product-price">PKR 350,000.00 - 550,000.00</p>
+                            <p class="product-moq">1 Unit (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
+                                    3yrs</span></div>
                         </div>
                     </div>
                     <!-- 12 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=800&auto=format&fit=crop"
-                                alt="P12"></div>
+                                src="https://images.unsplash.com/photo-1541625602330-2277a1cd1f84?q=80&w=800&auto=format&fit=crop"
+                                alt="Heavy Dump Truck"></div>
                         <div class="product-info">
-                            <p class="product-name">Professional Welding Robot Arm</p>
-                            <p class="product-price">PKR 6,500,000.00</p>
+                            <p class="product-name">Articulated Dump Truck - Off-Road 40T</p>
+                            <p class="product-price">PKR 4,500,000.00 - 6,500,000.00</p>
                             <p class="product-moq">1 Unit (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">JP
-                                    15yrs</span></div>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
+                                    12yrs</span></div>
                         </div>
                     </div>
                     <!-- 13 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=800&auto=format&fit=crop"
-                                alt="P13"></div>
+                                src="https://images.unsplash.com/photo-1581092446327-0cf192fa8004?q=80&w=800&auto=format&fit=crop"
+                                alt="Roller Chain"></div>
                         <div class="product-info">
-                            <p class="product-name">Mobile Crane - Urban Construction</p>
-                            <p class="product-price">PKR 25,000,000.00</p>
-                            <p class="product-moq">1 Unit (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">DE
-                                    20yrs</span></div>
+                            <p class="product-name">Industrial Roller Chain - Multiple Rows</p>
+                            <p class="product-price">PKR 5,000.00 - 12,000.00</p>
+                            <p class="product-moq">50 Meters (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">JP
+                                    6yrs</span></div>
                         </div>
                     </div>
                     <!-- 14 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop"
-                                alt="P14"></div>
+                                src="https://images.unsplash.com/photo-1581094156640-1d8f89f76a6e?q=80&w=800&auto=format&fit=crop"
+                                alt="Power Pack"></div>
                         <div class="product-info">
-                            <p class="product-name">Large Scale Solar Panel Assembly</p>
-                            <p class="product-price">PKR 8,200,000.00</p>
-                            <p class="product-moq">1 Set (MOQ)</p>
+                            <p class="product-name">Hydraulic Power Pack Unit - 5kW 200 bar</p>
+                            <p class="product-price">PKR 85,000.00 - 120,000.00</p>
+                            <p class="product-moq">2 Units (MOQ)</p>
                             <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">CN
-                                    10yrs</span></div>
+                                    4yrs</span></div>
                         </div>
                     </div>
                     <!-- 15 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop"
-                                alt="P15"></div>
+                                src="https://images.unsplash.com/photo-1521533519894-325fbe359620?q=80&w=800&auto=format&fit=crop"
+                                alt="Laser Cutter"></div>
                         <div class="product-info">
-                            <p class="product-name">Precision Quality Control Station</p>
-                            <p class="product-price">PKR 1,500,000.00</p>
-                            <p class="product-moq">1 Set (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">US
-                                    5yrs</span></div>
+                            <p class="product-name">Laser Cutting Machine - Fiber 3000W</p>
+                            <p class="product-price">PKR 4,500,000.00 - 6,800,000.00</p>
+                            <p class="product-moq">1 Unit (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">JP
+                                    9yrs</span></div>
                         </div>
                     </div>
                 </div>

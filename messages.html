@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Center | Noshahibaba.com</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .messenger-container {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            height: calc(100vh - 140px);
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 20px;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Sidebar: Chat List */
+        .chat-list-sidebar {
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            background: #fcfcfc;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sidebar-header h2 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .chat-search-box {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .chat-search-box input {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .chat-items-container {
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .chat-item {
+            padding: 15px 20px;
+            display: flex;
+            gap: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+            border-bottom: 1px solid #f8f8f8;
+        }
+
+        .chat-item:hover {
+            background: #f5f5f5;
+        }
+
+        .chat-item.active {
+            background: #fff4ed;
+            border-left: 4px solid var(--primary);
+        }
+
+        .chat-item-avatar {
+            width: 48px;
+            height: 48px;
+            background: #eee;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .chat-item-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .status-dot {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            width: 12px;
+            height: 12px;
+            background: #4ade80;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+
+        .chat-item-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .chat-item-info .top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+        }
+
+        .chat-item-info .name {
+            font-weight: 600;
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .chat-item-info .time {
+            font-size: 11px;
+            color: #999;
+        }
+
+        .chat-item-info .preview {
+            font-size: 13px;
+            color: #666;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Main Chat Window */
+        .chat-window {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+        }
+
+        .chat-window-header {
+            padding: 15px 25px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-user-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-user-info h3 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .header-user-info p {
+            font-size: 12px;
+            color: #16a34a;
+            font-weight: 500;
+        }
+
+        .header-actions-btns {
+            display: flex;
+            gap: 15px;
+            color: #666;
+        }
+
+        .header-actions-btns i {
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .header-actions-btns i:hover {
+            color: var(--primary);
+        }
+
+        .chat-messages-area {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+            background: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .message {
+            max-width: 70%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message.received {
+            align-self: flex-start;
+        }
+
+        .message.sent {
+            align-self: flex-end;
+        }
+
+        .message-bubble {
+            padding: 12px 16px;
+            font-size: 14px;
+            line-height: 1.5;
+            border-radius: 12px;
+        }
+
+        .received .message-bubble {
+            background: white;
+            border: 1px solid #e2e8f0;
+            color: #0f172a;
+            border-bottom-left-radius: 2px;
+        }
+
+        .sent .message-bubble {
+            background: var(--primary);
+            color: white;
+            border-bottom-right-radius: 2px;
+        }
+
+        .message-time {
+            font-size: 10px;
+            color: #999;
+            margin-top: 5px;
+            align-self: flex-end;
+        }
+
+        .received .message-time {
+            align-self: flex-start;
+        }
+
+        .chat-input-area {
+            padding: 20px 25px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .attachment-btn {
+            color: #666;
+            cursor: pointer;
+        }
+
+        .message-input {
+            flex: 1;
+            padding: 12px 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 25px;
+            outline: none;
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+
+        .message-input:focus {
+            border-color: var(--primary);
+        }
+
+        .send-message-btn {
+            background: var(--primary);
+            color: white;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.2s;
+        }
+
+        .send-message-btn:hover {
+            transform: scale(1.05);
+            background: var(--primary-hover);
+        }
+
+        @media (max-width: 768px) {
+            .messenger-container {
+                grid-template-columns: 1fr;
+                height: calc(100vh - 120px);
+                border-radius: 0;
+            }
+
+            .chat-list-sidebar {
+                display: none;
+                /* Hide list on mobile when chat is open in this view */
+            }
+
+            .chat-list-sidebar.mobile-show {
+                display: flex;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 2005;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left">
+                <span>Free delivery for your first order</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="helpcenter.html">Help Center</a>
+                <a href="regional-settings.html">Language: EN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                </a>
+            </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
+                    <input type="text" placeholder="Search messages...">
+                    <button class="search-btn"><i data-lucide="search"></i> Search</button>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="signin.html" class="action-item">
+                    <i data-lucide="user"></i>
+                    <span>Sign In</span>
+                </a>
+                <a href="messages.html" class="action-item active" style="color: var(--primary);">
+                    <i data-lucide="message-square"></i>
+                    <span>Messages</span>
+                </a>
+                <div class="action-item">
+                    <i data-lucide="shopping-cart"></i>
+                    <span>Cart</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="messenger-container">
+            <!-- Sidebar -->
+            <aside class="chat-list-sidebar">
+                <div class="sidebar-header">
+                    <h2>Messages</h2>
+                    <i data-lucide="edit-3" style="width: 20px; color: #666; cursor: pointer;"></i>
+                </div>
+                <div class="chat-search-box">
+                    <input type="text" placeholder="Search contacts...">
+                </div>
+                <div class="chat-items-container">
+                    <div class="chat-item active">
+                        <div class="chat-item-avatar">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=100&auto=format&fit=crop"
+                                alt="U1">
+                            <span class="status-dot"></span>
+                        </div>
+                        <div class="chat-item-info">
+                            <div class="top">
+                                <span class="name">Zhejiang Machinery Co.</span>
+                                <span class="time">10:24 AM</span>
+                            </div>
+                            <p class="preview">Regarding your inquiry about the CNC Lathe...</p>
+                        </div>
+                    </div>
+                    <div class="chat-item">
+                        <div class="chat-item-avatar">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=100&auto=format&fit=crop"
+                                alt="U2">
+                            <span class="status-dot"></span>
+                        </div>
+                        <div class="chat-item-info">
+                            <div class="top">
+                                <span class="name">Global Textiles Ltd.</span>
+                                <span class="time">Yesterday</span>
+                            </div>
+                            <p class="preview">The samples have been shipped to your office.</p>
+                        </div>
+                    </div>
+                    <div class="chat-item">
+                        <div class="chat-item-avatar">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop"
+                                alt="U3">
+                            <span class="status-dot" style="background: #cbd5e1;"></span>
+                        </div>
+                        <div class="chat-item-info">
+                            <div class="top">
+                                <span class="name">Shenzhen Electronics</span>
+                                <span class="time">Monday</span>
+                            </div>
+                            <p class="preview">Please check the new catalog for 2026.</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Chat Window -->
+            <div class="chat-window">
+                <div class="chat-window-header">
+                    <div class="header-user-info">
+                        <i data-lucide="chevron-left" class="mobile-only"
+                            style="margin-right: 10px; cursor: pointer;"></i>
+                        <div class="chat-item-avatar" style="width: 40px; height: 40px;">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=100&auto=format&fit=crop"
+                                alt="U1">
+                            <span class="status-dot"></span>
+                        </div>
+                        <div>
+                            <h3>Zhejiang Machinery Co.</h3>
+                            <p>Online</p>
+                        </div>
+                    </div>
+                    <div class="header-actions-btns">
+                        <i data-lucide="phone"></i>
+                        <i data-lucide="video"></i>
+                        <i data-lucide="info"></i>
+                    </div>
+                </div>
+
+                <div class="chat-messages-area" id="messages-display">
+                    <div class="message received">
+                        <div class="message-bubble">
+                            Dear Customer, thank you for reaching out to us regarding the High-Precision CNC Lathe
+                            Machine.
+                        </div>
+                        <span class="message-time">10:05 AM</span>
+                    </div>
+                    <div class="message received">
+                        <div class="message-bubble">
+                            Yes, it is currently in stock and we can offer a 10% discount for orders above 2 units.
+                        </div>
+                        <span class="message-time">10:06 AM</span>
+                    </div>
+                    <div class="message sent">
+                        <div class="message-bubble">
+                            That sounds great. Could you please send me the technical data sheet for the heavy-duty
+                            model?
+                        </div>
+                        <span class="message-time">10:15 AM</span>
+                    </div>
+                    <div class="message received">
+                        <div class="message-bubble">
+                            Certainly! I am sending the document right now.
+                        </div>
+                        <span class="message-time">10:24 AM</span>
+                    </div>
+                </div>
+
+                <div class="chat-input-area">
+                    <i data-lucide="plus-circle" class="attachment-btn"></i>
+                    <i data-lucide="image" class="attachment-btn"></i>
+                    <input type="text" class="message-input" id="msg-input" placeholder="Type your message...">
+                    <button class="send-message-btn" id="send-msg-btn">
+                        <i data-lucide="send" style="width: 18px;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Bottom Nav -->
+    <div class="mobile-bottom-nav">
+        <a href="index.html" class="mobile-nav-item">
+            <i data-lucide="home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#" class="mobile-nav-item">
+            <i data-lucide="layers"></i>
+            <span>Categories</span>
+        </a>
+        <a href="messages.html" class="mobile-nav-item active">
+            <i data-lucide="message-square"></i>
+            <span>Messages</span>
+        </a>
+        <a href="#" class="mobile-nav-item">
+            <i data-lucide="shopping-cart"></i>
+            <span>Cart</span>
+        </a>
+        <a href="signin.html" class="mobile-nav-item">
+            <i data-lucide="user"></i>
+            <span>Account</span>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+
+        // Message sending simulation
+        const sendBtn = document.getElementById('send-msg-btn');
+        const input = document.getElementById('msg-input');
+        const display = id = "messages-display";
+
+        function appendMessage() {
+            const text = input.value.trim();
+            if (!text) return;
+
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'message sent';
+            msgDiv.innerHTML = `
+                <div class="message-bubble">${text}</div>
+                <span class="message-time">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+            `;
+            document.getElementById('messages-display').appendChild(msgDiv);
+            input.value = '';
+            document.getElementById('messages-display').scrollTop = document.getElementById('messages-display').scrollHeight;
+        }
+
+        sendBtn.addEventListener('click', appendMessage);
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') appendMessage();
+        });
+    </script>
+</body>
+
+</html>

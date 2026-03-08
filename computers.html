@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computer & Software | Noshahibaba.com</title>
+    <title>Computers & Office | Noshahibaba.com</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -39,7 +40,7 @@
             <div class="search-container">
                 <div class="search-box">
                     <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
-                    <input type="text" placeholder="Search Computers & Software...">
+                    <input type="text" placeholder="Search Computers...">
                     <button class="search-btn"><i data-lucide="search"></i> Search</button>
                 </div>
             </div>
@@ -82,15 +83,49 @@
     <main class="container" style="margin-top: 40px;">
         <!-- Hero Section -->
         <section class="category-hero"
-            style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; height: 300px; border-radius: 20px; display: flex; align-items: center; padding: 0 60px; color: white; margin-bottom: 40px;">
+            style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; height: 300px; border-radius: 20px; display: flex; align-items: center; padding: 0 60px; color: white; margin-bottom: 40px;">
             <div class="category-hero-content">
-                <h1 style="font-size: 52px; font-weight: 800; margin-bottom: 10px;">Computer & Software</h1>
-                <p style="font-size: 20px; opacity: 0.9;">Empower your workflow with high-performance computing and
-                    enterprise software.</p>
+                <h1 style="font-size: 52px; font-weight: 800; margin-bottom: 10px;">Computers & Office</h1>
+                <p style="font-size: 20px; opacity: 0.9;">Boost productivity. Advanced computing and office solutions
+                    for business.</p>
             </div>
         </section>
 
-        <div class="page-layout" style="display: grid; grid-template-columns: 260px 1fr; gap: 40px;">
+        <!-- Visual Categories Grid -->
+        <div class="visual-categories">
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?q=80&w=400&auto=format&fit=crop"
+                    alt="Desktops" class="visual-cat-img">
+                <span>Desktops</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=400&auto=format&fit=crop"
+                    alt="Laptops" class="visual-cat-img">
+                <span>Laptops</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?q=80&w=400&auto=format&fit=crop"
+                    alt="Components" class="visual-cat-img">
+                <span>Components</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=400&auto=format&fit=crop"
+                    alt="Accessories" class="visual-cat-img">
+                <span>Accessories</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=400&auto=format&fit=crop"
+                    alt="Networking" class="visual-cat-img">
+                <span>Networking</span>
+            </div>
+            <div class="visual-cat-card">
+                <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?q=80&w=400&auto=format&fit=crop"
+                    alt="Software" class="visual-cat-img">
+                <span>Software</span>
+            </div>
+        </div>
+
+        <div class="page-layout">
             <!-- Sidebar -->
             <aside class="sidebar"
                 style="background: white; border-radius: 16px; padding: 25px; box-shadow: var(--shadow-sm); height: fit-content;">
@@ -98,23 +133,41 @@
                     style="font-size: 18px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;">
                     Categories</h4>
                 <ul class="sidebar-links" style="list-style: none;">
-                    <li><a href="#"
-                            style="color: var(--primary); font-weight: 600; font-size: 15px; display: block;">Laptops</a>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--primary); font-weight: 600; font-size: 15px; display: flex; align-items: center; gap: 10px;">
+                            <i data-lucide="monitor" style="width: 18px;"></i> Desktops
+                        </a>
                     </li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Servers</a>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="laptop" style="width: 18px;"></i> Laptops
+                        </a>
                     </li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Components</a>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="cpu" style="width: 18px;"></i> Components
+                        </a>
                     </li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Gaming
-                            Gear</a></li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Networking</a>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="keyboard" style="width: 18px;"></i> Accessories
+                        </a>
                     </li>
-                    <li><a href="#"
-                            style="color: var(--text-muted); font-size: 15px; transition: all 0.2s; display: block;">Software</a>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="wifi" style="width: 18px;"></i> Networking
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#"
+                            style="color: var(--text-muted); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">
+                            <i data-lucide="printer" style="width: 18px;"></i> Printers
+                        </a>
                     </li>
                 </ul>
             </aside>
@@ -125,196 +178,196 @@
                     <!-- 1 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?q=80&w=800&auto=format&fit=crop"
                                 alt="P1"></div>
                         <div class="product-info">
-                            <p class="product-name">High-Performance Gaming Laptop - Core i9 RTX 4090</p>
-                            <p class="product-price">PKR 250,500.00 - 350,000.00</p>
+                            <p class="product-name">Professional Gaming Desktop - RTX 4090 32GB RAM</p>
+                            <p class="product-price">PKR 250,000.00 - 450,000.00</p>
                             <p class="product-moq">1 Unit (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">CN
-                                    8yrs</span></div>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">US
+                                    5yrs</span></div>
                         </div>
                     </div>
                     <!-- 2 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=800&auto=format&fit=crop"
                                 alt="P2"></div>
                         <div class="product-info">
-                            <p class="product-name">Enterprise 2U Rack Server - Dual Xeon Scalable</p>
-                            <p class="product-price">PKR 850,000.00 - 1,200,000.00</p>
-                            <p class="product-moq">1 Unit (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">US
-                                    12yrs</span></div>
+                            <p class="product-name">Business Ultrabook 14 Inch - i7 13th Gen</p>
+                            <p class="product-price">PKR 115,000.00 - 180,000.00</p>
+                            <p class="product-moq">5 Units (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
+                                    8yrs</span></div>
                         </div>
                     </div>
                     <!-- 3 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?q=80&w=800&auto=format&fit=crop"
                                 alt="P3"></div>
                         <div class="product-info">
-                            <p class="product-name">Business Desktop PC Series - Core i5 Bundle</p>
+                            <p class="product-name">High-Performance Motherboard - DDR5 Compatible</p>
                             <p class="product-price">PKR 45,000.00 - 65,000.00</p>
-                            <p class="product-moq">5 Units (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
-                                    6yrs</span></div>
+                            <p class="product-moq">10 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">TW
+                                    10yrs</span></div>
                         </div>
                     </div>
                     <!-- 4 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=800&auto=format&fit=crop"
                                 alt="P4"></div>
                         <div class="product-info">
-                            <p class="product-name">Professional Workstation Graphics Card 24GB VRAM</p>
-                            <p class="product-price">PKR 180,000.00 - 220,000.00</p>
-                            <p class="product-moq">10 Units (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
-                                    4yrs</span></div>
+                            <p class="product-name">Wireless Ergonomic Keyboard - Multi-Device</p>
+                            <p class="product-price">PKR 3,500.00 - 6,200.00</p>
+                            <p class="product-moq">20 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
+                                    3yrs</span></div>
                         </div>
                     </div>
                     <!-- 5 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1633419461186-7d40a38105ec?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=800&auto=format&fit=crop"
                                 alt="P5"></div>
                         <div class="product-info">
-                            <p class="product-name">Enterprise Operating System License - Multi-User</p>
-                            <p class="product-price">PKR 12,500.00 - 25,000.00</p>
-                            <p class="product-moq">10 Licenses (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">IE
-                                    10yrs</span></div>
+                            <p class="product-name">Corporate Grade Dual-Band WiFi Router</p>
+                            <p class="product-price">PKR 12,000.00 - 18,000.00</p>
+                            <p class="product-moq">10 Units (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
+                                    6yrs</span></div>
                         </div>
                     </div>
                     <!-- 6 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=800&auto=format&fit=crop"
                                 alt="P6"></div>
                         <div class="product-info">
-                            <p class="product-name">Custom RGB Mechanical Gaming Keyboard</p>
-                            <p class="product-price">PKR 4,800.00 - 8,500.00</p>
-                            <p class="product-moq">20 Pieces (MOQ)</p>
+                            <p class="product-name">Modern Minimalist Table Lamp - LED USB</p>
+                            <p class="product-price">PKR 1,500.00 - 2,800.00</p>
+                            <p class="product-moq">50 Pieces (MOQ)</p>
                             <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
-                                    3yrs</span></div>
+                                    2yrs</span></div>
                         </div>
                     </div>
                     <!-- 7 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1629131726692-1accd0c53ce0?q=80&w=800&auto=format&fit=crop"
                                 alt="P7"></div>
                         <div class="product-info">
-                            <p class="product-name">High-Speed Professional Network Switch 24-Port</p>
-                            <p class="product-price">PKR 12,500.00 - 18,000.00</p>
-                            <p class="product-moq">5 Units (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">US
-                                    10yrs</span></div>
+                            <p class="product-name">External SSD 2TB - High Speed Transfer</p>
+                            <p class="product-price">PKR 15,000.00 - 22,000.00</p>
+                            <p class="product-moq">10 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">KR
+                                    7yrs</span></div>
                         </div>
                     </div>
                     <!-- 8 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=800&auto=format&fit=crop"
                                 alt="P8"></div>
                         <div class="product-info">
-                            <p class="product-name">Wireless Ergonomic Vertical Mouse - 2.4GHz</p>
-                            <p class="product-price">PKR 2,400.00 - 3,500.00</p>
-                            <p class="product-moq">50 Pieces (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
+                            <p class="product-name">4K Ultrawide 34 Inch Curved Monitor</p>
+                            <p class="product-price">PKR 65,000.00 - 85,000.00</p>
+                            <p class="product-moq">5 Units (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
                                     4yrs</span></div>
                         </div>
                     </div>
                     <!-- 9 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1600003014755-931fae02875f?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?q=80&w=800&auto=format&fit=crop"
                                 alt="P9"></div>
                         <div class="product-info">
-                            <p class="product-name">Ultrawide 34 Inch Curved Productivity Monitor</p>
-                            <p class="product-price">PKR 65,000.00 - 85,000.00</p>
+                            <p class="product-name">Wireless Laser Printer - All-in-One</p>
+                            <p class="product-price">PKR 35,000.00 - 45,000.00</p>
                             <p class="product-moq">2 Units (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">KR
-                                    6yrs</span></div>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">JP
+                                    12yrs</span></div>
                         </div>
                     </div>
                     <!-- 10 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?q=80&w=800&auto=format&fit=crop"
                                 alt="P10"></div>
                         <div class="product-info">
-                            <p class="product-name">Portable 2TB NVMe External SSD - Type-C</p>
-                            <p class="product-price">PKR 18,500.00 - 25,000.00</p>
-                            <p class="product-moq">10 Pieces (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">US
-                                    5yrs</span></div>
+                            <p class="product-name">Graphic Card RTX 4070 Ti - 12GB OC</p>
+                            <p class="product-price">PKR 125,000.00 - 155,000.00</p>
+                            <p class="product-moq">5 Units (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">TW
+                                    9yrs</span></div>
                         </div>
                     </div>
                     <!-- 11 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1591488320449-011701bb6704?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?q=80&w=800&auto=format&fit=crop"
                                 alt="P11"></div>
                         <div class="product-info">
-                            <p class="product-name">Professional Wireless Video Conference Kit</p>
-                            <p class="product-price">PKR 35,000.00 - 55,000.00</p>
-                            <p class="product-moq">2 Sets (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">PK
-                                    4yrs</span></div>
+                            <p class="product-name">Enterprise Task Management Software</p>
+                            <p class="product-price">PKR 1,500.00 Monthly / User</p>
+                            <p class="product-moq">10 Users (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CA
+                                    3yrs</span></div>
                         </div>
                     </div>
                     <!-- 12 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1563770660941-20978e870813?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?q=80&w=800&auto=format&fit=crop"
                                 alt="P12"></div>
                         <div class="product-info">
-                            <p class="product-name">Industrial Grade High-Speed Thermal Printer</p>
+                            <p class="product-name">High-End Laptop Docking Station</p>
                             <p class="product-price">PKR 12,000.00 - 18,000.00</p>
-                            <p class="product-moq">10 Units (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">CN
-                                    8yrs</span></div>
+                            <p class="product-moq">10 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">CN
+                                    6yrs</span></div>
                         </div>
                     </div>
                     <!-- 13 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?q=80&w=800&auto=format&fit=crop"
                                 alt="P13"></div>
                         <div class="product-info">
-                            <p class="product-name">Cloud ERP Software Subscription - 1 Year</p>
-                            <p class="product-price">PKR 45,000.00 - 85,000.00</p>
-                            <p class="product-moq">1 License (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">DE
-                                    5yrs</span></div>
+                            <p class="product-name">Mechanical Gaming Keyboard RGB</p>
+                            <p class="product-price">PKR 4,500.00 - 8,200.00</p>
+                            <p class="product-moq">10 Pieces (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    2yrs</span></div>
                         </div>
                     </div>
                     <!-- 14 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=800&auto=format&fit=crop"
                                 alt="P14"></div>
                         <div class="product-info">
-                            <p class="product-name">Noise Cancelling Bluetooth Headset with Mic</p>
-                            <p class="product-price">PKR 5,500.00 - 8,500.00</p>
-                            <p class="product-moq">20 Pieces (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
-                                    2yrs</span></div>
+                            <p class="product-name">Server Grade Network Switch 48-Port</p>
+                            <p class="product-price">PKR 45,000.00 - 85,000.00</p>
+                            <p class="product-moq">2 Units (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">US
+                                    10yrs</span></div>
                         </div>
                     </div>
                     <!-- 15 -->
                     <div class="product-card">
                         <div class="product-img-box"><img
-                                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1510282312150-cc8f6c5e8884?q=80&w=800&auto=format&fit=crop"
                                 alt="P15"></div>
                         <div class="product-info">
-                            <p class="product-name">Rack Mount Smart UPS - 1500VA Backup</p>
+                            <p class="product-name">Export Quality Office PC Inventory</p>
                             <p class="product-price">PKR 35,000.00 - 55,000.00</p>
-                            <p class="product-moq">5 Units (MOQ)</p>
-                            <div class="supplier-info"><span class="badge">Verified Pro</span><span class="country">US
-                                    12yrs</span></div>
+                            <p class="product-moq">10 Units (MOQ)</p>
+                            <div class="supplier-info"><span class="badge">Verified</span><span class="country">PK
+                                    5yrs</span></div>
                         </div>
                     </div>
                 </div>
