@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | Noshahibaba.com</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .cart-container {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .cart-items-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .cart-header h2 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .cart-item {
+            display: grid;
+            grid-template-columns: 100px 1fr auto;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid #f3f4f6;
+            align-items: center;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-img {
+            width: 100px;
+            height: 100px;
+            background: #f8fafc;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #eee;
+        }
+
+        .item-img img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+
+        .item-details h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .item-meta {
+            font-size: 13px;
+            color: #666;
+            display: flex;
+            gap: 15px;
+        }
+
+        .item-price-actions {
+            text-align: right;
+        }
+
+        .item-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #f3f4f6;
+            padding: 5px 12px;
+            border-radius: 8px;
+            width: fit-content;
+            margin-left: auto;
+        }
+
+        .qty-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #666;
+            display: flex;
+            align-items: center;
+        }
+
+        .qty-val {
+            font-weight: 600;
+            font-size: 14px;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .remove-item {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #ef4444;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            justify-content: flex-end;
+        }
+
+        /* Order Summary Sidebar */
+        .order-summary {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .summary-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .summary-total {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            margin-top: 25px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .checkout-btn:hover {
+            background: var(--primary-hover);
+        }
+
+        .trade-assurance-badge {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f7ff;
+            border-radius: 8px;
+            display: flex;
+            gap: 10px;
+            font-size: 12px;
+            color: #1e40af;
+        }
+
+        .trade-assurance-badge i {
+            color: #3b82f6;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 992px) {
+            .cart-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .cart-item {
+                grid-template-columns: 80px 1fr;
+            }
+
+            .item-price-actions {
+                grid-column: 1 / span 2;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-top: 1px solid #f9f9f9;
+                padding-top: 10px;
+                margin-top: 10px;
+            }
+
+            .item-img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left">
+                <span>Safe payments. Trusted suppliers. Global shipping.</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="helpcenter.html">Help Center</a>
+                <a href="#">Ship to: PK</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                </a>
+            </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
+                    <input type="text" placeholder="Search for items in your cart...">
+                    <button class="search-btn"><i data-lucide="search"></i> Search</button>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="signin.html" class="action-item">
+                    <i data-lucide="user"></i>
+                    <span>Sign In</span>
+                </a>
+                <a href="messages.html" class="action-item">
+                    <i data-lucide="message-square"></i>
+                    <span>Messages</span>
+                </a>
+                <a href="cart.html" class="action-item active" style="color: var(--primary);">
+                    <i data-lucide="shopping-cart"></i>
+                    <span>Cart</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="cart-container">
+            <!-- Items Section -->
+            <div class="cart-items-section">
+                <div class="cart-header">
+                    <h2>Shopping Cart (3 items)</h2>
+                    <label style="font-size: 14px; user-select: none;">
+                        <input type="checkbox" checked> Select All
+                    </label>
+                </div>
+
+                <!-- Item 1 -->
+                <div class="cart-item">
+                    <div class="item-img">
+                        <img src="https://images.unsplash.com/photo-1534067783941-51c9c23eca0c?q=80&w=200&auto=format&fit=crop"
+                            alt="I1">
+                    </div>
+                    <div class="item-details">
+                        <h3>Heavy Duty Industrial CNC Lathe Pro-300</h3>
+                        <div class="item-meta">
+                            <span>Color: Industrial Blue</span>
+                            <span>Volt: 440V</span>
+                        </div>
+                    </div>
+                    <div class="item-price-actions">
+                        <div class="item-price">PKR 450,000.00</div>
+                        <div class="quantity-control">
+                            <button class="qty-btn"><i data-lucide="minus" style="width: 14px;"></i></button>
+                            <span class="qty-val">1</span>
+                            <button class="qty-btn"><i data-lucide="plus" style="width: 14px;"></i></button>
+                        </div>
+                        <div class="remove-item"><i data-lucide="trash-2" style="width: 12px;"></i> Remove</div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="cart-item">
+                    <div class="item-img">
+                        <img src="https://images.unsplash.com/photo-1543085337-12432e4b609c?q=80&w=200&auto=format&fit=crop"
+                            alt="I2">
+                    </div>
+                    <div class="item-details">
+                        <h3>Premium Silk Blouse for Women - Floral Design</h3>
+                        <div class="item-meta">
+                            <span>Size: M</span>
+                            <span>Color: White</span>
+                        </div>
+                    </div>
+                    <div class="item-price-actions">
+                        <div class="item-price">PKR 4,200.00</div>
+                        <div class="quantity-control">
+                            <button class="qty-btn"><i data-lucide="minus" style="width: 14px;"></i></button>
+                            <span class="qty-val">10</span>
+                            <button class="qty-btn"><i data-lucide="plus" style="width: 14px;"></i></button>
+                        </div>
+                        <div class="remove-item"><i data-lucide="trash-2" style="width: 12px;"></i> Remove</div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="cart-item">
+                    <div class="item-img">
+                        <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=200&auto=format&fit=crop"
+                            alt="I3">
+                    </div>
+                    <div class="item-details">
+                        <h3>Wireless Noise Cancelling Earbuds Pro</h3>
+                        <div class="item-meta">
+                            <span>Color: Black</span>
+                        </div>
+                    </div>
+                    <div class="item-price-actions">
+                        <div class="item-price">PKR 2,400.00</div>
+                        <div class="quantity-control">
+                            <button class="qty-btn"><i data-lucide="minus" style="width: 14px;"></i></button>
+                            <span class="qty-val">5</span>
+                            <button class="qty-btn"><i data-lucide="plus" style="width: 14px;"></i></button>
+                        </div>
+                        <div class="remove-item"><i data-lucide="trash-2" style="width: 12px;"></i> Remove</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Sidebar -->
+            <div class="order-summary">
+                <div class="summary-title">Order Summary</div>
+                <div class="summary-row">
+                    <span>Items Subtotal:</span>
+                    <span>PKR 504,000.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping Fee:</span>
+                    <span>PKR 12,500.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Discount:</span>
+                    <span style="color: #16a34a;">-PKR 4,000.00</span>
+                </div>
+                <div class="summary-total">
+                    <span>Total:</span>
+                    <span>PKR 512,500.00</span>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+                <div class="trade-assurance-badge">
+                    <i data-lucide="shield-check"></i>
+                    <span>Protect your orders with Noshahibaba Trade Assurance. Full refund for delayed or non-matching
+                        goods.</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container" style="text-align: center; padding: 40px 0; color: #666; border-top: 1px solid #eee;">
+            <p>&copy; 2026 Noshahibaba.com. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>
