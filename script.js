@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // All Categories Toggle & Dropdown Logic
     const allCategoriesBtn = document.getElementById('all-categories-btn');
-    const subNav = document.querySelector('.sub-nav .container');
+    const headerNavRow = document.querySelector('.header-nav-row .container') || document.querySelector('.header-nav-row');
 
     const categoriesHTML = `
         <div class="categories-dropdown" id="global-categories-dropdown">
@@ -126,36 +126,28 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
     `;
 
-    if (allCategoriesBtn && subNav) {
+    if (allCategoriesBtn && headerNavRow) {
         // Inject dropdown if not present
         if (!document.getElementById('global-categories-dropdown')) {
-            const navFlex = document.querySelector('.nav-flex');
-            navFlex.insertAdjacentHTML('beforeend', categoriesHTML);
+            headerNavRow.insertAdjacentHTML('beforeend', categoriesHTML);
             lucide.createIcons();
         }
 
         const dropdown = document.getElementById('global-categories-dropdown');
         const closeBtn = dropdown.querySelector('.close-dropdown');
 
-        const mobileCatBtn = document.querySelector('.mobile-nav-item:nth-child(2)');
-
         allCategoriesBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            dropdown.classList.toggle('active');
+            const isActive = dropdown.classList.toggle('active');
+            // Toggle active state for button as well if needed
+            allCategoriesBtn.classList.toggle('active', isActive);
         });
-
-        if (mobileCatBtn) {
-            mobileCatBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                dropdown.classList.add('active');
-            });
-        }
 
         if (closeBtn) {
             closeBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 dropdown.classList.remove('active');
+                allCategoriesBtn.classList.remove('active');
             });
         }
 
@@ -163,6 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('click', (e) => {
             if (!dropdown.contains(e.target) && !allCategoriesBtn.contains(e.target)) {
                 dropdown.classList.remove('active');
+                allCategoriesBtn.classList.remove('active');
             }
         });
     }

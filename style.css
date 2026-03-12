@@ -271,24 +271,27 @@ ul {
   align-items: center;
   gap: 10px;
   padding: 10px 24px;
-  background: var(--primary);
-  color: #000;
-  font-weight: 800;
+  background: rgba(255, 255, 255, 0.05);
+  /* Unactive by default */
+  color: #fff;
+  font-weight: 700;
   font-size: 13px;
   border-radius: 999px;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 10px 25px rgba(255, 204, 0, 0.3);
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
   white-space: nowrap;
   flex-shrink: 0;
   margin-right: 20px;
 }
 
-.all-categories:hover {
+.all-categories:hover,
+.all-categories.active {
   background: var(--primary);
+  color: #000;
   transform: translateY(-4px) scale(1.06);
   box-shadow: 0 15px 35px rgba(255, 204, 0, 0.45);
+  border-color: var(--primary);
 }
 
 .nav-links {
