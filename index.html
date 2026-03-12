@@ -74,103 +74,68 @@
     <!-- Hero Section -->
     <main>
         <section class="hero-section">
-            <div class="container hero-grid">
-                <aside class="category-sidebar" id="category-sidebar">
-                    <ul>
-                        <li><a href="womens-clothing.html"
-                                style="display: flex; width: 100%; justify-content: space-between; align-items: center;"><span
-                                    style="display: flex; align-items: center; gap: 12px;"><i
-                                        data-lucide="shopping-bag"></i>
-                                    Women's Clothing</span> <i data-lucide="chevron-right"></i></a></li>
-                        <li><a href="mens-clothing.html"
-                                style="display: flex; width: 100%; justify-content: space-between; align-items: center;"><span
-                                    style="display: flex; align-items: center; gap: 12px;"><i data-lucide="user"></i>
-                                    Men's Clothing</span> <i data-lucide="chevron-right"></i></a></li>
-                        <li><a href="apparel.html"
-                                style="display: flex; width: 100%; justify-content: space-between; align-items: center;"><span
-                                    style="display: flex; align-items: center; gap: 12px;"><i data-lucide="shirt"></i>
-                                    Apparel & Accessories</span> <i data-lucide="chevron-right"></i></a></li>
-                        <li><a href="electronics.html"
-                                style="display: flex; width: 100%; justify-content: space-between; align-items: center;"><span
-                                    style="display: flex; align-items: center; gap: 12px;"><i data-lucide="cpu"></i>
-                                    Consumer Electronics</span> <i data-lucide="chevron-right"></i></a></li>
-                        <li><a href="home-garden.html"
-                                style="display: flex; width: 100%; justify-content: space-between; align-items: center;"><span
-                                    style="display: flex; align-items: center; gap: 12px;"><i data-lucide="home"></i>
-                                    Home & Garden</span> <i data-lucide="chevron-right"></i></a></li>
-                        <li><a href="machinery.html"
-                                style="display: flex; width: 100%; justify-content: space-between; align-items: center;"><span
-                                    style="display: flex; align-items: center; gap: 12px;"><i
-                                        data-lucide="settings"></i> Machinery</span> <i
-                                    data-lucide="chevron-right"></i></a></li>
-                        <li><a href="beauty.html"
-                                style="display: flex; width: 100%; justify-content: space-between; align-items: center;"><span
-                                    style="display: flex; align-items: center; gap: 12px;"><i data-lucide="heart"></i>
-                                    Beauty & Personal Care</span> <i data-lucide="chevron-right"></i></a></li>
-                        <li><a href="vehicles.html"
-                                style="display: flex; width: 100%; justify-content: space-between; align-items: center;"><span
-                                    style="display: flex; align-items: center; gap: 12px;"><i data-lucide="car"></i>
-                                    Vehicles & Accessories</span> <i data-lucide="chevron-right"></i></a></li>
-                        <li><a href="agriculture.html"
-                                style="display: flex; width: 100%; justify-content: space-between; align-items: center;"><span
-                                    style="display: flex; align-items: center; gap: 12px;"><i data-lucide="sprout"></i>
-                                    Agriculture & Food</span> <i data-lucide="chevron-right"></i></a></li>
-                        <li><a href="computers.html"
-                                style="display: flex; width: 100%; justify-content: space-between; align-items: center;"><span
-                                    style="display: flex; align-items: center; gap: 12px;"><i data-lucide="laptop"></i>
-                                    Computer & Software</span> <i data-lucide="chevron-right"></i></a></li>
-                    </ul>
-                </aside>
-                <div class="hero-main">
-                    <div class="hero-banner"
-                        style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1600&auto=format&fit=crop');">
-                        <div class="banner-content">
-                            <h1>Source Smarter.<br>Ship Faster.</h1>
-                            <p>Global trade possibilities at your fingertips.</p>
-                            <a href="#" class="cta-primary">Find Suppliers</a>
+            <div class="hero-carousel">
+                <div class="carousel-inner" id="carouselInner">
+                    <!-- Slide 1: Electronics (3D Gen) -->
+                    <div class="carousel-slide" style="background-image: url('hero_3d_electronics.png');">
+                        <div class="container slide-container">
+                            <div class="slide-content">
+                                <span class="slide-badge">New Generation Architecture</span>
+                                <h1>Advanced 3D<br>Electronics</h1>
+                                <p>Discover the future of digital supply chain with our elite collection of smart
+                                    devices and 3D electronics.</p>
+                                <div class="slide-btns">
+                                    <a href="#products" class="cta-primary">Source Now</a>
+                                    <a href="#" class="cta-outline">View Details</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="hero-sub-cards">
-                        <div class="sub-card">
-                            <div class="sub-card-text">
-                                <h3>New arrivals</h3>
-                                <p>Latest trends in tech</p>
+                    <!-- Slide 2: Logistics (3D Aesthetic) -->
+                    <div class="carousel-slide"
+                        style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad861f95a973?q=80&w=1920&auto=format&fit=crop');">
+                        <div class="container slide-container">
+                            <div class="slide-content">
+                                <span class="slide-badge">Global Logistics 3.0</span>
+                                <h1>Professional Shipping<br>Solutions</h1>
+                                <p>Automated tracking, global warehousing, and smart logistics for the modern trade era.
+                                </p>
+                                <div class="slide-btns">
+                                    <a href="#" class="cta-primary">Find Carriers</a>
+                                    <a href="#" class="cta-outline">View Rates</a>
+                                </div>
                             </div>
-                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=400&auto=format&fit=crop"
-                                alt="New Arrival">
                         </div>
-                        <div class="sub-card">
-                            <div class="sub-card-text">
-                                <h3>Best sellers</h3>
-                                <p>Top rated products</p>
+                    </div>
+                    <!-- Slide 3: Industrial (3D Aesthetic) -->
+                    <div class="carousel-slide"
+                        style="background-image: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1920&auto=format&fit=crop');">
+                        <div class="container slide-container">
+                            <div class="slide-content">
+                                <span class="slide-badge">Smart Manufacturing</span>
+                                <h1>Industrial Excellence<br>& Robotics</h1>
+                                <p>Direct connection to verified manufacturers with the latest 3D printing and robotic
+                                    solutions.</p>
+                                <div class="slide-btns">
+                                    <a href="#" class="cta-primary">Get Quotes</a>
+                                    <a href="#" class="cta-outline">View Catalog</a>
+                                </div>
                             </div>
-                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=400&auto=format&fit=crop"
-                                alt="Best Seller">
                         </div>
                     </div>
                 </div>
-                <aside class="hero-user-panel">
-                    <div class="user-welcome">
-                        <div class="user-avatar"><i data-lucide="user"></i></div>
-                        <p>Welcome to Noshahibaba</p>
-                        <div class="user-btns">
-                            <button class="join-btn">Join for free</button>
-                            <a href="signin.html" class="signin-btn" style="text-align: center; display: block;">Sign
-                                In</a>
-                        </div>
-                    </div>
-                    <div class="panel-promo">
-                        <h4>Trade Assurance</h4>
-                        <p>Protect your Noshahibaba.com orders</p>
-                        <a href="tradeassurance.html"
-                            style="color: var(--primary); font-size: 13px; font-weight: 600; text-decoration: none; display: inline-block; margin-top: 5px;">Find
-                            Protected Suppliers</a>
-                    </div>
-                    <div class="panel-promo">
-                        <h4>Verified Pro</h4>
-                        <p>Work with professional manufacturers</p>
-                    </div>
-                </aside>
+
+                <!-- Navigation -->
+                <div class="carousel-arrow prev" onclick="moveSlide(-1)"><i data-lucide="chevron-left"></i>
+                </div>
+                <div class="carousel-arrow next" onclick="moveSlide(1)"><i data-lucide="chevron-right"></i>
+                </div>
+
+                <div class="carousel-nav" id="carouselNav">
+                    <div class="carousel-dot active" onclick="goToSlide(0)"></div>
+                    <div class="carousel-dot" onclick="goToSlide(1)"></div>
+                    <div class="carousel-dot" onclick="goToSlide(2)"></div>
+                </div>
             </div>
         </section>
 
@@ -208,6 +173,49 @@
             </div>
         </section>
 
+        <!-- Promotional Banner (Exact Daraz Eid Sale Style) -->
+        <section class="promo-banner-section">
+            <div class="container">
+                <div class="daraz-promo-card">
+                    <!-- Spiral Binder Details -->
+                    <div class="notebook-spiral">
+                        <span></span><span></span><span></span><span></span><span></span><span></span>
+                    </div>
+
+                    <!-- 3D Decorative Assets -->
+                    <div class="hanging-lantern lantern-left"><i data-lucide="lamp"></i></div>
+                    <div class="hanging-lantern lantern-right"><i data-lucide="lamp"></i></div>
+
+                    <div class="promo-content">
+                        <div class="daraz-mega-deals">MEGA DEALS</div>
+                        <h2 class="daraz-eid-title">EID SALE</h2>
+                        <div class="daraz-coupon-badge">USE CODE: EID2026</div>
+                        <p class="promo-dates-v2">Sale Starts March 20th • Add to Cart Now!</p>
+
+                        <div class="daraz-countdown-v2">
+                            <div class="unit"><span>02</span>Days</div>
+                            <div class="unit"><span>14</span>Hrs</div>
+                            <div class="unit"><span>45</span>Mins</div>
+                        </div>
+
+                        <a href="#products" class="daraz-shop-btn">SHOP NOW <span>&raquo;</span></a>
+                    </div>
+
+                    <div class="promo-3d-visuals">
+                        <!-- Floating 3D Assets -->
+                        <div class="floating-asset gift-box-3d">
+                            <img src="https://images.unsplash.com/photo-1549462980-6a620041847c?q=80&w=400&auto=format&fit=crop"
+                                alt="3D Gift">
+                        </div>
+                        <div class="floating-asset coins-3d">
+                            <img src="https://images.unsplash.com/photo-1554672408-730436b60dde?q=80&w=400&auto=format&fit=crop"
+                                alt="3D Coins">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Product Grid -->
         <section class="products-section" id="products">
             <div class="container">
@@ -219,8 +227,7 @@
                     <!-- Product 1 - Smart Watch -->
                     <div class="product-card">
                         <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=1200&auto=format&fit=crop"
-                                alt="Ultra Smart Watch">
+                            <img src="assets/watch_3d.png" alt="Ultra Smart Watch">
                         </div>
                         <div class="product-info">
                             <p class="product-name">Ultra Series 9 Smart Watch - AMOLED Display & Health Tracking</p>
@@ -235,8 +242,7 @@
                     <!-- Product 2 - 4K Drone -->
                     <div class="product-card">
                         <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1473968512647-3e44a224fe8f?q=80&w=1200&auto=format&fit=crop"
-                                alt="Professional 4K Drone">
+                            <img src="assets/drone_3d.png" alt="Professional 4K Drone">
                         </div>
                         <div class="product-info">
                             <p class="product-name">Professional 4K Camera Drone - GPS & 5G WiFi FPV Transmission</p>
@@ -298,8 +304,7 @@
                     <!-- Product 6 - Gaming Mouse -->
                     <div class="product-card">
                         <div class="product-img-box">
-                            <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=1200&auto=format&fit=crop"
-                                alt="Gaming Mouse">
+                            <img src="assets/gaming_3d.png" alt="Gaming Mouse">
                         </div>
                         <div class="product-info">
                             <p class="product-name">RGB Mechanical Gaming Mouse - 12000 DPI Adjustable</p>
@@ -346,19 +351,7 @@
             </div>
         </section>
 
-        <!-- Newsletter -->
-        <section class="newsletter-section">
-            <div class="container newsletter-box">
-                <div class="newsletter-text">
-                    <h3>Subscribe to our newsletter</h3>
-                    <p>Get daily updates on the latest trends and top ranking products.</p>
-                </div>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Please enter your email address">
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </section>
+
     </main>
 
     <!-- Footer -->

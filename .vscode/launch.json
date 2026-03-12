@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open index.html",
-            "file": "e:\\Noshahi Alibaba\\index.html"
+            "file": "e:\\NoshahiBaba\\index.html"
         }
     ]
 }

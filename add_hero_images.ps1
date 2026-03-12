@@ -17,7 +17,7 @@ $images = @(
 
 for ($i = 0; $i -lt 14; $i++) {
     $pageSuffix = if ($i -eq 0) { "" } else { "-" + ($i + 1) }
-    $file = "e:\Noshahi Alibaba\featured$pageSuffix.html"
+    $file = "e:\NoshahiBaba\featured$pageSuffix.html"
     $imgUrl = $images[$i]
     
     if (Test-Path $file) {

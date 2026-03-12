@@ -162,4 +162,43 @@ document.addEventListener('DOMContentLoaded', () => {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
     }
+
+    // Hero Carousel Logic
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const inner = document.getElementById('carouselInner');
+
+    window.moveSlide = function (n) {
+        currentSlide = (currentSlide + n + slides.length) % slides.length;
+        updateCarousel();
+    }
+
+    window.goToSlide = function (n) {
+        currentSlide = n;
+        updateCarousel();
+    }
+
+    function updateCarousel() {
+        if (!inner) return;
+        const offset = -currentSlide * (100 / slides.length);
+        inner.style.transform = `translateX(${offset}%)`;
+
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+    }
+
+    // Auto-play
+    let autoPlayInterval = setInterval(() => moveSlide(1), 5000);
+
+    // Pause auto-play on hover
+    const carousel = document.querySelector('.hero-carousel');
+    if (carousel) {
+        carousel.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+        carousel.addEventListener('mouseleave', () => {
+            autoPlayInterval = setInterval(() => moveSlide(1), 5000);
+        });
+    }
 });

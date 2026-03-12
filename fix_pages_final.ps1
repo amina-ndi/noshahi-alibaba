@@ -2,7 +2,7 @@
     $n = $_
     $p = $n - 1
     $ne = $n + 1
-    $file = "e:\Noshahi Alibaba\featured-$n.html"
+    $file = "e:\NoshahiBaba\featured-$n.html"
     $content = Get-Content $file -Raw
     
     # Simple replacement for title and heading
