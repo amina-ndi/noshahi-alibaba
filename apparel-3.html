@@ -9,7 +9,8 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -21,44 +22,47 @@
             </div>
             <div class="top-bar-right">
                 <a href="helpcenter.html">Help Center</a>
-                <a href="regional-settings.html">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK"> PKR</a>
+                <a href="regional-settings.html">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK">
+                    PKR</a>
                 <a href="regional-settings.html">Language: EN</a>
             </div>
         </div>
     </div>
 
-    <!-- Main Header -->
-    <header class="main-header">
-        <div class="container header-flex">
-            <div class="logo">
-                <a href="index.html">
-                    <span class="logo-text">Noshahi<span>baba</span>.com</span>
-                </a>
-            </div>
-            <div class="search-container">
-                <div class="search-box">
-                    <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
-                    <input type="text" placeholder="Search in Apparel & Accessories...">
-                    <button class="search-btn"><i data-lucide="search"></i> Search</button>
+    <!-- Consolidated Header & Navigation -->
+    <header class="main-header sticky-header">
+        <div class="container">
+            <!-- First Row: Logo, Search -->
+            <div class="header-top-row">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                    </a>
                 </div>
+                <div class="search-container">
+                    <div class="search-box">
+                        <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
+                        <input type="text" placeholder="Search in Apparel & Accessories...">
+                        <button class="search-btn"><i data-lucide="search"></i> Search</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Row: Attached Navigation -->
+            <div class="header-nav-row">
+                <div class="all-categories" id="all-categories-btn"><i data-lucide="menu"></i> All categories</div>
+                <div class="nav-links">
+                    <a href="index.html" class="home-nav-btn"><i data-lucide="home"></i> Home</a><a
+                        href="featured.html">Featured selections</a>
+                    <a href="tradeassurance.html">Trade Assurance</a>
+                    <a href="buyer-central.html">Buyer Central</a>
+                    <a href="helpcenter.html">Help Center</a>
+                    <a href="getapp.html">Get the app</a>
+                </div>
+                <div class="nav-right"><a href="#">Become a supplier</a></div>
             </div>
         </div>
     </header>
-
-    <!-- Navigation -->
-    <nav class="sub-nav">
-        <div class="container nav-flex">
-            <div class="all-categories" id="all-categories-btn"><i data-lucide="menu"></i> All categories</div>
-            <div class="nav-links">
-                <a href="index.html" class="home-nav-btn"><i data-lucide="home"></i> Home</a><a href="featured.html">Featured selections</a>
-                <a href="tradeassurance.html">Trade Assurance</a>
-                <a href="buyer-central.html">Buyer Central</a>
-                <a href="helpcenter.html">Help Center</a>
-                <a href="getapp.html">Get the app</a>
-            </div>
-            <div class="nav-right"><a href="#">Become a supplier</a></div>
-        </div>
-    </nav>
     <!-- Breadcrumbs -->
     <div class="breadcrumb">
         <a href="index.html">Home</a> &gt; <a href="apparel.html">Apparel & Accessories</a> &gt; <span>Page 3</span>
@@ -226,5 +230,3 @@
 </body>
 
 </html>
-
-

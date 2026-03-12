@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Now | NoshahiBaba.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .shop-hero {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 100px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .shop-hero h1 {
+            font-size: 56px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .shop-container {
+            padding: 80px 0;
+            background: #0a0a0a;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header sticky-header" id="dynamic-header"></header>
+
+    <main>
+        <section class="shop-hero">
+            <div class="container">
+                <h1>All Products</h1>
+                <p style="color: rgba(255,255,255,0.7); font-size: 18px;">Discover our full collection with the best
+                    wholesale prices.</p>
+            </div>
+        </section>
+
+        <section class="shop-container">
+            <div class="container">
+                <div class="product-grid" id="product-container">
+                    <!-- Products will be mirrored here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="dynamic-footer"></footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Basic page logic to show some products
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            // In a real app, this would fetch from a database
+            console.log("Shop Now page loaded");
+        });
+    </script>
+</body>
+
+</html>

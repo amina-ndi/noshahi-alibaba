@@ -2,6 +2,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
 
+    // ---- Active Nav Link Detection ----
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+            link.classList.add('active');
+        }
+    });
+
     // Sticky Header Effect
     const mainHeader = document.querySelector('.main-header');
     const scrollHandler = () => {

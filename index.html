@@ -9,7 +9,8 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -28,49 +29,50 @@
         </div>
     </div>
 
-    <!-- Main Header -->
-    <header class="main-header">
-        <div class="container header-flex">
-            <div class="logo">
-                <a href="index.html">
-                    <span class="logo-text">Noshahi<span>baba</span>.com</span>
-                </a>
-            </div>
-            <div class="search-container">
-                <div class="search-box">
-                    <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
-                    <input type="text" placeholder="What are you looking for...">
-                    <button class="search-btn"><i data-lucide="search"></i> <span>Search</span></button>
+    <!-- Consolidated Header & Navigation -->
+    <header class="main-header sticky-header">
+        <div class="container">
+            <!-- First Row: Logo, Search, Actions -->
+            <div class="header-top-row">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                    </a>
+                </div>
+                <div class="search-container">
+                    <div class="search-box">
+                        <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
+                        <input type="text" placeholder="What are you looking for...">
+                        <button class="search-btn"><i data-lucide="search"></i> <span>Search</span></button>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign In</span></a><a
+                        href="messages.html" class="action-item"><i
+                            data-lucide="message-square"></i><span>Messages</span></a><a href="cart.html"
+                        class="action-item"><i data-lucide="shopping-cart"></i><span>Cart</span></a>
                 </div>
             </div>
-            <div class="header-actions">
-                <a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign In</span></a><a
-                    href="messages.html" class="action-item"><i
-                        data-lucide="message-square"></i><span>Messages</span></a><a href="cart.html"
-                    class="action-item"><i data-lucide="shopping-cart"></i><span>Cart</span></a>
+
+            <!-- Second Row: Attached Navigation -->
+            <div class="header-nav-row">
+                <div class="all-categories" id="all-categories-btn">
+                    <i data-lucide="menu"></i> All categories
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="home-nav-btn"><i data-lucide="home"></i> Home</a><a
+                        href="featured.html">Featured selections</a>
+                    <a href="tradeassurance.html">Trade Assurance</a>
+                    <a href="buyer-central.html">Buyer Central</a>
+                    <a href="helpcenter.html">Help Center</a>
+                    <a href="getapp.html">Get the app</a>
+                </div>
+                <div class="nav-right">
+                    <a href="#">Become a supplier</a>
+                </div>
             </div>
         </div>
     </header>
-
-    <!-- Navigation -->
-    <nav class="sub-nav">
-        <div class="container nav-flex">
-            <div class="all-categories" id="all-categories-btn">
-                <i data-lucide="menu"></i> All categories
-            </div>
-            <div class="nav-links">
-                <a href="index.html" class="home-nav-btn"><i data-lucide="home"></i> Home</a><a
-                    href="featured.html">Featured selections</a>
-                <a href="tradeassurance.html">Trade Assurance</a>
-                <a href="buyer-central.html">Buyer Central</a>
-                <a href="helpcenter.html">Help Center</a>
-                <a href="getapp.html">Get the app</a>
-            </div>
-            <div class="nav-right">
-                <a href="#">Become a supplier</a>
-            </div>
-        </div>
-    </nav>
 
     <!-- Hero Section -->
     <main>
@@ -220,9 +222,12 @@
         <!-- Product Grid -->
         <section class="products-section" id="products">
             <div class="container">
-                <div class="section-title">
-                    <h2>Just for you</h2>
-                    <a href="#">View more</a>
+                <div class="toppicks-header">
+                    <div class="toppicks-title-wrap">
+                        <h2 class="toppicks-title">Just for <span>You</span></h2>
+                        <p class="toppicks-sub">Handpicked deals tailored to your interests</p>
+                    </div>
+                    <a href="featured.html" class="toppicks-viewall">View All <i data-lucide="arrow-right"></i></a>
                 </div>
                 <div class="product-grid">
                     <!-- Product 1 - Smart Watch -->
@@ -234,9 +239,12 @@
                             <p class="product-name">Ultra Series 9 Smart Watch - AMOLED Display & Health Tracking</p>
                             <p class="product-price">PKR 4,500.00 - 8,200.00</p>
                             <p class="product-moq">10 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">CN 3yrs</span>
+                            <div class="product-footer">
+                                <div class="supplier-info">
+                                    <span class="tp-verified"><i data-lucide="shield-check"></i> Verified</span>
+                                    <span class="country">CN 3yrs</span>
+                                </div>
+                                <a href="shop-now.html"><button class="just-for-you-btn">Source Now</button></a>
                             </div>
                         </div>
                     </div>
@@ -249,9 +257,12 @@
                             <p class="product-name">Professional 4K Camera Drone - GPS & 5G WiFi FPV Transmission</p>
                             <p class="product-price">PKR 45,000.00 - 65,000.00</p>
                             <p class="product-moq">2 Sets (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified Pro</span>
-                                <span class="country">CN 6yrs</span>
+                            <div class="product-footer">
+                                <div class="supplier-info">
+                                    <span class="tp-verified"><i data-lucide="shield-check"></i> Verified Pro</span>
+                                    <span class="country">CN 6yrs</span>
+                                </div>
+                                <a href="shop-now.html"><button class="just-for-you-btn">Source Now</button></a>
                             </div>
                         </div>
                     </div>
@@ -264,9 +275,12 @@
                             <p class="product-name">Premium Portable Waterproof Bluetooth Speaker - 20W Hi-Fi Sound</p>
                             <p class="product-price">PKR 3,500.00 - 5,800.00</p>
                             <p class="product-moq">20 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">CN 2yrs</span>
+                            <div class="product-footer">
+                                <div class="supplier-info">
+                                    <span class="tp-verified"><i data-lucide="shield-check"></i> Verified</span>
+                                    <span class="country">CN 2yrs</span>
+                                </div>
+                                <a href="shop-now.html"><button class="just-for-you-btn">Source Now</button></a>
                             </div>
                         </div>
                     </div>
@@ -280,9 +294,12 @@
                             <p class="product-name">Professional Active Noise Cancelling Wireless Headphones</p>
                             <p class="product-price">PKR 12,000.00 - 18,000.00</p>
                             <p class="product-moq">5 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified Pro</span>
-                                <span class="country">PK 4yrs</span>
+                            <div class="product-footer">
+                                <div class="supplier-info">
+                                    <span class="tp-verified"><i data-lucide="shield-check"></i> Verified Pro</span>
+                                    <span class="country">PK 4yrs</span>
+                                </div>
+                                <a href="shop-now.html"><button class="just-for-you-btn">Source Now</button></a>
                             </div>
                         </div>
                     </div>
@@ -296,9 +313,12 @@
                             <p class="product-name">TWS Wireless Earbuds with Noise Cancellation & Long Battery</p>
                             <p class="product-price">PKR 2,500.00 - 4,800.00</p>
                             <p class="product-moq">50 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified</span>
-                                <span class="country">CN 2yrs</span>
+                            <div class="product-footer">
+                                <div class="supplier-info">
+                                    <span class="tp-verified"><i data-lucide="shield-check"></i> Verified</span>
+                                    <span class="country">CN 2yrs</span>
+                                </div>
+                                <a href="shop-now.html"><button class="just-for-you-btn">Source Now</button></a>
                             </div>
                         </div>
                     </div>
@@ -311,9 +331,12 @@
                             <p class="product-name">RGB Mechanical Gaming Mouse - 12000 DPI Adjustable</p>
                             <p class="product-price">PKR 1,500.00 - 3,200.00</p>
                             <p class="product-moq">100 Pieces (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified Pro</span>
-                                <span class="country">CN 5yrs</span>
+                            <div class="product-footer">
+                                <div class="supplier-info">
+                                    <span class="tp-verified"><i data-lucide="shield-check"></i> Verified Pro</span>
+                                    <span class="country">CN 5yrs</span>
+                                </div>
+                                <a href="shop-now.html"><button class="just-for-you-btn">Source Now</button></a>
                             </div>
                         </div>
                     </div>
@@ -327,9 +350,12 @@
                             </p>
                             <p class="product-price">PKR 8,500.00 - 12,000.00</p>
                             <p class="product-moq">5 Sets (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified Pro</span>
-                                <span class="country">PK 2yrs</span>
+                            <div class="product-footer">
+                                <div class="supplier-info">
+                                    <span class="tp-verified"><i data-lucide="shield-check"></i> Verified Pro</span>
+                                    <span class="country">PK 2yrs</span>
+                                </div>
+                                <a href="shop-now.html"><button class="just-for-you-btn">Source Now</button></a>
                             </div>
                         </div>
                     </div>
@@ -342,9 +368,136 @@
                             <p class="product-name">Ultra 4K Waterproof Action Camera - 20MP & Wide Angle Lens</p>
                             <p class="product-price">PKR 15,000.00 - 22,000.00</p>
                             <p class="product-moq">10 Sets (MOQ)</p>
-                            <div class="supplier-info">
-                                <span class="badge">Verified Pro</span>
-                                <span class="country">CN 4yrs</span>
+                            <div class="product-footer">
+                                <div class="supplier-info">
+                                    <span class="tp-verified"><i data-lucide="shield-check"></i> Verified Pro</span>
+                                    <span class="country">CN 4yrs</span>
+                                </div>
+                                <a href="shop-now.html"><button class="just-for-you-btn">Source Now</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Premium Featured 3D Section -->
+        <section class="toppicks-section" id="featured-innovations">
+            <div class="container">
+                <div class="toppicks-header">
+                    <div class="toppicks-title-wrap">
+                        <h2 class="toppicks-title">Featured <span>Innovations</span></h2>
+                        <p class="toppicks-sub">Next-gen products at wholesale prices</p>
+                    </div>
+                    <a href="featured.html" class="toppicks-viewall">View All <i data-lucide="arrow-right"></i></a>
+                </div>
+
+                <div class="toppicks-grid pf-grid-tp">
+                    <!-- Featured Product 1 -->
+                    <div class="tp-card">
+                        <div class="tp-badge">New Arrival</div>
+                        <div class="tp-img-wrap">
+                            <img src="assets/vr_headset_3d.png" alt="VR Headset">
+                            <div class="tp-glow"></div>
+                        </div>
+                        <div class="tp-info">
+                            <p class="tp-name">Next-Gen Virtual Reality Headset</p>
+                            <p class="tp-price">PKR 125,000</p>
+                            <p class="tp-moq">8K Resolution Tracking</p>
+                            <div class="tp-footer">
+                                <span class="tp-verified"><i data-lucide="shield-check"></i> Verified Pro</span>
+                                <a href="featured.html" class="tp-btn">Pre-Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Product 2 -->
+                    <div class="tp-card tp-card--featured">
+                        <div class="tp-badge tp-badge--hot">Limited Edition</div>
+                        <div class="tp-img-wrap">
+                            <img src="assets/gaming_console_3d.png" alt="Gaming Console">
+                            <div class="tp-glow tp-glow--gold"></div>
+                        </div>
+                        <div class="tp-info">
+                            <p class="tp-name">Cyberpunk Style Gaming Console</p>
+                            <p class="tp-price">PKR 180,000</p>
+                            <p class="tp-moq">Advanced Processing Unit</p>
+                            <div class="tp-footer">
+                                <span class="tp-verified"><i data-lucide="shield-check"></i> Verified Pro</span>
+                                <a href="featured.html" class="tp-btn">Source Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Product 3 -->
+                    <div class="tp-card">
+                        <div class="tp-badge tp-badge--new">Trending</div>
+                        <div class="tp-img-wrap">
+                            <img src="assets/pf_smartwatch_3d.png" alt="Futuristic Smartwatch">
+                            <div class="tp-glow"></div>
+                        </div>
+                        <div class="tp-info">
+                            <p class="tp-name">Futuristic Hologram Smartwatch</p>
+                            <p class="tp-price">PKR 45,000</p>
+                            <p class="tp-moq">Interactive Holo Display</p>
+                            <div class="tp-footer">
+                                <span class="tp-verified"><i data-lucide="shield-check"></i> Verified Pro</span>
+                                <a href="featured.html" class="tp-btn">Source Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Product 4 -->
+                    <div class="tp-card">
+                        <div class="tp-badge">Top Seller</div>
+                        <div class="tp-img-wrap">
+                            <img src="assets/pf_earbuds_3d.png" alt="Wireless Earbuds">
+                            <div class="tp-glow"></div>
+                        </div>
+                        <div class="tp-info">
+                            <p class="tp-name">Quantum Audio Wireless Earbuds</p>
+                            <p class="tp-price">PKR 28,000</p>
+                            <p class="tp-moq">True Lossless Audio</p>
+                            <div class="tp-footer">
+                                <span class="tp-verified"><i data-lucide="shield-check"></i> Verified Pro</span>
+                                <a href="featured.html" class="tp-btn">Source Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Product 5 -->
+                    <div class="tp-card tp-card--featured">
+                        <div class="tp-badge tp-badge--hot">Professional</div>
+                        <div class="tp-img-wrap">
+                            <img src="assets/pf_drone_3d.png" alt="AI Drone">
+                            <div class="tp-glow tp-glow--gold"></div>
+                        </div>
+                        <div class="tp-info">
+                            <p class="tp-name">Autonomous AI Camera Drone</p>
+                            <p class="tp-price">PKR 210,000</p>
+                            <p class="tp-moq">8K Cinematic Footage</p>
+                            <div class="tp-footer">
+                                <span class="tp-verified"><i data-lucide="shield-check"></i> Verified Pro</span>
+                                <a href="featured.html" class="tp-btn">Source Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Product 6 -->
+                    <div class="tp-card">
+                        <div class="tp-badge tp-badge--new">Smart Home</div>
+                        <div class="tp-img-wrap">
+                            <img src="assets/pf_smarthub_3d.png" alt="Smart Home Hub">
+                            <div class="tp-glow"></div>
+                        </div>
+                        <div class="tp-info">
+                            <p class="tp-name">Intelligent Home Assistant Hub</p>
+                            <p class="tp-price">PKR 35,000</p>
+                            <p class="tp-moq">Voice & AI Insights</p>
+                            <div class="tp-footer">
+                                <span class="tp-verified"><i data-lucide="shield-check"></i> Verified Pro</span>
+                                <a href="featured.html" class="tp-btn">Source Now</a>
                             </div>
                         </div>
                     </div>
