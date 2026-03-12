@@ -166,42 +166,98 @@ document.addEventListener('DOMContentLoaded', () => {
         return re.test(email);
     }
 
-    // Hero Carousel Logic
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.carousel-dot');
+    // Hero Carousel Logic - Enhanced Smooth Infinite Loop
     const inner = document.getElementById('carouselInner');
+    const originalSlides = document.querySelectorAll('.carousel-slide');
+    const dotsContainer = document.getElementById('carouselNav');
 
-    window.moveSlide = function (n) {
-        currentSlide = (currentSlide + n + slides.length) % slides.length;
-        updateCarousel();
-    }
+    if (inner && originalSlides.length > 0) {
+        // Clone first and last slides for infinite effect
+        const firstClone = originalSlides[0].cloneNode(true);
+        const lastClone = originalSlides[originalSlides.length - 1].cloneNode(true);
 
-    window.goToSlide = function (n) {
-        currentSlide = n;
-        updateCarousel();
-    }
+        inner.appendChild(firstClone);
+        inner.insertBefore(lastClone, originalSlides[0]);
 
-    function updateCarousel() {
-        if (!inner) return;
-        const offset = -currentSlide * (100 / slides.length);
-        inner.style.transform = `translateX(${offset}%)`;
+        const allSlides = document.querySelectorAll('.carousel-slide');
+        const slideCount = originalSlides.length;
+        let currentIndex = 1; // Start at the first original slide
+        let isTransitioning = false;
 
-        // Update dots
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentSlide);
+        // Reset width and starting position
+        inner.style.width = `${(slideCount + 2) * 100}%`;
+        allSlides.forEach(slide => {
+            slide.style.width = `${100 / (slideCount + 2)}%`;
         });
-    }
 
-    // Auto-play
-    let autoPlayInterval = setInterval(() => moveSlide(1), 5000);
+        // Initial position
+        inner.style.transform = `translateX(-${currentIndex * (100 / (slideCount + 2))}%)`;
 
-    // Pause auto-play on hover
-    const carousel = document.querySelector('.hero-carousel');
-    if (carousel) {
-        carousel.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
-        carousel.addEventListener('mouseleave', () => {
-            autoPlayInterval = setInterval(() => moveSlide(1), 5000);
+        window.moveSlide = function (n) {
+            if (isTransitioning) return;
+            resetAutoPlay();
+            goToSlide(currentIndex + n);
+        };
+
+        window.goToSlide = function (n) {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            currentIndex = n;
+
+            inner.style.transition = 'transform 1.2s cubic-bezier(0.7, 0, 0.3, 1)';
+            inner.style.transform = `translateX(-${currentIndex * (100 / (slideCount + 2))}%)`;
+
+            updateDots();
+        };
+
+        inner.addEventListener('transitionend', () => {
+            isTransitioning = false;
+
+            // Jump to original slides if we hit clones for infinite effect
+            if (currentIndex === 0) {
+                currentIndex = slideCount;
+                inner.style.transition = 'none';
+                inner.style.transform = `translateX(-${currentIndex * (100 / (slideCount + 2))}%)`;
+            } else if (currentIndex === slideCount + 1) {
+                currentIndex = 1;
+                inner.style.transition = 'none';
+                inner.style.transform = `translateX(-${currentIndex * (100 / (slideCount + 2))}%)`;
+            }
         });
+
+        function updateDots() {
+            const dots = document.querySelectorAll('.carousel-dot');
+            let activeDotIndex = currentIndex - 1;
+
+            if (currentIndex === 0) activeDotIndex = slideCount - 1;
+            if (currentIndex === slideCount + 1) activeDotIndex = 0;
+
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === activeDotIndex);
+            });
+        }
+
+        // Auto-play management
+        let autoPlayInterval;
+
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                moveSlide(1);
+            }, 7000); // 7 seconds for better readability
+        }
+
+        function resetAutoPlay() {
+            clearInterval(autoPlayInterval);
+            startAutoPlay();
+        }
+
+        startAutoPlay();
+
+        const carousel = document.querySelector('.hero-carousel');
+        if (carousel) {
+            carousel.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+            carousel.addEventListener('mouseleave', () => startAutoPlay());
+        }
     }
+
 });
