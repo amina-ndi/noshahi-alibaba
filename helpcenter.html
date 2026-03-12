@@ -420,253 +420,7 @@
 </head>
 
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container container-flex">
-            <div class="top-bar-left"><span>Free delivery for your first order</span></div>
-            <div class="top-bar-right">
-                <a href="helpcenter.html">Help Center</a>
-                <a href="regional-settings.html">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK"> PKR</a>
-                <a href="regional-settings.html">Language: EN</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Header -->
-    <header class="main-header">
-        <div class="container header-flex">
-            <div class="logo">
-                <a href="index.html">
-                    <span class="logo-text">Noshahi<span>baba</span>.com</span>
-                </a>
-            </div>
-            <div class="search-container">
-                <div class="search-box">
-                    <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
-                    <input type="text" placeholder="Search suppliers, products...">
-                    <button class="search-btn"><i data-lucide="search"></i> Search</button>
-                </div>
-            </div>
-            <div class="header-actions">
-                <a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign In</span></a><a href="messages.html" class="action-item"><i data-lucide="message-square"></i><span>Messages</span></a><a href="cart.html" class="action-item"><i data-lucide="shopping-cart"></i><span>Cart</span></a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Navigation -->
-    <nav class="sub-nav">
-        <div class="container nav-flex">
-            <div class="all-categories" id="all-categories-btn"><i data-lucide="menu"></i> All categories</div>
-            <div class="nav-links">
-                <a href="index.html" ><i data-lucide="home"></i> Home</a><a href="featured.html">Featured selections</a>
-                <a href="tradeassurance.html">Trade Assurance</a>
-                <a href="buyer-central.html">Buyer Central</a>
-                <a href="helpcenter.html" class="active" style="color:#ff6600;">Help Center</a>
-                <a href="getapp.html">Get the app</a>
-            </div>
-            <div class="nav-right"><a href="#">Become a supplier</a></div>
-        </div>
-    </nav>
-
-    <!-- ── HERO ─────────────────────────────────── -->
-    <section class="hc-hero">
-        <div class="container">
-            <h1>How can we help you?</h1>
-            <p>Search our knowledge base or browse categories below</p>
-            <div class="hc-search-bar">
-                <input type="text" id="hc-search-input" placeholder="Search for orders, payments, shipping, suppliers…">
-                <button onclick="handleHcSearch()"><i data-lucide="search"
-                        style="display:inline;width:16px;vertical-align:middle;margin-right:6px;"></i>Search</button>
-            </div>
-            <div class="hc-popular">
-                Popular: <a href="#">Track Order</a> <a href="#">Refund Policy</a> <a href="#">Verify Supplier</a> <a
-                    href="#">Cancel Order</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── HELP CATEGORIES ─────────────────────── -->
-    <section class="hc-cats">
-        <div class="container">
-            <div class="section-label">Browse by Topic</div>
-            <h2 class="section-heading">Help Categories</h2>
-            <div class="hc-cats-grid">
-                <a href="#" class="hc-cat-card">
-                    <div class="hc-cat-icon" style="background:#fff4ed;"><i data-lucide="shopping-bag"
-                            style="color:#ff6600;"></i></div>
-                    <h3>Orders & Payments</h3>
-                    <p>Place orders, payment methods, and order history.</p>
-                    <div class="article-count">24 Articles</div>
-                </a>
-                <a href="#" class="hc-cat-card">
-                    <div class="hc-cat-icon" style="background:#eff6ff;"><i data-lucide="truck"
-                            style="color:#3b82f6;"></i></div>
-                    <h3>Shipping & Delivery</h3>
-                    <p>Tracking, customs, logistics, and delivery issues.</p>
-                    <div class="article-count">31 Articles</div>
-                </a>
-                <a href="#" class="hc-cat-card">
-                    <div class="hc-cat-icon" style="background:#f0fdf4;"><i data-lucide="shield-check"
-                            style="color:#16a34a;"></i></div>
-                    <h3>Trade Assurance</h3>
-                    <p>Buyer protection, disputes, refunds and claims.</p>
-                    <div class="article-count">18 Articles</div>
-                </a>
-                <a href="#" class="hc-cat-card">
-                    <div class="hc-cat-icon" style="background:#faf5ff;"><i data-lucide="user-check"
-                            style="color:#9333ea;"></i></div>
-                    <h3>Account & Profile</h3>
-                    <p>Settings, verification, security, and personal info.</p>
-                    <div class="article-count">15 Articles</div>
-                </a>
-                <a href="#" class="hc-cat-card">
-                    <div class="hc-cat-icon" style="background:#fff4ed;"><i data-lucide="search"
-                            style="color:#ff6600;"></i></div>
-                    <h3>Finding Suppliers</h3>
-                    <p>Search, RFQ, supplier verification, and sourcing.</p>
-                    <div class="article-count">22 Articles</div>
-                </a>
-                <a href="#" class="hc-cat-card">
-                    <div class="hc-cat-icon" style="background:#eff6ff;"><i data-lucide="credit-card"
-                            style="color:#3b82f6;"></i></div>
-                    <h3>Payments & Billing</h3>
-                    <p>Payment methods, invoices, and billing issues.</p>
-                    <div class="article-count">20 Articles</div>
-                </a>
-                <a href="#" class="hc-cat-card">
-                    <div class="hc-cat-icon" style="background:#f0fdf4;"><i data-lucide="box"
-                            style="color:#16a34a;"></i></div>
-                    <h3>Returns & Refunds</h3>
-                    <p>Return policies, how to start a return, and refunds.</p>
-                    <div class="article-count">12 Articles</div>
-                </a>
-                <a href="#" class="hc-cat-card">
-                    <div class="hc-cat-icon" style="background:#fafafa;"><i data-lucide="smartphone"
-                            style="color:#64748b;"></i></div>
-                    <h3>Mobile App</h3>
-                    <p>Using Noshahibaba on mobile devices and troubleshooting.</p>
-                    <div class="article-count">9 Articles</div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── POPULAR ARTICLES ─────────────────────── -->
-    <section class="hc-articles">
-        <div class="inner">
-            <div class="container">
-                <div class="section-label">Most Read</div>
-                <h2 class="section-heading">Popular Articles</h2>
-                <div class="articles-layout">
-                    <div class="article-list">
-                        <a href="#" class="article-link"><i data-lucide="file-text"></i><span>How to place your first
-                                order on Noshahibaba</span><i data-lucide="chevron-right" class="arr"></i></a>
-                        <a href="#" class="article-link"><i data-lucide="truck"></i><span>How to track your shipment in
-                                real time</span><i data-lucide="chevron-right" class="arr"></i></a>
-                        <a href="#" class="article-link"><i data-lucide="shield-check"></i><span>What is Trade Assurance
-                                and how does it work?</span><i data-lucide="chevron-right" class="arr"></i></a>
-                        <a href="#" class="article-link"><i data-lucide="refresh-ccw"></i><span>How to request a refund
-                                or file a dispute</span><i data-lucide="chevron-right" class="arr"></i></a>
-                        <a href="#" class="article-link"><i data-lucide="badge-check"></i><span>How to verify a
-                                supplier's authenticity</span><i data-lucide="chevron-right" class="arr"></i></a>
-                        <a href="#" class="article-link"><i data-lucide="credit-card"></i><span>Accepted payment methods
-                                and how to pay</span><i data-lucide="chevron-right" class="arr"></i></a>
-                        <a href="#" class="article-link"><i data-lucide="package"></i><span>How to request product
-                                samples from suppliers</span><i data-lucide="chevron-right" class="arr"></i></a>
-                        <a href="#" class="article-link"><i data-lucide="message-circle"></i><span>How to send an RFQ
-                                (Request for Quotation)</span><i data-lucide="chevron-right" class="arr"></i></a>
-                    </div>
-                    <div>
-                        <div class="hc-widget">
-                            <h4>Contact Support</h4>
-                            <div class="contact-options">
-                                <div class="contact-opt">
-                                    <i data-lucide="message-circle"></i>
-                                    <div><span>Live Chat</span><small>Available 24/7 — avg. 2 min reply</small></div>
-                                </div>
-                                <div class="contact-opt">
-                                    <i data-lucide="mail"></i>
-                                    <div><span>Email Support</span><small>Response within 24 hours</small></div>
-                                </div>
-                                <div class="contact-opt">
-                                    <i data-lucide="phone"></i>
-                                    <div><span>Call Us</span><small>Mon–Fri, 9am–6pm PKT</small></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hc-widget">
-                            <h4>Quick Links</h4>
-                            <div class="contact-options">
-                                <a href="buyer-central.html" class="contact-opt"
-                                    style="text-decoration:none;color:inherit;">
-                                    <i data-lucide="users"></i>
-                                    <div><span>Buyer Central</span><small>Sourcing tips & guides</small></div>
-                                </a>
-                                <a href="tradeassurance.html" class="contact-opt"
-                                    style="text-decoration:none;color:inherit;">
-                                    <i data-lucide="shield"></i>
-                                    <div><span>Trade Assurance</span><small>Order protection info</small></div>
-                                </a>
-                                <a href="getapp.html" class="contact-opt" style="text-decoration:none;color:inherit;">
-                                    <i data-lucide="smartphone"></i>
-                                    <div><span>Get the App</span><small>Buy on the go</small></div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── VIDEO GUIDES ─────────────────────────── -->
-    <section class="hc-videos">
-        <div class="container">
-            <div class="section-label">Learn Faster</div>
-            <h2 class="section-heading">Video Guides</h2>
-            <p class="section-sub">Step-by-step visual tutorials to get you started quickly.</p>
-            <div class="videos-grid">
-                <div class="video-card">
-                    <div class="video-thumb">
-                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=700&auto=format&fit=crop"
-                            alt="Place First Order">
-                        <div class="play-btn"><i data-lucide="play"></i></div>
-                    </div>
-                    <div class="video-info">
-                        <span>Getting Started</span>
-                        <h4>How to Place Your First Order</h4>
-                        <p>5 min • Beginner</p>
-                    </div>
-                </div>
-                <div class="video-card">
-                    <div class="video-thumb">
-                        <img src="https://images.unsplash.com/photo-1454165033706-54c2826b0b03?q=80&w=700&auto=format&fit=crop"
-                            alt="Find Suppliers">
-                        <div class="play-btn"><i data-lucide="play"></i></div>
-                    </div>
-                    <div class="video-info">
-                        <span>Sourcing</span>
-                        <h4>How to Find & Verify Suppliers</h4>
-                        <p>8 min • Intermediate</p>
-                    </div>
-                </div>
-                <div class="video-card">
-                    <div class="video-thumb">
-                        <img src="https://images.unsplash.com/photo-1627377562473-863a137e5ec0?q=80&w=700&auto=format&fit=crop"
-                            alt="Track Order">
-                        <div class="play-btn"><i data-lucide="play"></i></div>
-                    </div>
-                    <div class="video-info">
-                        <span>Shipping</span>
-                        <h4>Tracking Your Shipment Live</h4>
-                        <p>4 min • Beginner</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+            <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-links">
@@ -675,8 +429,9 @@
                     <ul>
                         <li><a href="helpcenter.html">Help Center</a></li>
                         <li><a href="live-chat.html">Live Chat</a></li>
-                        <li><a href="order-status.html">Check order status</a></li>
-                        <li><a href="report-abuse.html">Report abuse</a></li>
+                        <li><a href="order-status.html">Check Order Status</a></li>
+                        <li><a href="report-abuse.html">Report Abuse</a></li>
+                        <li><a href="refunds.html">Refunds & Returns</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -684,8 +439,9 @@
                     <ul>
                         <li><a href="tradeassurance.html">Trade Assurance</a></li>
                         <li><a href="business-identity.html">Business Identity</a></li>
-                        <li><a href="logistics.html">Logistics Service</a></li>
-                        <li><a href="inspection.html">Inspection Service</a></li>
+                        <li><a href="logistics.html">Shipping & Logistics</a></li>
+                        <li><a href="inspections.html">Inspection Services</a></li>
+                        <li><a href="secure-payment.html">Secure Payment</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -693,15 +449,17 @@
                     <ul>
                         <li><a href="top-ranking.html">Top Ranking</a></li>
                         <li><a href="rfq.html">Request for Quotation</a></li>
-                        <li><a href="membership.html">Membership Program</a></li>
+                        <li><a href="membership.html">Membership Programs</a></li>
+                        <li><a href="verified-suppliers.html">Verified Suppliers</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Sell on Noshahibaba</h4>
                     <ul>
                         <li><a href="become-supplier.html">Become a Supplier</a></li>
-                        <li><a href="supplier-central.html">Supplier Central</a></li>
-                        <li><a href="training-center.html">Training Center</a></li>
+                        <li><a href="supplier-central.html">Seller Central</a></li>
+                        <li><a href="training-center.html">Supplier Training</a></li>
+                        <li><a href="partnership.html">Partnership Program</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -710,24 +468,51 @@
                         <li><a href="our-story.html">Our Story</a></li>
                         <li><a href="noshahi-group.html">Noshahi Group</a></li>
                         <li><a href="careers.html">Careers</a></li>
-                        <li><a href="legal.html">Legal Notice</a></li>
+                        <li><a href="legal.html">Legal & Privacy</a></li>
                     </ul>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <div class="social-links">
-                    <i data-lucide="facebook"></i>
-                    <i data-lucide="linkedin"></i>
-                    <i data-lucide="twitter"></i>
-                    <i data-lucide="instagram"></i>
-                    <i data-lucide="youtube"></i>
+                <div class="footer-info">
+                    <span class="copyright">� 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights reserved.</span>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Use</a>
                 </div>
-                <p>&copy; 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights reserved.</p>
-                <p>Noshahi Group | <a href="legal.html" style="color:#999;">Privacy Policy</a> | <a href="legal.html"
-                        style="color:#999;">Terms of Use</a></p>
+                <div class="social-links">
+                    <a href="https://facebook.com/noshahibaba" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="https://twitter.com/noshahibaba" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="https://instagram.com/noshahibaba" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    <a href="https://linkedin.com/company/noshahibaba" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="https://youtube.com/noshahibaba" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Bottom Nav -->
+    <div class="mobile-bottom-nav">
+        <a href="index.html" class="mobile-nav-item">
+            <i data-lucide="home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#" class="mobile-nav-item">
+            <i data-lucide="layers"></i>
+            <span>Categories</span>
+        </a>
+        <a href="messages.html" class="mobile-nav-item">
+            <i data-lucide="message-square"></i>
+            <span>Messages</span>
+        </a>
+        <a href="cart.html" class="mobile-nav-item">
+            <i data-lucide="shopping-cart"></i>
+            <span>Cart</span>
+        </a>
+        <a href="signin.html" class="mobile-nav-item">
+            <i data-lucide="user"></i>
+            <span>Account</span>
+        </a>
+    </div>
 
     <script src="script.js"></script>
     <script>
@@ -744,6 +529,8 @@
 </body>
 
 </html>
+
+
 
 
 

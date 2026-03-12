@@ -35,9 +35,65 @@
 </style>
 </head>
 <body>
-<div class="top-bar"><div class="container container-flex"><div class="top-bar-left"><span>Free delivery for your first order</span></div><div class="top-bar-right"><a href="helpcenter.html">Help Center</a></div></div></div>
-<header class="main-header"><div class="container header-flex"><div class="logo"><a href="index.html"><span class="logo-text">Noshahi<span>baba</span>.com</span></a></div><div class="search-container"><div class="search-box"><div class="search-type">Products <i data-lucide="chevron-down"></i></div><input type="text" placeholder="Search..."><button class="search-btn"><i data-lucide="search"></i> Search</button></div></div><div class="header-actions"><a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign In</span></a><div class="action-item"><i data-lucide="shopping-cart"></i><span>Cart</span></div></div></div></header>
-<nav class="sub-nav"><div class="container nav-flex"><div class="all-categories" id="all-categories-btn"><i data-lucide="menu"></i> All categories</div><div class="nav-links"><a href="featured.html">Featured selections</a><a href="tradeassurance.html">Trade Assurance</a><a href="buyer-central.html">Buyer Central</a><a href="helpcenter.html">Help Center</a><a href="getapp.html">Get the app</a></div><div class="nav-right"><a href="#">Become a supplier</a></div></div></nav>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left">
+                <span>Free delivery for your first order</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="helpcenter.html">Help Center</a>
+                <a href="regional-settings.html">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK">
+                    PKR</a>
+                <a href="regional-settings.html">Language: EN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Consolidated Header & Navigation -->
+    <header class="main-header sticky-header">
+        <div class="container">
+            <!-- First Row: Logo, Search, Actions -->
+            <div class="header-top-row">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                    </a>
+                </div>
+                <div class="search-container">
+                    <div class="search-box">
+                        <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
+                        <input type="text" placeholder="What are you looking for...">
+                        <button class="search-btn"><i data-lucide="search"></i> <span>Search</span></button>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign In</span></a><a
+                        href="messages.html" class="action-item"><i
+                            data-lucide="message-square"></i><span>Messages</span></a><a href="cart.html"
+                        class="action-item"><i data-lucide="shopping-cart"></i><span>Cart</span></a>
+                </div>
+            </div>
+
+            <!-- Second Row: Attached Navigation -->
+            <div class="header-nav-row">
+                <div class="all-categories" id="all-categories-btn">
+                    <i data-lucide="menu"></i> All categories
+                </div>
+                <div class="nav-links">
+                    <a href="index.html"><i data-lucide="home"></i> Home</a><a
+                        href="featured.html">Featured selections</a>
+                    <a href="tradeassurance.html">Trade Assurance</a>
+                    <a href="buyer-central.html">Buyer Central</a>
+                    <a href="helpcenter.html">Help Center</a>
+                    <a href="getapp.html">Get the app</a>
+                </div>
+                <div class="nav-right">
+                    <a href="#">Become a supplier</a>
+                </div>
+            </div>
+        </div>
+    </header>
 <section class="page-hero"><div class="container"><h1>Inspection Service</h1><p>Verify product quality before shipment with our certified third-party inspection partners worldwide.</p></div></section>
 <section class="content-sec gray"><div class="container"><div class="sl">Our Services</div><h2 class="sh">Types of Inspections</h2><div class="card-grid"><div class="f-card"><div class="f-icon"><i data-lucide="search"></i></div><h3>Pre-Production Inspection</h3><p>Verify raw materials and production readiness before manufacturing begins to avoid costly errors.</p></div><div class="f-card"><div class="f-icon"><i data-lucide="clipboard-check"></i></div><h3>During Production Check</h3><p>Monitor production at early stages to identify and correct defects while they're still fixable.</p></div><div class="f-card"><div class="f-icon"><i data-lucide="package-check"></i></div><h3>Pre-Shipment Inspection</h3><p>Full quality check of finished goods before they leave the factory. Most popular option.</p></div><div class="f-card"><div class="f-icon"><i data-lucide="anchor"></i></div><h3>Container Loading Check</h3><p>Ensure correct products and quantities are loaded safely into the shipping container.</p></div><div class="f-card"><div class="f-icon"><i data-lucide="flask-conical"></i></div><h3>Lab Testing</h3><p>Certify product safety, materials, and compliance with international standards like CE, RoHS, ASTM.</p></div><div class="f-card"><div class="f-icon"><i data-lucide="building-2"></i></div><h3>Factory Audit</h3><p>Comprehensive on-site audit of supplier facilities, processes, certifications, and capacity.</p></div></div></div></section>
 <section class="content-sec"><div class="container"><div class="sl">How It Works</div><h2 class="sh">3 Simple Steps</h2><div class="card-grid"><div class="f-card"><div class="f-icon" style="background:#eff6ff;"><i data-lucide="calendar" style="color:#3b82f6;"></i></div><h3>1. Book Inspection</h3><p>Select inspection type, dates, and factory location through your order dashboard.</p></div><div class="f-card"><div class="f-icon" style="background:#f0fdf4;"><i data-lucide="user-check" style="color:#16a34a;"></i></div><h3>2. Inspector Visits</h3><p>Our certified inspector visits the factory and checks products against your specifications.</p></div><div class="f-card"><div class="f-icon"><i data-lucide="file-check"></i></div><h3>3. Receive Report</h3><p>Get a detailed report with photos within 24 hours. Approve or dispute before payment release.</p></div></div></div></section>
@@ -105,6 +161,8 @@
     </footer><script src="script.js"></script><script>lucide.createIcons();</script>
 </body>
 </html>
+
+
 
 
 

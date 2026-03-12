@@ -315,7 +315,7 @@
 </head>
 
 <body>
-    <!-- Top Bar -->
+        <!-- Top Bar -->
     <div class="top-bar">
         <div class="container container-flex">
             <div class="top-bar-left">
@@ -323,38 +323,53 @@
             </div>
             <div class="top-bar-right">
                 <a href="helpcenter.html">Help Center</a>
+                <a href="regional-settings.html">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK">
+                    PKR</a>
                 <a href="regional-settings.html">Language: EN</a>
             </div>
         </div>
     </div>
 
-    <!-- Main Header -->
-    <header class="main-header">
-        <div class="container header-flex">
-            <div class="logo">
-                <a href="index.html">
-                    <span class="logo-text">Noshahi<span>baba</span>.com</span>
-                </a>
-            </div>
-            <div class="search-container">
-                <div class="search-box">
-                    <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
-                    <input type="text" placeholder="Search messages...">
-                    <button class="search-btn"><i data-lucide="search"></i> Search</button>
+    <!-- Consolidated Header & Navigation -->
+    <header class="main-header sticky-header">
+        <div class="container">
+            <!-- First Row: Logo, Search, Actions -->
+            <div class="header-top-row">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                    </a>
+                </div>
+                <div class="search-container">
+                    <div class="search-box">
+                        <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
+                        <input type="text" placeholder="What are you looking for...">
+                        <button class="search-btn"><i data-lucide="search"></i> <span>Search</span></button>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign In</span></a><a
+                        href="messages.html" class="action-item"><i
+                            data-lucide="message-square"></i><span>Messages</span></a><a href="cart.html"
+                        class="action-item"><i data-lucide="shopping-cart"></i><span>Cart</span></a>
                 </div>
             </div>
-            <div class="header-actions">
-                <a href="signin.html" class="action-item">
-                    <i data-lucide="user"></i>
-                    <span>Sign In</span>
-                </a>
-                <a href="messages.html" class="action-item active" style="color: var(--primary);">
-                    <i data-lucide="message-square"></i>
-                    <span>Messages</span>
-                </a>
-                <div class="action-item">
-                    <i data-lucide="shopping-cart"></i>
-                    <span>Cart</span>
+
+            <!-- Second Row: Attached Navigation -->
+            <div class="header-nav-row">
+                <div class="all-categories" id="all-categories-btn">
+                    <i data-lucide="menu"></i> All categories
+                </div>
+                <div class="nav-links">
+                    <a href="index.html"><i data-lucide="home"></i> Home</a><a
+                        href="featured.html">Featured selections</a>
+                    <a href="tradeassurance.html">Trade Assurance</a>
+                    <a href="buyer-central.html">Buyer Central</a>
+                    <a href="helpcenter.html">Help Center</a>
+                    <a href="getapp.html">Get the app</a>
+                </div>
+                <div class="nav-right">
+                    <a href="#">Become a supplier</a>
                 </div>
             </div>
         </div>
@@ -537,5 +552,7 @@
 </body>
 
 </html>
+
+
 
 

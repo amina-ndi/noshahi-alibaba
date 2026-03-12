@@ -235,174 +235,106 @@
 </head>
 
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container container-flex">
-            <div class="top-bar-left">
-                <span>Safe payments. Trusted suppliers. Global shipping.</span>
-            </div>
-            <div class="top-bar-right">
-                <a href="helpcenter.html">Help Center</a>
-                <a href="#">Ship to: PK</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Header -->
-    <header class="main-header">
-        <div class="container header-flex">
-            <div class="logo">
-                <a href="index.html">
-                    <span class="logo-text">Noshahi<span>baba</span>.com</span>
-                </a>
-            </div>
-            <div class="search-container">
-                <div class="search-box">
-                    <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
-                    <input type="text" placeholder="Search for items in your cart...">
-                    <button class="search-btn"><i data-lucide="search"></i> Search</button>
-                </div>
-            </div>
-            <div class="header-actions">
-                <a href="signin.html" class="action-item">
-                    <i data-lucide="user"></i>
-                    <span>Sign In</span>
-                </a>
-                <a href="messages.html" class="action-item">
-                    <i data-lucide="message-square"></i>
-                    <span>Messages</span>
-                </a>
-                <a href="cart.html" class="action-item active" style="color: var(--primary);">
-                    <i data-lucide="shopping-cart"></i>
-                    <span>Cart</span>
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <main class="container">
-        <div class="cart-container">
-            <!-- Items Section -->
-            <div class="cart-items-section">
-                <div class="cart-header">
-                    <h2>Shopping Cart (3 items)</h2>
-                    <label style="font-size: 14px; user-select: none;">
-                        <input type="checkbox" checked> Select All
-                    </label>
-                </div>
-
-                <!-- Item 1 -->
-                <div class="cart-item">
-                    <div class="item-img">
-                        <img src="https://images.unsplash.com/photo-1534067783941-51c9c23eca0c?q=80&w=200&auto=format&fit=crop"
-                            alt="I1">
-                    </div>
-                    <div class="item-details">
-                        <h3>Heavy Duty Industrial CNC Lathe Pro-300</h3>
-                        <div class="item-meta">
-                            <span>Color: Industrial Blue</span>
-                            <span>Volt: 440V</span>
-                        </div>
-                    </div>
-                    <div class="item-price-actions">
-                        <div class="item-price">PKR 450,000.00</div>
-                        <div class="quantity-control">
-                            <button class="qty-btn"><i data-lucide="minus" style="width: 14px;"></i></button>
-                            <span class="qty-val">1</span>
-                            <button class="qty-btn"><i data-lucide="plus" style="width: 14px;"></i></button>
-                        </div>
-                        <div class="remove-item"><i data-lucide="trash-2" style="width: 12px;"></i> Remove</div>
-                    </div>
-                </div>
-
-                <!-- Item 2 -->
-                <div class="cart-item">
-                    <div class="item-img">
-                        <img src="https://images.unsplash.com/photo-1543085337-12432e4b609c?q=80&w=200&auto=format&fit=crop"
-                            alt="I2">
-                    </div>
-                    <div class="item-details">
-                        <h3>Premium Silk Blouse for Women - Floral Design</h3>
-                        <div class="item-meta">
-                            <span>Size: M</span>
-                            <span>Color: White</span>
-                        </div>
-                    </div>
-                    <div class="item-price-actions">
-                        <div class="item-price">PKR 4,200.00</div>
-                        <div class="quantity-control">
-                            <button class="qty-btn"><i data-lucide="minus" style="width: 14px;"></i></button>
-                            <span class="qty-val">10</span>
-                            <button class="qty-btn"><i data-lucide="plus" style="width: 14px;"></i></button>
-                        </div>
-                        <div class="remove-item"><i data-lucide="trash-2" style="width: 12px;"></i> Remove</div>
-                    </div>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="cart-item">
-                    <div class="item-img">
-                        <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=200&auto=format&fit=crop"
-                            alt="I3">
-                    </div>
-                    <div class="item-details">
-                        <h3>Wireless Noise Cancelling Earbuds Pro</h3>
-                        <div class="item-meta">
-                            <span>Color: Black</span>
-                        </div>
-                    </div>
-                    <div class="item-price-actions">
-                        <div class="item-price">PKR 2,400.00</div>
-                        <div class="quantity-control">
-                            <button class="qty-btn"><i data-lucide="minus" style="width: 14px;"></i></button>
-                            <span class="qty-val">5</span>
-                            <button class="qty-btn"><i data-lucide="plus" style="width: 14px;"></i></button>
-                        </div>
-                        <div class="remove-item"><i data-lucide="trash-2" style="width: 12px;"></i> Remove</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Summary Sidebar -->
-            <div class="order-summary">
-                <div class="summary-title">Order Summary</div>
-                <div class="summary-row">
-                    <span>Items Subtotal:</span>
-                    <span>PKR 504,000.00</span>
-                </div>
-                <div class="summary-row">
-                    <span>Shipping Fee:</span>
-                    <span>PKR 12,500.00</span>
-                </div>
-                <div class="summary-row">
-                    <span>Discount:</span>
-                    <span style="color: #16a34a;">-PKR 4,000.00</span>
-                </div>
-                <div class="summary-total">
-                    <span>Total:</span>
-                    <span>PKR 512,500.00</span>
-                </div>
-                <button class="checkout-btn">Proceed to Checkout</button>
-                <div class="trade-assurance-badge">
-                    <i data-lucide="shield-check"></i>
-                    <span>Protect your orders with Noshahibaba Trade Assurance. Full refund for delayed or non-matching
-                        goods.</span>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Footer -->
+            <!-- Footer -->
     <footer>
-        <div class="container" style="text-align: center; padding: 40px 0; color: #666; border-top: 1px solid #eee;">
-            <p>&copy; 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights reserved.</p>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Get Support</h4>
+                    <ul>
+                        <li><a href="helpcenter.html">Help Center</a></li>
+                        <li><a href="live-chat.html">Live Chat</a></li>
+                        <li><a href="order-status.html">Check Order Status</a></li>
+                        <li><a href="report-abuse.html">Report Abuse</a></li>
+                        <li><a href="refunds.html">Refunds & Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Trade Services</h4>
+                    <ul>
+                        <li><a href="tradeassurance.html">Trade Assurance</a></li>
+                        <li><a href="business-identity.html">Business Identity</a></li>
+                        <li><a href="logistics.html">Shipping & Logistics</a></li>
+                        <li><a href="inspections.html">Inspection Services</a></li>
+                        <li><a href="secure-payment.html">Secure Payment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Source on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="top-ranking.html">Top Ranking</a></li>
+                        <li><a href="rfq.html">Request for Quotation</a></li>
+                        <li><a href="membership.html">Membership Programs</a></li>
+                        <li><a href="verified-suppliers.html">Verified Suppliers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Sell on Noshahibaba</h4>
+                    <ul>
+                        <li><a href="become-supplier.html">Become a Supplier</a></li>
+                        <li><a href="supplier-central.html">Seller Central</a></li>
+                        <li><a href="training-center.html">Supplier Training</a></li>
+                        <li><a href="partnership.html">Partnership Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="our-story.html">Our Story</a></li>
+                        <li><a href="noshahi-group.html">Noshahi Group</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="legal.html">Legal & Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-info">
+                    <span class="copyright">© 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights reserved.</span>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Use</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://facebook.com/noshahibaba" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="https://twitter.com/noshahibaba" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="https://instagram.com/noshahibaba" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    <a href="https://linkedin.com/company/noshahibaba" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="https://youtube.com/noshahibaba" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <!-- Mobile Bottom Nav -->
+    <div class="mobile-bottom-nav">
+        <a href="index.html" class="mobile-nav-item">
+            <i data-lucide="home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#" class="mobile-nav-item">
+            <i data-lucide="layers"></i>
+            <span>Categories</span>
+        </a>
+        <a href="messages.html" class="mobile-nav-item">
+            <i data-lucide="message-square"></i>
+            <span>Messages</span>
+        </a>
+        <a href="cart.html" class="mobile-nav-item">
+            <i data-lucide="shopping-cart"></i>
+            <span>Cart</span>
+        </a>
+        <a href="signin.html" class="mobile-nav-item">
+            <i data-lucide="user"></i>
+            <span>Account</span>
+        </a>
+    </div>
 
     <script src="script.js"></script>
     <script>lucide.createIcons();</script>
 </body>
 
 </html>
+
+
 
 
