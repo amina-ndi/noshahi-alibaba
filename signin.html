@@ -4,373 +4,443 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noshahibaba.com - Sign In</title>
+    <title>Sign In | NoshahiBaba.com</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #f2f3f7;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            overflow-x: hidden;
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Outfit', sans-serif;
         }
 
-        .signin-wrapper {
+        .signin-container {
+            height: 100vh;
+            width: 100vw;
             display: flex;
-            flex: 1;
-            min-height: 100vh;
+            background: #000;
+            position: relative;
         }
 
-        .signin-left {
+        /* Decorative background elements */
+        .bg-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 204, 0, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .glow-1 {
+            top: -200px;
+            right: -200px;
+        }
+
+        .glow-2 {
+            bottom: -200px;
+            left: -200px;
+        }
+
+        .signin-split {
+            display: flex;
+            width: 100%;
+            z-index: 2;
+        }
+
+        /* Left Side - Visual Branding */
+        .signin-visual {
             flex: 1.2;
-            background: linear-gradient(135deg, #1f2937 0%, #111827 100%), url('assets/hero_banner.png');
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            background-blend-mode: overlay;
-            padding: 60px;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            padding: 80px;
             color: white;
-            position: relative;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .signin-left::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(255, 102, 0, 0.1);
-        }
-
-        .signin-left>* {
-            position: relative;
-            z-index: 10;
-        }
-
-        .signin-left h1 {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 20px;
+        .signin-visual h1 {
+            font-size: 64px;
+            font-weight: 900;
             line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(90deg, #fff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .signin-left p {
+        .signin-visual p {
             font-size: 20px;
-            opacity: 0.8;
+            color: rgba(255, 255, 255, 0.7);
             max-width: 500px;
-            line-height: 1.6;
+            margin-bottom: 48px;
         }
 
-        .signin-right {
+        .trust-badges {
+            display: flex;
+            gap: 40px;
+        }
+
+        .badge-item {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .badge-item i {
+            color: var(--primary);
+            width: 32px;
+            height: 32px;
+        }
+
+        .badge-item span {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        /* Right Side - Form */
+        .signin-form-area {
             flex: 1;
-            background: #fdfdfd;
-            padding: 60px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            padding: 40px;
+            background: #050505;
         }
 
         .login-card {
             width: 100%;
-            max-width: 440px;
-            background: white;
+            max-width: 420px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 30px;
             padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
-        .logo-login {
-            margin-bottom: 40px;
+        .form-header {
             text-align: center;
+            margin-bottom: 35px;
         }
 
-        .login-tabs {
-            display: flex;
-            border-bottom: 2px solid #f3f4f6;
-            margin-bottom: 30px;
-        }
-
-        .login-tab {
-            flex: 1;
-            text-align: center;
-            padding: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            color: #666;
-            transition: all 0.2s;
-        }
-
-        .login-tab.active {
-            color: #ff6600;
-            border-bottom: 2px solid #ff6600;
-            margin-bottom: -2px;
-        }
-
-        .form-group {
+        .logo-box {
             margin-bottom: 20px;
+            display: inline-block;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 14px 16px;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            outline: none;
-            font-size: 15px;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-
-        .form-group input:focus {
-            border-color: #ff6600;
-            box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.1);
-        }
-
-        .login-btn {
-            width: 100%;
-            background: #ff6600;
-            color: white;
-            border: none;
-            padding: 14px;
-            border-radius: 8px;
+        .welcome-text {
+            font-size: 24px;
             font-weight: 700;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: background 0.2s, transform 0.1s;
+            color: #fff;
+            margin-bottom: 8px;
         }
 
-        .login-btn:hover {
-            background: #e65c00;
-        }
-
-        .login-btn:active {
-            transform: scale(0.98);
-        }
-
-        .login-options {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
+        .sub-text {
+            color: #888;
             font-size: 14px;
-            color: #666;
         }
 
-        .login-options a:hover {
-            color: #ff6600;
-        }
-
-        .social-login {
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        .social-login p {
-            font-size: 14px;
-            color: #999;
+        .input-group {
             margin-bottom: 20px;
             position: relative;
         }
 
-        .social-login p::before,
-        .social-login p::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            width: 32%;
-            height: 1px;
-            background: #eee;
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #aaa;
+            font-size: 13px;
+            font-weight: 500;
+            padding-left: 5px;
         }
 
-        .social-login p::before {
-            left: 0;
-        }
-
-        .social-login p::after {
-            right: 0;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .social-icon {
-            width: 48px;
-            height: 48px;
-            border: 1px solid #e5e7eb;
+        .input-group input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
+            padding: 14px 18px;
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.1);
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 13px;
+        }
+
+        .remember-forgot label {
+            color: #888;
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 8px;
             cursor: pointer;
-            transition: all 0.2s;
         }
 
-        .social-icon:hover {
-            background: #f9f9f9;
-            border-color: #d1d5db;
-            transform: translateY(-2px);
-        }
-
-        .social-icon.fb {
-            color: #1877f2;
-        }
-
-        .social-icon.google {
-            color: #ea4335;
-        }
-
-        .social-icon.linkedin {
-            color: #0a66c2;
-        }
-
-        .register-footer {
-            margin-top: 30px;
-            font-size: 14px;
-            color: #666;
-        }
-
-        .register-footer a {
-            color: #ff6600;
+        .remember-forgot a {
+            color: var(--primary);
+            text-decoration: none;
             font-weight: 600;
         }
 
+        .remember-forgot a:hover {
+            text-decoration: underline;
+        }
+
+        .signin-button {
+            width: 100%;
+            padding: 15px;
+            background: var(--primary);
+            color: #000;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 25px;
+        }
+
+        .signin-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 204, 0, 0.2);
+            filter: brightness(1.1);
+        }
+
+        .social-divider {
+            text-align: center;
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .social-divider::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 1;
+        }
+
+        .social-divider span {
+            background: #111;
+            padding: 0 15px;
+            color: #666;
+            font-size: 12px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .social-btns {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .social-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #fff;
+        }
+
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-note {
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+        }
+
+        .footer-note a {
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        /* Mobile Styles */
         @media (max-width: 1024px) {
-            .signin-left {
+            .signin-visual {
                 display: none;
+            }
+
+            body,
+            html {
+                overflow: auto;
+                /* Allow scroll if content exceeds mobile height slightly */
+            }
+
+            .signin-container {
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .signin-form-area {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .login-card {
+                padding: 30px 20px;
+                border: none;
+                background: transparent;
+                box-shadow: none;
+                backdrop-filter: none;
+            }
+        }
+
+        @media (max-height: 700px) {
+            .signin-container {
+                height: auto;
+                min-height: 100vh;
+            }
+
+            body,
+            html {
+                overflow: auto;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="signin-wrapper">
-        <aside class="signin-left">
-            <h1>Unlock Global<br>Opportunities.</h1>
-            <p>Join millions of businesses sourcing directly from manufacturers on Noshahibaba.com.</p>
-            <div style="margin-top: 60px; display: flex; gap: 40px;">
-                <div class="feature-bullet">
-                    <i data-lucide="shield-check"
-                        style="width: 32px; height: 32px; color: #ff6600; margin-bottom: 10px;"></i>
-                    <h4 style="font-size: 18px;">Verified Pro</h4>
-                    <p style="font-size: 14px; opacity: 0.7;">Quality inspected factors</p>
-                </div>
-                <div class="feature-bullet">
-                    <i data-lucide="truck" style="width: 32px; height: 32px; color: #ff6600; margin-bottom: 10px;"></i>
-                    <h4 style="font-size: 18px;">Fast Shipping</h4>
-                    <p style="font-size: 14px; opacity: 0.7;">Global logistics support</p>
-                </div>
-            </div>
-        </aside>
+    <div class="signin-container">
+        <div class="bg-glow glow-1"></div>
+        <div class="bg-glow glow-2"></div>
 
-        <main class="signin-right">
-            <div class="logo-login">
-                <a href="index.html">
-                    <span class="logo-text" style="font-size: 32px;">Noshahi<span>baba</span>.com</span>
-                </a>
-            </div>
-
-            <div class="login-card">
-                <div class="login-tabs">
-                    <div class="login-tab active" id="account-tab">Account</div>
-                    <div class="login-tab" id="mobile-tab">Mobile</div>
+        <div class="signin-split">
+            <!-- Left Branding Side -->
+            <div class="signin-visual">
+                <div class="logo-box">
+                    <a href="index.html">
+                        <span class="logo-text"
+                            style="font-size: 32px; color: #fff;">Noshahi<span>baba</span>.com</span>
+                    </a>
                 </div>
+                <h1>Marketplace<br>for Global Trade.</h1>
+                <p>Access millions of products, thousands of suppliers, and endless opportunities to grow your business.
+                </p>
 
-                <form id="login-form">
-                    <div class="form-group">
-                        <label for="username">Account Name</label>
-                        <input type="text" id="username" placeholder="Email address or member ID" required>
+                <div class="trust-badges">
+                    <div class="badge-item">
+                        <i data-lucide="shield-check"></i>
+                        <span>Trade Assurance</span>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" placeholder="Enter password" required>
+                    <div class="badge-item">
+                        <i data-lucide="award"></i>
+                        <span>Verified Suppliers</span>
                     </div>
-
-                    <button type="submit" class="login-btn">Sign In</button>
-                </form>
-
-                <div class="login-options">
-                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                        <input type="checkbox"> Stay signed in
-                    </label>
-                    <div>
-                        <a href="#">Forgot password?</a>
-                    </div>
-                </div>
-
-                <div class="social-login">
-                    <p>Or sign in with</p>
-                    <div class="social-icons">
-                        <div class="social-icon fb"><i data-lucide="facebook"></i></div>
-                        <div class="social-icon google"><i data-lucide="mail"></i></div>
-                        <div class="social-icon linkedin"><i data-lucide="linkedin"></i></div>
+                    <div class="badge-item">
+                        <i data-lucide="truck"></i>
+                        <span>Global Logistics</span>
                     </div>
                 </div>
             </div>
 
-            <div class="register-footer">
-                New user? <a href="#">Create a Free Account</a>
-            </div>
+            <!-- Right Form Side -->
+            <div class="signin-form-area">
+                <div class="login-card">
+                    <div class="form-header">
+                        <div class="logo-box mobile-only">
+                            <a href="index.html" style="text-decoration: none;">
+                                <span class="logo-text"
+                                    style="font-size: 28px; color: #fff;">Noshahi<span>baba</span>.com</span>
+                            </a>
+                        </div>
+                        <div class="welcome-text">Welcome Back</div>
+                        <div class="sub-text">Please enter your details to sign in</div>
+                    </div>
 
-            <div style="margin-top: 60px; font-size: 12px; color: #999; text-align: center;">
-                <p>Noshahi Group | Privacy Policy | Terms of Use</p>
-                <p style="margin-top: 10px;">&copy; 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights reserved.</p>
+                    <form id="signinForm">
+                        <div class="input-group">
+                            <label>Email or Member ID</label>
+                            <input type="text" placeholder="name@company.com" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Password</label>
+                            <input type="password" placeholder="••••••••" required>
+                        </div>
+
+                        <div class="remember-forgot">
+                            <label>
+                                <input type="checkbox"> Remember me
+                            </label>
+                            <a href="#">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="signin-button">Sign In</button>
+                    </form>
+
+                    <div class="social-divider">
+                        <span>OR CONTINUE WITH</span>
+                    </div>
+
+                    <div class="social-btns">
+                        <button class="social-btn">
+                            <i data-lucide="chrome" style="width: 18px; margin-right: 10px;"></i> Google
+                        </button>
+                        <button class="social-btn">
+                            <i data-lucide="facebook" style="width: 18px; margin-right: 10px;"></i> Facebook
+                        </button>
+                    </div>
+
+                    <div class="footer-note">
+                        Don't have an account? <a href="#">Join Free</a>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px; font-size: 11px; color: #444; text-align: center;">
+                    &copy; 2026 Noshahibaba.com | Developed by Noshahi Developer Inc.
+                </div>
             </div>
-        </main>
+        </div>
     </div>
 
     <script>
         lucide.createIcons();
 
-        // Tab switching
-        const accountTab = document.getElementById('account-tab');
-        const mobileTab = document.getElementById('mobile-tab');
-        const usernameLabel = document.querySelector('label[for="username"]');
-        const usernameInput = document.getElementById('username');
-
-        accountTab.addEventListener('click', () => {
-            accountTab.classList.add('active');
-            mobileTab.classList.remove('active');
-            usernameLabel.textContent = 'Account Name';
-            usernameInput.placeholder = 'Email address or member ID';
-            usernameInput.type = 'text';
-        });
-
-        mobileTab.addEventListener('click', () => {
-            mobileTab.classList.add('active');
-            accountTab.classList.remove('active');
-            usernameLabel.textContent = 'Mobile Number';
-            usernameInput.placeholder = 'Your mobile number';
-            usernameInput.type = 'tel';
-        });
-
-        // Form Submission
-        document.getElementById('login-form').addEventListener('submit', (e) => {
+        document.getElementById('signinForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            alert('Sign-in successful!\n(Note: This is a demo clone)');
-            window.location.href = 'index.html';
+            // Show a professional loading state would be next, but for demo:
+            const btn = e.target.querySelector('button');
+            btn.innerHTML = 'Signing in...';
+            btn.style.opacity = '0.7';
+
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1000);
         });
     </script>
 </body>
 
 </html>
-
-
-
-
