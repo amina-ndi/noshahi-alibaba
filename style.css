@@ -267,19 +267,28 @@ ul {
 }
 
 .all-categories {
-  font-weight: 600;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin-right: 40px;
+  padding: 10px 24px;
+  background: var(--primary);
+  color: #000;
+  font-weight: 800;
+  font-size: 13px;
+  border-radius: 999px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 25px rgba(255, 204, 0, 0.3);
+  border: none;
   cursor: pointer;
-  padding: 5px 10px;
-  border-radius: 6px;
-  transition: background 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-right: 20px;
 }
 
 .all-categories:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--primary);
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 15px 35px rgba(255, 204, 0, 0.45);
 }
 
 .nav-links {
@@ -315,18 +324,11 @@ ul {
   box-shadow: 0 4px 12px rgba(255, 204, 0, 0.35);
 }
 
-/* Home Nav Button */
+/* Home Nav Button Base Styling */
 .home-nav-btn {
   display: inline-flex !important;
   align-items: center;
   gap: 6px;
-  background: var(--primary) !important;
-  color: #1a1a1a !important;
-  font-weight: 700 !important;
-  padding: 6px 16px;
-  border-radius: 999px;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 4px 12px rgba(255, 204, 0, 0.35);
 }
 
 .home-nav-btn i {
