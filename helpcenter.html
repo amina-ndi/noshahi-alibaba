@@ -1,426 +1,565 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help Center | Noshahibaba.com</title>
+    <title>Help Center | Noshahibaba.com - We're here to help</title>
     <meta name="description"
-        content="Get answers to your questions about buying, selling, payments, shipping, and more on Noshahibaba.com.">
+        content="Get instant answers to your questions about buying, selling, payments, and shipping on Noshahibaba.com. Global support for a global marketplace.">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <style>
-        /* ── Hero ─────────────────────────────── */
+        :root {
+            --primary: #ffcc00;
+            --primary-dark: #e6b800;
+            --secondary: #0f172a;
+            --accent: #2563eb;
+            --bg-light: #f8fafc;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-nav-row {
+            white-space: nowrap;
+            flex-wrap: nowrap !important;
+        }
+
+        /* --- Hero Section --- */
         .hc-hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
-            padding: 80px 0 100px;
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)),
+                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1400&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0 100px;
             text-align: center;
             color: white;
             position: relative;
         }
 
         .hc-hero h1 {
-            font-size: 46px;
+            font-size: 52px;
             font-weight: 800;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
         }
 
-        .hc-hero p {
-            font-size: 18px;
-            opacity: 0.8;
-            margin-bottom: 36px;
+        .hc-search-wrapper {
+            max-width: 700px;
+            margin: 40px auto 0;
+            position: relative;
         }
 
-        .hc-search-bar {
-            display: flex;
-            max-width: 640px;
-            margin: 0 auto;
+        .hc-search-box {
             background: white;
-            border-radius: 50px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+            border-radius: 16px;
+            padding: 8px;
+            display: flex;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
-        .hc-search-bar input {
+        .hc-search-box input {
             flex: 1;
-            padding: 18px 24px;
             border: none;
+            padding: 16px 24px;
+            font-size: 18px;
             outline: none;
-            font-size: 16px;
-            font-family: 'Inter', sans-serif;
-            background: transparent;
-            color: #0f172a;
+            color: var(--text-main);
         }
 
-        .hc-search-bar button {
-            background: #ff6600;
-            color: white;
+        .hc-search-btn {
+            background: var(--primary);
+            color: #000;
             border: none;
-            padding: 0 32px;
-            font-size: 15px;
+            padding: 16px 32px;
+            border-radius: 12px;
             font-weight: 700;
             cursor: pointer;
-            transition: background 0.2s;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .hc-search-bar button:hover {
-            background: #e05500;
-        }
-
-        .hc-popular {
-            margin-top: 22px;
-            font-size: 14px;
-            opacity: 0.65;
-        }
-
-        .hc-popular a {
-            color: #ffbb7a;
-            text-decoration: underline;
-            margin: 0 6px;
-        }
-
-        /* ── Category Cards ─────────────────────── */
-        .hc-cats {
-            padding: 70px 0;
-        }
-
-        .hc-cats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 22px;
-            margin-top: 50px;
-        }
-
-        .hc-cat-card {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 14px;
-            padding: 32px 24px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.25s;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        .hc-cat-card:hover {
-            border-color: #ff6600;
-            box-shadow: 0 12px 32px rgba(255, 102, 0, 0.13);
-            transform: translateY(-5px);
-            color: inherit;
-        }
-
-        .hc-cat-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 16px;
+            transition: all 0.3s;
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin: 0 auto 18px;
-            font-size: 28px;
+            gap: 10px;
         }
 
-        .hc-cat-icon i {
-            width: 30px;
-            height: 30px;
+        .hc-search-btn:hover {
+            background: var(--primary-dark);
+            transform: scale(1.02);
         }
 
-        .hc-cat-card h3 {
-            font-size: 16px;
-            font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 8px;
+        /* --- Topic Grid --- */
+        .hc-section {
+            padding: 100px 0;
         }
 
-        .hc-cat-card p {
-            font-size: 13px;
-            color: #64748b;
-            line-height: 1.5;
-        }
-
-        .hc-cat-card .article-count {
-            font-size: 12px;
-            color: #ff6600;
-            font-weight: 600;
-            margin-top: 14px;
-        }
-
-        /* ── Popular Articles ───────────────────── */
-        .hc-articles {
-            padding: 0 0 70px;
-            background: #f8fafc;
-        }
-
-        .hc-articles .inner {
-            padding-top: 70px;
-        }
-
-        .articles-layout {
+        .hc-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
             margin-top: 40px;
         }
 
-        .article-list {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .article-link {
+        .hc-card {
             background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 18px 22px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 1px solid #eef2f6;
+            text-align: center;
             text-decoration: none;
             color: inherit;
-            transition: all 0.2s;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1);
         }
 
-        .article-link:hover {
-            border-color: #ff6600;
-            transform: translateX(4px);
-            color: inherit;
+        .hc-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+            border-color: var(--primary);
         }
 
-        .article-link i {
-            width: 18px;
-            height: 18px;
-            color: #ff6600;
-            flex-shrink: 0;
-        }
-
-        .article-link span {
-            font-size: 15px;
-            color: #0f172a;
-            font-weight: 500;
-            flex: 1;
-        }
-
-        .article-link .arr {
-            width: 16px;
-            height: 16px;
-            color: #94a3b8;
-            margin-left: auto;
-        }
-
-        .hc-widget {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 14px;
-            padding: 28px 24px;
-            margin-bottom: 22px;
-        }
-
-        .hc-widget h4 {
-            font-size: 17px;
-            font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 18px;
-        }
-
-        .contact-options {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .contact-opt {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            padding: 14px 18px;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-
-        .contact-opt:hover {
-            border-color: #ff6600;
-            background: #fff4ed;
-            color: inherit;
-        }
-
-        .contact-opt i {
-            width: 22px;
-            height: 22px;
-            color: #ff6600;
-        }
-
-        .contact-opt div span {
-            display: block;
-            font-size: 14px;
-            font-weight: 600;
-            color: #0f172a;
-        }
-
-        .contact-opt div small {
-            font-size: 12px;
-            color: #64748b;
-        }
-
-        /* ── Video Guides ───────────────────────── */
-        .hc-videos {
-            padding: 70px 0;
-        }
-
-        .videos-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 44px;
-        }
-
-        .video-card {
-            border-radius: 14px;
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-            transition: all 0.25s;
-        }
-
-        .video-card:hover {
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-            transform: translateY(-4px);
-        }
-
-        .video-thumb {
-            position: relative;
-            height: 180px;
-            background: #0f172a;
-            overflow: hidden;
-        }
-
-        .video-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.7;
-        }
-
-        .play-btn {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 52px;
-            height: 52px;
-            background: rgba(255, 102, 0, 0.9);
-            border-radius: 50%;
+        .hc-icon {
+            width: 70px;
+            height: 70px;
+            background: #fff9e6;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 0 auto 24px;
+            color: var(--primary-dark);
         }
 
-        .play-btn i {
-            width: 22px;
-            height: 22px;
-            color: white;
+        .hc-card:hover .hc-icon {
+            background: var(--primary);
+            color: #000;
         }
 
-        .video-info {
-            padding: 18px 20px;
-            background: white;
-        }
-
-        .video-info span {
-            font-size: 11px;
-            color: #ff6600;
+        .hc-card h3 {
+            font-size: 20px;
             font-weight: 700;
-            text-transform: uppercase;
+            margin-bottom: 12px;
         }
 
-        .video-info h4 {
+        .hc-card p {
             font-size: 15px;
-            font-weight: 700;
-            color: #0f172a;
-            margin: 6px 0;
+            color: var(--text-muted);
+            line-height: 1.6;
         }
 
-        .video-info p {
-            font-size: 13px;
-            color: #64748b;
+        /* --- FAQ Accordions --- */
+        .faq-section {
+            background: var(--bg-light);
+            padding: 100px 0;
+            border-radius: 60px;
+            margin: 0 20px;
         }
 
-        /* ── Section Labels ─────────────────────── */
-        .section-label {
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: #ff6600;
-            text-transform: uppercase;
-            margin-bottom: 12px;
+        .faq-header {
+            text-align: center;
+            margin-bottom: 60px;
         }
 
-        .section-heading {
-            font-size: 34px;
+        .faq-header h2 {
+            font-size: 36px;
             font-weight: 800;
-            color: #0f172a;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
-        .section-sub {
-            font-size: 16px;
-            color: #64748b;
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        /* ── Responsive ─────────────────────────── */
-        @media (max-width: 1024px) {
-            .hc-cats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .faq-item {
+            background: white;
+            border-radius: 16px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            border: 1px solid #fff;
+            transition: all 0.3s;
+        }
 
-            .articles-layout {
-                grid-template-columns: 1fr;
-            }
+        .faq-question {
+            padding: 24px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 17px;
+        }
 
-            .videos-grid {
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease-out;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .faq-item.active {
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .faq-item.active .faq-answer {
+            padding-bottom: 24px;
+            max-height: 200px;
+        }
+
+        .faq-item.active i {
+            transform: rotate(180deg);
+            color: var(--primary-dark);
+        }
+
+        /* --- Contact Section --- */
+        .contact-box {
+            background: var(--secondary);
+            border-radius: 30px;
+            padding: 60px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            /* Added spacing from footer */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-visual i {
+            width: 120px;
+            height: 120px;
+            opacity: 0.1;
+        }
+
+        .contact-content {
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+
+        .contact-box h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            font-size: 17px;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .contact-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-contact {
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-live-chat {
+            background: var(--primary);
+            color: #000;
+        }
+
+        .btn-email {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-contact:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-contact i {
+            width: 20px;
+            height: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            color: rgba(255, 255, 255, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        .social-links i {
+            width: 20px;
+            height: 20px;
+            display: block;
+        }
+
+        /* --- Responsiveness --- */
+        @media (max-width: 992px) {
+            .hc-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
             .hc-hero h1 {
-                font-size: 34px;
-            }
-        }
-
-        @media (max-width: 640px) {
-
-            .hc-cats-grid,
-            .videos-grid {
-                grid-template-columns: 1fr;
+                font-size: 40px;
             }
 
-            .hc-hero h1 {
-                font-size: 26px;
-            }
-
-            .hc-search-bar {
-                border-radius: 12px;
+            .contact-box {
                 flex-direction: column;
+                text-align: center;
+                padding: 40px;
             }
 
-            .hc-search-bar button {
-                padding: 16px;
-                border-radius: 0 0 12px 12px;
+            .contact-actions {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hc-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hc-search-box {
+                padding: 5px;
+                flex-direction: column;
+                border-radius: 20px;
+            }
+
+            .hc-search-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .faq-question {
+                padding: 20px;
+                font-size: 15px;
+            }
+
+            .hc-hero {
+                padding: 80px 0 60px;
             }
         }
     </style>
 </head>
 
 <body>
-            <!-- Footer -->
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left">
+                <span>Free delivery for your first order</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="helpcenter.html">Help Center</a>
+                <a href="regional-settings.html">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK">
+                    PKR</a>
+                <a href="regional-settings.html">Language: EN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Consolidated Header & Navigation -->
+    <header class="main-header sticky-header">
+        <div class="container">
+            <!-- First Row: Logo, Search, Actions -->
+            <div class="header-top-row">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                    </a>
+                </div>
+                <div class="search-container">
+                    <div class="search-box">
+                        <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
+                        <input type="text" placeholder="What are you looking for...">
+                        <button class="search-btn"><i data-lucide="search"></i> <span>Search</span></button>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign In</span></a><a
+                        href="messages.html" class="action-item"><i
+                            data-lucide="message-square"></i><span>Messages</span></a><a href="cart.html"
+                        class="action-item"><i data-lucide="shopping-cart"></i><span>Cart</span></a>
+                </div>
+            </div>
+
+            <!-- Second Row: Attached Navigation -->
+            <div class="header-nav-row">
+                <div class="all-categories" id="all-categories-btn">
+                    <i data-lucide="menu"></i> All categories
+                </div>
+                <div class="nav-links">
+                    <a href="index.html"><i data-lucide="home"></i> Home</a>
+                    <a href="featured.html">Featured selections</a>
+                    <a href="tradeassurance.html">Trade Assurance</a>
+                    <a href="buyer-central.html">Buyer Central</a>
+                    <a href="helpcenter.html" class="active">Help Center</a>
+                    <a href="getapp.html">Get the app</a>
+                </div>
+                <div class="nav-right">
+                    <a href="#">Become a supplier</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hc-hero">
+            <div class="container">
+                <h1>How can we <span>help you?</span></h1>
+                <p>Search over 1,000 articles or select a topic to find what you need.</p>
+                <div class="hc-search-wrapper">
+                    <div class="hc-search-box">
+                        <i data-lucide="search" style="margin-left: 15px; color: #94a3b8; align-self: center;"></i>
+                        <input type="text" id="hc-main-search" placeholder="Type your question here...">
+                        <button class="hc-search-btn" onclick="handleSearch()">Search HelpCenter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topics -->
+        <section class="container hc-section">
+            <div class="hc-grid">
+                <a href="#" class="hc-card">
+                    <div class="hc-icon"><i data-lucide="box"></i></div>
+                    <h3>Account & Profile</h3>
+                    <p>Managing your account details, security settings, and notifications.</p>
+                </a>
+                <a href="#" class="hc-card">
+                    <div class="hc-icon"><i data-lucide="shopping-bag"></i></div>
+                    <h3>Buying on Noshahi</h3>
+                    <p>How to find products, place orders, and communicate with suppliers.</p>
+                </a>
+                <a href="#" class="hc-card">
+                    <div class="hc-icon"><i data-lucide="credit-card"></i></div>
+                    <h3>Payments & Pricing</h3>
+                    <p>Supported payment methods, currencies, and invoice management.</p>
+                </a>
+                <a href="#" class="hc-card">
+                    <div class="hc-icon"><i data-lucide="truck"></i></div>
+                    <h3>Shipping & Logistics</h3>
+                    <p>Tracking orders, shipping methods, and customs information.</p>
+                </a>
+                <a href="#" class="hc-card">
+                    <div class="hc-icon"><i data-lucide="shield-check"></i></div>
+                    <h3>Safety & Security</h3>
+                    <p>Trade Assurance, verified suppliers, and reporting suspicious activity.</p>
+                </a>
+                <a href="#" class="hc-card">
+                    <div class="hc-icon"><i data-lucide="message-square"></i></div>
+                    <h3>Selling on Noshahi</h3>
+                    <p>Setting up your shop, managing inquiries, and growing your sales.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQs -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="faq-header">
+                    <h2>Popular <span>Questions</span></h2>
+                    <p>Find quick answers to our most frequently asked help topics.</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How do I track my order?</span>
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            You can track your order status by going to 'My Account' > 'Order History'. Click on the
+                            specific order ID to see the detailed real-time logistics tracking provided by our carriers.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Is my payment secure?</span>
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Absolutely. $10B+ worth of trade is protected by Noshahibaba Trade Assurance. We hold your
+                            payment in escrow and only release it to the supplier after you confirm order satisfaction.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What if my products are damaged?</span>
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            If products arrive damaged or don't match specifications, you can open a dispute. Our
+                            dedicated resolution center will investigate and initiate a refund if necessary.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How do I contact a supplier?</span>
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Click 'Contact Supplier' or the Chat icon on any product page to start a conversation. You
+                            can send text, files, and even video messages directly through our platform.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="container">
+            <div class="contact-box">
+                <div class="contact-content">
+                    <h2>Didn't find what you need?</h2>
+                    <p>Our dedicated support team is available 24/7 to assist with your business concerns.</p>
+                    <div class="contact-actions">
+                        <a href="#" class="btn-contact btn-live-chat"><i data-lucide="message-circle"></i> Start Live
+                            Chat</a>
+                        <a href="#" class="btn-contact btn-email"><i data-lucide="mail"></i> Email Support</a>
+                    </div>
+                </div>
+                <div class="contact-visual">
+                    <i data-lucide="headphones"></i>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-links">
@@ -472,65 +611,58 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <div class="footer-info">
-                    <span class="copyright">� 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights reserved.</span>
+                    <span class="copyright">© 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights
+                        reserved.</span>
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms of Use</a>
                 </div>
                 <div class="social-links">
-                    <a href="https://facebook.com/noshahibaba" aria-label="Facebook"><i data-lucide="facebook"></i></a>
-                    <a href="https://twitter.com/noshahibaba" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-                    <a href="https://instagram.com/noshahibaba" aria-label="Instagram"><i data-lucide="instagram"></i></a>
-                    <a href="https://linkedin.com/company/noshahibaba" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-                    <a href="https://youtube.com/noshahibaba" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                    <a href="#"><i data-lucide="facebook"></i></a>
+                    <a href="#"><i data-lucide="twitter"></i></a>
+                    <a href="#"><i data-lucide="instagram"></i></a>
+                    <a href="#"><i data-lucide="linkedin"></i></a>
+                    <a href="#"><i data-lucide="youtube"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Mobile Bottom Nav -->
+    <!-- Mobile Navigation -->
     <div class="mobile-bottom-nav">
-        <a href="index.html" class="mobile-nav-item">
-            <i data-lucide="home"></i>
-            <span>Home</span>
-        </a>
-        <a href="#" class="mobile-nav-item">
-            <i data-lucide="layers"></i>
-            <span>Categories</span>
-        </a>
-        <a href="messages.html" class="mobile-nav-item">
-            <i data-lucide="message-square"></i>
-            <span>Messages</span>
-        </a>
-        <a href="cart.html" class="mobile-nav-item">
-            <i data-lucide="shopping-cart"></i>
-            <span>Cart</span>
-        </a>
-        <a href="signin.html" class="mobile-nav-item">
-            <i data-lucide="user"></i>
-            <span>Account</span>
-        </a>
+        <a href="index.html" class="mobile-nav-item"><i data-lucide="home"></i><span>Home</span></a>
+        <a href="#" class="mobile-nav-item"><i data-lucide="layers"></i><span>Categories</span></a>
+        <a href="messages.html" class="mobile-nav-item"><i data-lucide="message-square"></i><span>Messages</span></a>
+        <a href="cart.html" class="mobile-nav-item"><i data-lucide="shopping-cart"></i><span>Cart</span></a>
+        <a href="signin.html" class="mobile-nav-item"><i data-lucide="user"></i><span>Account</span></a>
     </div>
 
-    <script src="script.js"></script>
     <script>
         lucide.createIcons();
-        function handleHcSearch() {
-            const q = document.getElementById('hc-search-input').value.trim();
-            if (q) alert('Searching for: "' + q + '"\n(This is a demo)');
-            else document.getElementById('hc-search-input').focus();
+
+        // FAQ Interactivity
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
+        });
+
+        function handleSearch() {
+            const q = document.getElementById('hc-main-search').value;
+            if (q) alert('Search initiated for: ' + q);
         }
-        document.getElementById('hc-search-input').addEventListener('keypress', e => {
-            if (e.key === 'Enter') handleHcSearch();
+
+        // Sticky Header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.sticky-header');
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
         });
     </script>
 </body>
 
 </html>
-
-
-
-
-

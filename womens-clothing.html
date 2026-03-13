@@ -1,19 +1,363 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Women's Clothing | Noshahibaba.com</title>
+    <title>Women's Clothing | Noshahibaba.com - Premium Fashion</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ffcc00;
+            --primary-dark: #e6b800;
+            --secondary: #1e293b;
+            --bg-light: #f8fafc;
+        }
 
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f5;
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .clothing-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1600&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 140px 0 100px;
+            color: white;
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 4px solid var(--primary);
+        }
+
+        .clothing-hero h1 {
+            font-size: 64px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -2px;
+        }
+
+        .clothing-hero h1 span {
+            color: var(--primary);
+        }
+
+        .clothing-hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Grid System */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 100px;
+        }
+
+        /* 3D Card Styling */
+        .clothing-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #eee;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .clothing-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        .img-container {
+            height: 320px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .img-container img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            transition: all 0.5s ease;
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.1));
+            animation: float3D 6s ease-in-out infinite;
+        }
+
+        @keyframes float3D {
+            0%, 100% { transform: translateY(0) rotate(0); }
+            50% { transform: translateY(-15px) rotate(3deg); }
+        }
+
+        /* Card Actions Hover */
+        .card-actions {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -40%);
+            display: flex;
+            gap: 12px;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 10;
+        }
+
+        .clothing-card:hover .card-actions {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+
+        .action-btn {
+            width: 45px;
+            height: 45px;
+            background: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            color: #1a1a1a;
+        }
+
+        .action-btn:hover {
+            background: var(--primary);
+            color: #000;
+            transform: scale(1.1);
+        }
+
+        .action-btn.wishlist-btn.active {
+            color: #ff4757;
+        }
+        .action-btn.wishlist-btn.active i {
+            fill: #ff4757;
+        }
+
+        .card-body {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            height: 54px;
+            overflow: hidden;
+            line-height: 1.5;
+        }
+
+        .price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .price-val {
+            font-size: 24px;
+            font-weight: 800;
+            color: #000;
+        }
+
+        .moq-val {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .btn-source {
+            width: 100%;
+            padding: 12px;
+            background: #000;
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-source:hover {
+            background: var(--primary);
+            color: #000;
+        }
+
+        .tag-3d {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--primary);
+            color: #000;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            z-index: 5;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-transform: uppercase;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .product-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 992px) {
+            .product-grid { grid-template-columns: repeat(2, 1fr); }
+            .clothing-hero h1 { font-size: 48px; }
+        }
+
+        @media (max-width: 600px) {
+            .product-grid { grid-template-columns: 1fr; gap: 20px; }
+            .img-container { height: 260px; }
+            .clothing-hero h1 { font-size: 36px; }
+            .clothing-hero { padding: 100px 0 60px; }
+            .card-actions { opacity: 1; transform: translate(-50%, -50%); top: 15%; left: 85%; flex-direction: column; }
+        }
+    </style>
+</head>
 <body>
-            <!-- Footer -->
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left">
+                <span>Free delivery for your first order</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="helpcenter.html">Help Center</a>
+                <a href="regional-settings.html">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK"> PKR</a>
+                <a href="regional-settings.html">Language: EN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Consolidated Header & Navigation -->
+    <header class="main-header sticky-header">
+        <div class="container">
+            <div class="header-top-row">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                    </a>
+                </div>
+                <div class="search-container">
+                    <div class="search-box">
+                        <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
+                        <input type="text" placeholder="Search premium clothing...">
+                        <button class="search-btn"><i data-lucide="search"></i> <span>Search</span></button>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign In</span></a>
+                    <a href="messages.html" class="action-item"><i data-lucide="message-square"></i><span>Messages</span></a>
+                    <a href="cart.html" class="action-item"><i data-lucide="shopping-cart"></i><span>Cart</span></a>
+                </div>
+            </div>
+
+            <div class="header-nav-row">
+                <div class="all-categories" id="all-categories-btn">
+                    <i data-lucide="menu"></i> All categories
+                </div>
+                <div class="nav-links">
+                    <a href="index.html"><i data-lucide="home"></i> Home</a>
+                    <a href="featured.html">Featured selections</a>
+                    <a href="tradeassurance.html">Trade Assurance</a>
+                    <a href="buyer-central.html">Buyer Central</a>
+                    <a href="helpcenter.html">Help Center</a>
+                    <a href="getapp.html">Get the app</a>
+                </div>
+                <div class="nav-right">
+                    <a href="#">Become a supplier</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="clothing-hero">
+            <div class="container">
+                <h1>Women's <span>Fashion Essentials</span></h1>
+                <p>Curated 3D collection of high-end apparel from diamond-verified manufacturers.</p>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="product-grid">
+                <!-- Helper for 12 cards -->
+                <script>
+                    const products = [
+                        { title: "Luxury Silk Evening Dress - Hand-Stitched Diamond Grade", price: "8,500", moq: "10", img: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=800" },
+                        { title: "Premium Organic Cotton Tee - Sustainable Comfort Series", price: "1,200", moq: "50", img: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=800" },
+                        { title: "Pastel Summer Collection - Lightweight Breathable Fabric", price: "4,200", moq: "20", img: "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?q=80&w=800" },
+                        { title: "Vintage Oversized Denim Jacket - Distressed Finished 3D", price: "5,500", moq: "15", img: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=800" },
+                        { title: "Designer Pointed-Toe Heels - Calfskin Leather Finish", price: "12,000", moq: "5", img: "https://images.unsplash.com/photo-1515347669655-b0f181c00fa3?q=80&w=800" },
+                        { title: "Premium Suede Handbag - Italian Design Heritage", price: "15,400", moq: "2", img: "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?q=80&w=800" },
+                        { title: "Cashmere Trench Coat - Winter Elite Series 2026", price: "25,000", moq: "1", img: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=800" },
+                        { title: "Elegant One-Piece Jumpsuit - Minimalist Business Wear", price: "6,800", moq: "10", img: "https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?q=80&w=800" },
+                        { title: "Oversized Knit Cardigan - Ultra Soft Merino Wool", price: "4,900", moq: "12", img: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=800" },
+                        { title: "Modern Power Suit - Tailored Fit Contemporary Style", price: "18,500", moq: "3", img: "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?q=80&w=800" },
+                        { title: "Artisan Silk Scarf - Hand-Painted 3D Pattern Series", price: "2,400", moq: "100", img: "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?q=80&w=800" },
+                        { title: "Satin Button-Down Blouse - High Reflection 3D Fabric", price: "3,500", moq: "30", img: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=800" }
+                    ];
+
+                    document.write(products.map(p => `
+                        <div class="clothing-card">
+                            <span class="tag-3d">3D Visual</span>
+                            <div class="img-container">
+                                <div class="card-actions">
+                                    <button class="action-btn wishlist-btn" onclick="toggleWishlist(this)"><i data-lucide="heart"></i></button>
+                                    <button class="action-btn view-btn" onclick="quickView('${p.title}')"><i data-lucide="eye"></i></button>
+                                </div>
+                                <img src="${p.img}&auto=format&fit=crop" alt="${p.title}">
+                            </div>
+                            <div class="card-body">
+                                <h3>${p.title}</h3>
+                                <div class="price-row">
+                                    <span class="price-val">PKR ${p.price}</span>
+                                </div>
+                                <p class="moq-val">MOQ: ${p.moq} Pieces</p>
+                                <button class="btn-source"><i data-lucide="shopping-bag"></i> Source Now</button>
+                            </div>
+                        </div>
+                    `).join(''));
+                </script>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-links">
@@ -65,19 +409,19 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <div class="footer-info">
-                    <span class="copyright">� 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights reserved.</span>
+                    <span class="copyright">© 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights reserved.</span>
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms of Use</a>
                 </div>
                 <div class="social-links">
-                    <a href="https://facebook.com/noshahibaba" aria-label="Facebook"><i data-lucide="facebook"></i></a>
-                    <a href="https://twitter.com/noshahibaba" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-                    <a href="https://instagram.com/noshahibaba" aria-label="Instagram"><i data-lucide="instagram"></i></a>
-                    <a href="https://linkedin.com/company/noshahibaba" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-                    <a href="https://youtube.com/noshahibaba" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                    <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
                 </div>
             </div>
         </div>
@@ -85,34 +429,24 @@
 
     <!-- Mobile Bottom Nav -->
     <div class="mobile-bottom-nav">
-        <a href="index.html" class="mobile-nav-item">
-            <i data-lucide="home"></i>
-            <span>Home</span>
-        </a>
-        <a href="#" class="mobile-nav-item">
-            <i data-lucide="layers"></i>
-            <span>Categories</span>
-        </a>
-        <a href="messages.html" class="mobile-nav-item">
-            <i data-lucide="message-square"></i>
-            <span>Messages</span>
-        </a>
-        <a href="cart.html" class="mobile-nav-item">
-            <i data-lucide="shopping-cart"></i>
-            <span>Cart</span>
-        </a>
-        <a href="signin.html" class="mobile-nav-item">
-            <i data-lucide="user"></i>
-            <span>Account</span>
-        </a>
+        <a href="index.html" class="mobile-nav-item"><i data-lucide="home"></i><span>Home</span></a>
+        <a href="messages.html" class="mobile-nav-item"><i data-lucide="message-square"></i><span>Messages</span></a>
+        <a href="cart.html" class="mobile-nav-item"><i data-lucide="shopping-cart"></i><span>Cart</span></a>
+        <a href="signin.html" class="mobile-nav-item"><i data-lucide="user"></i><span>Account</span></a>
     </div>
 
-    <script src="script.js"></script>
-    <script>lucide.createIcons();</script>
+    <script>
+        function toggleWishlist(btn) {
+            btn.classList.toggle('active');
+            const isActive = btn.classList.contains('active');
+            // Mock logic
+        }
+
+        function quickView(title) {
+            alert("Quick View: " + title + "\n(Product Detail Modal logic triggered)");
+        }
+
+        lucide.createIcons();
+    </script>
 </body>
-
 </html>
-
-
-
-

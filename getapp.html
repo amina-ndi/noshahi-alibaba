@@ -1,402 +1,125 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get the App | Noshahibaba.com</title>
-    <meta name="description"
-        content="Download the Noshahibaba app and source from millions of products on the go. Available on iOS and Android.">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* ── App Hero ─────────────────────────────── */
-        .app-hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1a2744 50%, #0f172a 100%);
-            padding: 90px 0;
-            color: white;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .app-hero::before {
-            content: '';
-            position: absolute;
-            bottom: -120px;
-            right: -80px;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(255, 102, 0, 0.2) 0%, transparent 65%);
-            border-radius: 50%;
-        }
-
-        .app-hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .app-hero h1 {
-            font-size: 50px;
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 22px;
-        }
-
-        .app-hero h1 span {
-            color: #ff6600;
-        }
-
-        .app-hero p {
-            font-size: 18px;
-            opacity: 0.85;
-            line-height: 1.7;
-            margin-bottom: 36px;
-        }
-
-        .app-store-btns {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .app-store-btn {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: white;
-            color: #0f172a;
-            border-radius: 12px;
-            padding: 13px 22px;
-            text-decoration: none;
-            transition: all 0.25s;
-            border: 2px solid transparent;
-        }
-
-        .app-store-btn:hover {
-            background: transparent;
-            border-color: white;
-            color: white;
-        }
-
-        .app-store-btn i {
-            width: 28px;
-            height: 28px;
-        }
-
-        .app-store-btn .btn-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .app-store-btn .btn-text small {
-            font-size: 11px;
-            opacity: 0.6;
-        }
-
-        .app-store-btn .btn-text strong {
-            font-size: 16px;
-            display: block;
-        }
-
-        .app-qr-box {
-            margin-top: 30px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 12px;
-            padding: 16px 20px;
-            max-width: 340px;
-        }
-
-        .qr-code {
-            width: 70px;
-            height: 70px;
-            background: white;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .qr-code i {
-            width: 44px;
-            height: 44px;
-            color: #0f172a;
-        }
-
-        .qr-text {
-            font-size: 13px;
-            opacity: 0.75;
-            line-height: 1.6;
-        }
-
-        .qr-text strong {
-            display: block;
-            font-size: 14px;
-            opacity: 1;
-            margin-bottom: 2px;
-        }
-
-        /* Phone Mockup */
-        .phone-mockup {
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-
-        .phone-outer {
-            width: 260px;
-            background: linear-gradient(160deg, #1e293b, #0e1220);
-            border-radius: 40px;
-            padding: 14px;
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
-            position: relative;
-        }
-
-        .phone-screen {
-            border-radius: 28px;
-            overflow: hidden;
-            background: #fff;
-        }
-
-        .phone-screen img {
-            width: 100%;
-            display: block;
-        }
-
-        .phone-notch {
-            width: 100px;
-            height: 6px;
-            background: #0e1220;
-            border-radius: 999px;
-            margin: 0 auto 10px;
-        }
-
-        /* ── Features Grid ───────────────────────── */
-        .app-features {
-            padding: 80px 0;
-            background: #f8fafc;
-        }
-
-        .features-grid-app {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 50px;
-        }
-
-        .app-feat-card {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 14px;
-            padding: 30px 24px;
-            transition: all 0.25s;
-        }
-
-        .app-feat-card:hover {
-            border-color: #ff6600;
-            box-shadow: 0 12px 32px rgba(255, 102, 0, 0.12);
-            transform: translateY(-4px);
-        }
-
-        .app-feat-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 18px;
-        }
-
-        .app-feat-icon i {
-            width: 26px;
-            height: 26px;
-        }
-
-        .app-feat-card h3 {
-            font-size: 17px;
-            font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 10px;
-        }
-
-        .app-feat-card p {
-            font-size: 14px;
-            color: #64748b;
-            line-height: 1.7;
-        }
-
-        /* ── Screenshots ─────────────────────────── */
-        .app-screenshots {
-            padding: 80px 0;
-        }
-
-        .screenshots-slider {
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-            margin-top: 50px;
-            padding-bottom: 16px;
-            scrollbar-width: thin;
-            scrollbar-color: #ff6600 #f1f5f9;
-        }
-
-        .screenshot-item {
-            flex-shrink: 0;
-            width: 200px;
-            background: #0f172a;
-            border-radius: 24px;
-            padding: 10px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-        }
-
-        .screenshot-item img {
-            width: 100%;
-            border-radius: 18px;
-            display: block;
-        }
-
-        .screenshot-label {
-            text-align: center;
-            margin-top: 12px;
-            font-size: 13px;
-            color: #64748b;
-            font-weight: 500;
-        }
-
-        /* ── Stats ───────────────────────────────── */
-        .app-stats {
-            background: linear-gradient(135deg, #ff6600, #ff9900);
-            padding: 70px 0;
-        }
-
-        .stats-grid-app {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            text-align: center;
-        }
-
-        .stat-block h3 {
-            font-size: 42px;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 8px;
-        }
-
-        .stat-block p {
-            font-size: 15px;
-            color: rgba(255, 255, 255, 0.85);
-        }
-
-        /* ── Download CTA ────────────────────────── */
-        .download-cta {
-            background: #0f172a;
-            padding: 80px 0;
-            text-align: center;
-            color: white;
-        }
-
-        .download-cta h2 {
-            font-size: 40px;
-            font-weight: 800;
-            margin-bottom: 16px;
-        }
-
-        .download-cta p {
-            font-size: 18px;
-            opacity: 0.75;
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .download-btns {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        /* ── Section Labels ─────────────────────── */
-        .section-label {
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: #ff6600;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-
-        .section-heading {
-            font-size: 34px;
-            font-weight: 800;
-            color: #0f172a;
-            margin-bottom: 12px;
-        }
-
-        .section-sub {
-            font-size: 16px;
-            color: #64748b;
-        }
-
-        /* ── Responsive ─────────────────────────── */
-        @media (max-width: 1024px) {
-            .app-hero-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .phone-mockup {
-                display: none;
-            }
-
-            .features-grid-app {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .stats-grid-app {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .app-hero h1 {
-                font-size: 36px;
-            }
-        }
-
-        @media (max-width: 640px) {
-
-            .features-grid-app,
-            .stats-grid-app {
-                grid-template-columns: 1fr;
-            }
-
-            .app-hero h1 {
-                font-size: 28px;
-            }
-
-            .app-store-btns {
-                flex-direction: column;
-            }
-
-            .download-cta h2 {
-                font-size: 26px;
-            }
-        }
+        :root { --primary: #ffcc00; --secondary: #0f172a; }
+        body { font-family: 'Inter', sans-serif; background: #fff; }
+        .app-hero { background: linear-gradient(135deg, #0f172a 0%, #1a2744 50%, #0f172a 100%); padding: 120px 0; color: white; overflow: hidden; position: relative; }
+        .app-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .app-hero h1 { font-size: 56px; font-weight: 900; line-height: 1.1; margin-bottom: 24px; }
+        .app-hero h1 span { color: var(--primary); }
+        .app-hero p { font-size: 20px; opacity: 0.8; margin-bottom: 40px; }
+        .app-store-btns { display: flex; gap: 15px; }
+        .app-store-btn { display: flex; align-items: center; gap: 12px; background: white; color: #000; padding: 12px 24px; border-radius: 12px; font-weight: 700; text-decoration: none; transition: 0.3s; }
+        .app-store-btn:hover { background: var(--primary); transform: translateY(-3px); }
+        .app-store-btn i { width: 24px; height: 24px; }
+        .feature-app-card { background: #f8fafc; padding: 40px; border-radius: 24px; transition: 0.3s; }
+        .feature-app-card:hover { transform: translateY(-10px); background: #fff; box-shadow: 0 30px 60px rgba(0,0,0,0.05); }
+        .app-stats { background: var(--primary); padding: 80px 0; color: #000; }
+        .stats-grid-app { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center; }
+        .stat-block h3 { font-size: 48px; font-weight: 900; margin-bottom: 8px; }
+        @media (max-width: 992px) { .app-hero-grid { grid-template-columns: 1fr; text-align: center; } .app-store-btns { justify-content: center; } .stats-grid-app { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
-
 <body>
-            <!-- Footer -->
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left"><span>Free delivery for your first order</span></div>
+            <div class="top-bar-right">
+                <a href="helpcenter.html">Help Center</a>
+                <a href="regional-settings.html">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK"> PKR</a>
+                <a href="regional-settings.html">Language: EN</a>
+            </div>
+        </div>
+    </div>
+    <header class="main-header sticky-header">
+        <div class="container">
+            <div class="header-top-row">
+                <div class="logo"><a href="index.html"><span class="logo-text">Noshahi<span>baba</span>.com</span></a></div>
+                <div class="search-container">
+                    <div class="search-box">
+                        <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
+                        <input type="text" placeholder="Search products...">
+                        <button class="search-btn"><i data-lucide="search"></i> <span>Search</span></button>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign In</span></a>
+                    <a href="messages.html" class="action-item"><i data-lucide="message-square"></i><span>Messages</span></a>
+                    <a href="cart.html" class="action-item"><i data-lucide="shopping-cart"></i><span>Cart</span></a>
+                </div>
+            </div>
+            <div class="header-nav-row">
+                <div class="all-categories" id="all-categories-btn"><i data-lucide="menu"></i> All categories</div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="featured.html">Featured selections</a>
+                    <a href="tradeassurance.html">Trade Assurance</a>
+                    <a href="buyer-central.html">Buyer Central</a>
+                    <a href="helpcenter.html">Help Center</a>
+                    <a href="getapp.html" class="active">Get the app</a>
+                </div>
+                <div class="nav-right"><a href="#">Become a supplier</a></div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="app-hero">
+            <div class="container">
+                <div class="app-hero-grid">
+                    <div>
+                        <h1>The Entire Marketplace In <span>Your Pocket</span></h1>
+                        <p>Source from millions of global suppliers, track every movement, and manage your business on the go.</p>
+                        <div class="app-store-btns">
+                            <a href="#" class="app-store-btn"><i data-lucide="apple"></i> App Store</a>
+                            <a href="#" class="app-store-btn"><i data-lucide="play"></i> Google Play</a>
+                        </div>
+                    </div>
+                    <div class="phone-mockup">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=800" alt="Mobile" style="max-width:100%; border-radius:30px; box-shadow:0 30px 60px rgba(0,0,0,0.5);">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container" style="padding:100px 0;">
+            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:30px;">
+                <div class="feature-app-card">
+                    <i data-lucide="bell" style="color:var(--primary); margin-bottom:20px;"></i>
+                    <h3>Instant Alerts</h3>
+                    <p>Track shipments and receive quote notifications instantly.</p>
+                </div>
+                <div class="feature-app-card">
+                    <i data-lucide="message-square" style="color:var(--primary); margin-bottom:20px;"></i>
+                    <h3>Chat Translation</h3>
+                    <p>Built-in 15+ language translation for seamless global communication.</p>
+                </div>
+                <div class="feature-app-card">
+                    <i data-lucide="shield-check" style="color:var(--primary); margin-bottom:20px;"></i>
+                    <h3>Trade Assurance</h3>
+                    <p>Total security and protection on all mobile transactions.</p>
+                </div>
+            </div>
+        </section>
+        <section class="app-stats">
+            <div class="container">
+                <div class="stats-grid-app">
+                    <div class="stat-block"><h3>50M+</h3><p>Downloads</p></div>
+                    <div class="stat-block"><h3>4.9</h3><p>Star Rating</p></div>
+                    <div class="stat-block"><h3>190+</h3><p>Countries</p></div>
+                    <div class="stat-block"><h3>24/7</h3><p>Support</p></div>
+                </div>
+            </div>
+        </section>
+    </main>
+        <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-links">
@@ -448,10 +171,10 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <div class="footer-info">
-                    <span class="copyright">� 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights reserved.</span>
+                    <span class="copyright">© 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights reserved.</span>
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms of Use</a>
                 </div>
@@ -465,6 +188,7 @@
             </div>
         </div>
     </footer>
+
 
     <!-- Mobile Bottom Nav -->
     <div class="mobile-bottom-nav">
@@ -491,16 +215,6 @@
     </div>
 
     <script src="script.js"></script>
-    <script>
-        lucide.createIcons();
-        document.getElementById('appstore-btn').addEventListener('click', e => { e.preventDefault(); alert('App Store link coming soon!\n(Demo Version)'); });
-        document.getElementById('playstore-btn').addEventListener('click', e => { e.preventDefault(); alert('Google Play link coming soon!\n(Demo Version)'); });
-    </script>
+    <script>lucide.createIcons();</script>
 </body>
-
 </html>
-
-
-
-
-

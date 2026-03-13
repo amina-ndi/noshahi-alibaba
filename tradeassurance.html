@@ -1,202 +1,650 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trade Assurance | Noshahibaba.com</title>
+    <title>Trade Assurance | Noshahibaba.com - Secure Global Trade</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #ffcc00;
+            --secondary: #1e293b;
+            --accent: #2563eb;
+            --success: #10b981;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-nav-row {
+            white-space: nowrap;
+            flex-wrap: nowrap !important;
+        }
+
+        /* Hero Section */
         .ta-hero {
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.8)), url('https://images.unsplash.com/photo-1454165833772-d99628a5ffef?q=80&w=1200&auto=format&fit=crop');
+            position: relative;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)),
+                url('https://images.unsplash.com/photo-1579532512133-f0ff02810aa3?q=80&w=1600&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
-            padding: 100px 0;
+            background-attachment: fixed;
+            padding: 160px 0 120px;
             color: white;
             text-align: center;
+            overflow: hidden;
+        }
+
+        .ta-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(transparent, #fff);
         }
 
         .ta-hero h1 {
-            font-size: 48px;
+            font-size: 64px;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+
+        .ta-hero h1 span {
+            color: var(--primary);
         }
 
         .ta-hero p {
-            font-size: 20px;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto 40px;
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 800px;
+            margin: 0 auto 48px;
+            line-height: 1.6;
         }
 
-        .ta-hero .cta-primary {
-            font-size: 18px;
-            padding: 15px 40px;
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
         }
 
+        .btn-ta {
+            padding: 16px 40px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .btn-ta-primary {
+            background-color: var(--primary);
+            color: #000;
+            border: none;
+        }
+
+        .btn-ta-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 204, 0, 0.3);
+        }
+
+        .btn-ta-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-ta-outline:hover {
+            border-color: white;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        /* Stats Bar */
         .stats-bar {
-            background-color: #ffd02f;
-            padding: 20px 0;
-            text-align: center;
+            background: white;
+            padding: 40px 0;
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 30px;
+            text-align: center;
         }
 
-        .stat-item h3 {
-            font-size: 24px;
-            font-weight: 700;
+        .stat-item h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 8px;
         }
 
         .stat-item p {
             font-size: 14px;
-            color: #333;
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .protection-pillars {
-            padding: 80px 0;
-        }
-
-        .section-header {
+        /* Benefits Section */
+        .section-title {
             text-align: center;
             margin-bottom: 60px;
         }
 
-        .section-header h2 {
-            font-size: 32px;
-            font-weight: 700;
+        .section-title h2 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
         }
 
-        .pillar-grid {
+        .section-title p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
+            margin-bottom: 100px;
         }
 
-        .pillar-card {
+        .benefit-card {
             background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            display: flex;
-            gap: 20px;
+            padding: 48px;
+            border-radius: 24px;
+            border: 1px solid #f1f5f9;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
         }
 
-        .pillar-icon {
-            width: 60px;
-            height: 60px;
-            background: #fff4ed;
-            color: #ff6600;
-            border-radius: 50%;
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+            border-color: var(--primary);
+        }
+
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: #fff9e6;
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
+            margin-bottom: 24px;
+            color: var(--primary);
+            transition: all 0.3s ease;
         }
 
-        .pillar-content h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
+        .benefit-card:hover .benefit-icon {
+            background: var(--primary);
+            color: #000;
+            transform: rotate(-10deg) scale(1.1);
         }
 
-        .pillar-content p {
-            color: #666;
+        .benefit-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .benefit-card p {
+            font-size: 16px;
             line-height: 1.6;
+            color: var(--text-muted);
         }
 
-        .how-it-works {
-            background: #f8fafc;
-            padding: 80px 0;
+        /* How it Works */
+        .hiw-section {
+            background-color: var(--bg-light);
+            padding: 100px 0;
+            border-radius: 60px;
+            margin: 60px 20px;
         }
 
-        .steps-flex {
-            display: flex;
-            justify-content: space-between;
+        .hiw-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             gap: 40px;
             position: relative;
         }
 
-        .step-item {
-            flex: 1;
-            text-align: center;
-            position: relative;
-            z-index: 2;
+        .hiw-grid::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            background: dashed #e2e8f0;
+            z-index: 1;
         }
 
-        .step-num {
-            width: 40px;
-            height: 40px;
-            background: #ff6600;
-            color: white;
+        .hiw-item {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hiw-number {
+            width: 80px;
+            height: 80px;
+            background: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border: 5px solid var(--bg-light);
+        }
+
+        .hiw-item h3 {
+            font-size: 20px;
             font-weight: 700;
-            margin: 0 auto 20px;
+            margin-bottom: 12px;
         }
 
-        .step-item h4 {
-            margin-bottom: 10px;
+        .hiw-item p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.5;
         }
 
-        .step-item p {
-            font-size: 14px;
-            color: #666;
-        }
-
+        /* FAQ Section */
         .faq-section {
-            padding: 80px 0;
-        }
-
-        .faq-grid {
-            max-width: 800px;
-            margin: 0 auto;
+            padding: 100px 0;
         }
 
         .faq-item {
             margin-bottom: 20px;
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 1px solid #f1f5f9;
             padding-bottom: 20px;
         }
 
-        .faq-item h3 {
-            font-size: 18px;
-            cursor: pointer;
+        .faq-question {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            cursor: pointer;
+            padding: 10px 0;
         }
 
-        @media (max-width: 768px) {
+        .faq-question h3 {
+            font-size: 18px;
+            font-weight: 600;
+        }
 
-            .stats-grid,
-            .pillar-grid,
-            .steps-flex {
-                grid-template-columns: 1fr;
-                flex-direction: column;
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* CTA Section */
+        .ta-cta {
+            background: var(--secondary);
+            padding: 80px 0;
+            border-radius: 30px;
+            margin: 60px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ta-cta::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -10%;
+            width: 40%;
+            height: 140%;
+            background: radial-gradient(circle, rgba(255, 204, 0, 0.1) 0%, transparent 70%);
+            z-index: 1;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .ta-cta h2 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .ta-hero h1 {
+                font-size: 48px;
             }
 
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hiw-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hiw-grid::before {
+                display: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
             .ta-hero h1 {
-                font-size: 32px;
+                font-size: 36px;
             }
 
             .ta-hero p {
-                font-size: 16px;
+                font-size: 18px;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hiw-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ta-hero {
+                padding: 120px 0 80px;
             }
         }
     </style>
 </head>
 
 <body>
-            <!-- Footer -->
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left">
+                <span>Free delivery for your first order</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="helpcenter.html">Help Center</a>
+                <a href="regional-settings.html">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK">
+                    PKR</a>
+                <a href="regional-settings.html">Language: EN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Consolidated Header & Navigation -->
+    <header class="main-header sticky-header">
+        <div class="container">
+            <!-- First Row: Logo, Search, Actions -->
+            <div class="header-top-row">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                    </a>
+                </div>
+                <div class="search-container">
+                    <div class="search-box">
+                        <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
+                        <input type="text" placeholder="What are you looking for...">
+                        <button class="search-btn"><i data-lucide="search"></i> <span>Search</span></button>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign In</span></a><a
+                        href="messages.html" class="action-item"><i
+                            data-lucide="message-square"></i><span>Messages</span></a><a href="cart.html"
+                        class="action-item"><i data-lucide="shopping-cart"></i><span>Cart</span></a>
+                </div>
+            </div>
+
+            <!-- Second Row: Attached Navigation -->
+            <div class="header-nav-row">
+                <div class="all-categories" id="all-categories-btn">
+                    <i data-lucide="menu"></i> All categories
+                </div>
+                <div class="nav-links">
+                    <a href="index.html"><i data-lucide="home"></i> Home</a>
+                    <a href="featured.html">Featured selections</a>
+                    <a href="tradeassurance.html" class="active">Trade Assurance</a>
+                    <a href="buyer-central.html">Buyer Central</a>
+                    <a href="helpcenter.html">Help Center</a>
+                    <a href="getapp.html">Get the app</a>
+                </div>
+                <div class="nav-right">
+                    <a href="#">Become a supplier</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="ta-hero">
+            <div class="container">
+                <div class="featured-header">
+                    <h1>Smarter, Safer, <span>Global Trade</span></h1>
+                    <p>Trade Assurance protects your Noshahibaba.com orders from payment to delivery. Get full security
+                        for every transaction.</p>
+                    <div class="hero-btns">
+                        <a href="featured.html" class="btn-ta btn-ta-primary">Source Protected Products <i
+                                data-lucide="shield-check"></i></a>
+                        <a href="#how-it-works" class="btn-ta btn-ta-outline">Learn More <i
+                                data-lucide="play-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <section class="container">
+            <div class="stats-bar">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h2>100%</h2>
+                        <p>Payment Security</p>
+                    </div>
+                    <div class="stat-item">
+                        <h2>24/7</h2>
+                        <p>Dispute Support</p>
+                    </div>
+                    <div class="stat-item">
+                        <h2>$10B+</h2>
+                        <p>Trade Protected</p>
+                    </div>
+                    <div class="stat-item">
+                        <h2>200+</h2>
+                        <p>Countries Covered</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Benefits -->
+        <section class="container" style="padding: 100px 0 50px;">
+            <div class="section-title">
+                <h2>Our Core <span>Protections</span></h2>
+                <p>Noshahibaba Trade Assurance is designed to give you peace of mind throughout your entire sourcing
+                    journey.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i data-lucide="lock" size="32"></i></div>
+                    <h3>Safe Payment</h3>
+                    <p>Your payment is held in escrow and only released to the supplier after you confirm satisfactory
+                        receipt of your order.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i data-lucide="truck" size="32"></i></div>
+                    <h3>Shipping Guarantee</h3>
+                    <p>Get your money back if the supplier fails to ship your order on the agreed date or if the
+                        shipping doesn't meet quality standards.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i data-lucide="clipboard-check" size="32"></i></div>
+                    <h3>Product Quality</h3>
+                    <p>Your order is covered if the product quality doesn't match the specifications in your purchase
+                        contract.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it Works -->
+        <section class="hiw-section" id="how-it-works">
+            <div class="container">
+                <div class="section-title">
+                    <h2>How It <span>Works</span></h2>
+                    <p>Four simple steps to secure your global business transactions.</p>
+                </div>
+                <div class="hiw-grid">
+                    <div class="hiw-item">
+                        <div class="hiw-number">1</div>
+                        <h3>Find Suppliers</h3>
+                        <p>Look for the Trade Assurance icon when searching for products.</p>
+                    </div>
+                    <div class="hiw-item">
+                        <div class="hiw-number">2</div>
+                        <h3>Place Order</h3>
+                        <p>Agree on terms and pay through the secure Noshahibaba platform.</p>
+                    </div>
+                    <div class="hiw-item">
+                        <div class="hiw-number">3</div>
+                        <h3>Payment Held</h3>
+                        <p>We hold your payment securely until you receive your products.</p>
+                    </div>
+                    <div class="hiw-item">
+                        <div class="hiw-number">4</div>
+                        <h3>Order Complete</h3>
+                        <p>Review your goods and release the funds to the supplier.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="container faq-section">
+            <div class="section-title">
+                <h2>Common <span>Questions</span></h2>
+                <p>Everything you need to know about Trade Assurance protection.</p>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is Trade Assurance free to use?</h3>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, Trade Assurance is a free service provided by Noshahibaba.com to help build trust between
+                        buyers and suppliers.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What payment methods are supported?</h3>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        We support Visa, Mastercard, T/T (Bank Transfer), Online Bank Payment, and Western Union.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I open a dispute?</h3>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        You can open a dispute in your Order Management dashboard if you are not satisfied with the
+                        quality or delivery timing.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="container">
+            <div class="ta-cta">
+                <div class="cta-content">
+                    <h2>Ready to trade with confidence?</h2>
+                    <p style="font-size: 18px; margin-bottom: 40px; opacity: 0.9;">Join millions of buyers who secure
+                        their business with Trade Assurance.</p>
+                    <div class="hero-btns">
+                        <a href="featured.html" class="btn-ta btn-ta-primary">Start Sourcing Now</a>
+                        <a href="signin.html" class="btn-ta btn-ta-outline">Sign Up Free</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-links">
@@ -248,18 +696,21 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <div class="footer-info">
-                    <span class="copyright">� 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights reserved.</span>
+                    <span class="copyright">© 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights
+                        reserved.</span>
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms of Use</a>
                 </div>
                 <div class="social-links">
                     <a href="https://facebook.com/noshahibaba" aria-label="Facebook"><i data-lucide="facebook"></i></a>
                     <a href="https://twitter.com/noshahibaba" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-                    <a href="https://instagram.com/noshahibaba" aria-label="Instagram"><i data-lucide="instagram"></i></a>
-                    <a href="https://linkedin.com/company/noshahibaba" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="https://instagram.com/noshahibaba" aria-label="Instagram"><i
+                            data-lucide="instagram"></i></a>
+                    <a href="https://linkedin.com/company/noshahibaba" aria-label="LinkedIn"><i
+                            data-lucide="linkedin"></i></a>
                     <a href="https://youtube.com/noshahibaba" aria-label="YouTube"><i data-lucide="youtube"></i></a>
                 </div>
             </div>
@@ -290,13 +741,37 @@
         </a>
     </div>
 
-    <script src="script.js"></script>
     <script>
-        lucide.createIcons();
+        // Initialize Lucide Icons
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                // Close all others
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+                // Toggle current
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Sticky Header Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.sticky-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
     </script>
 </body>
 
 </html>
-
-
-

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,316 +11,1263 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-                .featured-hero {
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1600&auto=format&fit=crop');
+        .featured-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+                url('https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1600&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
-            padding: 80px 0;
-            margin-bottom: 40px;
+            background-attachment: fixed;
+            padding: 120px 0;
+            margin-bottom: 0;
             color: white;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .featured-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 204, 0, 0.05) 0%, transparent 70%);
+            animation: pulse 10s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: scale(1.2);
+                opacity: 0.6;
+            }
+        }
+
+        .featured-header {
+            position: relative;
+            z-index: 2;
         }
 
         .featured-header h1 {
-            font-size: 42px;
-            font-weight: 800;
-            margin-bottom: 10px;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #fff;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+        }
+
+        .featured-header h1 span {
+            color: var(--primary);
+            display: inline-block;
+            position: relative;
         }
 
         .featured-header p {
-            color: #f3f4f6;
+            color: rgba(255, 255, 255, 0.8);
             font-size: 20px;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
 
         .filter-bar {
-            background: white;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
             padding: 15px 0;
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 1px solid #eee;
             position: sticky;
-            top: 74px;
+            top: 124px;
             z-index: 100;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            .filter-bar {
+                top: 70px;
+                padding: 10px 0;
+            }
         }
 
         .filter-links {
             display: flex;
-            gap: 30px;
+            gap: 15px;
             overflow-x: auto;
             white-space: nowrap;
-            padding-bottom: 5px;
+            padding: 5px 0;
+            scrollbar-width: none;
+        }
+
+        .filter-links::-webkit-scrollbar {
+            display: none;
         }
 
         .filter-links a {
-            font-weight: 500;
-            color: #444;
-            font-size: 15px;
-            padding: 8px 15px;
-            border-radius: 20px;
-            transition: all 0.2s;
+            font-weight: 600;
+            color: #555;
+            font-size: 14px;
+            padding: 10px 24px;
+            border-radius: 999px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: #f5f5f5;
+            border: 1px solid #eee;
         }
 
         .filter-links a.active,
         .filter-links a:hover {
-            background-color: #fff4ed;
-            color: #ff6600;
+            background-color: var(--primary);
+            color: #000;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 204, 0, 0.25);
         }
 
         .featured-grid {
-            margin-bottom: 80px;
+            padding: 60px 0 100px;
         }
 
         .results-count {
-            margin-bottom: 30px;
-            color: #888;
-            font-size: 14px;
+            margin-bottom: 40px;
+            color: #666;
+            font-size: 15px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .results-count::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            perspective: 1000px;
         }
 
         .featured-card {
             background: white;
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
-            border: 1px solid #eee;
-            transition: all 0.3s;
+            border: 1px solid #f0f0f0;
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
             display: flex;
             flex-direction: column;
-            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
         }
 
         .featured-card:hover {
-            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1);
-            transform: translateY(-8px);
-            border-color: #ff6600;
+            transform: translateY(-8px) rotateX(4deg) rotateY(-2deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
         }
 
         .img-container {
-            height: 240px;
-            background: #f9f9f9;
-            padding: 20px;
+            height: 220px;
+            background: #fff;
+            padding: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
+            overflow: hidden;
         }
 
         .img-container img {
-            max-width: 100%;
-            max-height: 100%;
+            max-width: 80%;
+            max-height: 80%;
             object-fit: contain;
+            transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.1));
+            animation: float3D 6s ease-in-out infinite;
+            transform: translateZ(20px);
+        }
+
+        @keyframes float3D {
+
+            0%,
+            100% {
+                transform: translateZ(20px) translateY(0);
+            }
+
+            50% {
+                transform: translateZ(40px) translateY(-10px) rotate(2deg);
+            }
+        }
+
+        .featured-card:hover .img-container img {
+            transform: scale(1.15) translateZ(60px) rotate(-3deg);
+            filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.2));
+            animation-play-state: paused;
         }
 
         .rank-badge {
             position: absolute;
             top: 15px;
             left: 15px;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 3px 10px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 600;
+            background: var(--primary);
+            color: #000;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(255, 204, 0, 0.2);
+            z-index: 5;
+        }
+
+        .card-actions {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -40%);
+            display: flex;
+            gap: 10px;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 10;
+        }
+
+        .featured-card:hover .card-actions {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+
+        .action-btn {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            color: #333;
+            transition: all 0.3s;
+        }
+
+        .action-btn:hover {
+            background: var(--primary);
+            color: #000;
+            transform: scale(1.1);
+        }
+
+        .action-btn.wishlist-btn.active {
+            color: #ff4757;
+        }
+
+        .action-btn.wishlist-btn.active i {
+            fill: #ff4757;
+            stroke: #ff4757;
+        }
+
+        .qv-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .qv-modal.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .qv-content {
+            background: white;
+            width: 100%;
+            max-width: 900px;
+            border-radius: 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+            position: relative;
+            animation: slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .qv-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: #f1f5f9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.2s;
+        }
+
+        .qv-close:hover {
+            background: #e2e8f0;
+            transform: rotate(90deg);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .qv-content {
+                grid-template-columns: 1fr;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
         }
 
         .card-body {
-            padding: 20px;
+            padding: 18px;
             flex: 1;
             display: flex;
             flex-direction: column;
         }
 
         .card-body h3 {
-            font-size: 14px;
-            font-weight: 500;
+            font-size: 15px;
+            font-weight: 600;
             line-height: 1.4;
-            height: 40px;
+            height: 42px;
             overflow: hidden;
-            display: -webkit-box;
-            line-clamp: 2;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
+            color: #111;
+            transition: color 0.3s;
+        }
+
+        .featured-card:hover .card-body h3 {
+            color: var(--primary-hover);
         }
 
         .price-row {
-            margin-bottom: 8px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
         }
 
         .price-val {
-            font-size: 18px;
-            font-weight: 700;
-            color: #111;
+            font-size: 24px;
+            font-weight: 800;
+            color: #000;
         }
 
         .moq-val {
-            font-size: 13px;
+            font-size: 14px;
             color: #888;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .source-now-btn {
+            width: 100%;
+            padding: 12px;
+            background: #000;
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .source-now-btn:hover {
+            background: var(--primary);
+            color: #000;
+            box-shadow: 0 10px 20px rgba(255, 204, 0, 0.2);
         }
 
         .supplier-row {
             margin-top: auto;
-            border-top: 1px solid #f3f4f6;
-            padding-top: 15px;
+            border-top: 1px solid #f5f5f5;
+            padding-top: 12px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .supplier-meta {
-            font-size: 12px;
+            font-size: 13px;
             color: #666;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .supplier-country {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
         }
 
         .verified-pro {
-            color: #4f46e5;
-            font-weight: 700;
+            color: #4CAF50;
+            font-weight: 800;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             display: flex;
             align-items: center;
             gap: 4px;
+            background: #f1f8f1;
+            padding: 5px 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(76, 175, 80, 0.1);
         }
 
         .pagination {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin: 50px 0;
+            gap: 12px;
+            padding: 80px 0;
         }
 
         .pg-btn {
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            border: 1px solid #eee;
+            border-radius: 12px;
             background: white;
             cursor: pointer;
-            font-weight: 600;
-            text-decoration: none;
+            font-weight: 700;
             color: #333;
+            transition: all 0.3s;
         }
 
         .pg-btn.active {
-            background: #ff6600;
-            color: white;
-            border-color: #ff6600;
+            background: var(--primary);
+            color: #000;
+            border-color: var(--primary);
+            box-shadow: 0 8px 20px rgba(255, 204, 0, 0.3);
         }
 
         .pg-btn:hover:not(.active) {
-            border-color: #ff6600;
-            color: #ff6600;
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 1200px) {
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .featured-header h1 {
+                font-size: 42px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .featured-hero {
+                padding: 60px 0;
+            }
+
+            .featured-header h1 {
+                font-size: 32px;
+            }
+
+            .filter-bar {
+                top: 100px;
+            }
+
+            .img-container {
+                height: 200px;
+                /* Reduced from 280px */
+                padding: 15px;
+            }
+
+            .card-body {
+                padding: 16px;
+            }
+
+            .card-body h3 {
+                font-size: 16px;
+                height: 48px;
+                margin-bottom: 10px;
+            }
+
+            .price-val {
+                font-size: 21px;
+            }
+
+            .source-now-btn {
+                padding: 10px;
+                /* Smaller button */
+                font-size: 13px;
+                border-radius: 10px;
+                margin-bottom: 15px;
+            }
+
+            .supplier-row {
+                padding-top: 15px;
+            }
         }
     </style>
 </head>
 
 <body>
-            <!-- Footer -->
-    <footer>
+    <header class="main-header sticky-header">
         <div class="container">
-            <div class="footer-links">
-                <div class="footer-col">
-                    <h4>Get Support</h4>
-                    <ul>
-                        <li><a href="helpcenter.html">Help Center</a></li>
-                        <li><a href="live-chat.html">Live Chat</a></li>
-                        <li><a href="order-status.html">Check Order Status</a></li>
-                        <li><a href="report-abuse.html">Report Abuse</a></li>
-                        <li><a href="refunds.html">Refunds & Returns</a></li>
-                    </ul>
+            <div class="header-top-row">
+                <div class="logo"><a href="index.html"><span class="logo-text">Noshahi<span>baba</span>.com</span></a>
                 </div>
-                <div class="footer-col">
-                    <h4>Trade Services</h4>
-                    <ul>
-                        <li><a href="tradeassurance.html">Trade Assurance</a></li>
-                        <li><a href="business-identity.html">Business Identity</a></li>
-                        <li><a href="logistics.html">Shipping & Logistics</a></li>
-                        <li><a href="inspections.html">Inspection Services</a></li>
-                        <li><a href="secure-payment.html">Secure Payment</a></li>
-                    </ul>
+                <div class="search-container">
+                    <div class="search-box">
+                        <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
+                        <input type="text" placeholder="What are you looking for...">
+                        <button class="search-btn"><i data-lucide="search"></i> <span>Search</span></button>
+                    </div>
                 </div>
-                <div class="footer-col">
-                    <h4>Source on Noshahibaba</h4>
-                    <ul>
-                        <li><a href="top-ranking.html">Top Ranking</a></li>
-                        <li><a href="rfq.html">Request for Quotation</a></li>
-                        <li><a href="membership.html">Membership Programs</a></li>
-                        <li><a href="verified-suppliers.html">Verified Suppliers</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Sell on Noshahibaba</h4>
-                    <ul>
-                        <li><a href="become-supplier.html">Become a Supplier</a></li>
-                        <li><a href="supplier-central.html">Seller Central</a></li>
-                        <li><a href="training-center.html">Supplier Training</a></li>
-                        <li><a href="partnership.html">Partnership Program</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>About Us</h4>
-                    <ul>
-                        <li><a href="our-story.html">Our Story</a></li>
-                        <li><a href="noshahi-group.html">Noshahi Group</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="legal.html">Legal & Privacy</a></li>
-                    </ul>
+                <div class="header-actions">
+                    <a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign In</span></a>
+                    <a href="messages.html" class="action-item"><i
+                            data-lucide="message-square"></i><span>Messages</span></a>
+                    <a href="cart.html" class="action-item"><i data-lucide="shopping-cart"></i><span>Cart</span></a>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-info">
-                    <span class="copyright">© 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights reserved.</span>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Use</a>
-                </div>
-                <div class="social-links">
-                    <a href="https://facebook.com/noshahibaba" aria-label="Facebook"><i data-lucide="facebook"></i></a>
-                    <a href="https://twitter.com/noshahibaba" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-                    <a href="https://instagram.com/noshahibaba" aria-label="Instagram"><i data-lucide="instagram"></i></a>
-                    <a href="https://linkedin.com/company/noshahibaba" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-                    <a href="https://youtube.com/noshahibaba" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+            <div class="header-nav-row">
+                <div class="all-categories" id="all-categories-btn"><i data-lucide="menu"></i> All categories</div>
+                <div class="nav-links">
+                    <a href="index.html"><i data-lucide="home"></i> Home</a>
+                    <a href="featured.html" class="active">Featured selections</a>
+                    <a href="tradeassurance.html">Trade Assurance</a>
+                    <a href="buyer-central.html">Buyer Central</a>
+                    <a href="helpcenter.html">Help Center</a>
                 </div>
             </div>
         </div>
-    </footer>
+    </header>
+    <section class="featured-hero">
+        <div class="container featured-header">
+            <h1>Featured <span>Selections</span></h1>
+            <p>Premium global innovations and handpicked artisanal exports from our diamond-verified partners.</p>
+        </div>
+    </section>
+    <main class="container">
+        <div class="featured-grid">
+            <div class="product-grid">
+                <!-- Card 1 -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">Top Pick</span>
+                        <div class="card-actions">
+                            <button class="action-btn wishlist-btn"><i data-lucide="heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i data-lucide="eye"></i></button>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1527698266440-12101746a971?q=80&w=800&auto=format&fit=crop"
+                            alt="3D Drone">
+                    </div>
+                    <div class="card-body">
+                        <h3>Professional 4K Camera Drone with GPS & Auto-Return</h3>
+                        <div class="price-row"><span class="price-val">PKR 85,000.00</span></div>
+                        <p class="moq-val"><i data-lucide="package" style="width: 14px;"></i> 1 Unit (Min. Order)</p>
+                        <a href="shop-now.html" class="source-now-btn">Source Now</a>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                <div class="supplier-country">CN 4yrs</div>
+                                <span class="stars" style="color: #ffbe00; font-size: 10px;"><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i></span>
+                            </div>
+                            <div class="verified-pro">Verified</div>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Mobile Bottom Nav -->
-    <div class="mobile-bottom-nav">
-        <a href="index.html" class="mobile-nav-item">
-            <i data-lucide="home"></i>
-            <span>Home</span>
-        </a>
-        <a href="#" class="mobile-nav-item">
-            <i data-lucide="layers"></i>
-            <span>Categories</span>
-        </a>
-        <a href="messages.html" class="mobile-nav-item">
-            <i data-lucide="message-square"></i>
-            <span>Messages</span>
-        </a>
-        <a href="cart.html" class="mobile-nav-item">
-            <i data-lucide="shopping-cart"></i>
-            <span>Cart</span>
-        </a>
-        <a href="signin.html" class="mobile-nav-item">
-            <i data-lucide="user"></i>
-            <span>Account</span>
-        </a>
+                <!-- Card 2 -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">Trending</span>
+                        <div class="card-actions">
+                            <button class="action-btn wishlist-btn"><i data-lucide="heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i data-lucide="eye"></i></button>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=800&auto=format&fit=crop"
+                            alt="3D VR Headset">
+                    </div>
+                    <div class="card-body">
+                        <h3>Immersive Wireless VR Headset with OLED Precision</h3>
+                        <div class="price-row"><span class="price-val">PKR 45,000.00</span></div>
+                        <p class="moq-val"><i data-lucide="package" style="width: 14px;"></i> 2 Units (Min. Order)</p>
+                        <a href="shop-now.html" class="source-now-btn">Source Now</a>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                <div class="supplier-country">US 5yrs</div>
+                                <span class="stars" style="color: #ffbe00; font-size: 10px;"><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i></span>
+                            </div>
+                            <div class="verified-pro">Verified</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">Gaming</span>
+                        <div class="card-actions">
+                            <button class="action-btn wishlist-btn"><i data-lucide="heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i data-lucide="eye"></i></button>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1618384881397-3c6cd6f26b86?q=80&w=800&auto=format&fit=crop"
+                            alt="3D Keyboard">
+                    </div>
+                    <div class="card-body">
+                        <h3>RGB Mechanical Gaming Keyboard - Tactical Edition</h3>
+                        <div class="price-row"><span class="price-val">PKR 8,500.00</span></div>
+                        <p class="moq-val"><i data-lucide="package" style="width: 14px;"></i> 10 Units (Min. Order)</p>
+                        <a href="shop-now.html" class="source-now-btn">Source Now</a>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                <div class="supplier-country">KR 3yrs</div>
+                                <span class="stars" style="color: #ffbe00; font-size: 10px;"><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i></span>
+                            </div>
+                            <div class="verified-pro">Verified</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">Smart Home</span>
+                        <div class="card-actions">
+                            <button class="action-btn wishlist-btn"><i data-lucide="heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i data-lucide="eye"></i></button>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1594911771146-5ec5ed59e944?q=80&w=800&auto=format&fit=crop"
+                            alt="3D Purifier">
+                    </div>
+                    <div class="card-body">
+                        <h3>Smart Air Purifier with HEPA Filter & AI Mode</h3>
+                        <div class="price-row"><span class="price-val">PKR 15,000.00</span></div>
+                        <p class="moq-val"><i data-lucide="package" style="width: 14px;"></i> 5 Units (Min. Order)</p>
+                        <a href="shop-now.html" class="source-now-btn">Source Now</a>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                <div class="supplier-country">JP 6yrs</div>
+                                <span class="stars" style="color: #ffbe00; font-size: 10px;"><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i></span>
+                            </div>
+                            <div class="verified-pro">Verified</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">Luxury</span>
+                        <div class="card-actions">
+                            <button class="action-btn wishlist-btn"><i data-lucide="heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i data-lucide="eye"></i></button>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=800&auto=format&fit=crop"
+                            alt="3D Watch">
+                    </div>
+                    <div class="card-body">
+                        <h3>Premium Smart Watch Series X - Silver Edition</h3>
+                        <div class="price-row"><span class="price-val">PKR 18,900.00</span></div>
+                        <p class="moq-val"><i data-lucide="package" style="width: 14px;"></i> 10 Units (Min. Order)</p>
+                        <a href="shop-now.html" class="source-now-btn">Source Now</a>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                <div class="supplier-country">CH 4yrs</div>
+                                <span class="stars" style="color: #ffbe00; font-size: 10px;"><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i></span>
+                            </div>
+                            <div class="verified-pro">Verified</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">Audio</span>
+                        <div class="card-actions">
+                            <button class="action-btn wishlist-btn"><i data-lucide="heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i data-lucide="eye"></i></button>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=800&auto=format&fit=crop"
+                            alt="3D Audio">
+                    </div>
+                    <div class="card-body">
+                        <h3>Studio Monitoring Headphones - Hi-Res Audio</h3>
+                        <div class="price-row"><span class="price-val">PKR 25,000.00</span></div>
+                        <p class="moq-val"><i data-lucide="package" style="width: 14px;"></i> 5 Units (Min. Order)</p>
+                        <a href="shop-now.html" class="source-now-btn">Source Now</a>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                <div class="supplier-country">DE 8yrs</div>
+                                <span class="stars" style="color: #ffbe00; font-size: 10px;"><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i></span>
+                            </div>
+                            <div class="verified-pro">Verified</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">Lifestyle</span>
+                        <div class="card-actions">
+                            <button class="action-btn wishlist-btn"><i data-lucide="heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i data-lucide="eye"></i></button>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1586201327693-866199fbf21d?q=80&w=800&auto=format&fit=crop"
+                            alt="3D Lifestyle">
+                    </div>
+                    <div class="card-body">
+                        <h3>Modern Lifestyle Essentials Pack - Limited Edition</h3>
+                        <div class="price-row"><span class="price-val">PKR 12,000.00</span></div>
+                        <p class="moq-val"><i data-lucide="package" style="width: 14px;"></i> 20 Units (Min. Order)</p>
+                        <a href="shop-now.html" class="source-now-btn">Source Now</a>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                <div class="supplier-country">IT 5yrs</div>
+                                <span class="stars" style="color: #ffbe00; font-size: 10px;"><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i></span>
+                            </div>
+                            <div class="verified-pro">Verified</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">Photography</span>
+                        <div class="card-actions">
+                            <button class="action-btn wishlist-btn"><i data-lucide="heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i data-lucide="eye"></i></button>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1516724562728-afc824a36e84?q=80&w=800&auto=format&fit=crop"
+                            alt="3D Camera">
+                    </div>
+                    <div class="card-body">
+                        <h3>Mirrorless 8K Camera - Professional Cinema Rig</h3>
+                        <div class="price-row"><span class="price-val">PKR 380,000.00</span></div>
+                        <p class="moq-val"><i data-lucide="package" style="width: 14px;"></i> 1 Unit (Min. Order)</p>
+                        <a href="shop-now.html" class="source-now-btn">Source Now</a>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                <div class="supplier-country">JP 12yrs</div>
+                                <span class="stars" style="color: #ffbe00; font-size: 10px;"><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i></span>
+                            </div>
+                            <div class="verified-pro">Verified</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">Computing</span>
+                        <div class="card-actions">
+                            <button class="action-btn wishlist-btn"><i data-lucide="heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i data-lucide="eye"></i></button>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=800&auto=format&fit=crop"
+                            alt="3D Monitor">
+                    </div>
+                    <div class="card-body">
+                        <h3>Curved 49" UltraWide Gaming Monitor - 240Hz</h3>
+                        <div class="price-row"><span class="price-val">PKR 145,000.00</span></div>
+                        <p class="moq-val"><i data-lucide="package" style="width: 14px;"></i> 1 Unit (Min. Order)</p>
+                        <a href="shop-now.html" class="source-now-btn">Source Now</a>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                <div class="supplier-country">KR 9yrs</div>
+                                <span class="stars" style="color: #ffbe00; font-size: 10px;"><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i></span>
+                            </div>
+                            <div class="verified-pro">Verified</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 10 -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">Innovation</span>
+                        <div class="card-actions">
+                            <button class="action-btn wishlist-btn"><i data-lucide="heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i data-lucide="eye"></i></button>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=800&auto=format&fit=crop"
+                            alt="3D Tablet">
+                    </div>
+                    <div class="card-body">
+                        <h3>AI-Powered Smart Assistant Hub - Home Core</h3>
+                        <div class="price-row"><span class="price-val">PKR 32,500.00</span></div>
+                        <p class="moq-val"><i data-lucide="package" style="width: 14px;"></i> 5 Units (Min. Order)</p>
+                        <a href="shop-now.html" class="source-now-btn">Source Now</a>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                <div class="supplier-country">US 15yrs</div>
+                                <span class="stars" style="color: #ffbe00; font-size: 10px;"><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i></span>
+                            </div>
+                            <div class="verified-pro">Verified</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 11 -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">Design</span>
+                        <div class="card-actions">
+                            <button class="action-btn wishlist-btn"><i data-lucide="heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i data-lucide="eye"></i></button>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?q=80&w=800&auto=format&fit=crop"
+                            alt="3D Mouse">
+                    </div>
+                    <div class="card-body">
+                        <h3>Ergonomic Vertical Mouse - Precision Comfort</h3>
+                        <div class="price-row"><span class="price-val">PKR 7,500.00</span></div>
+                        <p class="moq-val"><i data-lucide="package" style="width: 14px;"></i> 20 Units (Min. Order)</p>
+                        <a href="shop-now.html" class="source-now-btn">Source Now</a>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                <div class="supplier-country">TW 6yrs</div>
+                                <span class="stars" style="color: #ffbe00; font-size: 10px;"><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i></span>
+                            </div>
+                            <div class="verified-pro">Verified</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 12 -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">Office</span>
+                        <div class="card-actions">
+                            <button class="action-btn wishlist-btn"><i data-lucide="heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i data-lucide="eye"></i></button>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1580480055273-228ff5388ef8?q=80&w=800&auto=format&fit=crop"
+                            alt="3D Chair">
+                    </div>
+                    <div class="card-body">
+                        <h3>High-Back Mesh Executive Chair pro-fit</h3>
+                        <div class="price-row"><span class="price-val">PKR 42,000.00</span></div>
+                        <p class="moq-val"><i data-lucide="package" style="width: 14px;"></i> 1 Unit (Min. Order)</p>
+                        <a href="shop-now.html" class="source-now-btn">Source Now</a>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                <div class="supplier-country">HK 10yrs</div>
+                                <span class="stars" style="color: #ffbe00; font-size: 10px;"><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i></span>
+                            </div>
+                            <div class="verified-pro">Verified</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 13 -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">Gourmet</span>
+                        <div class="card-actions">
+                            <button class="action-btn wishlist-btn"><i data-lucide="heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i data-lucide="eye"></i></button>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?q=80&w=800&auto=format&fit=crop"
+                            alt="3D Espresso">
+                    </div>
+                    <div class="card-body">
+                        <h3>Automatic Espresso Station - Barista Series</h3>
+                        <div class="price-row"><span class="price-val">PKR 58,000.00</span></div>
+                        <p class="moq-val"><i data-lucide="package" style="width: 14px;"></i> 2 Units (Min. Order)</p>
+                        <a href="shop-now.html" class="source-now-btn">Source Now</a>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                <div class="supplier-country">IT 20yrs</div>
+                                <span class="stars" style="color: #ffbe00; font-size: 10px;"><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i></span>
+                            </div>
+                            <div class="verified-pro">Verified</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 14 -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">Security</span>
+                        <div class="card-actions">
+                            <button class="action-btn wishlist-btn"><i data-lucide="heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i data-lucide="eye"></i></button>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?q=80&w=800&auto=format&fit=crop"
+                            alt="3D Camera">
+                    </div>
+                    <div class="card-body">
+                        <h3>Outdoor 4K Security Cam - Solar Powered</h3>
+                        <div class="price-row"><span class="price-val">PKR 15,500.00</span></div>
+                        <p class="moq-val"><i data-lucide="package" style="width: 14px;"></i> 10 Units (Min. Order)</p>
+                        <a href="shop-now.html" class="source-now-btn">Source Now</a>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                <div class="supplier-country">CN 8yrs</div>
+                                <span class="stars" style="color: #ffbe00; font-size: 10px;"><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i></span>
+                            </div>
+                            <div class="verified-pro">Verified</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 15 -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">Storage</span>
+                        <div class="card-actions">
+                            <button class="action-btn wishlist-btn"><i data-lucide="heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i data-lucide="eye"></i></button>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1597872200370-499dfca092ca?q=80&w=800&auto=format&fit=crop"
+                            alt="3D SSD">
+                    </div>
+                    <div class="card-body">
+                        <h3>Rugged 4TB External SSD - Shockproof Design</h3>
+                        <div class="price-row"><span class="price-val">PKR 35,000.00</span></div>
+                        <p class="moq-val"><i data-lucide="package" style="width: 14px;"></i> 5 Units (Min. Order)</p>
+                        <a href="shop-now.html" class="source-now-btn">Source Now</a>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                <div class="supplier-country">TW 11yrs</div>
+                                <span class="stars" style="color: #ffbe00; font-size: 10px;"><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i></span>
+                            </div>
+                            <div class="verified-pro">Verified</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 16 -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">Smart Health</span>
+                        <div class="card-actions">
+                            <button class="action-btn wishlist-btn"><i data-lucide="heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i data-lucide="eye"></i></button>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1563991655280-cb95c90ca2fb?q=80&w=800&auto=format&fit=crop"
+                            alt="3D Device">
+                    </div>
+                    <div class="card-body">
+                        <h3>Sonic Electric Toothbrush - Platinum Series</h3>
+                        <div class="price-row"><span class="price-val">PKR 12,500.00</span></div>
+                        <p class="moq-val"><i data-lucide="package" style="width: 14px;"></i> 25 Units (Min. Order)</p>
+                        <a href="shop-now.html" class="source-now-btn">Source Now</a>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                <div class="supplier-country">UK 9yrs</div>
+                                <span class="stars" style="color: #ffbe00; font-size: 10px;"><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i></span>
+                            </div>
+                            <div class="verified-pro">Verified</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 17 -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">Home Care</span>
+                        <div class="card-actions">
+                            <button class="action-btn wishlist-btn"><i data-lucide="heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i data-lucide="eye"></i></button>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1558317374-067fb5f30001?q=80&w=800&auto=format&fit=crop"
+                            alt="3D Vacuum">
+                    </div>
+                    <div class="card-body">
+                        <h3>Cyclonic Cordless Vacuum - Max Suction</h3>
+                        <div class="price-row"><span class="price-val">PKR 28,000.00</span></div>
+                        <p class="moq-val"><i data-lucide="package" style="width: 14px;"></i> 10 Units (Min. Order)</p>
+                        <a href="shop-now.html" class="source-now-btn">Source Now</a>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                <div class="supplier-country">CN 7yrs</div>
+                                <span class="stars" style="color: #ffbe00; font-size: 10px;"><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i></span>
+                            </div>
+                            <div class="verified-pro">Verified</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 18 -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">Eco Energy</span>
+                        <div class="card-actions">
+                            <button class="action-btn wishlist-btn"><i data-lucide="heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i data-lucide="eye"></i></button>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1621360841013-c7683c659ec6?q=80&w=800&auto=format&fit=crop"
+                            alt="3D Hub">
+                    </div>
+                    <div class="card-body">
+                        <h3>Lithium Power Hub 2000Wh - Off-Grid Pro</h3>
+                        <div class="price-row"><span class="price-val">PKR 185,000.00</span></div>
+                        <p class="moq-val"><i data-lucide="package" style="width: 14px;"></i> 1 Unit (Min. Order)</p>
+                        <a href="shop-now.html" class="source-now-btn">Source Now</a>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                <div class="supplier-country">US 18yrs</div>
+                                <span class="stars" style="color: #ffbe00; font-size: 10px;"><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i></span>
+                            </div>
+                            <div class="verified-pro">Verified</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 19 -->
+                <div class="featured-card">
+                    <div class="img-container">
+                        <span class="rank-badge">Kitchen Tech</span>
+                        <div class="card-actions">
+                            <button class="action-btn wishlist-btn"><i data-lucide="heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i data-lucide="eye"></i></button>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop"
+                            alt="3D Appliance">
+                    </div>
+                    <div class="card-body">
+                        <h3>Smart Induction Range - Precise Heat Control</h3>
+                        <div class="price-row"><span class="price-val">PKR 35,000.00</span></div>
+                        <p class="moq-val"><i data-lucide="package" style="width: 14px;"></i> 5 Units (Min. Order)</p>
+                        <a href="shop-now.html" class="source-now-btn">Source Now</a>
+                        <div class="supplier-row">
+                            <div class="supplier-meta">
+                                <div class="supplier-country">CN 14yrs</div>
+                                <span class="stars" style="color: #ffbe00; font-size: 10px;"><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i><i data-lucide="star"
+                                        style="width: 10px; height: 10px; fill: #ffbe00;"></i></span>
+                            </div>
+                            <div class="verified-pro">Verified</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination">
+                <a href="featured-13.html" class="pg-btn"><i data-lucide="chevron-left"></i></a>
+                <a href="featured.html" class="pg-btn">1</a>
+                <a href="featured-13.html" class="pg-btn">13</a>
+                <a href="featured-14.html" class="pg-btn active">14</a>
+                <a href="#" class="pg-btn"><i data-lucide="chevron-right"></i></a>
+            </div>
+        </div>
+    </main>
+    <footer style="background: #000; color: #fff; padding: 60px 0; text-align: center;">
+        <div class="container">
+            <p>&copy; 2026 Noshahibaba.com | Premium Global Marketplace</p>
+        </div>
+    </footer>
+    <!-- Quick View Modal -->
+    <div class="qv-modal" id="quickViewModal">
+        <div class="qv-content">
+            <div class="qv-close" onclick="closeQuickView()"><i data-lucide="x"></i></div>
+            <div
+                style="background: #f8fafc; display: flex; align-items: center; justify-content: center; padding: 30px;">
+                <img id="qvImage" src="" alt="Product" style="max-width: 90%; max-height: 350px; object-fit: contain;">
+            </div>
+            <div style="padding: 30px; display: flex; flex-direction: column; gap: 15px;">
+                <h2 id="qvTitle" style="font-size: 24px; color: #111;"></h2>
+                <div style="font-size: 28px; font-weight: 800; color: #000;" id="qvPrice"></div>
+                <div style="color: #64748b; font-size: 14px;" id="qvMoq"></div>
+                <a href="shop-now.html" class="source-now-btn" style="margin-top: auto;">Inquiry Now</a>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
     <script>
-        lucide.createIcons();
+        function initIcons() { if (window.lucide) { lucide.createIcons(); } }
+        document.addEventListener('DOMContentLoaded', initIcons);
+        window.addEventListener('load', initIcons);
+
+        // Wishlist Toggle
+        document.querySelectorAll('.wishlist-btn').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                this.classList.toggle('active');
+            });
+        });
+
+        // Quick View Logic
+        const modal = document.getElementById('quickViewModal');
+        document.querySelectorAll('.quick-view-btn').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const card = this.closest('.featured-card');
+                document.getElementById('qvImage').src = card.querySelector('.img-container img').src;
+                document.getElementById('qvTitle').innerText = card.querySelector('h3').innerText;
+                document.getElementById('qvPrice').innerText = card.querySelector('.price-val').innerText;
+                document.getElementById('qvMoq').innerText = card.querySelector('.moq-val')?.innerText || 'MOQ: 1 Unit';
+                modal.classList.add('active');
+                if (window.lucide) lucide.createIcons();
+            });
+        });
+
+        function closeQuickView() {
+            modal.classList.remove('active');
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeQuickView();
+        });
     </script>
 </body>
 
 </html>
-
-
-
-
-
-

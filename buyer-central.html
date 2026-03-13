@@ -1,517 +1,626 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buyer Central | Noshahibaba.com</title>
+    <title>Buyer Central | Noshahibaba.com - Grow Your Business Globally</title>
     <meta name="description"
-        content="Your one-stop resource for buying smarter on Noshahibaba.com. Find suppliers, manage orders, and grow your business.">
+        content="Master your global sourcing journey. Discover verified suppliers, secure transactions, and enterprise-grade tools in the Noshahibaba Buyer Central.">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <style>
-        /* ── Page-specific styles ─────────────────────── */
+        :root {
+            --primary: #ffcc00;
+            --primary-dark: #e6b800;
+            --secondary: #0f172a;
+            --accent: #3b82f6;
+            --bg-light: #f8fafc;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-nav-row {
+            white-space: nowrap;
+            flex-wrap: nowrap !important;
+        }
+
+        /* --- Hero Section --- */
         .bc-hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0c4a6e 100%);
-            padding: 90px 0 80px;
-            color: white;
             position: relative;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 160px 0 100px;
+            color: white;
             overflow: hidden;
         }
 
         .bc-hero::before {
             content: '';
             position: absolute;
-            top: -80px;
-            right: -80px;
-            width: 420px;
-            height: 420px;
-            background: radial-gradient(circle, rgba(255, 102, 0, 0.25) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 204, 0, 0.15) 0%, transparent 70%);
             border-radius: 50%;
         }
 
         .bc-hero-inner {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 80px;
             align-items: center;
+            position: relative;
+            z-index: 2;
         }
 
-        .bc-hero h1 {
-            font-size: 48px;
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 20px;
+        .bc-hero-content h1 {
+            font-size: 64px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -2px;
         }
 
-        .bc-hero h1 span {
-            color: #ff6600;
+        .bc-hero-content h1 span {
+            color: var(--primary);
+            display: block;
         }
 
-        .bc-hero p {
-            font-size: 18px;
-            opacity: 0.85;
-            line-height: 1.7;
-            margin-bottom: 35px;
-        }
-
-        .bc-hero-btns {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: #ff6600;
-            color: white;
-            padding: 14px 32px;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 15px;
-            text-decoration: none;
-            transition: background 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-primary:hover {
-            background: #e05500;
-            color: white;
-        }
-
-        .btn-outline-white {
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 15px;
-            text-decoration: none;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-outline-white:hover {
-            border-color: white;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-        }
-
-        .bc-hero-img {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 16px;
-            padding: 30px;
-            backdrop-filter: blur(8px);
-        }
-
-        .bc-hero-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-        }
-
-        .bc-stat {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 20px 14px;
-            text-align: center;
-        }
-
-        .bc-stat h3 {
-            font-size: 28px;
-            font-weight: 800;
-            color: #ff6600;
-            margin-bottom: 4px;
-        }
-
-        .bc-stat p {
-            font-size: 12px;
-            opacity: 0.7;
-        }
-
-        /* ── How it works ─────────────────────────────── */
-        .hiw-section {
-            padding: 80px 0;
-            background: #f8fafc;
-        }
-
-        .section-label {
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: #ff6600;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-
-        .section-heading {
-            font-size: 36px;
-            font-weight: 800;
-            color: #0f172a;
-            margin-bottom: 14px;
-        }
-
-        .section-sub {
-            font-size: 17px;
-            color: #64748b;
+        .bc-hero-content p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 40px;
             max-width: 600px;
         }
 
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin-top: 55px;
-            position: relative;
-        }
-
-        .steps-grid::before {
-            content: '';
-            position: absolute;
-            top: 36px;
-            left: 10%;
-            right: 10%;
-            height: 2px;
-            background: linear-gradient(to right, #ff6600, #0c4a6e);
-            z-index: 0;
-        }
-
-        .step-card {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 14px;
-            padding: 30px 22px;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            transition: transform 0.25s, box-shadow 0.25s;
-        }
-
-        .step-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .step-num {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, #ff6600, #ff9900);
-            border-radius: 50%;
+        .bc-hero-actions {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 22px;
-            font-weight: 800;
-            color: white;
-        }
-
-        .step-card h3 {
-            font-size: 17px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #0f172a;
-        }
-
-        .step-card p {
-            font-size: 14px;
-            color: #64748b;
-            line-height: 1.6;
-        }
-
-        /* ── Features ─────────────────────────────────── */
-        .features-section {
-            padding: 80px 0;
-        }
-
-        .features-grid-bc {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-            margin-top: 55px;
-        }
-
-        .feature-card-bc {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 14px;
-            padding: 32px 26px;
-            transition: all 0.25s;
-        }
-
-        .feature-card-bc:hover {
-            border-color: #ff6600;
-            box-shadow: 0 12px 32px rgba(255, 102, 0, 0.12);
-            transform: translateY(-4px);
-        }
-
-        .feature-icon-bc {
-            width: 52px;
-            height: 52px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            background: #fff4ed;
-        }
-
-        .feature-icon-bc i {
-            width: 26px;
-            height: 26px;
-            color: #ff6600;
-        }
-
-        .feature-card-bc h3 {
-            font-size: 18px;
-            font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 10px;
-        }
-
-        .feature-card-bc p {
-            font-size: 14px;
-            color: #64748b;
-            line-height: 1.7;
-        }
-
-        /* ── Sourcing Journey ─────────────────────────── */
-        .sourcing-section {
-            padding: 80px 0;
-            background: #0f172a;
-            color: white;
-        }
-
-        .sourcing-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            margin-top: 50px;
-        }
-
-        .sourcing-list {
-            list-style: none;
-        }
-
-        .sourcing-list li {
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
-            padding: 18px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .sourcing-list li:last-child {
-            border-bottom: none;
-        }
-
-        .sourcing-list .icon-box {
-            width: 40px;
-            height: 40px;
-            min-width: 40px;
-            background: rgba(255, 102, 0, 0.15);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .sourcing-list .icon-box i {
-            width: 20px;
-            height: 20px;
-            color: #ff6600;
-        }
-
-        .sourcing-list h4 {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .sourcing-list p {
-            font-size: 14px;
-            opacity: 0.65;
-            line-height: 1.6;
-        }
-
-        .sourcing-img-box {
-            border-radius: 16px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .sourcing-img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 16px;
-        }
-
-        .sourcing-badge {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            background: #ff6600;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 14px;
-        }
-
-        /* ── FAQ ──────────────────────────────────────── */
-        .faq-section {
-            padding: 80px 0;
-            background: #f8fafc;
-        }
-
-        .faq-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
             gap: 20px;
-            margin-top: 50px;
         }
 
-        .faq-item {
-            background: white;
-            border: 1px solid #e2e8f0;
+        .btn-bc {
+            padding: 16px 36px;
             border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .faq-q {
-            padding: 20px 24px;
-            font-size: 15px;
-            font-weight: 600;
-            color: #0f172a;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .faq-q i {
-            width: 20px;
-            height: 20px;
-            color: #ff6600;
-            flex-shrink: 0;
-        }
-
-        .faq-a {
-            padding: 0 24px 20px;
-            font-size: 14px;
-            color: #64748b;
-            line-height: 1.7;
-        }
-
-        /* ── CTA Banner ───────────────────────────────── */
-        .cta-banner {
-            background: linear-gradient(135deg, #ff6600, #ff9900);
-            padding: 70px 0;
-            text-align: center;
-            color: white;
-        }
-
-        .cta-banner h2 {
-            font-size: 38px;
-            font-weight: 800;
-            margin-bottom: 16px;
-        }
-
-        .cta-banner p {
-            font-size: 18px;
-            opacity: 0.9;
-            margin-bottom: 36px;
-        }
-
-        .btn-white {
-            background: white;
-            color: #ff6600;
-            padding: 15px 40px;
-            border-radius: 8px;
             font-weight: 700;
             font-size: 16px;
             text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-bc-primary {
+            background: var(--primary);
+            color: #000;
+        }
+
+        .btn-bc-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 204, 0, 0.3);
+        }
+
+        .btn-bc-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-bc-outline:hover {
+            border-color: white;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .bc-hero-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+        }
+
+        .bc-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .bc-stat-box {
+            text-align: center;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .bc-stat-box h3 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .bc-stat-box p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- Sections Utility --- */
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- How It Works --- */
+        .hiw-step {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 120px;
+        }
+
+        .hiw-step:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .hiw-content {
+            flex: 1;
+        }
+
+        .hiw-visual {
+            flex: 1;
+            position: relative;
+        }
+
+        .hiw-visual img {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(15, 23, 42, 0.1);
+            transition: transform 0.5s ease;
+        }
+
+        .hiw-step:hover .hiw-visual img {
+            transform: scale(1.02);
+        }
+
+        .step-tag {
+            background: #fff9e6;
+            color: var(--primary-dark);
+            padding: 6px 16px;
+            border-radius: 99px;
+            font-size: 14px;
+            font-weight: 700;
             display: inline-block;
-            transition: transform 0.2s;
+            margin-bottom: 20px;
         }
 
-        .btn-white:hover {
-            transform: translateY(-2px);
-            color: #e05500;
+        .hiw-content h3 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--secondary);
         }
 
-        /* ── Responsive ───────────────────────────────── */
+        .hiw-content p {
+            font-size: 17px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .hiw-features {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .hiw-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .hiw-features li i {
+            color: var(--success);
+        }
+
+        /* --- Tools & Services --- */
+        .tools-section {
+            background: var(--bg-light);
+            padding: 100px 0;
+            border-radius: 0 0 60px 60px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .tool-card {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid #eef2f6;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+            border-color: var(--primary);
+        }
+
+        .tool-icon {
+            width: 64px;
+            height: 64px;
+            background: #fff9e6;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: var(--primary-dark);
+        }
+
+        .tool-card:hover .tool-icon {
+            background: var(--primary);
+            color: #000;
+        }
+
+        .tool-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .tool-card p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .tool-link {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* --- Responsive Design --- */
         @media (max-width: 1024px) {
-
-            .bc-hero-inner,
-            .sourcing-grid,
-            .faq-grid {
+            .bc-hero-inner {
                 grid-template-columns: 1fr;
+                text-align: center;
             }
 
-            .steps-grid {
+            .bc-hero-content p {
+                margin: 0 auto 40px;
+            }
+
+            .bc-hero-actions {
+                justify-content: center;
+            }
+
+            .tools-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .steps-grid::before {
-                display: none;
-            }
-
-            .features-grid-bc {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .bc-hero h1 {
-                font-size: 36px;
-            }
-
-            .section-heading {
-                font-size: 28px;
+            .bc-hero-content h1 {
+                font-size: 52px;
             }
         }
 
-        @media (max-width: 640px) {
-            .bc-hero {
-                padding: 60px 0 50px;
+        @media (max-width: 768px) {
+
+            .hiw-step,
+            .hiw-step:nth-child(even) {
+                flex-direction: column;
+                text-align: center;
+                margin-bottom: 80px;
             }
 
-            .bc-hero h1 {
-                font-size: 28px;
-            }
-
-            .bc-hero-stats {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .steps-grid,
-            .features-grid-bc {
+            .hiw-features {
                 grid-template-columns: 1fr;
             }
 
-            .bc-hero-btns {
-                flex-direction: column;
+            .section-header h2 {
+                font-size: 32px;
             }
 
-            .cta-banner h2 {
-                font-size: 26px;
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bc-hero {
+                padding: 120px 0 80px;
             }
         }
     </style>
 </head>
 
 <body>
-            <!-- Footer -->
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left">
+                <span>Free delivery for your first order</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="helpcenter.html">Help Center</a>
+                <a href="regional-settings.html">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK">
+                    PKR</a>
+                <a href="regional-settings.html">Language: EN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Consolidated Header & Navigation -->
+    <header class="main-header sticky-header">
+        <div class="container">
+            <!-- First Row: Logo, Search, Actions -->
+            <div class="header-top-row">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                    </a>
+                </div>
+                <div class="search-container">
+                    <div class="search-box">
+                        <div class="search-type">Products <i data-lucide="chevron-down"></i></div>
+                        <input type="text" placeholder="What are you looking for...">
+                        <button class="search-btn"><i data-lucide="search"></i> <span>Search</span></button>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign In</span></a><a
+                        href="messages.html" class="action-item"><i
+                            data-lucide="message-square"></i><span>Messages</span></a><a href="cart.html"
+                        class="action-item"><i data-lucide="shopping-cart"></i><span>Cart</span></a>
+                </div>
+            </div>
+
+            <!-- Second Row: Attached Navigation -->
+            <div class="header-nav-row">
+                <div class="all-categories" id="all-categories-btn">
+                    <i data-lucide="menu"></i> All categories
+                </div>
+                <div class="nav-links">
+                    <a href="index.html"><i data-lucide="home"></i> Home</a>
+                    <a href="featured.html">Featured selections</a>
+                    <a href="tradeassurance.html">Trade Assurance</a>
+                    <a href="buyer-central.html" class="active">Buyer Central</a>
+                    <a href="helpcenter.html">Help Center</a>
+                    <a href="getapp.html">Get the app</a>
+                </div>
+                <div class="nav-right">
+                    <a href="#">Become a supplier</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bc-hero">
+            <div class="container">
+                <div class="bc-hero-inner">
+                    <div class="bc-hero-content">
+                        <span class="step-tag" style="background: rgba(255,204,0,0.1); color: var(--primary);">EXCLUSIVE
+                            BUYER ACCESS</span>
+                        <h1>Everything You Need To <span>Grow Globally</span></h1>
+                        <p>Unlock the power of expert sourcing tools, secure logistics, and verified suppliers—all in
+                            one place.</p>
+                        <div class="bc-hero-actions">
+                            <a href="featured.html" class="btn-bc btn-bc-primary">Start Sourcing Now <i
+                                    data-lucide="arrow-right"></i></a>
+                            <a href="#tools" class="btn-bc btn-bc-outline">Explore Buyer Tools</a>
+                        </div>
+                    </div>
+                    <div class="bc-hero-card">
+                        <div class="bc-stats-grid">
+                            <div class="bc-stat-box">
+                                <h3>$100B+</h3>
+                                <p>Annual Trade</p>
+                            </div>
+                            <div class="bc-stat-box">
+                                <h3>200M+</h3>
+                                <p>Products</p>
+                            </div>
+                            <div class="bc-stat-box">
+                                <h3>190+</h3>
+                                <p>Countries</p>
+                            </div>
+                            <div class="bc-stat-box">
+                                <h3>40+</h3>
+                                <p>Industries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sourcing Steps -->
+        <section class="section-padding container">
+            <div class="section-header">
+                <h2>Mastering Your <span>Sourcing Journey</span></h2>
+                <p>Follow our comprehensive guide to source efficiently and safely from global manufacturers.</p>
+            </div>
+
+            <div class="hiw-step">
+                <div class="hiw-content">
+                    <span class="step-tag">STEP 1</span>
+                    <h3>Identify & Find Suppliers</h3>
+                    <p>Use our advanced filters to find verified manufacturers. Look for Gold Suppliers and Trade
+                        Assurance icons to ensure reliability.</p>
+                    <ul class="hiw-features">
+                        <li><i data-lucide="check-circle-2"></i> Verified Profiles</li>
+                        <li><i data-lucide="check-circle-2"></i> Video Inspections</li>
+                        <li><i data-lucide="check-circle-2"></i> Factory Tours</li>
+                        <li><i data-lucide="check-circle-2"></i> Capability Rating</li>
+                    </ul>
+                </div>
+                <div class="hiw-visual">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1000&auto=format&fit=crop"
+                        alt="Find Suppliers">
+                </div>
+            </div>
+
+            <div class="hiw-step">
+                <div class="hiw-content">
+                    <span class="step-tag">STEP 2</span>
+                    <h3>Communicate & Sample</h3>
+                    <p>Connect directly with suppliers via Noshahi Messenger. Request samples to verify quality before
+                        placing bulk orders.</p>
+                    <ul class="hiw-features">
+                        <li><i data-lucide="check-circle-2"></i> Real-time Translate</li>
+                        <li><i data-lucide="check-circle-2"></i> Multi-media Chat</li>
+                        <li><i data-lucide="check-circle-2"></i> Sample Requests</li>
+                        <li><i data-lucide="check-circle-2"></i> Custom Quotes</li>
+                    </ul>
+                </div>
+                <div class="hiw-visual">
+                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1000&auto=format&fit=crop"
+                        alt="Communicate Suppliers">
+                </div>
+            </div>
+
+            <div class="hiw-step">
+                <div class="hiw-content">
+                    <span class="step-tag">STEP 3</span>
+                    <h3>Secure Transactions</h3>
+                    <p>Use Trade Assurance to protect your payments. Our system holds funds until you confirm receipt of
+                        quality products.</p>
+                    <ul class="hiw-features">
+                        <li><i data-lucide="check-circle-2"></i> 100% Safe Pay</li>
+                        <li><i data-lucide="check-circle-2"></i> Order Tracking</li>
+                        <li><i data-lucide="check-circle-2"></i> Quality Check</li>
+                        <li><i data-lucide="check-circle-2"></i> Refund Policy</li>
+                    </ul>
+                </div>
+                <div class="hiw-visual">
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1000&auto=format&fit=crop"
+                        alt="Secure Pay">
+                </div>
+            </div>
+        </section>
+
+        <!-- Buyer Tools -->
+        <section class="tools-section" id="tools">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Premium <span>Buyer Tools</span></h2>
+                    <p>Access our suite of enterprise tools built to simplify global procurement.</p>
+                </div>
+                <div class="tools-grid">
+                    <a href="rfq.html" class="tool-card">
+                        <div class="tool-icon"><i data-lucide="send" size="32"></i></div>
+                        <h3>Request For Quotation</h3>
+                        <p>Post your buying requirements and let verified suppliers come to you with quotes.</p>
+                        <span class="tool-link">Try RFQ Tool <i data-lucide="chevron-right"></i></span>
+                    </a>
+                    <a href="logistics.html" class="tool-card">
+                        <div class="tool-icon"><i data-lucide="truck" size="32"></i></div>
+                        <h3>Global Logistics</h3>
+                        <p>Calculate shipping rates and track your freight globally with our logistics partners.</p>
+                        <span class="tool-link">Calculate Rates <i data-lucide="chevron-right"></i></span>
+                    </a>
+                    <a href="tradeassurance.html" class="tool-card">
+                        <div class="tool-icon"><i data-lucide="shield-check" size="32"></i></div>
+                        <h3>Trade Assurance</h3>
+                        <p>Get comprehensive protection for every order placed on the platform.</p>
+                        <span class="tool-link">View Protections <i data-lucide="chevron-right"></i></span>
+                    </a>
+                    <a href="inspection.html" class="tool-card">
+                        <div class="tool-icon"><i data-lucide="clipboard-check" size="32"></i></div>
+                        <h3>Inspection Services</h3>
+                        <p>Hire professional inspectors to verify products at the factory before shipping.</p>
+                        <span class="tool-link">Learn More <i data-lucide="chevron-right"></i></span>
+                    </a>
+                    <a href="regional-settings.html" class="tool-card">
+                        <div class="tool-icon"><i data-lucide="globe" size="32"></i></div>
+                        <h3>Language Support</h3>
+                        <p>Source in your native language with our real-time translation integrated chat.</p>
+                        <span class="tool-link">Set Language <i data-lucide="chevron-right"></i></span>
+                    </a>
+                    <a href="helpcenter.html" class="tool-card">
+                        <div class="tool-icon"><i data-lucide="help-circle" size="32"></i></div>
+                        <h3>Buyer Education</h3>
+                        <p>Watch webinars and read articles on how to become a sourcing expert.</p>
+                        <span class="tool-link">Join Webinar <i data-lucide="chevron-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="section-padding container">
+            <div
+                style="background: var(--secondary); border-radius: 40px; padding: 80px 40px; text-align: center; color: white;">
+                <h2 style="font-size: 48px; font-weight: 900; margin-bottom: 20px;">Ready To Scale Your Business?</h2>
+                <p style="font-size: 20px; opacity: 0.8; margin-bottom: 40px;">Join 200,000+ businesses sourcing on
+                    Noshahibaba.com today.</p>
+                <div class="bc-hero-actions">
+                    <a href="signin.html" class="btn-bc btn-bc-primary">Create Free Account</a>
+                    <a href="featured.html" class="btn-bc btn-bc-outline">Browse Top Selections</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-links">
@@ -563,18 +672,21 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <div class="footer-info">
-                    <span class="copyright">� 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights reserved.</span>
+                    <span class="copyright">© 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights
+                        reserved.</span>
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms of Use</a>
                 </div>
                 <div class="social-links">
                     <a href="https://facebook.com/noshahibaba" aria-label="Facebook"><i data-lucide="facebook"></i></a>
                     <a href="https://twitter.com/noshahibaba" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-                    <a href="https://instagram.com/noshahibaba" aria-label="Instagram"><i data-lucide="instagram"></i></a>
-                    <a href="https://linkedin.com/company/noshahibaba" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="https://instagram.com/noshahibaba" aria-label="Instagram"><i
+                            data-lucide="instagram"></i></a>
+                    <a href="https://linkedin.com/company/noshahibaba" aria-label="LinkedIn"><i
+                            data-lucide="linkedin"></i></a>
                     <a href="https://youtube.com/noshahibaba" aria-label="YouTube"><i data-lucide="youtube"></i></a>
                 </div>
             </div>
@@ -605,13 +717,9 @@
         </a>
     </div>
 
-    <script src="script.js"></script>
-    <script>lucide.createIcons();</script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>
-
-
-
-
-
