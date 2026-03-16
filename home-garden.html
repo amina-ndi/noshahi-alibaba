@@ -9,12 +9,634 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background-color: #fff !important;
+        }
+
+        .filter-bar {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 100px;
+            z-index: 100;
+        }
+
+        .filter-links {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .filter-links a {
+            font-weight: 600;
+            color: #555;
+            font-size: 14px;
+            padding: 10px 24px;
+            border-radius: 999px;
+            background: #f5f5f5;
+            border: 1px solid #eee;
+            white-space: nowrap;
+        }
+
+        .filter-links a.active {
+            background-color: var(--primary);
+            color: #000;
+            border-color: var(--primary);
+        }
+
+        /* Home & Garden specific enhancements */
+        .card-bold-dark.card-base {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-bold-dark.card-base:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-bold-dark .img-box {
+            background: #fdfdfd;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .card-bold-dark .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card-bold-dark:hover .img-box img {
+            transform: scale(1.1);
+        }
+
+        .prod-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .source-btn {
+            width: 100%;
+            margin-top: auto;
+            background: var(--primary);
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .source-btn:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .home-gradient-bg {
+            background: radial-gradient(circle at 20% 20%, #f0fff4 0, rgba(240, 255, 244, 0) 28%), radial-gradient(circle at 80% 0%, #fffbf0 0, rgba(255, 251, 240, 0) 30%), #ffffff;
+        }
+
+        .prod-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        /* Card Actions Styling */
+        .card-actions {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 10;
+            opacity: 0;
+            transform: translateX(10px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card-bold-dark:hover .card-actions,
+        .card-base:hover .card-actions {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .card-action-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.2s;
+            color: #333;
+        }
+
+        .card-action-btn:hover {
+            background: var(--primary);
+            color: #000;
+            transform: scale(1.1);
+        }
+
+        .card-action-btn i {
+            width: 18px;
+            height: 18px;
+        }
+
+        .like-active i {
+            fill: #ff4757;
+            color: #ff4757;
+        }
+
+        @media (max-width: 1200px) {
+            .prod-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .prod-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .prod-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .filter-bar {
+                top: 70px;
+            }
+        }
+
+        .garden-carousel-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .mini-carousel-container {
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid #eee;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+            overflow: hidden;
+        }
+
+        .mini-carousel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .mini-carousel-header h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin: 0;
+            color: #1e293b;
+        }
+
+        .carousel-controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .ctrl-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #334155;
+        }
+
+        .ctrl-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #000;
+        }
+
+        .mini-carousel-viewport {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .mini-carousel-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .mini-carousel-slide {
+            flex: 0 0 100%;
+        }
+
+        @media (max-width: 900px) {
+            .garden-carousel-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
-            <!-- Footer -->
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left">
+                <span>Transform Your Space | Wholesale Home Essentials</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="helpcenter.html">Help Center</a>
+                <a href="regional-settings.html">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK">
+                    PKR</a>
+                <a href="regional-settings.html">Language: EN</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header sticky-header">
+        <div class="container">
+            <div class="header-top-row">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                    </a>
+                </div>
+                <div class="search-container">
+                    <div class="search-box">
+                        <div class="search-type">Home & Garden <i data-lucide="chevron-down"></i></div>
+                        <input type="text" placeholder="Search Modern Furniture, Smart Kitchen, Seeds...">
+                        <button class="search-btn"><i data-lucide="search"></i> <span>Search</span></button>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign In</span></a>
+                    <a href="messages.html" class="action-item"><i
+                            data-lucide="message-square"></i><span>Messages</span></a>
+                    <a href="cart.html" class="action-item"><i data-lucide="shopping-cart"></i><span>Cart</span></a>
+                </div>
+            </div>
+
+            <div class="header-nav-row">
+                <div class="all-categories" id="all-categories-btn">
+                    <i data-lucide="menu"></i> All categories
+                </div>
+                <div class="nav-links">
+                    <a href="index.html"><i data-lucide="home"></i> Home</a>
+                    <a href="featured.html">Featured selections</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="filter-bar">
+        <div class="container">
+            <div class="filter-links">
+                <a href="featured.html">All Categories</a>
+                <a href="consumer-electronics.html">Consumer Electronics</a>
+                <a href="laptops-pcs.html">Laptops & PCs</a>
+                <a href="gaming-laptops.html">Gaming Laptops</a>
+                <a href="apparel.html">Apparel & Fashion</a>
+                <a href="home-garden.html" class="active">Home & Garden</a>
+                <a href="machinery.html">Machinery</a>
+                <a href="beauty.html">Beauty & Personal Care</a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Modern Living Section -->
+        <section id="living" class="home-gradient-bg" style="padding: 80px 0;">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <h1 style="font-size: 42px; font-weight: 900; margin-bottom: 10px;">Modern Living & Furniture</h1>
+                    <p style="color: #64748b; font-size: 18px; margin-bottom: 40px;">Curated pieces for the contemporary
+                        home.</p>
+                </div>
+                <div class="prod-grid">
+                    <!-- Product 1 -->
+                    <div class="card-bold-dark card-base">
+                        <div class="img-box">
+                            <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=800&auto=format&fit=crop"
+                                alt="Modern Sofa">
+                        </div>
+                        <div class="prod-info">
+                            <div class="title"
+                                style="font-weight: 700; font-size: 16px; height: 44px; overflow: hidden; margin-bottom: 10px;">
+                                3D Minimalist Sofa - Ivory Velvet Edition</div>
+                            <div class="price"
+                                style="font-size: 24px; font-weight: 900; color: #111; margin-bottom: 5px;">PKR 125,000
+                            </div>
+                            <div class="supplier-badge"
+                                style="font-size: 12px; color: #666; display: flex; align-items: center; gap: 6px; margin-bottom: 15px;">
+                                <i data-lucide="shield-check" style="width: 16px; color: #FFCC00;"></i> Verified
+                                Furniture Hub
+                            </div>
+                            <button class="source-btn">Source Now</button>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="card-bold-dark card-base">
+                        <div class="img-box">
+                            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=800&auto=format&fit=crop"
+                                alt="Bed">
+                        </div>
+                        <div class="prod-info">
+                            <div class="title"
+                                style="font-weight: 700; font-size: 16px; height: 44px; overflow: hidden; margin-bottom: 10px;">
+                                3D Smart Bed Frame - Integrated Ambient Lighting</div>
+                            <div class="price"
+                                style="font-size: 24px; font-weight: 900; color: #111; margin-bottom: 5px;">PKR 185,000
+                            </div>
+                            <div class="supplier-badge"
+                                style="font-size: 12px; color: #666; display: flex; align-items: center; gap: 6px; margin-bottom: 15px;">
+                                <i data-lucide="shield-check" style="width: 16px; color: #FFCC00;"></i>
+                                High-Tech Home Ltd
+                            </div>
+                            <button class="source-btn">Source Now</button>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="card-bold-dark card-base">
+                        <div class="img-box">
+                            <img src="https://images.unsplash.com/photo-1567016432779-094069958ad5?q=80&w=800&auto=format&fit=crop"
+                                alt="Table">
+                        </div>
+                        <div class="prod-info">
+                            <div class="title"
+                                style="font-weight: 700; font-size: 16px; height: 44px; overflow: hidden; margin-bottom: 10px;">
+                                3D Marble Dining Table - 8-Seater Luxury Set</div>
+                            <div class="price"
+                                style="font-size: 24px; font-weight: 900; color: #111; margin-bottom: 5px;">PKR 245,000
+                            </div>
+                            <div class="supplier-badge"
+                                style="font-size: 12px; color: #666; display: flex; align-items: center; gap: 6px; margin-bottom: 15px;">
+                                <i data-lucide="shield-check" style="width: 16px; color: #FFCC00;"></i> Elite Living Co.
+                            </div>
+                            <button class="source-btn">Source Now</button>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="card-bold-dark card-base">
+                        <div class="img-box">
+                            <img src="https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?q=80&w=800&auto=format&fit=crop"
+                                alt="Pot">
+                        </div>
+                        <div class="prod-info">
+                            <div class="title"
+                                style="font-weight: 700; font-size: 16px; height: 44px; overflow: hidden; margin-bottom: 10px;">
+                                3D Smart Planter - Auto-Irrigation & UV Support</div>
+                            <div class="price"
+                                style="font-size: 24px; font-weight: 900; color: #111; margin-bottom: 5px;">PKR 15,600
+                            </div>
+                            <div class="supplier-badge"
+                                style="font-size: 12px; color: #666; display: flex; align-items: center; gap: 6px; margin-bottom: 15px;">
+                                <i data-lucide="shield-check" style="width: 16px; color: #FFCC00;"></i> GreenTech Garden
+                            </div>
+                            <button class="source-btn">Source Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kitchen & Dining -->
+        <section id="kitchen" style="padding: 80px 0;">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title" style="border-left: 5px solid #10b981; padding-left: 20px;">Elite
+                        Kitchenware & Dining</h2>
+                </div>
+                <div class="prod-grid">
+                    <div class="card-bold-dark card-base">
+                        <div class="img-box"><img
+                                src="https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?q=80&w=800&auto=format&fit=crop"
+                                alt="Cookware"></div>
+                        <div class="prod-info" style="padding: 20px;">
+                            <div class="title">Professional Non-Stick Cookware Set - 12 Pieces</div>
+                            <div class="price">PKR 18,500</div>
+                            <button class="source-btn"
+                                style="width: 100%; margin-top: 15px; background: var(--primary); border: none; padding: 12px; border-radius: 8px; font-weight: 800;">Source
+                                Now</button>
+                        </div>
+                    </div>
+                    <div class="card-bold-dark card-base">
+                        <div class="img-box"><img
+                                src="https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?q=80&w=800&auto=format&fit=crop"
+                                alt="Toaster"></div>
+                        <div class="prod-info" style="padding: 20px;">
+                            <div class="title">Retro Style 4-Slice Toaster - Brushed Steel</div>
+                            <div class="price">PKR 9,800</div>
+                            <button class="source-btn"
+                                style="width: 100%; margin-top: 15px; background: var(--primary); border: none; padding: 12px; border-radius: 8px; font-weight: 800;">Source
+                                Now</button>
+                        </div>
+                    </div>
+                    <div class="card-bold-dark card-base">
+                        <div class="img-box"><img
+                                src="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?q=80&w=800&auto=format&fit=crop"
+                                alt="Dinner set"></div>
+                        <div class="prod-info" style="padding: 20px;">
+                            <div class="title">Fine Bone China Dinner Set - 24 Pieces Service</div>
+                            <div class="price">PKR 15,200</div>
+                            <button class="source-btn"
+                                style="width: 100%; margin-top: 15px; background: var(--primary); border: none; padding: 12px; border-radius: 8px; font-weight: 800;">Source
+                                Now</button>
+                        </div>
+                    </div>
+                    <div class="card-bold-dark card-base">
+                        <div class="img-box"><img
+                                src="https://images.unsplash.com/photo-1589125586943-39908cf4988e?q=80&w=800&auto=format&fit=crop"
+                                alt="Coffee machine"></div>
+                        <div class="prod-info" style="padding: 20px;">
+                            <div class="title">Automatic Espresso & Cappuccino Machine</div>
+                            <div class="price">PKR 42,000</div>
+                            <button class="source-btn"
+                                style="width: 100%; margin-top: 15px; background: var(--primary); border: none; padding: 12px; border-radius: 8px; font-weight: 800;">Source
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Garden & Outdoor Section -->
+        <section id="garden" class="home-gradient-bg" style="padding: 100px 0;">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">Garden & Outdoor Living</h2>
+                    <p style="color: #64748b; margin-top: 10px;">Premium exterior furniture and automated garden tools.
+                    </p>
+                </div>
+
+                <div class="garden-carousel-row">
+                    <!-- Carousel 1: Outdoor Comfort -->
+                    <div class="mini-carousel-container">
+                        <div class="mini-carousel-header">
+                            <h3><i data-lucide="sun"
+                                    style="color: #f59e0b; margin-right: 10px; vertical-align: middle;"></i>Outdoor
+                                Comfort</h3>
+                            <div class="carousel-controls">
+                                <button class="ctrl-btn prev-ctrl"><i data-lucide="chevron-left"></i></button>
+                                <button class="ctrl-btn next-ctrl"><i data-lucide="chevron-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="mini-carousel-viewport">
+                            <div class="mini-carousel-track">
+                                <div class="mini-carousel-slide">
+                                    <div class="card-bold-dark card-base">
+                                        <div class="img-box">
+                                            <img src="https://images.unsplash.com/photo-1617103023988-518a287ee3c2?q=80&w=800&auto=format&fit=crop"
+                                                alt="Garden Sofa">
+                                        </div>
+                                        <div class="prod-info">
+                                            <div class="title"
+                                                style="font-weight: 700; font-size: 16px; height: 44px; overflow: hidden; margin-bottom: 10px;">
+                                                All-Weather Rattan Sofa Set - UV Resistant</div>
+                                            <div class="price"
+                                                style="font-size: 24px; font-weight: 900; color: #111; margin-bottom: 5px;">
+                                                PKR 112,000</div>
+                                            <div class="supplier-badge"
+                                                style="font-size: 12px; color: #666; display: flex; align-items: center; gap: 6px; margin-bottom: 15px;">
+                                                <i data-lucide="shield-check"
+                                                    style="width: 16px; color: var(--primary);"></i> Outdoor-Elite Hub
+                                            </div>
+                                            <button class="source-btn">Source Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mini-carousel-slide">
+                                    <div class="card-bold-dark card-base">
+                                        <div class="img-box">
+                                            <img src="https://images.unsplash.com/photo-1611735341450-74d61e660ad2?q=80&w=800&auto=format&fit=crop"
+                                                alt="Tents">
+                                        </div>
+                                        <div class="prod-info">
+                                            <div class="title"
+                                                style="font-weight: 700; font-size: 16px; height: 44px; overflow: hidden; margin-bottom: 10px;">
+                                                Premium Outdoor Gazebo - Heavy Duty Framework</div>
+                                            <div class="price"
+                                                style="font-size: 24px; font-weight: 900; color: #111; margin-bottom: 5px;">
+                                                PKR 35,000</div>
+                                            <div class="supplier-badge"
+                                                style="font-size: 12px; color: #666; display: flex; align-items: center; gap: 6px; margin-bottom: 15px;">
+                                                <i data-lucide="shield-check"
+                                                    style="width: 16px; color: var(--primary);"></i> Tent-Master
+                                                Supplies
+                                            </div>
+                                            <button class="source-btn">Source Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carousel 2: Smart Garden Tools -->
+                    <div class="mini-carousel-container">
+                        <div class="mini-carousel-header">
+                            <h3><i data-lucide="leaf"
+                                    style="color: #22c55e; margin-right: 10px; vertical-align: middle;"></i>Smart Garden
+                                Tools</h3>
+                            <div class="carousel-controls">
+                                <button class="ctrl-btn prev-ctrl"><i data-lucide="chevron-left"></i></button>
+                                <button class="ctrl-btn next-ctrl"><i data-lucide="chevron-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="mini-carousel-viewport">
+                            <div class="mini-carousel-track">
+                                <div class="mini-carousel-slide">
+                                    <div class="card-bold-dark card-base">
+                                        <div class="img-box">
+                                            <img src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?q=80&w=800&auto=format&fit=crop"
+                                                alt="Lawn Mower">
+                                        </div>
+                                        <div class="prod-info">
+                                            <div class="title"
+                                                style="font-weight: 700; font-size: 16px; height: 44px; overflow: hidden; margin-bottom: 10px;">
+                                                Battery Powered Robotic Lawn Mower - Smart Sensors</div>
+                                            <div class="price"
+                                                style="font-size: 24px; font-weight: 900; color: #111; margin-bottom: 5px;">
+                                                PKR 68,000</div>
+                                            <div class="supplier-badge"
+                                                style="font-size: 12px; color: #666; display: flex; align-items: center; gap: 6px; margin-bottom: 15px;">
+                                                <i data-lucide="shield-check"
+                                                    style="width: 16px; color: var(--primary);"></i> Agri-Botics Global
+                                            </div>
+                                            <button class="source-btn">Source Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mini-carousel-slide">
+                                    <div class="card-bold-dark card-base">
+                                        <div class="img-box">
+                                            <img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?q=80&w=800&auto=format&fit=crop"
+                                                alt="Garden Lights">
+                                        </div>
+                                        <div class="prod-info">
+                                            <div class="title"
+                                                style="font-weight: 700; font-size: 16px; height: 44px; overflow: hidden; margin-bottom: 10px;">
+                                                Solar Powered Pathway Lights - Waterproof LED</div>
+                                            <div class="price"
+                                                style="font-size: 24px; font-weight: 900; color: #111; margin-bottom: 5px;">
+                                                PKR 4,500</div>
+                                            <div class="supplier-badge"
+                                                style="font-size: 12px; color: #666; display: flex; align-items: center; gap: 6px; margin-bottom: 15px;">
+                                                <i data-lucide="shield-check"
+                                                    style="width: 16px; color: var(--primary);"></i> Eco-Lite Solutions
+                                            </div>
+                                            <button class="source-btn">Source Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
     <footer>
         <div class="container-fluid">
             <div class="footer-links">
@@ -87,7 +709,18 @@
         </div>
     </footer>
 
-    <!-- Mobile Bottom Nav -->
+    <!-- Lightbox & Modal -->
+    <div id="imgLightbox">
+        <button class="close-lightbox" onclick="closeLightbox()">&times;</button>
+        <img src="" alt="Full view" id="lightboxImg">
+    </div>
+
+    <div id="infoModal" class="modal-overlay" onclick="if(event.target==this) closeModal()">
+        <div class="modal-content" id="infoModalInner">
+            <!-- Dynamic content -->
+        </div>
+    </div>
+
     <div class="mobile-bottom-nav">
         <a href="index.html" class="mobile-nav-item active">
             <i data-lucide="home"></i>
@@ -111,12 +744,125 @@
         </a>
     </div>
 
-    <script src="script.js"></script>
-    <script>lucide.createIcons();</script>
+    <script>
+        // Modal helpers
+        function closeModal() {
+            document.getElementById('infoModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        function openLightbox(imgSrc) {
+            const lb = document.getElementById('imgLightbox');
+            document.getElementById('lightboxImg').src = imgSrc;
+            lb.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            document.getElementById('imgLightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function attachActionButtons() {
+            document.querySelectorAll('.card-bold-dark, .card-base').forEach(card => {
+                if (card.querySelector('.card-actions')) return;
+                const imgBox = card.querySelector('.img-box');
+                if (!imgBox) return;
+
+                const wrap = document.createElement('div');
+                wrap.className = 'card-actions';
+                wrap.innerHTML = `
+                    <button class="card-action-btn view-btn" aria-label="View detail"><i data-lucide="eye"></i></button>
+                    <button class="card-action-btn like-btn" aria-label="Like"><i data-lucide="heart"></i></button>
+                `;
+                imgBox.appendChild(wrap);
+            });
+            if (window.lucide) lucide.createIcons();
+        }
+
+        attachActionButtons();
+
+        document.addEventListener('click', (e) => {
+            const viewBtn = e.target.closest('.view-btn');
+            const likeBtn = e.target.closest('.like-btn');
+            const imgTarget = e.target.closest('.img-box img');
+            const card = e.target.closest('.card-bold-dark, .card-base');
+
+            if (!card && !imgTarget) return;
+
+            if (likeBtn) {
+                likeBtn.classList.toggle('like-active');
+                return;
+            }
+
+            const title = card?.querySelector('.title')?.innerText || '';
+            const price = card?.querySelector('.price')?.innerText || '';
+            const imgEl = card?.querySelector('img');
+            const img = imgEl ? imgEl.src : (imgTarget ? imgTarget.src : '');
+
+            if (imgTarget) {
+                openLightbox(imgTarget.src);
+                return;
+            }
+
+            if (viewBtn && img) {
+                const url = new URL('product-detail.html', window.location.href);
+                url.searchParams.set('img', img);
+                url.searchParams.set('title', title);
+                url.searchParams.set('price', price);
+                window.location.href = url.toString();
+                return;
+            }
+
+            if (card && !e.target.closest('button')) {
+                const supplier = card.querySelector('.supplier-badge')?.innerText?.trim() || 'Verified Factory';
+                document.getElementById('infoModalInner').innerHTML = `
+            <button onclick="closeModal()" class="modal-close-btn">&times;</button>
+            <div class="detail-grid" style="align-items:center;">
+                <div style="position:relative;">
+                    <img src="${img}" style="width:100%; border-radius:12px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); cursor:pointer;" onclick="openLightbox(this.src)">
+                </div>
+                <div class="detail-info">
+                    <div class="detail-badge">${supplier}</div>
+                    <h2 class="detail-title">${title}</h2>
+                    <p class="detail-price">${price}</p>
+                    <button class="modal-btn-secondary" style="width:100%; padding:20px; font-size:18px;">Contact Supplier</button>
+                </div>
+            </div>
+            `;
+                document.getElementById('infoModal').style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                if (window.lucide) lucide.createIcons();
+            }
+        });
+
+        function initMiniCarousels() {
+            document.querySelectorAll('.mini-carousel-container').forEach(carousel => {
+                const track = carousel.querySelector('.mini-carousel-track');
+                const slides = carousel.querySelectorAll('.mini-carousel-slide');
+                const prev = carousel.querySelector('.prev-ctrl');
+                const next = carousel.querySelector('.next-ctrl');
+                let index = 0;
+
+                function update() {
+                    track.style.transform = `translateX(-${index * 100}%)`;
+                }
+
+                if (prev) prev.onclick = (e) => {
+                    e.stopPropagation();
+                    index = (index > 0) ? index - 1 : slides.length - 1;
+                    update();
+                };
+
+                if (next) next.onclick = (e) => {
+                    e.stopPropagation();
+                    index = (index < slides.length - 1) ? index + 1 : 0;
+                    update();
+                };
+            });
+        }
+        initMiniCarousels();
+
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>
-
-
-
-

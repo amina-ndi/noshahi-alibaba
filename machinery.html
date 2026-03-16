@@ -4,17 +4,662 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Machinery | Noshahibaba.com</title>
+    <title>Machinery & Industrial Equipment | Noshahibaba.com</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background-color: #fff !important;
+        }
+
+        .filter-bar {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 100px;
+            z-index: 100;
+        }
+
+        .filter-links {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .filter-links a {
+            font-weight: 600;
+            color: #555;
+            font-size: 14px;
+            padding: 10px 24px;
+            border-radius: 999px;
+            background: #f5f5f5;
+            border: 1px solid #eee;
+            white-space: nowrap;
+        }
+
+        .filter-links a.active {
+            background-color: var(--primary);
+            color: #000;
+            border-color: var(--primary);
+        }
+
+        /* Machinery specific enhancements */
+        .card-bold-dark.card-base {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-bold-dark.card-base:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-bold-dark .img-box {
+            background: #fdfdfd;
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .card-bold-dark .img-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card-bold-dark:hover .img-box img {
+            transform: scale(1.1) translateY(-10px);
+        }
+
+        .prod-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .source-btn {
+            width: 100%;
+            margin-top: auto;
+            background: var(--primary);
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .source-btn:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .machinery-gradient-bg {
+            background: radial-gradient(circle at 20% 20%, #f1f5f9 0, rgba(241, 245, 249, 0) 28%), radial-gradient(circle at 80% 0%, #fff7ed 0, rgba(255, 247, 237, 0) 30%), #ffffff;
+        }
+
+        .prod-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        /* Card Actions Styling */
+        .card-actions {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 10;
+            opacity: 0;
+            transform: translateX(10px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card-bold-dark:hover .card-actions,
+        .card-base:hover .card-actions {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .card-action-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.2s;
+            color: #333;
+        }
+
+        .card-action-btn:hover {
+            background: var(--primary);
+            color: #000;
+            transform: scale(1.1);
+        }
+
+        .card-action-btn i {
+            width: 18px;
+            height: 18px;
+        }
+
+        .like-active i {
+            fill: #ff4757;
+            color: #ff4757;
+        }
+
+        .industrial-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #1e293b;
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+
+        @media (max-width: 1200px) {
+            .prod-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .prod-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .prod-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .filter-bar {
+                top: 70px;
+            }
+        }
+
+        .agri-carousel-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .mini-carousel-container {
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid #eee;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+            overflow: hidden;
+        }
+
+        .mini-carousel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .mini-carousel-header h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin: 0;
+            color: #1e293b;
+        }
+
+        .carousel-controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .ctrl-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #334155;
+        }
+
+        .ctrl-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #000;
+        }
+
+        .mini-carousel-viewport {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .mini-carousel-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .mini-carousel-slide {
+            flex: 0 0 100%;
+        }
+
+        @media (max-width: 900px) {
+            .agri-carousel-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
-            <!-- Footer -->
+    <div class="top-bar">
+        <div class="container container-flex">
+            <div class="top-bar-left">
+                <span>Heavy Industry Solutions | Direct Factory Sourcing</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="helpcenter.html">Help Center</a>
+                <a href="regional-settings.html">Ship to: <img src="https://flagcdn.com/w20/pk.png" width="16" alt="PK">
+                    PKR</a>
+                <a href="regional-settings.html">Language: EN</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header sticky-header">
+        <div class="container">
+            <div class="header-top-row">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                    </a>
+                </div>
+                <div class="search-container">
+                    <div class="search-box">
+                        <div class="search-type">Machinery <i data-lucide="chevron-down"></i></div>
+                        <input type="text" placeholder="Search CNC Machines, Excavators, Generators...">
+                        <button class="search-btn"><i data-lucide="search"></i> <span>Search</span></button>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign In</span></a>
+                    <a href="messages.html" class="action-item"><i
+                            data-lucide="message-square"></i><span>Messages</span></a>
+                    <a href="cart.html" class="action-item"><i data-lucide="shopping-cart"></i><span>Cart</span></a>
+                </div>
+            </div>
+
+            <div class="header-nav-row">
+                <div class="all-categories" id="all-categories-btn">
+                    <i data-lucide="menu"></i> All categories
+                </div>
+                <div class="nav-links">
+                    <a href="index.html"><i data-lucide="home"></i> Home</a>
+                    <a href="featured.html">Featured selections</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="filter-bar">
+        <div class="container">
+            <div class="filter-links">
+                <a href="featured.html">All Categories</a>
+                <a href="consumer-electronics.html">Consumer Electronics</a>
+                <a href="laptops-pcs.html">Laptops & PCs</a>
+                <a href="gaming-laptops.html">Gaming Laptops</a>
+                <a href="apparel.html">Apparel & Fashion</a>
+                <a href="home-garden.html">Home & Garden</a>
+                <a href="machinery.html" class="active">Machinery</a>
+                <a href="beauty.html">Beauty & Personal Care</a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Heavy Machinery Section -->
+        <section id="heavy" class="machinery-gradient-bg" style="padding: 80px 0;">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <h1 style="font-size: 42px; font-weight: 900; margin-bottom: 10px;">Heavy Duty Industrial Machinery
+                    </h1>
+                    <p style="color: #64748b; font-size: 18px; margin-bottom: 40px;">Global standard engineering for
+                        large-scale operations.</p>
+                </div>
+                <div class="prod-grid">
+                    <!-- Product 1 -->
+                    <div class="card-bold-dark card-base">
+                        <div class="img-box">
+                            <div class="industrial-badge">Verified Factory</div>
+                            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=800&auto=format&fit=crop"
+                                alt="Industrial Robot">
+                        </div>
+                        <div class="prod-info">
+                            <div class="title"
+                                style="font-weight: 700; font-size: 16px; height: 44px; overflow: hidden; margin-bottom: 10px;">
+                                3D Robotic Arm - Precision Assembly Series</div>
+                            <div class="price"
+                                style="font-size: 24px; font-weight: 900; color: #111; margin-bottom: 5px;">PKR
+                                8,500,000</div>
+                            <div class="supplier-badge"
+                                style="font-size: 12px; color: #666; display: flex; align-items: center; gap: 6px; margin-bottom: 15px;">
+                                <i data-lucide="shield-check" style="width: 16px; color: #FFCC00;"></i> Diamond
+                                Engineering Works
+                            </div>
+                            <button class="source-btn">Source Now</button>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="card-bold-dark card-base">
+                        <div class="img-box">
+                            <div class="industrial-badge">Bulk Supply</div>
+                            <img src="https://images.unsplash.com/photo-1541888941295-1e3bc2444b03?q=80&w=800&auto=format&fit=crop"
+                                alt="CNC Machine">
+                        </div>
+                        <div class="prod-info">
+                            <div class="title"
+                                style="font-weight: 700; font-size: 16px; height: 44px; overflow: hidden; margin-bottom: 10px;">
+                                Professional CNC Milling Center - 3D Precision Gear</div>
+                            <div class="price"
+                                style="font-size: 24px; font-weight: 900; color: #111; margin-bottom: 5px;">PKR
+                                4,850,000</div>
+                            <div class="supplier-badge"
+                                style="font-size: 12px; color: #666; display: flex; align-items: center; gap: 6px; margin-bottom: 15px;">
+                                <i data-lucide="shield-check" style="width: 16px; color: #FFCC00;"></i>
+                                Precision Tech Solutions
+                            </div>
+                            <button class="source-btn">Source Now</button>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="card-bold-dark card-base">
+                        <div class="img-box">
+                            <img src="https://images.unsplash.com/photo-1504328156602-ff14472296aa?q=80&w=800&auto=format&fit=crop"
+                                alt="Generator">
+                        </div>
+                        <div class="prod-info">
+                            <div class="title"
+                                style="font-weight: 700; font-size: 16px; height: 44px; overflow: hidden; margin-bottom: 10px;">
+                                3D Industrial Generator - Smart Load Sourcing</div>
+                            <div class="price"
+                                style="font-size: 24px; font-weight: 900; color: #111; margin-bottom: 5px;">PKR
+                                2,200,000</div>
+                            <div class="supplier-badge"
+                                style="font-size: 12px; color: #666; display: flex; align-items: center; gap: 6px; margin-bottom: 15px;">
+                                <i data-lucide="shield-check" style="width: 16px; color: #FFCC00;"></i> Eco-Power
+                                Systems
+                            </div>
+                            <button class="source-btn">Source Now</button>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="card-bold-dark card-base">
+                        <div class="img-box">
+                            <img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?q=80&w=800&auto=format&fit=crop"
+                                alt="Turbine">
+                        </div>
+                        <div class="prod-info">
+                            <div class="title"
+                                style="font-weight: 700; font-size: 16px; height: 44px; overflow: hidden; margin-bottom: 10px;">
+                                3D Wind Turbine Unit - Clean Energy Hub</div>
+                            <div class="price"
+                                style="font-size: 24px; font-weight: 900; color: #111; margin-bottom: 5px;">PKR
+                                5,450,000</div>
+                            <div class="supplier-badge"
+                                style="font-size: 12px; color: #666; display: flex; align-items: center; gap: 6px; margin-bottom: 15px;">
+                                <i data-lucide="shield-check" style="width: 16px; color: #FFCC00;"></i> SkyGreen Energy
+                            </div>
+                            <button class="source-btn">Source Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Construction & Infrastructure -->
+        <section id="construction" style="padding: 80px 0;">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title" style="border-left: 5px solid #f97316; padding-left: 20px;">Construction &
+                        Building Tech</h2>
+                </div>
+                <div class="prod-grid">
+                    <div class="card-bold-dark card-base">
+                        <div class="img-box"><img
+                                src="https://images.unsplash.com/photo-1534433363143-6af52093077e?q=80&w=800&auto=format&fit=crop"
+                                alt="Cement Mixer"></div>
+                        <div class="prod-info" style="padding: 20px;">
+                            <div class="title">Portable Concrete Mixer Machine - Industrial Pump System</div>
+                            <div class="price">PKR 345,000</div>
+                            <button class="source-btn"
+                                style="width: 100%; margin-top: 15px; background: var(--primary); border: none; padding: 12px; border-radius: 8px; font-weight: 800;">Source
+                                Now</button>
+                        </div>
+                    </div>
+                    <div class="card-bold-dark card-base">
+                        <div class="img-box"><img
+                                src="https://images.unsplash.com/photo-1589939705384-5185138a047a?q=80&w=800&auto=format&fit=crop"
+                                alt="Forklift"></div>
+                        <div class="prod-info" style="padding: 20px;">
+                            <div class="title">Electric Forklift Truck - 3 Ton Lifting Capacity</div>
+                            <div class="price">PKR 1,280,000</div>
+                            <button class="source-btn"
+                                style="width: 100%; margin-top: 15px; background: var(--primary); border: none; padding: 12px; border-radius: 8px; font-weight: 800;">Source
+                                Now</button>
+                        </div>
+                    </div>
+                    <div class="card-bold-dark card-base">
+                        <div class="img-box"><img
+                                src="https://images.unsplash.com/photo-1504917595217-d4dc5f639c4a?q=80&w=800&auto=format&fit=crop"
+                                alt="Drill"></div>
+                        <div class="prod-info" style="padding: 20px;">
+                            <div class="title">Borehole Drilling Rig - High Depth Water Sourcing</div>
+                            <div class="price">PKR 2,150,000</div>
+                            <button class="source-btn"
+                                style="width: 100%; margin-top: 15px; background: var(--primary); border: none; padding: 12px; border-radius: 8px; font-weight: 800;">Source
+                                Now</button>
+                        </div>
+                    </div>
+                    <div class="card-bold-dark card-base">
+                        <div class="img-box"><img
+                                src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=800&auto=format&fit=crop"
+                                alt="Machinery Parts"></div>
+                        <div class="prod-info" style="padding: 20px;">
+                            <div class="title">Wholesale Industrial Spare Parts - Custom Forging</div>
+                            <div class="price">PKR 15,000 / batch</div>
+                            <button class="source-btn"
+                                style="width: 100%; margin-top: 15px; background: var(--primary); border: none; padding: 12px; border-radius: 8px; font-weight: 800;">Source
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agricultural Machines -->
+        <section id="agri" class="machinery-gradient-bg" style="padding: 100px 0;">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">Smart Agricultural Farm Machinery</h2>
+                    <p style="color: #64748b; margin-top: 10px;">Future-ready farming equipment for global efficiency.
+                    </p>
+                </div>
+
+                <div class="agri-carousel-row">
+                    <!-- Carousel 1: Trending Tractors -->
+                    <div class="mini-carousel-container">
+                        <div class="mini-carousel-header">
+                            <h3><i data-lucide="tractor"
+                                    style="color: #16a34a; margin-right: 10px; vertical-align: middle;"></i>Trending
+                                Tractors</h3>
+                            <div class="carousel-controls">
+                                <button class="ctrl-btn prev-ctrl"><i data-lucide="chevron-left"></i></button>
+                                <button class="ctrl-btn next-ctrl"><i data-lucide="chevron-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="mini-carousel-viewport">
+                            <div class="mini-carousel-track">
+                                <!-- Slide 1 -->
+                                <div class="mini-carousel-slide">
+                                    <div class="card-bold-dark card-base">
+                                        <div class="img-box">
+                                            <div class="industrial-badge">Most Popular</div>
+                                            <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=800&auto=format&fit=crop"
+                                                alt="Tractor">
+                                        </div>
+                                        <div class="prod-info">
+                                            <div class="title"
+                                                style="font-weight: 700; font-size: 16px; height: 44px; overflow: hidden; margin-bottom: 10px;">
+                                                4WD Multi-Functional Farm Tractor - 120HP Series</div>
+                                            <div class="price"
+                                                style="font-size: 24px; font-weight: 900; color: #111; margin-bottom: 5px;">
+                                                PKR 3,500,000</div>
+                                            <div class="supplier-badge"
+                                                style="font-size: 12px; color: #666; display: flex; align-items: center; gap: 6px; margin-bottom: 15px;">
+                                                <i data-lucide="shield-check"
+                                                    style="width: 16px; color: var(--primary);"></i> Agri-Master Global
+                                            </div>
+                                            <button class="source-btn">Source Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Slide 2 -->
+                                <div class="mini-carousel-slide">
+                                    <div class="card-bold-dark card-base">
+                                        <div class="img-box">
+                                            <div class="industrial-badge">New Arrival</div>
+                                            <img src="https://images.unsplash.com/photo-1595133282136-e822998ae38f?q=80&w=800&auto=format&fit=crop"
+                                                alt="Harvester">
+                                        </div>
+                                        <div class="prod-info">
+                                            <div class="title"
+                                                style="font-weight: 700; font-size: 16px; height: 44px; overflow: hidden; margin-bottom: 10px;">
+                                                Automatic Grain Combine Harvester - High Efficiency</div>
+                                            <div class="price"
+                                                style="font-size: 24px; font-weight: 900; color: #111; margin-bottom: 5px;">
+                                                PKR 5,800,000</div>
+                                            <div class="supplier-badge"
+                                                style="font-size: 12px; color: #666; display: flex; align-items: center; gap: 6px; margin-bottom: 15px;">
+                                                <i data-lucide="shield-check"
+                                                    style="width: 16px; color: var(--primary);"></i> FarmTech Industries
+                                            </div>
+                                            <button class="source-btn">Source Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carousel 2: Irrigation & Tools -->
+                    <div class="mini-carousel-container">
+                        <div class="mini-carousel-header">
+                            <h3><i data-lucide="droplet"
+                                    style="color: #2563eb; margin-right: 10px; vertical-align: middle;"></i>Irrigation &
+                                Tools</h3>
+                            <div class="carousel-controls">
+                                <button class="ctrl-btn prev-ctrl"><i data-lucide="chevron-left"></i></button>
+                                <button class="ctrl-btn next-ctrl"><i data-lucide="chevron-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="mini-carousel-viewport">
+                            <div class="mini-carousel-track">
+                                <!-- Slide 1 -->
+                                <div class="mini-carousel-slide">
+                                    <div class="card-bold-dark card-base">
+                                        <div class="img-box">
+                                            <img src="https://images.unsplash.com/photo-1594498257600-ebb8a190e9d2?q=80&w=800&auto=format&fit=crop"
+                                                alt="Irrigation">
+                                        </div>
+                                        <div class="prod-info">
+                                            <div class="title"
+                                                style="font-weight: 700; font-size: 16px; height: 44px; overflow: hidden; margin-bottom: 10px;">
+                                                Smart Pivot Irrigation System - Automated Water Control</div>
+                                            <div class="price"
+                                                style="font-size: 24px; font-weight: 900; color: #111; margin-bottom: 5px;">
+                                                PKR 1,200,000</div>
+                                            <div class="supplier-badge"
+                                                style="font-size: 12px; color: #666; display: flex; align-items: center; gap: 6px; margin-bottom: 15px;">
+                                                <i data-lucide="shield-check"
+                                                    style="width: 16px; color: var(--primary);"></i> Aqua-Green Tech
+                                            </div>
+                                            <button class="source-btn">Source Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Slide 2 -->
+                                <div class="mini-carousel-slide">
+                                    <div class="card-bold-dark card-base">
+                                        <div class="img-box">
+                                            <img src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?q=80&w=800&auto=format&fit=crop"
+                                                alt="Drone">
+                                        </div>
+                                        <div class="prod-info">
+                                            <div class="title"
+                                                style="font-weight: 700; font-size: 16px; height: 44px; overflow: hidden; margin-bottom: 10px;">
+                                                Agricultural Spraying Drone - 20L Tank Autopilot</div>
+                                            <div class="price"
+                                                style="font-size: 24px; font-weight: 900; color: #111; margin-bottom: 5px;">
+                                                PKR 450,000</div>
+                                            <div class="supplier-badge"
+                                                style="font-size: 12px; color: #666; display: flex; align-items: center; gap: 6px; margin-bottom: 15px;">
+                                                <i data-lucide="shield-check"
+                                                    style="width: 16px; color: var(--primary);"></i> SkyFarm Robotics
+                                            </div>
+                                            <button class="source-btn">Source Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
     <footer>
         <div class="container-fluid">
             <div class="footer-links">
@@ -87,7 +732,18 @@
         </div>
     </footer>
 
-    <!-- Mobile Bottom Nav -->
+    <!-- Lightbox & Modal -->
+    <div id="imgLightbox">
+        <button class="close-lightbox" onclick="closeLightbox()">&times;</button>
+        <img src="" alt="Full view" id="lightboxImg">
+    </div>
+
+    <div id="infoModal" class="modal-overlay" onclick="if(event.target==this) closeModal()">
+        <div class="modal-content" id="infoModalInner">
+            <!-- Dynamic content -->
+        </div>
+    </div>
+
     <div class="mobile-bottom-nav">
         <a href="index.html" class="mobile-nav-item active">
             <i data-lucide="home"></i>
@@ -111,12 +767,125 @@
         </a>
     </div>
 
-    <script src="script.js"></script>
-    <script>lucide.createIcons();</script>
+    <script>
+        // Modal helpers
+        function closeModal() {
+            document.getElementById('infoModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        function openLightbox(imgSrc) {
+            const lb = document.getElementById('imgLightbox');
+            document.getElementById('lightboxImg').src = imgSrc;
+            lb.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            document.getElementById('imgLightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function attachActionButtons() {
+            document.querySelectorAll('.card-bold-dark, .card-base').forEach(card => {
+                if (card.querySelector('.card-actions')) return;
+                const imgBox = card.querySelector('.img-box');
+                if (!imgBox) return;
+
+                const wrap = document.createElement('div');
+                wrap.className = 'card-actions';
+                wrap.innerHTML = `
+                    <button class="card-action-btn view-btn" aria-label="View detail"><i data-lucide="eye"></i></button>
+                    <button class="card-action-btn like-btn" aria-label="Like"><i data-lucide="heart"></i></button>
+                `;
+                imgBox.appendChild(wrap);
+            });
+            if (window.lucide) lucide.createIcons();
+        }
+
+        attachActionButtons();
+
+        document.addEventListener('click', (e) => {
+            const viewBtn = e.target.closest('.view-btn');
+            const likeBtn = e.target.closest('.like-btn');
+            const imgTarget = e.target.closest('.img-box img');
+            const card = e.target.closest('.card-bold-dark, .card-base');
+
+            if (!card && !imgTarget) return;
+
+            if (likeBtn) {
+                likeBtn.classList.toggle('like-active');
+                return;
+            }
+
+            const title = card?.querySelector('.title')?.innerText || '';
+            const price = card?.querySelector('.price')?.innerText || '';
+            const imgEl = card?.querySelector('img');
+            const img = imgEl ? imgEl.src : (imgTarget ? imgTarget.src : '');
+
+            if (imgTarget) {
+                openLightbox(imgTarget.src);
+                return;
+            }
+
+            if (viewBtn && img) {
+                const url = new URL('product-detail.html', window.location.href);
+                url.searchParams.set('img', img);
+                url.searchParams.set('title', title);
+                url.searchParams.set('price', price);
+                window.location.href = url.toString();
+                return;
+            }
+
+            if (card && !e.target.closest('button')) {
+                const supplier = card.querySelector('.supplier-badge')?.innerText?.trim() || 'Verified Factory';
+                document.getElementById('infoModalInner').innerHTML = `
+            <button onclick="closeModal()" class="modal-close-btn">&times;</button>
+            <div class="detail-grid" style="align-items:center;">
+                <div style="position:relative;">
+                    <img src="${img}" style="width:100%; border-radius:12px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); cursor:pointer;" onclick="openLightbox(this.src)">
+                </div>
+                <div class="detail-info">
+                    <div class="detail-badge">${supplier}</div>
+                    <h2 class="detail-title">${title}</h2>
+                    <p class="detail-price">${price}</p>
+                    <button class="modal-btn-secondary" style="width:100%; padding:20px; font-size:18px;">Request Quote</button>
+                </div>
+            </div>
+            `;
+                document.getElementById('infoModal').style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                if (window.lucide) lucide.createIcons();
+            }
+        });
+
+        function initMiniCarousels() {
+            document.querySelectorAll('.mini-carousel-container').forEach(carousel => {
+                const track = carousel.querySelector('.mini-carousel-track');
+                const slides = carousel.querySelectorAll('.mini-carousel-slide');
+                const prev = carousel.querySelector('.prev-ctrl');
+                const next = carousel.querySelector('.next-ctrl');
+                let index = 0;
+
+                function update() {
+                    track.style.transform = `translateX(-${index * 100}%)`;
+                }
+
+                prev.onclick = (e) => {
+                    e.stopPropagation();
+                    index = (index > 0) ? index - 1 : slides.length - 1;
+                    update();
+                };
+
+                next.onclick = (e) => {
+                    e.stopPropagation();
+                    index = (index < slides.length - 1) ? index + 1 : 0;
+                    update();
+                };
+            });
+        }
+        initMiniCarousels();
+
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>
-
-
-
-
