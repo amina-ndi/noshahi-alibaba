@@ -3177,3 +3177,224 @@ footer .container {
   object-fit: cover !important;
   padding: 0 !important;
 }
+
+/* --- Product Detail Modal & Responsive Grid --- */
+.info-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.info-modal-inner {
+  background: #fff;
+  width: 100%;
+  max-width: 1150px;
+  padding: 40px;
+  border-radius: 35px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  border: none;
+  background: #f1f5f9;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 30px;
+  cursor: pointer;
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  z-index: 100;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.gallery-img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}
+
+.detail-info {
+  padding-top: 10px;
+}
+
+.detail-badge {
+  background: #f8fafc;
+  color: #64748b;
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 13px;
+  width: fit-content;
+  margin-bottom: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.detail-title {
+  font-size: 36px;
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.detail-price {
+  font-size: 30px;
+  font-weight: 900;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.detail-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: #475569;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.detail-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #475569;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.detail-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* Mobile Responsiveness for Modal Content */
+@media (max-width: 992px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .info-modal-inner {
+    padding: 40px 20px 20px;
+    border-radius: 25px;
+  }
+
+  .detail-title {
+    font-size: 28px;
+  }
+
+  .detail-price {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-close-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+/* Modal Internal Enhancements */
+.modal-btn-primary {
+  padding: 14px;
+  background: #FFCC00;
+  color: #0f172a;
+  border: none;
+  border-radius: 12px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Outfit', sans-serif;
+}
+
+.modal-btn-primary:hover {
+  background: #000;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.modal-btn-secondary {
+  padding: 14px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Outfit', sans-serif;
+}
+
+.modal-btn-secondary:hover {
+  background: #FFCC00;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+.detail-feature-item {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  color: #475569;
+  font-weight: 600;
+}
+
+.detail-feature-item i {
+  flex-shrink: 0;
+}
+
+.gallery-grid img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}

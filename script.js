@@ -315,16 +315,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.openPremiumModal = function (imgSrc, title, price) {
-        const modal = document.getElementById('globalPremiumModal');
-        if (!modal) return;
+        const url = new URL('product-detail.html', window.location.href);
+        url.searchParams.set('img', imgSrc);
+        url.searchParams.set('title', title);
+        url.searchParams.set('price', price);
+        window.location.href = url.toString();
+    };
 
-        document.getElementById('pmImage').src = imgSrc;
-        document.getElementById('pmTitle').innerText = title;
-        document.getElementById('pmPrice').innerText = price;
-
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        lucide.createIcons();
+    window.quickView = function (title) {
+        // Handled by card event listener bubbling, just preventing errors
     };
 
     function initPremiumCards() {
