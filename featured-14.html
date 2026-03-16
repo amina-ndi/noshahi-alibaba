@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -80,7 +80,7 @@
         .filter-bar {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(20px);
-            padding: 15px 0;
+            padding: 0 0;
             border-bottom: 1px solid #eee;
             position: sticky;
             top: 124px;
@@ -124,7 +124,7 @@
             background-color: var(--primary);
             color: #000;
             border-color: var(--primary);
-            transform: translateY(-2px);
+            
             box-shadow: 0 8px 20px rgba(255, 204, 0, 0.25);
         }
 
@@ -154,63 +154,6 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             perspective: 1000px;
-        }
-
-        .featured-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid #f0f0f0;
-            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            transform-style: preserve-3d;
-        }
-
-        .featured-card:hover {
-            transform: translateY(-8px) rotateX(4deg) rotateY(-2deg);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary);
-        }
-
-        .img-container {
-            height: 220px;
-            background: #fff;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .img-container img {
-            max-width: 80%;
-            max-height: 80%;
-            object-fit: contain;
-            transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.1));
-            animation: float3D 6s ease-in-out infinite;
-            transform: translateZ(20px);
-        }
-
-        @keyframes float3D {
-
-            0%,
-            100% {
-                transform: translateZ(20px) translateY(0);
-            }
-
-            50% {
-                transform: translateZ(40px) translateY(-10px) rotate(2deg);
-            }
-        }
-
-        .featured-card:hover .img-container img {
-            transform: scale(1.15) translateZ(60px) rotate(-3deg);
-            filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.2));
-            animation-play-state: paused;
         }
 
         .rank-badge {
@@ -274,75 +217,6 @@
             stroke: #ff4757;
         }
 
-        .qv-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(8px);
-            z-index: 9999;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .qv-modal.active {
-            display: flex;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .qv-content {
-            background: white;
-            width: 100%;
-            max-width: 900px;
-            border-radius: 24px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            overflow: hidden;
-            position: relative;
-            animation: slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .qv-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
-            background: #f1f5f9;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 10;
-            transition: all 0.2s;
-        }
-
-        .qv-close:hover {
-            background: #e2e8f0;
-            transform: rotate(90deg);
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-
             to {
                 transform: translateY(0);
                 opacity: 1;
@@ -357,147 +231,17 @@
             }
         }
 
-        .card-body {
-            padding: 18px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
+        
 
-        .card-body h3 {
-            font-size: 15px;
-            font-weight: 600;
-            line-height: 1.4;
-            height: 42px;
-            overflow: hidden;
-            margin-bottom: 10px;
-            color: #111;
-            transition: color 0.3s;
-        }
+        
 
-        .featured-card:hover .card-body h3 {
-            color: var(--primary-hover);
-        }
+        
 
-        .price-row {
-            margin-bottom: 5px;
-            display: flex;
-            align-items: baseline;
-            gap: 8px;
-        }
+        
 
-        .price-val {
-            font-size: 24px;
-            font-weight: 800;
-            color: #000;
-        }
+        
 
-        .moq-val {
-            font-size: 14px;
-            color: #888;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .source-now-btn {
-            width: 100%;
-            padding: 12px;
-            background: #000;
-            color: #fff;
-            border: none;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-
-        .source-now-btn:hover {
-            background: var(--primary);
-            color: #000;
-            box-shadow: 0 10px 20px rgba(255, 204, 0, 0.2);
-        }
-
-        .supplier-row {
-            margin-top: auto;
-            border-top: 1px solid #f5f5f5;
-            padding-top: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .supplier-meta {
-            font-size: 13px;
-            color: #666;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .supplier-country {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-weight: 600;
-        }
-
-        .verified-pro {
-            color: #4CAF50;
-            font-weight: 800;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            background: #f1f8f1;
-            padding: 5px 10px;
-            border-radius: 8px;
-            border: 1px solid rgba(76, 175, 80, 0.1);
-        }
-
-        .pagination {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            padding: 80px 0;
-        }
-
-        .pg-btn {
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #eee;
-            border-radius: 12px;
-            background: white;
-            cursor: pointer;
-            font-weight: 700;
-            color: #333;
-            transition: all 0.3s;
-        }
-
-        .pg-btn.active {
-            background: var(--primary);
-            color: #000;
-            border-color: var(--primary);
-            box-shadow: 0 8px 20px rgba(255, 204, 0, 0.3);
-        }
-
-        .pg-btn:hover:not(.active) {
-            border-color: var(--primary);
-            color: var(--primary);
-            transform: translateY(-5px);
-        }
+        
 
         @media (max-width: 1200px) {
             .product-grid {
@@ -536,11 +280,11 @@
             .img-container {
                 height: 200px;
                 /* Reduced from 280px */
-                padding: 15px;
+                padding: 0;
             }
 
             .card-body {
-                padding: 16px;
+                padding: 0;
             }
 
             .card-body h3 {
@@ -554,7 +298,7 @@
             }
 
             .source-now-btn {
-                padding: 10px;
+                padding: 0;
                 /* Smaller button */
                 font-size: 13px;
                 border-radius: 10px;
@@ -571,8 +315,12 @@
 <body>
     <header class="main-header sticky-header">
         <div class="container">
+            <!-- First Row: Logo, Search, Actions -->
             <div class="header-top-row">
-                <div class="logo"><a href="index.html"><span class="logo-text">Noshahi<span>baba</span>.com</span></a>
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                    </a>
                 </div>
                 <div class="search-container">
                     <div class="search-box">
@@ -582,35 +330,32 @@
                     </div>
                 </div>
                 <div class="header-actions">
-                    <a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign In</span></a>
-                    <a href="messages.html" class="action-item"><i
-                            data-lucide="message-square"></i><span>Messages</span></a>
-                    <a href="cart.html" class="action-item"><i data-lucide="shopping-cart"></i><span>Cart</span></a>
+                    <a href="signin.html" class="action-item"><i data-lucide="user"></i><span>Sign In</span></a><a
+                        href="messages.html" class="action-item"><i
+                            data-lucide="message-square"></i><span>Messages</span></a><a href="cart.html"
+                        class="action-item"><i data-lucide="shopping-cart"></i><span>Cart</span></a>
                 </div>
             </div>
+
+            <!-- Second Row: Attached Navigation -->
             <div class="header-nav-row">
-                <div class="all-categories" id="all-categories-btn"><i data-lucide="menu"></i> All categories</div>
-                <div class="nav-links">
-                    <a href="index.html"><i data-lucide="home"></i> Home</a>
-                    <a href="featured.html" class="active">Featured selections</a>
-                    <a href="tradeassurance.html">Trade Assurance</a>
-                    <a href="buyer-central.html">Buyer Central</a>
-                    <a href="helpcenter.html">Help Center</a>
+                <div class="all-categories" id="all-categories-btn">
+                    <i data-lucide="menu"></i> All categories
                 </div>
+                <div class="nav-links">
+                    <a href="index.html" class="active"><i data-lucide="home"></i> Home</a>
+                    <a href="featured.html">Featured selections</a>
+                </div>
+
             </div>
         </div>
     </header>
-    <section class="featured-hero">
-        <div class="container featured-header">
-            <h1>Featured <span>Selections</span></h1>
-            <p>Premium global innovations and handpicked artisanal exports from our diamond-verified partners.</p>
-        </div>
-    </section>
+    
     <main class="container">
         <div class="featured-grid">
             <div class="product-grid">
                 <!-- Card 1 -->
-                <div class="featured-card">
+                <div class="featured-card card-base">
                     <div class="img-container">
                         <span class="rank-badge">Top Pick</span>
                         <div class="card-actions">
@@ -641,7 +386,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="featured-card">
+                <div class="featured-card card-base">
                     <div class="img-container">
                         <span class="rank-badge">Trending</span>
                         <div class="card-actions">
@@ -672,7 +417,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="featured-card">
+                <div class="featured-card card-base">
                     <div class="img-container">
                         <span class="rank-badge">Gaming</span>
                         <div class="card-actions">
@@ -703,7 +448,7 @@
                 </div>
 
                 <!-- Card 4 -->
-                <div class="featured-card">
+                <div class="featured-card card-base">
                     <div class="img-container">
                         <span class="rank-badge">Smart Home</span>
                         <div class="card-actions">
@@ -734,7 +479,7 @@
                 </div>
 
                 <!-- Card 5 -->
-                <div class="featured-card">
+                <div class="featured-card card-base">
                     <div class="img-container">
                         <span class="rank-badge">Luxury</span>
                         <div class="card-actions">
@@ -765,7 +510,7 @@
                 </div>
 
                 <!-- Card 6 -->
-                <div class="featured-card">
+                <div class="featured-card card-base">
                     <div class="img-container">
                         <span class="rank-badge">Audio</span>
                         <div class="card-actions">
@@ -796,7 +541,7 @@
                 </div>
 
                 <!-- Card 7 -->
-                <div class="featured-card">
+                <div class="featured-card card-base">
                     <div class="img-container">
                         <span class="rank-badge">Lifestyle</span>
                         <div class="card-actions">
@@ -827,7 +572,7 @@
                 </div>
 
                 <!-- Card 8 -->
-                <div class="featured-card">
+                <div class="featured-card card-base">
                     <div class="img-container">
                         <span class="rank-badge">Photography</span>
                         <div class="card-actions">
@@ -858,7 +603,7 @@
                 </div>
 
                 <!-- Card 9 -->
-                <div class="featured-card">
+                <div class="featured-card card-base">
                     <div class="img-container">
                         <span class="rank-badge">Computing</span>
                         <div class="card-actions">
@@ -889,7 +634,7 @@
                 </div>
 
                 <!-- Card 10 -->
-                <div class="featured-card">
+                <div class="featured-card card-base">
                     <div class="img-container">
                         <span class="rank-badge">Innovation</span>
                         <div class="card-actions">
@@ -920,7 +665,7 @@
                 </div>
 
                 <!-- Card 11 -->
-                <div class="featured-card">
+                <div class="featured-card card-base">
                     <div class="img-container">
                         <span class="rank-badge">Design</span>
                         <div class="card-actions">
@@ -951,7 +696,7 @@
                 </div>
 
                 <!-- Card 12 -->
-                <div class="featured-card">
+                <div class="featured-card card-base">
                     <div class="img-container">
                         <span class="rank-badge">Office</span>
                         <div class="card-actions">
@@ -982,7 +727,7 @@
                 </div>
 
                 <!-- Card 13 -->
-                <div class="featured-card">
+                <div class="featured-card card-base">
                     <div class="img-container">
                         <span class="rank-badge">Gourmet</span>
                         <div class="card-actions">
@@ -1013,7 +758,7 @@
                 </div>
 
                 <!-- Card 14 -->
-                <div class="featured-card">
+                <div class="featured-card card-base">
                     <div class="img-container">
                         <span class="rank-badge">Security</span>
                         <div class="card-actions">
@@ -1044,7 +789,7 @@
                 </div>
 
                 <!-- Card 15 -->
-                <div class="featured-card">
+                <div class="featured-card card-base">
                     <div class="img-container">
                         <span class="rank-badge">Storage</span>
                         <div class="card-actions">
@@ -1075,7 +820,7 @@
                 </div>
 
                 <!-- Card 16 -->
-                <div class="featured-card">
+                <div class="featured-card card-base">
                     <div class="img-container">
                         <span class="rank-badge">Smart Health</span>
                         <div class="card-actions">
@@ -1106,7 +851,7 @@
                 </div>
 
                 <!-- Card 17 -->
-                <div class="featured-card">
+                <div class="featured-card card-base">
                     <div class="img-container">
                         <span class="rank-badge">Home Care</span>
                         <div class="card-actions">
@@ -1137,7 +882,7 @@
                 </div>
 
                 <!-- Card 18 -->
-                <div class="featured-card">
+                <div class="featured-card card-base">
                     <div class="img-container">
                         <span class="rank-badge">Eco Energy</span>
                         <div class="card-actions">
@@ -1168,7 +913,7 @@
                 </div>
 
                 <!-- Card 19 -->
-                <div class="featured-card">
+                <div class="featured-card card-base">
                     <div class="img-container">
                         <span class="rank-badge">Kitchen Tech</span>
                         <div class="card-actions">
@@ -1198,13 +943,7 @@
                     </div>
                 </div>
             </div>
-            <div class="pagination">
-                <a href="featured-13.html" class="pg-btn"><i data-lucide="chevron-left"></i></a>
-                <a href="featured.html" class="pg-btn">1</a>
-                <a href="featured-13.html" class="pg-btn">13</a>
-                <a href="featured-14.html" class="pg-btn active">14</a>
-                <a href="#" class="pg-btn"><i data-lucide="chevron-right"></i></a>
-            </div>
+            
         </div>
     </main>
     <footer style="background: #000; color: #fff; padding: 60px 0; text-align: center;">
@@ -1213,61 +952,12 @@
         </div>
     </footer>
     <!-- Quick View Modal -->
-    <div class="qv-modal" id="quickViewModal">
-        <div class="qv-content">
-            <div class="qv-close" onclick="closeQuickView()"><i data-lucide="x"></i></div>
-            <div
-                style="background: #f8fafc; display: flex; align-items: center; justify-content: center; padding: 30px;">
-                <img id="qvImage" src="" alt="Product" style="max-width: 90%; max-height: 350px; object-fit: contain;">
-            </div>
-            <div style="padding: 30px; display: flex; flex-direction: column; gap: 15px;">
-                <h2 id="qvTitle" style="font-size: 24px; color: #111;"></h2>
-                <div style="font-size: 28px; font-weight: 800; color: #000;" id="qvPrice"></div>
-                <div style="color: #64748b; font-size: 14px;" id="qvMoq"></div>
-                <a href="shop-now.html" class="source-now-btn" style="margin-top: auto;">Inquiry Now</a>
-            </div>
+        
         </div>
     </div>
 
     <script src="script.js"></script>
-    <script>
-        function initIcons() { if (window.lucide) { lucide.createIcons(); } }
-        document.addEventListener('DOMContentLoaded', initIcons);
-        window.addEventListener('load', initIcons);
-
-        // Wishlist Toggle
-        document.querySelectorAll('.wishlist-btn').forEach(btn => {
-            btn.addEventListener('click', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                this.classList.toggle('active');
-            });
-        });
-
-        // Quick View Logic
-        const modal = document.getElementById('quickViewModal');
-        document.querySelectorAll('.quick-view-btn').forEach(btn => {
-            btn.addEventListener('click', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                const card = this.closest('.featured-card');
-                document.getElementById('qvImage').src = card.querySelector('.img-container img').src;
-                document.getElementById('qvTitle').innerText = card.querySelector('h3').innerText;
-                document.getElementById('qvPrice').innerText = card.querySelector('.price-val').innerText;
-                document.getElementById('qvMoq').innerText = card.querySelector('.moq-val')?.innerText || 'MOQ: 1 Unit';
-                modal.classList.add('active');
-                if (window.lucide) lucide.createIcons();
-            });
-        });
-
-        function closeQuickView() {
-            modal.classList.remove('active');
-        }
-
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeQuickView();
-        });
-    </script>
 </body>
 
 </html>
+

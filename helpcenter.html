@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -70,7 +70,7 @@
         .hc-search-box {
             background: white;
             border-radius: 16px;
-            padding: 8px;
+            padding: 0;
             display: flex;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
@@ -127,7 +127,7 @@
         }
 
         .hc-card:hover {
-            transform: translateY(-10px);
+            
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
             border-color: var(--primary);
         }
@@ -224,7 +224,7 @@
         }
 
         .faq-item.active i {
-            transform: rotate(180deg);
+            
             color: var(--primary-dark);
         }
 
@@ -232,7 +232,7 @@
         .contact-box {
             background: var(--secondary);
             border-radius: 30px;
-            padding: 60px;
+            padding: 0;
             color: white;
             display: flex;
             align-items: center;
@@ -296,7 +296,7 @@
         }
 
         .btn-contact:hover {
-            transform: translateY(-3px);
+            
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
 
@@ -339,7 +339,7 @@
             .contact-box {
                 flex-direction: column;
                 text-align: center;
-                padding: 40px;
+                padding: 0;
             }
 
             .contact-actions {
@@ -353,7 +353,7 @@
             }
 
             .hc-search-box {
-                padding: 5px;
+                padding: 0;
                 flex-direction: column;
                 border-radius: 20px;
             }
@@ -364,7 +364,7 @@
             }
 
             .faq-question {
-                padding: 20px;
+                padding: 0;
                 font-size: 15px;
             }
 
@@ -422,16 +422,10 @@
                     <i data-lucide="menu"></i> All categories
                 </div>
                 <div class="nav-links">
-                    <a href="index.html"><i data-lucide="home"></i> Home</a>
+                    <a href="index.html" class="active"><i data-lucide="home"></i> Home</a>
                     <a href="featured.html">Featured selections</a>
-                    <a href="tradeassurance.html">Trade Assurance</a>
-                    <a href="buyer-central.html">Buyer Central</a>
-                    <a href="helpcenter.html" class="active">Help Center</a>
-                    <a href="getapp.html">Get the app</a>
                 </div>
-                <div class="nav-right">
-                    <a href="#">Become a supplier</a>
-                </div>
+
             </div>
         </div>
     </header>
@@ -561,7 +555,7 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
+        <div class="container-fluid">
             <div class="footer-links">
                 <div class="footer-col">
                     <h4>Get Support</h4>
@@ -620,11 +614,13 @@
                     <a href="terms.html">Terms of Use</a>
                 </div>
                 <div class="social-links">
-                    <a href="#"><i data-lucide="facebook"></i></a>
-                    <a href="#"><i data-lucide="twitter"></i></a>
-                    <a href="#"><i data-lucide="instagram"></i></a>
-                    <a href="#"><i data-lucide="linkedin"></i></a>
-                    <a href="#"><i data-lucide="youtube"></i></a>
+                    <a href="https://facebook.com/noshahibaba" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="https://twitter.com/noshahibaba" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="https://instagram.com/noshahibaba" aria-label="Instagram"><i
+                            data-lucide="instagram"></i></a>
+                    <a href="https://linkedin.com/company/noshahibaba" aria-label="LinkedIn"><i
+                            data-lucide="linkedin"></i></a>
+                    <a href="https://youtube.com/noshahibaba" aria-label="YouTube"><i data-lucide="youtube"></i></a>
                 </div>
             </div>
         </div>
@@ -632,11 +628,26 @@
 
     <!-- Mobile Navigation -->
     <div class="mobile-bottom-nav">
-        <a href="index.html" class="mobile-nav-item"><i data-lucide="home"></i><span>Home</span></a>
-        <a href="#" class="mobile-nav-item"><i data-lucide="layers"></i><span>Categories</span></a>
-        <a href="messages.html" class="mobile-nav-item"><i data-lucide="message-square"></i><span>Messages</span></a>
-        <a href="cart.html" class="mobile-nav-item"><i data-lucide="shopping-cart"></i><span>Cart</span></a>
-        <a href="signin.html" class="mobile-nav-item"><i data-lucide="user"></i><span>Account</span></a>
+        <a href="index.html" class="mobile-nav-item active">
+            <i data-lucide="home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#" class="mobile-nav-item">
+            <i data-lucide="layers"></i>
+            <span>Categories</span>
+        </a>
+        <a href="messages.html" class="mobile-nav-item">
+            <i data-lucide="message-square"></i>
+            <span>Messages</span>
+        </a>
+        <a href="cart.html" class="mobile-nav-item">
+            <i data-lucide="shopping-cart"></i>
+            <span>Cart</span>
+        </a>
+        <a href="signin.html" class="mobile-nav-item">
+            <i data-lucide="user"></i>
+            <span>Account</span>
+        </a>
     </div>
 
     <script>
@@ -663,6 +674,6 @@
             else header.classList.remove('scrolled');
         });
     </script>
-</body>
+<script src="script.js"></script></body>
 
 </html>

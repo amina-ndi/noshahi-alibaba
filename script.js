@@ -259,5 +259,102 @@ document.addEventListener('DOMContentLoaded', () => {
             carousel.addEventListener('mouseleave', () => startAutoPlay());
         }
     }
+    // ---- Global Premium Modal & Card Logic ----
+    function injectGlobalModal() {
+        if (document.getElementById('globalPremiumModal')) return;
+
+        const modalHTML = `
+            <div class="premium-modal" id="globalPremiumModal">
+                <div class="pm-content">
+                    <div class="pm-close" id="closePremiumModal"><i data-lucide="x"></i></div>
+                    <div class="pm-image-side">
+                        <img id="pmImage" src="" alt="Product">
+                    </div>
+                    <div class="pm-info-side">
+                        <span class="pm-badge">Premium Selection</span>
+                        <h2 id="pmTitle" class="pm-title"></h2>
+                        <div id="pmPrice" class="pm-price"></div>
+                        <div style="color: #64748b; font-size: 15px; display: flex; align-items: center; gap: 8px;">
+                            <i data-lucide="truck" style="width: 18px;"></i>
+                            Verified global logistics available
+                        </div>
+                        <hr style="border: none; border-top: 1px solid #f1f5f9;">
+                        <div class="pm-cta">
+                            <a href="shop-now.html" class="pm-btn">Inquire Now</a>
+                            <button class="pm-btn wishlist-btn" style="width: 60px; flex: 0; background: #fff; color: #000; border: 2px solid #e2e8f0;">
+                                <i data-lucide="heart"></i>
+                            </button>
+                        </div>
+                        <div style="margin-top: auto; padding: 15px; background: #f8fafc; border-radius: 12px; display: flex; gap: 10px; align-items: center;">
+                            <i data-lucide="shield-check" style="color: #10b981; width: 20px;"></i>
+                            <span style="font-size: 13px; color: #475569; font-weight: 500;">Noshahi Trade Assurance Protected</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+        lucide.createIcons();
+
+        const modal = document.getElementById('globalPremiumModal');
+        const closeBtn = document.getElementById('closePremiumModal');
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+
+    window.openPremiumModal = function (imgSrc, title, price) {
+        const modal = document.getElementById('globalPremiumModal');
+        if (!modal) return;
+
+        document.getElementById('pmImage').src = imgSrc;
+        document.getElementById('pmTitle').innerText = title;
+        document.getElementById('pmPrice').innerText = price;
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        lucide.createIcons();
+    };
+
+    function initPremiumCards() {
+        const cardSelectors = ['.featured-card', '.clothing-card', '.card-base', '.product-card'];
+
+        document.querySelectorAll(cardSelectors.join(',')).forEach(card => {
+            // Only add if not already handling (to avoid double listeners on index.html etc)
+            if (card.dataset.premiumInit) return;
+            card.dataset.premiumInit = "true";
+
+            card.addEventListener('click', function (e) {
+                if (e.target.closest('.wishlist-btn')) return;
+
+                const imgSrc = this.querySelector('img').src;
+                const title = (this.querySelector('h3') || this.querySelector('.title')).innerText;
+                const priceElement = this.querySelector('.price-val') || this.querySelector('.price');
+                const price = priceElement ? priceElement.innerText : "";
+
+                window.openPremiumModal(imgSrc, title, price);
+            });
+        });
+    }
+
+    injectGlobalModal();
+    initPremiumCards();
+
+    // Re-init on load more or dynamic changes if needed
+    const observer = new MutationObserver(() => {
+        initPremiumCards();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
 
 });

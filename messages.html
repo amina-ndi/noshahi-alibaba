@@ -30,7 +30,7 @@
         }
 
         .sidebar-header {
-            padding: 20px;
+            padding: 0;
             border-bottom: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
@@ -43,7 +43,7 @@
         }
 
         .chat-search-box {
-            padding: 15px;
+            padding: 0;
             border-bottom: 1px solid var(--border-color);
         }
 
@@ -62,7 +62,7 @@
         }
 
         .chat-item {
-            padding: 15px 20px;
+            padding: 0 20px;
             display: flex;
             gap: 15px;
             cursor: pointer;
@@ -149,7 +149,7 @@
         }
 
         .chat-window-header {
-            padding: 15px 25px;
+            padding: 0 25px;
             border-bottom: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
@@ -190,7 +190,7 @@
 
         .chat-messages-area {
             flex: 1;
-            padding: 30px;
+            padding: 0;
             overflow-y: auto;
             background: #f8fafc;
             display: flex;
@@ -244,7 +244,7 @@
         }
 
         .chat-input-area {
-            padding: 20px 25px;
+            padding: 0 25px;
             border-top: 1px solid var(--border-color);
             display: flex;
             align-items: center;
@@ -346,16 +346,10 @@
                     <i data-lucide="menu"></i> All categories
                 </div>
                 <div class="nav-links">
-                    <a href="index.html"><i data-lucide="home"></i> Home</a><a
-                        href="featured.html">Featured selections</a>
-                    <a href="tradeassurance.html">Trade Assurance</a>
-                    <a href="buyer-central.html">Buyer Central</a>
-                    <a href="helpcenter.html">Help Center</a>
-                    <a href="getapp.html">Get the app</a>
+                    <a href="index.html" class="active"><i data-lucide="home"></i> Home</a>
+                    <a href="featured.html">Featured selections</a>
                 </div>
-                <div class="nav-right">
-                    <a href="#">Become a supplier</a>
-                </div>
+
             </div>
         </div>
     </header>
@@ -483,7 +477,7 @@
 
     <!-- Mobile Bottom Nav -->
     <div class="mobile-bottom-nav">
-        <a href="index.html" class="mobile-nav-item">
+        <a href="index.html" class="mobile-nav-item active">
             <i data-lucide="home"></i>
             <span>Home</span>
         </a>
@@ -491,11 +485,11 @@
             <i data-lucide="layers"></i>
             <span>Categories</span>
         </a>
-        <a href="messages.html" class="mobile-nav-item active">
+        <a href="messages.html" class="mobile-nav-item">
             <i data-lucide="message-square"></i>
             <span>Messages</span>
         </a>
-        <a href="#" class="mobile-nav-item">
+        <a href="cart.html" class="mobile-nav-item">
             <i data-lucide="shopping-cart"></i>
             <span>Cart</span>
         </a>

@@ -19,7 +19,7 @@
         .cart-items-section {
             background: white;
             border-radius: 12px;
-            padding: 30px;
+            padding: 0;
             box-shadow: var(--shadow-sm);
             border: 1px solid var(--border-color);
         }
@@ -42,7 +42,7 @@
             display: grid;
             grid-template-columns: 100px 1fr auto;
             gap: 20px;
-            padding: 20px 0;
+            padding: 0 0;
             border-bottom: 1px solid #f3f4f6;
             align-items: center;
         }
@@ -66,7 +66,7 @@
         .item-img img {
             max-width: 80%;
             max-height: 80%;
-            object-fit: contain;
+            object-fit: cover;
         }
 
         .item-details h3 {
@@ -136,7 +136,7 @@
         .order-summary {
             background: white;
             border-radius: 12px;
-            padding: 25px;
+            padding: 0;
             box-shadow: var(--shadow-sm);
             border: 1px solid var(--border-color);
             position: sticky;
@@ -176,7 +176,7 @@
             background: var(--primary);
             color: white;
             border: none;
-            padding: 15px;
+            padding: 0;
             border-radius: 8px;
             font-size: 16px;
             font-weight: 700;
@@ -191,7 +191,7 @@
 
         .trade-assurance-badge {
             margin-top: 20px;
-            padding: 15px;
+            padding: 0;
             background: #f0f7ff;
             border-radius: 8px;
             display: flex;
@@ -237,7 +237,7 @@
 <body>
             <!-- Footer -->
     <footer>
-        <div class="container">
+        <div class="container-fluid">
             <div class="footer-links">
                 <div class="footer-col">
                     <h4>Get Support</h4>
@@ -287,18 +287,21 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <div class="footer-info">
-                    <span class="copyright">© 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights reserved.</span>
+                    <span class="copyright">Â© 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights
+                        reserved.</span>
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms of Use</a>
                 </div>
                 <div class="social-links">
                     <a href="https://facebook.com/noshahibaba" aria-label="Facebook"><i data-lucide="facebook"></i></a>
                     <a href="https://twitter.com/noshahibaba" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-                    <a href="https://instagram.com/noshahibaba" aria-label="Instagram"><i data-lucide="instagram"></i></a>
-                    <a href="https://linkedin.com/company/noshahibaba" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="https://instagram.com/noshahibaba" aria-label="Instagram"><i
+                            data-lucide="instagram"></i></a>
+                    <a href="https://linkedin.com/company/noshahibaba" aria-label="LinkedIn"><i
+                            data-lucide="linkedin"></i></a>
                     <a href="https://youtube.com/noshahibaba" aria-label="YouTube"><i data-lucide="youtube"></i></a>
                 </div>
             </div>
@@ -307,7 +310,7 @@
 
     <!-- Mobile Bottom Nav -->
     <div class="mobile-bottom-nav">
-        <a href="index.html" class="mobile-nav-item">
+        <a href="index.html" class="mobile-nav-item active">
             <i data-lucide="home"></i>
             <span>Home</span>
         </a>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -115,7 +115,7 @@
         }
 
         .btn-bc-primary:hover {
-            transform: translateY(-5px);
+            
             box-shadow: 0 15px 30px rgba(255, 204, 0, 0.3);
         }
 
@@ -128,7 +128,7 @@
         .btn-bc-outline:hover {
             border-color: white;
             background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-5px);
+            
         }
 
         .bc-hero-card {
@@ -136,7 +136,7 @@
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 24px;
-            padding: 40px;
+            padding: 0;
             box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
         }
 
@@ -148,7 +148,7 @@
 
         .bc-stat-box {
             text-align: center;
-            padding: 24px;
+            padding: 0;
             background: rgba(255, 255, 255, 0.03);
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -285,7 +285,7 @@
 
         .tool-card {
             background: white;
-            padding: 40px;
+            padding: 0;
             border-radius: 24px;
             border: 1px solid #eef2f6;
             transition: all 0.4s ease;
@@ -294,7 +294,7 @@
         }
 
         .tool-card:hover {
-            transform: translateY(-10px);
+            
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
             border-color: var(--primary);
         }
@@ -437,16 +437,10 @@
                     <i data-lucide="menu"></i> All categories
                 </div>
                 <div class="nav-links">
-                    <a href="index.html"><i data-lucide="home"></i> Home</a>
+                    <a href="index.html" class="active"><i data-lucide="home"></i> Home</a>
                     <a href="featured.html">Featured selections</a>
-                    <a href="tradeassurance.html">Trade Assurance</a>
-                    <a href="buyer-central.html" class="active">Buyer Central</a>
-                    <a href="helpcenter.html">Help Center</a>
-                    <a href="getapp.html">Get the app</a>
                 </div>
-                <div class="nav-right">
-                    <a href="#">Become a supplier</a>
-                </div>
+
             </div>
         </div>
     </header>
@@ -622,7 +616,7 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
+        <div class="container-fluid">
             <div class="footer-links">
                 <div class="footer-col">
                     <h4>Get Support</h4>
@@ -695,7 +689,7 @@
 
     <!-- Mobile Bottom Nav -->
     <div class="mobile-bottom-nav">
-        <a href="index.html" class="mobile-nav-item">
+        <a href="index.html" class="mobile-nav-item active">
             <i data-lucide="home"></i>
             <span>Home</span>
         </a>
@@ -720,6 +714,6 @@
     <script>
         lucide.createIcons();
     </script>
-</body>
+<script src="script.js"></script></body>
 
 </html>

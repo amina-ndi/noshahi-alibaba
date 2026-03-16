@@ -37,7 +37,7 @@
             background: #111;
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 20px;
-            padding: 25px;
+            padding: 0;
             scrollbar-width: thin;
             scrollbar-color: var(--primary) #1a1a1a;
         }
@@ -106,7 +106,7 @@
             align-items: center;
             margin-bottom: 30px;
             background: #111;
-            padding: 15px 25px;
+            padding: 0 25px;
             border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
@@ -143,7 +143,7 @@
         }
 
         .catalog-card:hover {
-            transform: translateY(-10px);
+            
             border-color: var(--primary);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
@@ -154,7 +154,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 0;
             overflow: hidden;
             position: relative;
         }
@@ -162,7 +162,7 @@
         .catalog-img-box img {
             max-width: 100%;
             max-height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             transition: transform 0.5s ease;
         }
 
@@ -188,7 +188,7 @@
         }
 
         .catalog-info {
-            padding: 20px;
+            padding: 0;
         }
 
         .catalog-title {
@@ -218,7 +218,7 @@
 
         .catalog-btn {
             width: 100%;
-            padding: 12px;
+            padding: 0;
             background: var(--primary);
             border: none;
             border-radius: 12px;
@@ -244,7 +244,7 @@
             }
 
             .shop-page-layout {
-                padding: 20px 0;
+                padding: 0 0;
             }
         }
 
@@ -323,16 +323,10 @@
                     <i data-lucide="menu"></i> All categories
                 </div>
                 <div class="nav-links">
-                    <a href="index.html"><i data-lucide="home"></i> Home</a><a href="featured.html">Featured
-                        selections</a>
-                    <a href="tradeassurance.html">Trade Assurance</a>
-                    <a href="buyer-central.html">Buyer Central</a>
-                    <a href="helpcenter.html">Help Center</a>
-                    <a href="getapp.html">Get the app</a>
+                    <a href="index.html" class="active"><i data-lucide="home"></i> Home</a>
+                    <a href="featured.html">Featured selections</a>
                 </div>
-                <div class="nav-right">
-                    <a href="#">Become a supplier</a>
-                </div>
+
             </div>
         </div>
     </header>
@@ -527,21 +521,8 @@
                     </div>
                 </div>
 
-                <!-- Pagination -->
-                <div class="pagination" style="display: flex; justify-content: center; gap: 10px; margin-top: 50px;">
-                    <a href="#" class="pg-btn active">1</a>
-                    <a href="#" class="pg-btn">2</a>
-                    <a href="#" class="pg-btn">3</a>
-                    <a href="#" class="pg-btn">4</a>
-                    <a href="#" class="pg-btn"><i data-lucide="chevron-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
+                <footer>
+        <div class="container-fluid">
             <div class="footer-links">
                 <div class="footer-col">
                     <h4>Get Support</h4>
@@ -614,7 +595,7 @@
 
     <!-- Mobile Bottom Nav -->
     <div class="mobile-bottom-nav">
-        <a href="index.html" class="mobile-nav-item">
+        <a href="index.html" class="mobile-nav-item active">
             <i data-lucide="home"></i>
             <span>Home</span>
         </a>

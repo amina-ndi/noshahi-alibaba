@@ -59,7 +59,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 80px;
+            padding: 0;
             color: white;
             border-right: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -110,7 +110,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 40px;
+            padding: 0;
             background: #050505;
         }
 
@@ -121,7 +121,7 @@
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 30px;
-            padding: 40px;
+            padding: 0;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
@@ -207,7 +207,7 @@
 
         .signin-button {
             width: 100%;
-            padding: 15px;
+            padding: 0;
             background: var(--primary);
             color: #000;
             border: none;
@@ -220,7 +220,7 @@
         }
 
         .signin-button:hover {
-            transform: translateY(-2px);
+            
             box-shadow: 0 10px 20px rgba(255, 204, 0, 0.2);
             filter: brightness(1.1);
         }
@@ -262,7 +262,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 12px;
+            padding: 0;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 12px;
@@ -307,11 +307,11 @@
 
             .signin-form-area {
                 width: 100%;
-                padding: 20px;
+                padding: 0;
             }
 
             .login-card {
-                padding: 30px 20px;
+                padding: 0 20px;
                 border: none;
                 background: transparent;
                 box-shadow: none;
@@ -421,12 +421,7 @@
 
                 <div style="margin-top: 30px; font-size: 11px; color: #444; text-align: center;">
                     &copy; 2026 Noshahibaba.com | Developed by Noshahi Developer Inc.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
+                </div></main><script>
         lucide.createIcons();
 
         document.getElementById('signinForm').addEventListener('submit', function (e) {
@@ -441,6 +436,6 @@
             }, 1000);
         });
     </script>
-</body>
+<script src="script.js"></script></body>
 
 </html>

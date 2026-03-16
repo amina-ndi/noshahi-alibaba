@@ -38,7 +38,7 @@
 
         .filter-bar {
             background: white;
-            padding: 15px 0;
+            padding: 0 0;
             border-bottom: 1px solid #e5e7eb;
             position: sticky;
             top: 74px;
@@ -79,27 +79,18 @@
             font-size: 14px;
         }
 
-        .featured-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #eee;
-            transition: all 0.3s;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
+        
 
         .featured-card:hover {
             box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1);
-            transform: translateY(-8px);
+            
             border-color: #ff6600;
         }
 
         .img-container {
             height: 240px;
             background: #f9f9f9;
-            padding: 20px;
+            padding: 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -109,7 +100,7 @@
         .img-container img {
             max-width: 100%;
             max-height: 100%;
-            object-fit: contain;
+            object-fit: cover;
         }
 
         .rank-badge {
@@ -125,7 +116,7 @@
         }
 
         .card-body {
-            padding: 20px;
+            padding: 0;
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -181,45 +172,20 @@
             gap: 4px;
         }
 
-        .pagination {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin: 50px 0;
-        }
+        
 
-        .pg-btn {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            background: white;
-            cursor: pointer;
-            font-weight: 600;
-            text-decoration: none;
-            color: #333;
-        }
+        
 
-        .pg-btn.active {
-            background: #ff6600;
-            color: white;
-            border-color: #ff6600;
-        }
+        
 
-        .pg-btn:hover:not(.active) {
-            border-color: #ff6600;
-            color: #ff6600;
-        }
+        
     </style>
 </head>
 
 <body>
             <!-- Footer -->
     <footer>
-        <div class="container">
+        <div class="container-fluid">
             <div class="footer-links">
                 <div class="footer-col">
                     <h4>Get Support</h4>
@@ -269,18 +235,21 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <div class="footer-info">
-                    <span class="copyright">© 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights reserved.</span>
+                    <span class="copyright">Â© 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights
+                        reserved.</span>
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms of Use</a>
                 </div>
                 <div class="social-links">
                     <a href="https://facebook.com/noshahibaba" aria-label="Facebook"><i data-lucide="facebook"></i></a>
                     <a href="https://twitter.com/noshahibaba" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-                    <a href="https://instagram.com/noshahibaba" aria-label="Instagram"><i data-lucide="instagram"></i></a>
-                    <a href="https://linkedin.com/company/noshahibaba" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="https://instagram.com/noshahibaba" aria-label="Instagram"><i
+                            data-lucide="instagram"></i></a>
+                    <a href="https://linkedin.com/company/noshahibaba" aria-label="LinkedIn"><i
+                            data-lucide="linkedin"></i></a>
                     <a href="https://youtube.com/noshahibaba" aria-label="YouTube"><i data-lucide="youtube"></i></a>
                 </div>
             </div>
@@ -289,7 +258,7 @@
 
     <!-- Mobile Bottom Nav -->
     <div class="mobile-bottom-nav">
-        <a href="index.html" class="mobile-nav-item">
+        <a href="index.html" class="mobile-nav-item active">
             <i data-lucide="home"></i>
             <span>Home</span>
         </a>
@@ -318,6 +287,8 @@
 </body>
 
 </html>
+
+
 
 
 
