@@ -206,13 +206,13 @@ ul {
   display: flex;
   align-items: center;
   padding-top: 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .logo-text {
   font-size: 26px;
   font-weight: 800;
-  color: #fff;
+  color: #000;
   letter-spacing: -0.5px;
 }
 
@@ -233,14 +233,14 @@ ul {
 
 .search-type {
   padding: 10px 20px;
-  background: #1a1a1a;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  background: #f7f7f7;
+  border-right: 1px solid #e5e7eb;
   font-size: 14px;
   display: flex;
   align-items: center;
   gap: 5px;
   cursor: pointer;
-  color: #fff;
+  color: #333;
 }
 
 .search-box input {
@@ -249,8 +249,8 @@ ul {
   padding: 10px 20px;
   outline: none;
   font-size: 15px;
-  background: #111;
-  color: #fff;
+  background: #fff;
+  color: #1a1a1a;
 }
 
 .search-btn {
@@ -281,7 +281,7 @@ ul {
   flex-direction: column;
   align-items: center;
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #444;
   cursor: pointer;
 }
 
@@ -296,7 +296,7 @@ ul {
 }
 
 .main-header {
-  background-color: #000;
+  background-color: #fff;
   padding: 15px 0;
   position: sticky;
   top: 0;
@@ -392,14 +392,14 @@ ul {
   align-items: center;
   gap: 10px;
   padding: 10px 24px;
-  background: rgba(255, 255, 255, 0.05);
+  background: #f5f5f5;
   /* Unactive by default */
-  color: #fff;
+  color: #1a1a1a;
   font-weight: 700;
   font-size: 13px;
   border-radius: 999px;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #e5e7eb;
   cursor: pointer;
   white-space: nowrap;
   flex-shrink: 0;
@@ -437,9 +437,9 @@ ul {
 .nav-links a {
   padding: 6px 14px;
   border-radius: 999px;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-weight: 600;
+  color: #0f172a; /* black-like */
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -448,7 +448,6 @@ ul {
 .nav-links a:hover {
   background: var(--primary);
   color: #1a1a1a;
-  font-weight: 700;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(255, 204, 0, 0.35);
 }

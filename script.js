@@ -112,16 +112,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 <i data-lucide="x" class="close-dropdown" style="width: 20px; cursor: pointer;"></i>
             </div>
             <ul>
-                <li><a href="womens-clothing.html"><i data-lucide="shopping-bag"></i> Women's Clothing</a></li>
-                <li><a href="mens-clothing.html"><i data-lucide="user"></i> Men's Clothing</a></li>
-                <li><a href="apparel.html"><i data-lucide="shirt"></i> Apparel & Accessories</a></li>
-                <li><a href="electronics.html"><i data-lucide="cpu"></i> Consumer Electronics</a></li>
+                <li><a href="consumer-electronics.html"><i data-lucide="cpu"></i> Consumer Electronics</a></li>
+                <li><a href="laptops-pcs.html"><i data-lucide="laptop"></i> Laptops & PCs</a></li>
+                <li><a href="gaming-laptops.html"><i data-lucide="gamepad-2"></i> Gaming Laptops</a></li>
+                <li><a href="apparel.html"><i data-lucide="shirt"></i> Apparel & Fashion</a></li>
                 <li><a href="home-garden.html"><i data-lucide="home"></i> Home & Garden</a></li>
-                <li><a href="machinery.html"><i data-lucide="settings"></i> Machinery</a></li>
-                <li><a href="beauty.html"><i data-lucide="heart"></i> Beauty & Personal Care</a></li>
-                <li><a href="vehicles.html"><i data-lucide="car"></i> Vehicles & Accessories</a></li>
-                <li><a href="agriculture.html"><i data-lucide="sprout"></i> Agriculture & Food</a></li>
-                <li><a href="computers.html"><i data-lucide="laptop"></i> Computer & Software</a></li>
+                <li><a href="machinery.html"><i data-lucide="factory"></i> Machinery</a></li>
+                <li><a href="beauty.html"><i data-lucide="sparkles"></i> Beauty & Personal Care</a></li>
+                <li><a href="vehicles.html"><i data-lucide="truck"></i> Vehicles & Parts</a></li>
+                <li><a href="kids-wear.html"><i data-lucide="baby"></i> Kids Wear</a></li>
             </ul>
         </div>
     `;
@@ -168,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Hero Carousel Logic - Enhanced Smooth Infinite Loop
     const inner = document.getElementById('carouselInner');
-    const originalSlides = document.querySelectorAll('.carousel-slide');
+    const originalSlides = document.querySelectorAll('.hero-slide');
     const dotsContainer = document.getElementById('carouselNav');
 
     if (inner && originalSlides.length > 0) {
@@ -179,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         inner.appendChild(firstClone);
         inner.insertBefore(lastClone, originalSlides[0]);
 
-        const allSlides = document.querySelectorAll('.carousel-slide');
+        const allSlides = document.querySelectorAll('.hero-slide');
         const slideCount = originalSlides.length;
         let currentIndex = 1; // Start at the first original slide
         let isTransitioning = false;
@@ -226,14 +225,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         function updateDots() {
-            const dots = document.querySelectorAll('.carousel-dot');
+            const dots = document.querySelectorAll('.dot');
             let activeDotIndex = currentIndex - 1;
 
             if (currentIndex === 0) activeDotIndex = slideCount - 1;
             if (currentIndex === slideCount + 1) activeDotIndex = 0;
 
             dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === activeDotIndex);
+                if (dot) dot.classList.toggle('active', index === activeDotIndex);
             });
         }
 
@@ -253,10 +252,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
         startAutoPlay();
 
-        const carousel = document.querySelector('.hero-carousel');
+        const carousel = document.querySelector('.hero-section');
         if (carousel) {
             carousel.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
             carousel.addEventListener('mouseleave', () => startAutoPlay());
+
+            // Touch support
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            carousel.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            carousel.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    moveSlide(1);
+                } else if (touchEndX > touchStartX + swipeThreshold) {
+                    moveSlide(-1);
+                }
+            }
         }
     }
     // ---- Global Premium Modal & Card Logic ----
