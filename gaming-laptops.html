@@ -93,54 +93,6 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .corner-icon {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            width: 38px;
-            height: 38px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(8px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-            z-index: 3;
-        }
-
-        .corner-actions {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            display: flex;
-            gap: 8px;
-            z-index: 4;
-        }
-
-        .corner-btn {
-            width: 34px;
-            height: 34px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.92);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .corner-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
-        }
-
-        .corner-btn.active {
-            background: var(--primary);
-            color: #000;
-        }
 
         .spec-tag {
             display: inline-block;
@@ -263,7 +215,6 @@
                     <!-- Laptop 1 -->
                     <div class="card-bold-dark card-base">
                         <div class="img-box">
-                            <div class="corner-icon"><i data-lucide="cpu"></i></div>
                             <div class="gaming-badge">RTX 4090</div>
                             <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?q=80&w=800&auto=format&fit=crop"
                                 alt="Gaming Laptop">
@@ -293,7 +244,6 @@
                     <!-- Laptop 2 -->
                     <div class="card-bold-dark card-base">
                         <div class="img-box">
-                            <div class="corner-icon"><i data-lucide="zap"></i></div>
                             <div class="gaming-badge">RTX 4080</div>
                             <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=800&auto=format&fit=crop"
                                 alt="Gaming Laptop">
@@ -323,7 +273,6 @@
                     <!-- Laptop 3 -->
                     <div class="card-bold-dark card-base">
                         <div class="img-box">
-                            <div class="corner-icon"><i data-lucide="keyboard"></i></div>
                             <div class="gaming-badge">RTX 4070</div>
                             <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?q=80&w=800&auto=format&fit=crop"
                                 alt="Mechanical Keyboard">
@@ -349,7 +298,6 @@
                     <!-- Laptop 4 -->
                     <div class="card-bold-dark card-base">
                         <div class="img-box">
-                            <div class="corner-icon"><i data-lucide="gauge"></i></div>
                             <div class="gaming-badge">RTX 4060</div>
                             <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?q=80&w=800&auto=format&fit=crop"
                                 alt="Gaming Laptop">
@@ -385,7 +333,6 @@
                 <div class="prod-grid">
                     <div class="card-bold-dark card-base">
                         <div class="img-box">
-                            <div class="corner-icon"><i data-lucide="battery-charging"></i></div>
                             <div class="gaming-badge">RTX 3050</div><img
                                 src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=800&auto=format&fit=crop"
                                 alt="Budget Laptop">
@@ -400,7 +347,6 @@
                     </div>
                     <div class="card-bold-dark card-base">
                         <div class="img-box">
-                            <div class="corner-icon"><i data-lucide="shield"></i></div>
                             <div class="gaming-badge">GTX 1650</div><img
                                 src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=800&auto=format&fit=crop"
                                 alt="Budget Laptop">
@@ -415,7 +361,6 @@
                     </div>
                     <div class="card-bold-dark card-base">
                         <div class="img-box">
-                            <div class="corner-icon"><i data-lucide="zap-off"></i></div>
                             <div class="gaming-badge">RTX 4050</div><img
                                 src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?q=80&w=800&auto=format&fit=crop"
                                 alt="Gaming Laptop">
@@ -430,7 +375,6 @@
                     </div>
                     <div class="card-bold-dark card-base">
                         <div class="img-box">
-                            <div class="corner-icon"><i data-lucide="headset"></i></div>
                             <div class="gaming-badge">RTX 3050</div><img
                                 src="https://images.unsplash.com/photo-1517336714460-4c50422b3f14?q=80&w=800&auto=format&fit=crop"
                                 alt="Gaming Laptop">
@@ -571,34 +515,11 @@
             document.body.style.overflow = 'auto';
         }
 
-        function attachActionButtons() {
-            document.querySelectorAll('.card-bold-dark, .card-base').forEach(card => {
-                if (card.querySelector('.card-actions')) return;
-                const wrap = document.createElement('div');
-                wrap.className = 'card-actions';
-                wrap.innerHTML = `
-                    <button class="card-action-btn view-btn" aria-label="View detail"><i data-lucide="eye"></i></button>
-                    <button class="card-action-btn like-btn" aria-label="Like"><i data-lucide="heart"></i></button>
-                `;
-                card.appendChild(wrap);
-            });
-            if (window.lucide) lucide.createIcons();
-        }
-
-        attachActionButtons();
-
         document.addEventListener('click', (e) => {
-            const viewBtn = e.target.closest('.view-btn');
-            const likeBtn = e.target.closest('.like-btn');
             const imgTarget = e.target.closest('.img-box img');
             const card = e.target.closest('.card-bold-dark, .card-base');
 
             if (!card && !imgTarget) return;
-
-            if (likeBtn) {
-                likeBtn.classList.toggle('like-active');
-                return;
-            }
 
             const title = card?.querySelector('.title')?.innerText || '';
             const price = card?.querySelector('.price')?.innerText || '';
@@ -607,15 +528,6 @@
 
             if (imgTarget) {
                 openLightbox(imgTarget.src);
-                return;
-            }
-
-            if (viewBtn && img) {
-                const url = new URL('product-detail.html', window.location.href);
-                url.searchParams.set('img', img);
-                url.searchParams.set('title', title);
-                url.searchParams.set('price', price);
-                window.location.href = url.toString();
                 return;
             }
 
@@ -671,40 +583,12 @@
         setFilterOffset();
         toggleShadow();
 
-        // Add view + like icons to every product card image box
-        const actionTemplate = `
-            <div class="corner-actions">
-                <button class="corner-btn view-btn" aria-label="View"><i data-lucide="eye"></i></button>
-                <button class="corner-btn like-btn" aria-label="Like"><i data-lucide="heart"></i></button>
-            </div>
-        `;
-
-        document.querySelectorAll('.card-bold-dark .img-box').forEach(box => {
-            if (!box.querySelector('.corner-actions')) {
-                box.insertAdjacentHTML('afterbegin', actionTemplate);
-            }
-        });
-
-        document.querySelectorAll('.like-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                btn.classList.toggle('active');
-            });
-        });
-
-        document.querySelectorAll('.view-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const img = btn.closest('.img-box')?.querySelector('img')?.src;
-                if (img) openLightbox(img);
-            });
-        });
-
         if (window.lucide) lucide.createIcons();
     </script>
 </body>
 
 </html>
+
 
 
 
