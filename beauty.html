@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="assets/logo.png" />
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beauty & Personal Care | Noshahibaba.com</title>
+    <title>NoshahiBaba</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,8 +23,8 @@
             padding: 15px 0;
             border-bottom: 1px solid #eee;
             position: sticky;
-            top: 100px;
-            z-index: 100;
+            top: var(--filter-offset, 90px);
+            z-index: 160;
         }
 
         .filter-links {
@@ -270,6 +271,43 @@
             flex: 0 0 100%;
         }
 
+        /* Haircare row tweaks */
+        #haircare .prod-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        #haircare .card-bold-dark .img-box {
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.65), rgba(236, 240, 248, 0.35));
+            height: 280px;
+        }
+
+        #haircare .card-bold-dark .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 14px;
+            transform: perspective(1100px) rotateY(-6deg);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+        }
+
+        #haircare .card-bold-dark .img-box img:hover {
+            transform: perspective(1100px) rotateY(0deg) translateY(-6px);
+        }
+
+        @media (max-width: 1200px) {
+            #haircare .prod-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 700px) {
+            #haircare .prod-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 900px) {
             .beauty-carousel-row {
                 grid-template-columns: 1fr;
@@ -298,7 +336,7 @@
             <div class="header-top-row">
                 <div class="logo">
                     <a href="index.html">
-                        <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                        <span class="logo-text">Noshahi<span>Baba</span>.com</span>
                     </a>
                 </div>
                 <div class="search-container">
@@ -331,8 +369,6 @@
     <div class="filter-bar">
         <div class="container">
             <div class="filter-links">
-                <a href="featured.html">All Categories</a>
-                <a href="consumer-electronics.html">Consumer Electronics</a>
                 <a href="laptops-pcs.html">Laptops & PCs</a>
                 <a href="gaming-laptops.html">Gaming Laptops</a>
                 <a href="apparel.html">Apparel & Fashion</a>
@@ -580,37 +616,73 @@
                 <div class="prod-grid">
                     <div class="card-bold-dark card-base">
                         <div class="img-box"><img
-                                src="https://images.unsplash.com/photo-1626784215021-2e3fccf5d45d?q=80&w=800&auto=format&fit=crop"
-                                alt="Hair Oil"></div>
+                                src="https://images.unsplash.com/photo-1751458290121-99f56515b6a7?auto=format&fit=crop&w=900&q=80"
+                                alt="3D Active Serum Bottle" loading="lazy"></div>
                         <div class="prod-info">
                             <div class="title"
                                 style="font-weight: 700; font-size: 16px; height: 44px; overflow: hidden; margin-bottom: 10px;">
-                                Pure Argan Oil Hair Serum - Frizz Control & Shine</div>
+                                3D Keratin Repair Serum â€“ Hover Vial Render</div>
                             <div class="price"
-                                style="font-size: 24px; font-weight: 900; color: #111; margin-bottom: 5px;">PKR 1,850
+                                style="font-size: 24px; font-weight: 900; color: #111; margin-bottom: 5px;">PKR 4,200
                             </div>
                             <div class="supplier-badge"
                                 style="font-size: 12px; color: #666; display: flex; align-items: center; gap: 6px; margin-bottom: 15px;">
-                                <i data-lucide="shield-check" style="width: 16px; color: var(--primary);"></i> Hair-Care
-                                Pro</div>
+                                <i data-lucide="shield-check" style="width: 16px; color: var(--primary);"></i> NovaLab
+                                3D Care</div>
                             <button class="source-btn">Source Now</button>
                         </div>
                     </div>
                     <div class="card-bold-dark card-base">
                         <div class="img-box"><img
-                                src="https://images.unsplash.com/photo-1522337360788-8b13df75cfef?q=80&w=800&auto=format&fit=crop"
-                                alt="Hair Dryer"></div>
+                                src="https://images.unsplash.com/photo-1748638348145-d53bc0373166?auto=format&fit=crop&w=900&q=80"
+                                alt="3D Shampoo Bottle Render" loading="lazy"></div>
                         <div class="prod-info">
                             <div class="title"
                                 style="font-weight: 700; font-size: 16px; height: 44px; overflow: hidden; margin-bottom: 10px;">
-                                Professional Salon Hair Dryer - Negative Ion Tech</div>
+                                Hydro-Shield Moisture Shampoo â€“ 3D Water Splash</div>
                             <div class="price"
-                                style="font-size: 24px; font-weight: 900; color: #111; margin-bottom: 5px;">PKR 12,500
+                                style="font-size: 24px; font-weight: 900; color: #111; margin-bottom: 5px;">PKR 2,950
                             </div>
                             <div class="supplier-badge"
                                 style="font-size: 12px; color: #666; display: flex; align-items: center; gap: 6px; margin-bottom: 15px;">
-                                <i data-lucide="shield-check" style="width: 16px; color: var(--primary);"></i>
-                                Salon-Equip Ltd</div>
+                                <i data-lucide="shield-check" style="width: 16px; color: var(--primary);"></i> Ela De
+                                Pure Studios</div>
+                            <button class="source-btn">Source Now</button>
+                        </div>
+                    </div>
+                    <div class="card-bold-dark card-base">
+                        <div class="img-box"><img
+                                src="https://images.unsplash.com/photo-1757039068345-1f3245db4f40?auto=format&fit=crop&w=900&q=80"
+                                alt="3D Twin Ionic Hair Dryers" loading="lazy"></div>
+                        <div class="prod-info">
+                            <div class="title"
+                                style="font-weight: 700; font-size: 16px; height: 44px; overflow: hidden; margin-bottom: 10px;">
+                                Graphite Twin Ionic Dryers â€“ CGI Studio Render</div>
+                            <div class="price"
+                                style="font-size: 24px; font-weight: 900; color: #111; margin-bottom: 5px;">PKR 13,800
+                            </div>
+                            <div class="supplier-badge"
+                                style="font-size: 12px; color: #666; display: flex; align-items: center; gap: 6px; margin-bottom: 15px;">
+                                <i data-lucide="shield-check" style="width: 16px; color: var(--primary);"></i> Pavlo
+                                Talpa Studio</div>
+                            <button class="source-btn">Source Now</button>
+                        </div>
+                    </div>
+                    <div class="card-bold-dark card-base">
+                        <div class="img-box"><img
+                                src="https://images.unsplash.com/photo-1757039068285-e27f60c403bb?auto=format&fit=crop&w=900&q=80"
+                                alt="3D Pastel Hair Dryer" loading="lazy"></div>
+                        <div class="prod-info">
+                            <div class="title"
+                                style="font-weight: 700; font-size: 16px; height: 44px; overflow: hidden; margin-bottom: 10px;">
+                                AeroCool Pastel Dryer â€“ 3D Product Shot</div>
+                            <div class="price"
+                                style="font-size: 24px; font-weight: 900; color: #111; margin-bottom: 5px;">PKR 11,600
+                            </div>
+                            <div class="supplier-badge"
+                                style="font-size: 12px; color: #666; display: flex; align-items: center; gap: 6px; margin-bottom: 15px;">
+                                <i data-lucide="shield-check" style="width: 16px; color: var(--primary);"></i> Vertex
+                                3D Design</div>
                             <button class="source-btn">Source Now</button>
                         </div>
                     </div>
@@ -644,7 +716,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Source on Noshahibaba</h4>
+                    <h4>Source on NoshahiBaba</h4>
                     <ul>
                         <li><a href="top-ranking.html">Top Ranking</a></li>
                         <li><a href="rfq.html">Request for Quotation</a></li>
@@ -653,7 +725,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Sell on Noshahibaba</h4>
+                    <h4>Sell on NoshahiBaba</h4>
                     <ul>
                         <li><a href="become-supplier.html">Become a Supplier</a></li>
                         <li><a href="supplier-central.html">Seller Central</a></li>
@@ -674,19 +746,19 @@
 
             <div class="footer-bottom">
                 <div class="footer-info">
-                    <span class="copyright">© 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights
+                    <span class="copyright">Â© 2026 NoshahiBaba.com | Developed by Noshahi Developer Inc. All rights
                         reserved.</span>
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms of Use</a>
                 </div>
                 <div class="social-links">
-                    <a href="https://facebook.com/noshahibaba" aria-label="Facebook"><i data-lucide="facebook"></i></a>
-                    <a href="https://twitter.com/noshahibaba" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-                    <a href="https://instagram.com/noshahibaba" aria-label="Instagram"><i
+                    <a href="https://facebook.com/NoshahiBaba" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="https://twitter.com/NoshahiBaba" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="https://instagram.com/NoshahiBaba" aria-label="Instagram"><i
                             data-lucide="instagram"></i></a>
-                    <a href="https://linkedin.com/company/noshahibaba" aria-label="LinkedIn"><i
+                    <a href="https://linkedin.com/company/NoshahiBaba" aria-label="LinkedIn"><i
                             data-lucide="linkedin"></i></a>
-                    <a href="https://youtube.com/noshahibaba" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                    <a href="https://youtube.com/NoshahiBaba" aria-label="YouTube"><i data-lucide="youtube"></i></a>
                 </div>
             </div>
         </div>
@@ -845,7 +917,33 @@
         initMiniCarousels();
 
         lucide.createIcons();
+
+        // Keep filter bar directly under sticky navbar and add shadow when stuck
+        const filterBar = document.querySelector('.filter-bar');
+        const mainHeader = document.querySelector('.main-header');
+
+        const setFilterOffset = () => {
+            if (!filterBar || !mainHeader) return;
+            const offset = mainHeader.offsetHeight;
+            filterBar.style.setProperty('--filter-offset', `${offset}px`);
+        };
+
+        const toggleShadow = () => {
+            if (!filterBar) return;
+            const stuck = window.scrollY > (filterBar.offsetTop - 10);
+            filterBar.style.boxShadow = stuck ? '0 8px 30px rgba(0,0,0,0.06)' : 'none';
+        };
+
+        window.addEventListener('resize', setFilterOffset);
+        document.addEventListener('scroll', toggleShadow);
+        setFilterOffset();
+        toggleShadow();
     </script>
 </body>
 
 </html>
+
+
+
+
+

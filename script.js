@@ -4,12 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ---- Active Nav Link Detection ----
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-item');
     navLinks.forEach(link => {
-        const linkPage = link.getAttribute('href');
-        if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
-            link.classList.add('active');
-        }
+        const href = link.getAttribute('href') || '';
+        const linkPage = href.split('/').pop().split('#')[0];
+        const isHome = linkPage === 'index.html' || linkPage === '';
+        const isCurrent = linkPage === currentPage;
+        link.classList.toggle('active', isCurrent || (isHome && currentPage === 'index.html'));
     });
 
     // Sticky Header Effect

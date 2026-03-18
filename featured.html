@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="assets/logo.png" />
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Featured Selections | Noshahibaba.com</title>
+    <title>NoshahiBaba</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,13 +18,13 @@
         }
 
         .filter-bar {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(20px);
             padding: 15px 0;
             border-bottom: 1px solid #eee;
             position: sticky;
-            top: 124px;
-            z-index: 100;
+            top: var(--filter-offset, 90px);
+            z-index: 160;
         }
 
         .filter-links {
@@ -31,6 +32,7 @@
             gap: 15px;
             overflow-x: auto;
             scrollbar-width: none;
+            padding-bottom: 4px;
         }
 
         .filter-links a {
@@ -41,12 +43,14 @@
             border-radius: 999px;
             background: #f5f5f5;
             border: 1px solid #eee;
+            transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
         }
 
         .filter-links a.active {
             background-color: var(--primary);
             color: #000;
             border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
     </style>
 </head>
@@ -71,7 +75,7 @@
             <div class="header-top-row">
                 <div class="logo">
                     <a href="index.html">
-                        <span class="logo-text">Noshahi<span>baba</span>.com</span>
+                        <span class="logo-text">Noshahi<span>Baba</span>.com</span>
                     </a>
                 </div>
                 <div class="search-container">
@@ -105,8 +109,7 @@
     <div class="filter-bar">
         <div class="container">
             <div class="filter-links">
-                <a href="#" class="active">All Categories</a>
-                <a href="consumer-electronics.html">Consumer Electronics</a>
+                <a href="consumer-electronics.html" class="active">Consumer Electronics</a>
                 <a href="laptops-pcs.html">Laptops & PCs</a>
                 <a href="gaming-laptops.html">Gaming Laptops</a>
                 <a href="apparel.html">Apparel & Fashion</a>
@@ -117,11 +120,35 @@
         </div>
     </div>
 
+    <script>
+        // Keep filter bar tucked right under the sticky header
+        const filterBar = document.querySelector('.filter-bar');
+        const mainHeader = document.querySelector('.main-header');
+
+        const setFilterOffset = () => {
+            if (!filterBar || !mainHeader) return;
+            const offset = mainHeader.offsetHeight;
+            filterBar.style.setProperty('--filter-offset', `${offset}px`);
+        };
+
+        // Add slight shadow when the sticky filter bar is engaged
+        const toggleShadow = () => {
+            if (!filterBar) return;
+            const stuck = window.scrollY > (filterBar.offsetTop - 10);
+            filterBar.style.boxShadow = stuck ? '0 8px 30px rgba(0,0,0,0.06)' : 'none';
+        };
+
+        window.addEventListener('resize', setFilterOffset);
+        document.addEventListener('scroll', toggleShadow);
+        setFilterOffset();
+        toggleShadow();
+    </script>
+
     <main class="container-fluid" style="padding: 60px 0;">
         <!-- Section 1: Platinum Featured Innovations -->
         <section style="margin-bottom: 80px;">
             <div class="section-title-wrapper container-fluid">
-                <h2 class="section-title">ðŸ’Ž Platinum Featured Innovations</h2>
+                <h2 class="section-title">Ã°Å¸â€™Å½ Platinum Featured Innovations</h2>
             </div>
             <div class="prod-grid container-fluid">
                 <div class="card-bold-dark card-base" onclick="openModal(this)">
@@ -228,7 +255,7 @@
         <!-- Section 2: Trending & Best Sellers with MASSIVE Dual Carousels (30 Cards Each) -->
         <section style="margin-top: 60px;">
             <div class="section-title-wrapper container-fluid">
-                <h2 class="section-title">ðŸ”¥ Trending Global Best Sellers</h2>
+                <h2 class="section-title">Ã°Å¸â€Â¥ Trending Global Best Sellers</h2>
             </div>
 
             <div class="dual-carousel-row container-fluid">
@@ -1101,7 +1128,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Source on Noshahibaba</h4>
+                    <h4>Source on NoshahiBaba</h4>
                     <ul>
                         <li><a href="top-ranking.html">Top Ranking</a></li>
                         <li><a href="rfq.html">Request for Quotation</a></li>
@@ -1110,7 +1137,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Sell on Noshahibaba</h4>
+                    <h4>Sell on NoshahiBaba</h4>
                     <ul>
                         <li><a href="become-supplier.html">Become a Supplier</a></li>
                         <li><a href="supplier-central.html">Seller Central</a></li>
@@ -1131,19 +1158,19 @@
 
             <div class="footer-bottom">
                 <div class="footer-info">
-                    <span class="copyright">© 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights
+                    <span class="copyright">Â© 2026 NoshahiBaba.com | Developed by Noshahi Developer Inc. All rights
                         reserved.</span>
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms of Use</a>
                 </div>
                 <div class="social-links">
-                    <a href="https://facebook.com/noshahibaba" aria-label="Facebook"><i data-lucide="facebook"></i></a>
-                    <a href="https://twitter.com/noshahibaba" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-                    <a href="https://instagram.com/noshahibaba" aria-label="Instagram"><i
+                    <a href="https://facebook.com/NoshahiBaba" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="https://twitter.com/NoshahiBaba" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="https://instagram.com/NoshahiBaba" aria-label="Instagram"><i
                             data-lucide="instagram"></i></a>
-                    <a href="https://linkedin.com/company/noshahibaba" aria-label="LinkedIn"><i
+                    <a href="https://linkedin.com/company/NoshahiBaba" aria-label="LinkedIn"><i
                             data-lucide="linkedin"></i></a>
-                    <a href="https://youtube.com/noshahibaba" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                    <a href="https://youtube.com/NoshahiBaba" aria-label="YouTube"><i data-lucide="youtube"></i></a>
                 </div>
             </div>
         </div>
@@ -1175,3 +1202,8 @@
 </body>
 
 </html>
+
+
+
+
+
