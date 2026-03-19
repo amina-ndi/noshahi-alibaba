@@ -516,6 +516,7 @@
         }
 
         document.addEventListener('click', (e) => {
+            const sourceBtn = e.target.closest('.source-btn');
             const imgTarget = e.target.closest('.img-box img');
             const card = e.target.closest('.card-bold-dark, .card-base');
 
@@ -528,6 +529,17 @@
 
             if (imgTarget) {
                 openLightbox(imgTarget.src);
+                return;
+            }
+
+            if (sourceBtn && card) {
+                const supplier = card.querySelector('.supplier-badge')?.innerText?.trim() || 'Verified Supplier';
+                const url = new URL('product-detail.html', window.location.href);
+                if (img) url.searchParams.set('img', img);
+                if (title) url.searchParams.set('title', title);
+                if (price) url.searchParams.set('price', price);
+                url.searchParams.set('supplier', supplier);
+                window.location.href = url.toString();
                 return;
             }
 

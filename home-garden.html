@@ -770,6 +770,7 @@
                 wrap.className = 'card-actions';
                 wrap.innerHTML = `
                     <button class="card-action-btn view-btn" aria-label="View detail"><i data-lucide="eye"></i></button>
+                    <button class="card-action-btn cart-btn" aria-label="Add to cart"><i data-lucide="shopping-cart"></i></button>
                     <button class="card-action-btn like-btn" aria-label="Like"><i data-lucide="heart"></i></button>
                 `;
                 imgBox.appendChild(wrap);
@@ -781,7 +782,9 @@
 
         document.addEventListener('click', (e) => {
             const viewBtn = e.target.closest('.view-btn');
+            const cartBtn = e.target.closest('.cart-btn');
             const likeBtn = e.target.closest('.like-btn');
+            const sourceBtn = e.target.closest('.source-btn');
             const imgTarget = e.target.closest('.img-box img');
             const card = e.target.closest('.card-bold-dark, .card-base');
 
@@ -799,6 +802,24 @@
 
             if (imgTarget) {
                 openLightbox(imgTarget.src);
+                return;
+            }
+
+            if (cartBtn && img) {
+                const supplier = card.querySelector('.supplier-badge')?.innerText?.trim() || 'Verified Supplier';
+                window.addProductToCart?.({ title, price, img, supplier, quantity: 1 });
+                alert(`"${title}" added to cart.`);
+                return;
+            }
+
+            if (sourceBtn && img) {
+                const supplier = card.querySelector('.supplier-badge')?.innerText?.trim() || 'Verified Supplier';
+                const url = new URL('product-detail.html', window.location.href);
+                url.searchParams.set('img', img);
+                url.searchParams.set('title', title);
+                url.searchParams.set('price', price);
+                url.searchParams.set('supplier', supplier);
+                window.location.href = url.toString();
                 return;
             }
 

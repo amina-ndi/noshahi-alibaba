@@ -34,6 +34,7 @@
 
         .chat-section {
             padding: 70px 0;
+            background: linear-gradient(180deg, #fffdf4 0%, #ffffff 100%);
         }
 
         .chat-layout {
@@ -52,8 +53,8 @@
         }
 
         .chat-header {
-            background: linear-gradient(135deg, #ff6600, #ff9900);
-            padding: 0 24px;
+            background: linear-gradient(135deg, #ffcc00, #f5b700);
+            padding: 18px 24px;
             display: flex;
             align-items: center;
             gap: 14px;
@@ -124,7 +125,7 @@
             width: 34px;
             height: 34px;
             border-radius: 50%;
-            background: #ff6600;
+            background: #ffcc00;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -134,7 +135,7 @@
         .msg-avatar i {
             width: 16px;
             height: 16px;
-            color: white;
+            color: #111827;
         }
 
         .msg-bubble {
@@ -152,8 +153,8 @@
         }
 
         .msg.user .msg-bubble {
-            background: #ff6600;
-            color: white;
+            background: #ffcc00;
+            color: #111827;
             border-radius: 12px 4px 12px 12px;
         }
 
@@ -162,6 +163,7 @@
             border-top: 1px solid #e2e8f0;
             display: flex;
             gap: 10px;
+            background: #fff;
         }
 
         .chat-input input {
@@ -175,12 +177,13 @@
         }
 
         .chat-input input:focus {
-            border-color: #ff6600;
+            border-color: #ffcc00;
+            box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.18);
         }
 
         .send-btn {
-            background: #ff6600;
-            color: white;
+            background: #ffcc00;
+            color: #111827;
             border: none;
             padding: 12px 18px;
             border-radius: 8px;
@@ -194,7 +197,7 @@
         }
 
         .send-btn:hover {
-            background: #e05500;
+            background: #f0b800;
         }
 
         .chat-info {
@@ -234,8 +237,13 @@
         .info-item i {
             width: 20px;
             height: 20px;
-            color: #ff6600;
+            color: #d4a300;
             flex-shrink: 0;
+        }
+
+        .info-item a {
+            color: #b58900 !important;
+            font-weight: 700;
         }
 
         .status-badge {
@@ -257,13 +265,163 @@
             border-radius: 50%;
         }
 
-        @media(max-width:768px) {
+        @media(max-width:992px) {
             .chat-layout {
                 grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .page-hero h1 {
+                font-size: 32px;
+            }
+
+            .chat-section {
+                padding: 40px 0 56px;
+            }
+        }
+
+        @media(max-width:768px) {
+            .page-hero {
+                padding: 52px 0 42px;
             }
 
             .page-hero h1 {
                 font-size: 28px;
+            }
+
+            .page-hero p {
+                font-size: 15px;
+                padding: 0 10px;
+            }
+
+            .chat-section {
+                padding: 28px 0 40px;
+            }
+
+            .chat-layout {
+                gap: 18px;
+            }
+
+            .chat-box,
+            .info-card {
+                border-radius: 14px;
+            }
+
+            .chat-header {
+                padding: 14px 16px;
+                gap: 10px;
+            }
+
+            .chat-header .avatar {
+                width: 40px;
+                height: 40px;
+            }
+
+            .chat-header h3 {
+                font-size: 15px;
+                margin: 0 0 2px;
+            }
+
+            .chat-header p {
+                font-size: 12px;
+                margin: 0;
+            }
+
+            .chat-messages {
+                height: 280px;
+                padding: 14px;
+            }
+
+            .msg {
+                max-width: 92%;
+            }
+
+            .msg-bubble {
+                font-size: 13px;
+                padding: 11px 13px;
+            }
+
+            .chat-input {
+                padding: 12px;
+                flex-direction: column;
+            }
+
+            .chat-input input,
+            .send-btn {
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .send-btn {
+                justify-content: center;
+            }
+
+            .chat-info {
+                gap: 14px;
+            }
+
+            .info-card {
+                padding: 18px 16px;
+            }
+
+            .info-card h3 {
+                font-size: 17px;
+                margin-bottom: 10px;
+            }
+
+            .info-item {
+                align-items: flex-start;
+                padding: 10px 0;
+                font-size: 13px;
+                line-height: 1.5;
+            }
+        }
+
+        @media(max-width:480px) {
+            .top-bar-right {
+                display: none;
+            }
+
+            .container {
+                padding: 0 14px;
+            }
+
+            .page-hero h1 {
+                font-size: 24px;
+            }
+
+            .chat-header {
+                padding: 12px 14px;
+            }
+
+            .chat-messages {
+                height: 240px;
+                padding: 12px;
+                gap: 10px;
+            }
+
+            .msg-avatar {
+                width: 30px;
+                height: 30px;
+            }
+
+            .msg-bubble {
+                font-size: 12px;
+                padding: 10px 12px;
+            }
+
+            .chat-input {
+                padding: 10px;
+            }
+
+            .chat-input input {
+                padding: 11px 12px;
+                font-size: 13px;
+            }
+
+            .send-btn {
+                padding: 11px 14px;
+                font-size: 13px;
             }
         }
     </style>
@@ -370,9 +528,9 @@
                         <div class="info-item"><i data-lucide="mail"></i>support@NoshahiBaba.com</div>
                         <div class="info-item"><i data-lucide="phone"></i>+92-300-NOSHAHI (Monâ€“Fri, 9amâ€“6pm)</div>
                         <div class="info-item"><i data-lucide="file-question"></i><a href="helpcenter.html"
-                                style="color:#ff6600;">Browse Help Center Articles</a></div>
+                                style="color:#b58900;">Browse Help Center Articles</a></div>
                         <div class="info-item"><i data-lucide="shield-check"></i><a href="tradeassurance.html"
-                                style="color:#ff6600;">File a Trade Assurance Dispute</a></div>
+                                style="color:#b58900;">File a Trade Assurance Dispute</a></div>
                     </div>
                 </div>
             </div>
@@ -387,8 +545,6 @@
                     <ul>
                         <li><a href="helpcenter.html">Help Center</a></li>
                         <li><a href="live-chat.html">Live Chat</a></li>
-                        <li><a href="order-status.html">Check Order Status</a></li>
-                        <li><a href="report-abuse.html">Report Abuse</a></li>
                         <li><a href="refunds.html">Refunds & Returns</a></li>
                     </ul>
                 </div>
@@ -397,7 +553,6 @@
                     <ul>
                         <li><a href="tradeassurance.html">Trade Assurance</a></li>
                         <li><a href="business-identity.html">Business Identity</a></li>
-                        <li><a href="logistics.html">Shipping & Logistics</a></li>
                         <li><a href="inspections.html">Inspection Services</a></li>
                         <li><a href="secure-payment.html">Secure Payment</a></li>
                     </ul>
@@ -416,7 +571,6 @@
                     <ul>
                         <li><a href="become-supplier.html">Become a Supplier</a></li>
                         <li><a href="supplier-central.html">Seller Central</a></li>
-                        <li><a href="training-center.html">Supplier Training</a></li>
                         <li><a href="partnership.html">Partnership Program</a></li>
                     </ul>
                 </div>

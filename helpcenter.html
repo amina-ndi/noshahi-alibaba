@@ -255,6 +255,34 @@
             position: relative;
             z-index: 2;
             flex: 1;
+            padding: 56px 56px 56px 60px;
+        }
+
+        .contact-visual {
+            width: 220px;
+            min-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            position: relative;
+        }
+
+        .contact-visual::before {
+            content: '';
+            position: absolute;
+            inset: 24px;
+            border-radius: 28px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .contact-visual i {
+            position: relative;
+            z-index: 2;
+            width: 128px;
+            height: 128px;
+            opacity: 0.22;
         }
 
         .contact-box h2 {
@@ -343,6 +371,19 @@
                 padding: 0;
             }
 
+            .contact-content {
+                padding: 42px 28px 18px;
+            }
+
+            .contact-visual {
+                width: 100%;
+                padding: 0 28px 34px;
+            }
+
+            .contact-visual::before {
+                inset: 0 28px 0;
+            }
+
             .contact-actions {
                 justify-content: center;
             }
@@ -371,6 +412,43 @@
 
             .hc-hero {
                 padding: 80px 0 60px;
+            }
+
+            .contact-content {
+                padding: 34px 20px 16px;
+            }
+
+            .contact-box h2 {
+                font-size: 26px;
+            }
+
+            .contact-box p {
+                font-size: 15px;
+                margin-bottom: 22px;
+            }
+
+            .contact-actions {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .btn-contact {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .contact-visual {
+                padding: 0 20px 24px;
+            }
+
+            .contact-visual::before {
+                inset: 0 20px 0;
+                border-radius: 20px;
+            }
+
+            .contact-visual i {
+                width: 88px;
+                height: 88px;
             }
         }
     </style>
@@ -464,11 +542,6 @@
                     <div class="hc-icon"><i data-lucide="credit-card"></i></div>
                     <h3>Payments & Pricing</h3>
                     <p>Supported payment methods, currencies, and invoice management.</p>
-                </a>
-                <a href="#" class="hc-card">
-                    <div class="hc-icon"><i data-lucide="truck"></i></div>
-                    <h3>Shipping & Logistics</h3>
-                    <p>Tracking orders, shipping methods, and customs information.</p>
                 </a>
                 <a href="#" class="hc-card">
                     <div class="hc-icon"><i data-lucide="shield-check"></i></div>

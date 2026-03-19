@@ -8,31 +8,32 @@
 <script src="https://unpkg.com/lucide@latest"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-.page-hero{background:linear-gradient(135deg,#0f172a,#1e3a5f);padding:70px 0;text-align:center;color:white;}
-.page-hero h1{font-size:42px;font-weight:800;margin-bottom:14px;}
-.page-hero p{font-size:18px;opacity:.8;max-width:620px;margin:0 auto;}
-.content-sec{padding:70px 0;}
-.content-sec.gray{background:#f8fafc;}
+.page-hero{background:linear-gradient(135deg,#0f172a,#1e3a5f);padding:72px 0;text-align:center;color:white;}
+.page-hero h1{font-size:42px;font-weight:800;margin-bottom:14px;letter-spacing:-1px;}
+.page-hero p{font-size:18px;opacity:.86;max-width:620px;margin:0 auto;line-height:1.7;}
+.content-sec{padding:72px 0;}
+.content-sec.gray{background:linear-gradient(180deg,#fffdf4 0%,#f8fafc 100%);}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;margin-top:40px;}
-.f-card{background:white;border:1px solid #e2e8f0;border-radius:14px;padding: 0;transition:.25s;}
-.f-card:hover{border-color:#ff6600;box-shadow:0 12px 32px rgba(255,102,0,.1);transform:translateY(-4px);}
-.f-icon{width:52px;height:52px;border-radius:12px;background:#fff4ed;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
-.f-icon i{width:26px;height:26px;color:#ff6600;}
+.f-card{background:white;border:1px solid #e2e8f0;border-radius:18px;padding:26px;transition:.25s;box-shadow:0 8px 24px rgba(15,23,42,.04);}
+.f-card:hover{border-color:#ffcc00;box-shadow:0 16px 36px rgba(255,204,0,.18);transform:translateY(-4px);}
+.f-icon{width:52px;height:52px;border-radius:12px;background:#fff7cc;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.f-icon i{width:26px;height:26px;color:#c99700;}
 .f-card h3{font-size:17px;font-weight:700;color:#0f172a;margin-bottom:8px;}
 .f-card p{font-size:14px;color:#64748b;line-height:1.7;}
-.cta-band{background:linear-gradient(135deg,#ff6600,#ff9900);padding:60px 0;text-align:center;color:white;}
+.cta-band{background:linear-gradient(135deg,#ffcc00,#eab308);padding:60px 0;text-align:center;color:#0f172a;}
 .cta-band h2{font-size:34px;font-weight:800;margin-bottom:14px;}
 .cta-band p{font-size:17px;opacity:.9;margin-bottom:30px;}
-.btn-w{background:white;color:#ff6600;padding:14px 36px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none;display:inline-block;transition:.2s;}
-.btn-w:hover{transform:translateY(-2px);color:#e05500;}
-.sl{font-size:13px;font-weight:700;letter-spacing:2px;color:#ff6600;text-transform:uppercase;margin-bottom:10px;}
+.btn-w{background:#0f172a;color:#fff;padding:14px 36px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;display:inline-block;transition:.2s;}
+.btn-w:hover{transform:translateY(-2px);background:#111827;color:#fff;}
+.sl{font-size:13px;font-weight:700;letter-spacing:2px;color:#c99700;text-transform:uppercase;margin-bottom:10px;}
 .sh{font-size:34px;font-weight:800;color:#0f172a;margin-bottom:12px;}
-.ss{font-size:16px;color:#64748b;max-width:600px;}
+.ss{font-size:16px;color:#64748b;max-width:600px;line-height:1.7;}
 .table-sect table{width:100%;border-collapse:collapse;margin-top:30px;}
 .table-sect th{background:#0f172a;color:white;padding:14px 18px;text-align:left;font-size:14px;}
 .table-sect td{padding:14px 18px;border-bottom:1px solid #f1f5f9;font-size:14px;color:#475569;}
-.table-sect tr:hover td{background:#fff4ed;}
-@media(max-width:640px){.page-hero h1{font-size:28px;}.cta-band h2{font-size:24px;}}
+.table-sect tr:hover td{background:#fffbea;}
+@media(max-width:900px){.page-hero{padding:56px 0;}.page-hero h1{font-size:34px;}.page-hero p{font-size:16px;padding:0 12px;}.content-sec{padding:54px 0;}.sh{font-size:28px;}.card-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}.f-card{padding:22px;}.cta-band{padding:48px 0;}.cta-band h2{font-size:28px;}}
+@media(max-width:640px){.container{padding:0 16px;}.page-hero{padding:44px 0;}.page-hero h1{font-size:28px;}.page-hero p{font-size:14px;line-height:1.6;}.content-sec{padding:40px 0;}.card-grid{grid-template-columns:1fr;gap:16px;margin-top:28px;}.f-card{padding:18px;border-radius:14px;}.f-card h3{font-size:16px;}.f-card p{font-size:13px;line-height:1.6;}.sl{font-size:11px;letter-spacing:1.4px;}.sh{font-size:24px;}.ss{font-size:14px;line-height:1.6;}.cta-band{padding:38px 0;}.cta-band h2{font-size:24px;}.cta-band p{font-size:14px;line-height:1.6;}.btn-w{width:100%;box-sizing:border-box;padding:12px 18px;text-align:center;}}
 </style>
 </head>
 <body>
@@ -81,7 +82,7 @@
     </header>
 <section class="page-hero"><div class="container"><h1>Business Identity</h1><p>Get your business verified on NoshahiBaba.com to build trust with global buyers and suppliers.</p></div></section>
 <section class="content-sec gray"><div class="container"><div class="sl">Why Verify</div><h2 class="sh">Benefits of Business Identity</h2><p class="ss">A verified business profile unlocks premium features and increases buyer confidence significantly.</p><div class="card-grid"><div class="f-card"><div class="f-icon"><i data-lucide="badge-check"></i></div><h3>Verified Pro Badge</h3><p>Display an official verified badge on your store that signals trust to every buyer who visits.</p></div><div class="f-card"><div class="f-icon"><i data-lucide="trending-up"></i></div><h3>Higher Rankings</h3><p>Verified businesses rank higher in search results, getting up to 3ï¿½ more visibility on the platform.</p></div><div class="f-card"><div class="f-icon"><i data-lucide="shield-check"></i></div><h3>Trade Assurance Access</h3><p>Only verified businesses can offer Trade Assurance to buyers, boosting conversions significantly.</p></div><div class="f-card"><div class="f-icon"><i data-lucide="users"></i></div><h3>Buyer Confidence</h3><p>Buyers are 5ï¿½ more likely to purchase from a verified supplier vs an unverified one.</p></div></div></div></section>
-<section class="content-sec"><div class="container"><div class="sl">Verification Steps</div><h2 class="sh">How to Get Verified</h2><div class="card-grid"><div class="f-card"><div class="f-icon" style="background:#eff6ff;"><i data-lucide="file-text" style="color:#3b82f6;"></i></div><h3>1. Submit Documents</h3><p>Upload your business registration certificate, CNIC, and tax number through your account settings.</p></div><div class="f-card"><div class="f-icon" style="background:#f0fdf4;"><i data-lucide="search-check" style="color:#16a34a;"></i></div><h3>2. Review Process</h3><p>Our team reviews your documents within 3ï¿½5 business days. You will receive email notifications on status.</p></div><div class="f-card"><div class="f-icon" style="background:#fff4ed;"><i data-lucide="award" style="color:#ff6600;"></i></div><h3>3. Get Badged</h3><p>Once approved, your store gets the Verified Pro badge and you unlock all premium supplier features.</p></div></div></div></section>
+<section class="content-sec"><div class="container"><div class="sl">Verification Steps</div><h2 class="sh">How to Get Verified</h2><div class="card-grid"><div class="f-card"><div class="f-icon" style="background:#eff6ff;"><i data-lucide="file-text" style="color:#3b82f6;"></i></div><h3>1. Submit Documents</h3><p>Upload your business registration certificate, CNIC, and tax number through your account settings.</p></div><div class="f-card"><div class="f-icon" style="background:#f0fdf4;"><i data-lucide="search-check" style="color:#16a34a;"></i></div><h3>2. Review Process</h3><p>Our team reviews your documents within 3ï¿½5 business days. You will receive email notifications on status.</p></div><div class="f-card"><div class="f-icon" style="background:#fff7cc;"><i data-lucide="award" style="color:#c99700;"></i></div><h3>3. Get Badged</h3><p>Once approved, your store gets the Verified Pro badge and you unlock all premium supplier features.</p></div></div></div></section>
 <section class="cta-band"><div class="container"><h2>Start Your Verification Today</h2><p>Join 50,000+ verified suppliers already growing their business on NoshahiBaba.</p><a href="signin.html" class="btn-w">Apply Now</a></div></section>
 <footer>
         <div class="container-fluid">
@@ -91,17 +92,13 @@
                     <ul>
                         <li><a href="helpcenter.html">Help Center</a></li>
                         <li><a href="live-chat.html">Live Chat</a></li>
-                        <li><a href="order-status.html">Check Order Status</a></li>
-                        <li><a href="report-abuse.html">Report Abuse</a></li>
                         <li><a href="refunds.html">Refunds & Returns</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Trade Services</h4>
                     <ul>
-                        <li><a href="tradeassurance.html">Trade Assurance</a></li>
                         <li><a href="business-identity.html">Business Identity</a></li>
-                        <li><a href="logistics.html">Shipping & Logistics</a></li>
                         <li><a href="inspections.html">Inspection Services</a></li>
                         <li><a href="secure-payment.html">Secure Payment</a></li>
                     </ul>
@@ -120,7 +117,6 @@
                     <ul>
                         <li><a href="become-supplier.html">Become a Supplier</a></li>
                         <li><a href="supplier-central.html">Seller Central</a></li>
-                        <li><a href="training-center.html">Supplier Training</a></li>
                         <li><a href="partnership.html">Partnership Program</a></li>
                     </ul>
                 </div>

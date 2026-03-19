@@ -1,3 +1,71 @@
+const NB_CART_KEY = 'noshahibaba_cart';
+
+function getCartItems() {
+    try {
+        const raw = localStorage.getItem(NB_CART_KEY);
+        const parsed = raw ? JSON.parse(raw) : [];
+        return Array.isArray(parsed) ? parsed : [];
+    } catch (error) {
+        return [];
+    }
+}
+
+function saveCartItems(items) {
+    localStorage.setItem(NB_CART_KEY, JSON.stringify(items));
+}
+
+function parsePriceValue(priceText) {
+    const numeric = Number.parseFloat(String(priceText || '').replace(/[^0-9.]/g, ''));
+    return Number.isFinite(numeric) ? numeric : 0;
+}
+
+window.getCartItems = getCartItems;
+
+window.addProductToCart = function (product) {
+    if (!product || !product.title) return { count: 0, quantity: 0 };
+
+    const items = getCartItems();
+    const normalizedPrice = product.price || 'PKR 0';
+    const quantityToAdd = Math.max(1, Number.parseInt(product.quantity, 10) || 1);
+    const existing = items.find((item) => item.title === product.title && item.price === normalizedPrice);
+
+    if (existing) {
+        existing.quantity += quantityToAdd;
+        if (product.img) existing.img = product.img;
+        if (product.supplier) existing.supplier = product.supplier;
+    } else {
+        items.push({
+            title: product.title,
+            price: normalizedPrice,
+            numericPrice: parsePriceValue(normalizedPrice),
+            img: product.img || '',
+            supplier: product.supplier || 'Verified Supplier',
+            quantity: quantityToAdd
+        });
+    }
+
+    saveCartItems(items);
+    return {
+        count: items.reduce((sum, item) => sum + (item.quantity || 0), 0),
+        quantity: quantityToAdd
+    };
+};
+
+window.removeProductFromCart = function (title, price) {
+    const items = getCartItems().filter((item) => !(item.title === title && item.price === price));
+    saveCartItems(items);
+    return items;
+};
+
+window.updateProductCartQuantity = function (title, price, delta) {
+    const items = getCartItems();
+    const target = items.find((item) => item.title === title && item.price === price);
+    if (!target) return items;
+    target.quantity = Math.max(1, (target.quantity || 1) + delta);
+    saveCartItems(items);
+    return items;
+};
+
 // Initialize Lucide Icons
 document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();

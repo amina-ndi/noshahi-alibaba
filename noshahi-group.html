@@ -12,7 +12,7 @@
     <style>
         .page-hero {
             background: linear-gradient(135deg, #0f172a, #1e3a5f);
-            padding: 80px 0;
+            padding: 72px 0;
             text-align: center;
             color: white;
         }
@@ -21,6 +21,7 @@
             font-size: 46px;
             font-weight: 800;
             margin-bottom: 20px;
+            letter-spacing: -1px;
         }
 
         .page-hero p {
@@ -32,18 +33,18 @@
         }
 
         .content-section {
-            padding: 90px 0;
+            padding: 72px 0;
         }
 
         .content-section.gray {
-            background: #f8fafc;
+            background: linear-gradient(180deg, #fffdf6 0%, #f8fafc 100%);
         }
 
         .section-label {
             font-size: 14px;
             font-weight: 700;
             letter-spacing: 2px;
-            color: #ff6600;
+            color: #c99700;
             text-transform: uppercase;
             margin-bottom: 12px;
             text-align: center;
@@ -67,9 +68,10 @@
             background: white;
             border: 1px solid #e2e8f0;
             border-radius: 16px;
-            padding: 0;
+            padding: 28px 24px;
             text-align: center;
             transition: .3s;
+            box-shadow: 0 10px 28px rgba(15, 23, 42, 0.04);
         }
 
         .company-card:hover {
@@ -82,7 +84,7 @@
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background: #fff4ed;
+            background: #fff7cc;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -91,18 +93,18 @@
         }
 
         .company-card:hover .icon-circle {
-            background: #ff6600;
+            background: #ffcc00;
         }
 
         .icon-circle i {
             width: 36px;
             height: 36px;
-            color: #ff6600;
+            color: #c99700;
             transition: .3s;
         }
 
         .company-card:hover .icon-circle i {
-            color: white;
+            color: #111827;
         }
 
         .company-card h3 {
@@ -121,10 +123,10 @@
         }
 
         .cta-band {
-            background: linear-gradient(135deg, #ff6600, #ff9900);
-            padding: 70px 0;
+            background: linear-gradient(135deg, #ffcc00, #eab308);
+            padding: 58px 0;
             text-align: center;
-            color: white;
+            color: #0f172a;
         }
 
         .cta-band h2 {
@@ -140,10 +142,10 @@
         }
 
         .btn-w {
-            background: white;
-            color: #ff6600;
+            background: #0f172a;
+            color: #fff;
             padding: 16px 42px;
-            border-radius: 8px;
+            border-radius: 10px;
             font-weight: 700;
             font-size: 16px;
             text-decoration: none;
@@ -153,14 +155,42 @@
         }
 
         .btn-w:hover {
-            
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-            color: #e05500;
+            color: #fff;
+            background: #111827;
+        }
+
+        @media(max-width: 900px) {
+            .page-hero {
+                padding: 56px 0;
+            }
+
+            .page-hero h1 {
+                font-size: 38px;
+            }
+
+            .page-hero p {
+                font-size: 16px;
+                padding: 0 12px;
+            }
+
+            .content-section {
+                padding: 56px 0;
+            }
+
+            .section-heading {
+                font-size: 32px;
+                margin-bottom: 32px;
+            }
         }
 
         @media(max-width: 768px) {
             .page-hero h1 {
                 font-size: 34px;
+            }
+
+            .page-hero p {
+                font-size: 15px;
             }
 
             .section-heading {
@@ -169,6 +199,83 @@
 
             .cta-band h2 {
                 font-size: 28px;
+            }
+
+            .company-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .company-card {
+                padding: 22px 18px;
+            }
+        }
+
+        @media(max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .page-hero {
+                padding: 44px 0;
+            }
+
+            .page-hero h1 {
+                font-size: 28px;
+                margin-bottom: 12px;
+            }
+
+            .page-hero p,
+            .company-card p,
+            .cta-band p {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            .content-section {
+                padding: 40px 0;
+            }
+
+            .section-label {
+                font-size: 11px;
+                letter-spacing: 1.5px;
+            }
+
+            .section-heading {
+                font-size: 24px;
+                margin-bottom: 24px;
+            }
+
+            .icon-circle {
+                width: 64px;
+                height: 64px;
+                margin-bottom: 18px;
+            }
+
+            .icon-circle i {
+                width: 28px;
+                height: 28px;
+            }
+
+            .company-card h3 {
+                font-size: 20px;
+            }
+
+            .cta-band {
+                padding: 40px 0;
+            }
+
+            .cta-band h2 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .btn-w {
+                width: 100%;
+                box-sizing: border-box;
+                text-align: center;
+                padding: 14px 18px;
+                font-size: 14px;
             }
         }
     </style>
@@ -235,8 +342,8 @@
 
             <div class="company-grid">
                 <div class="company-card">
-                    <div class="icon-circle" style="background:#fff4ed;"><i data-lucide="shopping-bag"
-                            style="color:#ff6600;"></i></div>
+                    <div class="icon-circle" style="background:#fff7cc;"><i data-lucide="shopping-bag"
+                            style="color:#c99700;"></i></div>
                     <h3>NoshahiBaba.com</h3>
                     <p>Our remarkably thriving flagship B2B wholesale marketplace decisively connecting millions of
                         global buyers and strategic suppliers across 190+ countries worldwide.</p>
@@ -284,17 +391,13 @@
                     <ul>
                         <li><a href="helpcenter.html">Help Center</a></li>
                         <li><a href="live-chat.html">Live Chat</a></li>
-                        <li><a href="order-status.html">Check Order Status</a></li>
-                        <li><a href="report-abuse.html">Report Abuse</a></li>
                         <li><a href="refunds.html">Refunds & Returns</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Trade Services</h4>
                     <ul>
-                        <li><a href="tradeassurance.html">Trade Assurance</a></li>
                         <li><a href="business-identity.html">Business Identity</a></li>
-                        <li><a href="logistics.html">Shipping & Logistics</a></li>
                         <li><a href="inspections.html">Inspection Services</a></li>
                         <li><a href="secure-payment.html">Secure Payment</a></li>
                     </ul>
@@ -302,7 +405,6 @@
                 <div class="footer-col">
                     <h4>Source on NoshahiBaba</h4>
                     <ul>
-                        <li><a href="top-ranking.html">Top Ranking</a></li>
                         <li><a href="rfq.html">Request for Quotation</a></li>
                         <li><a href="membership.html">Membership Programs</a></li>
                         <li><a href="verified-suppliers.html">Verified Suppliers</a></li>
@@ -313,7 +415,6 @@
                     <ul>
                         <li><a href="become-supplier.html">Become a Supplier</a></li>
                         <li><a href="supplier-central.html">Seller Central</a></li>
-                        <li><a href="training-center.html">Supplier Training</a></li>
                         <li><a href="partnership.html">Partnership Program</a></li>
                     </ul>
                 </div>

@@ -467,6 +467,27 @@
             filterBar.style.boxShadow = stuck ? '0 8px 30px rgba(0,0,0,0.06)' : 'none';
         };
 
+        const openProductDetail = (card) => {
+            if (!card) return;
+            const title = card.querySelector('.title')?.innerText?.trim() || 'Product Detail';
+            const price = card.querySelector('.price')?.innerText?.trim() || '';
+            const img = card.querySelector('img')?.src || '';
+            const supplier = card.querySelector('.supplier-badge')?.innerText?.trim() || 'Verified Supplier';
+            const url = new URL('product-detail.html', window.location.href);
+            url.searchParams.set('title', title);
+            if (price) url.searchParams.set('price', price);
+            if (img) url.searchParams.set('img', img);
+            url.searchParams.set('supplier', supplier);
+            window.location.href = url.toString();
+        };
+
+        document.querySelectorAll('.source-btn').forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openProductDetail(btn.closest('.card-bold-dark, .card-base'));
+            });
+        });
+
         window.addEventListener('resize', setFilterOffset);
         document.addEventListener('scroll', toggleShadow);
         setFilterOffset();

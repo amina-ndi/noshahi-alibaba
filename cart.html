@@ -236,7 +236,48 @@
 </head>
 
 <body>
-            <!-- Footer -->
+    <main class="container">
+        <div class="cart-container">
+            <section class="cart-items-section">
+                <div style="padding: 24px;">
+                    <div class="cart-header">
+                        <h2>Your Cart</h2>
+                        <span id="cartCountLabel">0 items</span>
+                    </div>
+                    <div id="cartItemsList"></div>
+                </div>
+            </section>
+
+            <aside class="order-summary">
+                <div style="padding: 24px;">
+                    <div class="summary-title">Order Summary</div>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="summarySubtotal">PKR 0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span id="summaryShipping">PKR 0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Items</span>
+                        <span id="summaryItems">0</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <span id="summaryTotal">PKR 0</span>
+                    </div>
+                    <button class="checkout-btn" style="padding: 14px;" onclick="window.location.href='signin.html'">Proceed to Checkout</button>
+                    <div class="trade-assurance-badge" style="padding: 14px; margin-top: 16px;">
+                        <i data-lucide="shield-check"></i>
+                        <div>Protected checkout with secure trade assurance and encrypted payment flow.</div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
     <footer>
         <div class="container-fluid">
             <div class="footer-links">
@@ -334,7 +375,94 @@
     </div>
 
     <script src="script.js"></script>
-    <script>lucide.createIcons();</script>
+    <script>
+        function formatCurrency(value) {
+            return `PKR ${Number(value || 0).toLocaleString()}`;
+        }
+
+        function renderCartPage() {
+            const items = window.getCartItems ? window.getCartItems() : [];
+            const list = document.getElementById('cartItemsList');
+            const count = items.reduce((sum, item) => sum + (item.quantity || 0), 0);
+            const subtotal = items.reduce((sum, item) => sum + ((item.numericPrice || 0) * (item.quantity || 1)), 0);
+            const shipping = count > 0 ? 2500 : 0;
+
+            document.getElementById('cartCountLabel').innerText = `${count} item${count === 1 ? '' : 's'}`;
+            document.getElementById('summaryItems').innerText = count;
+            document.getElementById('summarySubtotal').innerText = formatCurrency(subtotal);
+            document.getElementById('summaryShipping').innerText = formatCurrency(shipping);
+            document.getElementById('summaryTotal').innerText = formatCurrency(subtotal + shipping);
+
+            if (!items.length) {
+                list.innerHTML = `
+                    <div style="padding: 20px 0; text-align: center; color: #64748b;">
+                        <div style="font-size: 18px; font-weight: 800; color: #0f172a; margin-bottom: 8px;">Your cart is empty</div>
+                        <div style="margin-bottom: 18px;">Add products from the cart icon or product detail page.</div>
+                        <a href="index.html" style="display:inline-flex; align-items:center; justify-content:center; padding:12px 18px; border-radius:10px; background:#FFCC00; color:#111827; text-decoration:none; font-weight:800;">Continue Shopping</a>
+                    </div>
+                `;
+                if (window.lucide) lucide.createIcons();
+                return;
+            }
+
+            list.innerHTML = items.map((item) => `
+                <div class="cart-item" style="padding: 18px 0;">
+                    <div class="item-img">
+                        <img src="${item.img || 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop'}" alt="${item.title}">
+                    </div>
+                    <div class="item-details">
+                        <h3>${item.title}</h3>
+                        <div class="item-meta">
+                            <span>${item.supplier || 'Verified Supplier'}</span>
+                            <span>${item.price}</span>
+                        </div>
+                    </div>
+                    <div class="item-price-actions">
+                        <div class="item-price">${item.price}</div>
+                        <div class="quantity-control">
+                            <button class="qty-btn cart-qty-btn" type="button" data-title="${encodeURIComponent(item.title)}" data-price="${encodeURIComponent(item.price)}" data-delta="-1"><i data-lucide="minus"></i></button>
+                            <span class="qty-val">${item.quantity || 1}</span>
+                            <button class="qty-btn cart-qty-btn" type="button" data-title="${encodeURIComponent(item.title)}" data-price="${encodeURIComponent(item.price)}" data-delta="1"><i data-lucide="plus"></i></button>
+                        </div>
+                        <div class="remove-item cart-remove-btn" data-title="${encodeURIComponent(item.title)}" data-price="${encodeURIComponent(item.price)}">
+                            <i data-lucide="trash-2" style="width:14px;"></i> Remove
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function changeCartQty(title, price, delta) {
+            window.updateProductCartQuantity?.(decodeURIComponent(title), decodeURIComponent(price), delta);
+            renderCartPage();
+        }
+
+        function removeCartItem(title, price) {
+            window.removeProductFromCart?.(decodeURIComponent(title), decodeURIComponent(price));
+            renderCartPage();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCartPage();
+            if (window.lucide) lucide.createIcons();
+        });
+
+        document.addEventListener('click', (e) => {
+            const qtyBtn = e.target.closest('.cart-qty-btn');
+            const removeBtn = e.target.closest('.cart-remove-btn');
+
+            if (qtyBtn) {
+                changeCartQty(qtyBtn.dataset.title, qtyBtn.dataset.price, Number(qtyBtn.dataset.delta || 0));
+                return;
+            }
+
+            if (removeBtn) {
+                removeCartItem(removeBtn.dataset.title, removeBtn.dataset.price);
+            }
+        });
+    </script>
 </body>
 
 </html>
