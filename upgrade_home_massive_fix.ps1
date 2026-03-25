@@ -207,7 +207,7 @@ $finalHtml = @"
                 <div><h4 style="margin-bottom:25px; font-size:18px;">About Us</h4><ul style="list-style:none; padding:0; line-height:2.8;"><li><a href="#" style="color:#94a3b8; text-decoration:none;">Our Story</a></li><li><a href="#" style="color:#94a3b8; text-decoration:none;">Noshahi Group</a></li><li><a href="#" style="color:#94a3b8; text-decoration:none;">Careers</a></li></ul></div>
             </div>
             <div style="margin-top:80px; padding-top:40px; border-top:1px solid #1e293b; text-align:center; color:#64748b; font-size:14px;">
-                © 2026 Noshahibaba.com | Developed by Noshahi Developer Inc. All rights reserved.
+                © 2026 Noshahibaba.com  All rights reserved.
             </div>
         </div>
     </footer>
